@@ -1,276 +1,276 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://www.alexonsager.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.alexonsager.com/" rel="alternate" type="text/html" /><updated>2024-12-27T21:30:26+09:00</updated><id>https://www.alexonsager.com/feed.xml</id><title type="html">Alex Onsager</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">Installing GoToSocial on Coolify</title><link href="https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify.html" rel="alternate" type="text/html" title="Installing GoToSocial on Coolify" /><published>2024-12-27T00:00:00+09:00</published><updated>2024-12-27T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify.html">&lt;p&gt;Following up to my &lt;a href=&quot;/2024/12/02/i-want-to-love-mastodon.html&quot;&gt;earlier post about the fediverse&lt;/a&gt;, I discovered &lt;a href=&quot;https://gotosocial.org&quot;&gt;GoToSocial&lt;/a&gt;. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very &lt;a href=&quot;https://docs.gotosocial.org/en/latest/getting_started/#server-vps&quot;&gt;lightweight&lt;/a&gt;: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://www.alexonsager.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.alexonsager.com/" rel="alternate" type="text/html" /><updated>2024-12-31T23:48:44+09:00</updated><id>https://www.alexonsager.com/feed.xml</id><title type="html">Invisible Parade</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">Installing GoToSocial on Coolify</title><link href="https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify.html" rel="alternate" type="text/html" title="Installing GoToSocial on Coolify" /><published>2024-12-27T00:00:00+09:00</published><updated>2024-12-27T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/27/installing-gotosocial-on-coolify.html"><![CDATA[<p>Following up to my <a href="/2024/12/02/i-want-to-love-mastodon.html">earlier post about the fediverse</a>, I discovered <a href="https://gotosocial.org">GoToSocial</a>. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very <a href="https://docs.gotosocial.org/en/latest/getting_started/#server-vps">lightweight</a>: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold!</p>
 
-&lt;p&gt;This would let me set up my own single-user server, which solves all of my misgivings about Mastodon.&lt;/p&gt;
+<p>This would let me set up my own single-user server, which solves all of my misgivings about Mastodon.</p>
 
-&lt;div class=&quot;callout&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;Disclaimer&lt;/div&gt;
-I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here.&lt;br /&gt;
+<div class="callout">
+<div class="title">Disclaimer</div>
+I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here.<br />
 Please take my experience with a grain of salt, and correct me if you can.
-&lt;/div&gt;
+</div>
 
-&lt;p&gt;I have a VPS with &lt;a href=&quot;https://coolify.io&quot;&gt;Coolify&lt;/a&gt; to manage the multiple apps I have running, and all things considered it makes things very easy.&lt;br /&gt;
-I used a docker-compose file to deploy GoToSocial, and their &lt;a href=&quot;https://raw.githubusercontent.com/superseriousbusiness/gotosocial/main/example/docker-compose/docker-compose.yaml&quot;&gt;example file&lt;/a&gt; was almost perfect as-is.&lt;/p&gt;
+<p>I have a VPS with <a href="https://coolify.io">Coolify</a> to manage the multiple apps I have running, and all things considered it makes things very easy.<br />
+I used a docker-compose file to deploy GoToSocial, and their <a href="https://raw.githubusercontent.com/superseriousbusiness/gotosocial/main/example/docker-compose/docker-compose.yaml">example file</a> was almost perfect as-is.</p>
 
-&lt;!-- more --&gt;
+<!-- more -->
 
-&lt;h1 id=&quot;port-settings&quot;&gt;Port settings&lt;/h1&gt;
+<h1 id="port-settings">Port settings</h1>
 
-&lt;p&gt;Coolify acts as a reverse proxy, so I used that part of the configuration:&lt;/p&gt;
+<p>Coolify acts as a reverse proxy, so I used that part of the configuration:</p>
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;gotosocial&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# - &quot;443:8080&quot;&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;## For letsencrypt:&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;#- &quot;80:80&quot;&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;## For reverse proxy setups:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;127.0.0.1:8002:8080&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">gotosocial</span><span class="pi">:</span>
+  <span class="s">...</span>
+    <span class="s">ports</span><span class="err">:</span>
+      <span class="c1"># - "443:8080"</span>
+      <span class="c1">## For letsencrypt:</span>
+      <span class="c1">#- "80:80"</span>
+      <span class="c1">## For reverse proxy setups:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">127.0.0.1:8002:8080"</span>
+</code></pre></div></div>
 
-&lt;p&gt;8002 was just an open port that I chose, and Coolify is smart enough to use that port to route traffic from my GoToSocial domain.&lt;/p&gt;
+<p>8002 was just an open port that I chose, and Coolify is smart enough to use that port to route traffic from my GoToSocial domain.</p>
 
-&lt;h1 id=&quot;file-permissions&quot;&gt;File permissions&lt;/h1&gt;
+<h1 id="file-permissions">File permissions</h1>
 
-&lt;p&gt;&lt;a href=&quot;https://rknight.me/blog/installing-gotosocial-on-coolify/&quot;&gt;Robb Knight’s blog post&lt;/a&gt; showed me how to fix the sqlite database being unable to load because of a permissions issue. I had a similar issue with the Wazero compilation cache directory not being created, but I ended up just commenting that line out because it works without.&lt;/p&gt;
+<p><a href="https://rknight.me/blog/installing-gotosocial-on-coolify/">Robb Knight’s blog post</a> showed me how to fix the sqlite database being unable to load because of a permissions issue. I had a similar issue with the Wazero compilation cache directory not being created, but I ended up just commenting that line out because it works without.</p>
 
-&lt;h1 id=&quot;shooting-myself-in-the-foot&quot;&gt;Shooting myself in the foot&lt;/h1&gt;
+<h1 id="shooting-myself-in-the-foot">Shooting myself in the foot</h1>
 
-&lt;p&gt;I knew I had to mount a volume to make the database persist across redeploys and not be wiped fresh every time. &lt;a href=&quot;https://coolify.io/docs/knowledge-base/persistent-storage&quot;&gt;Coolify’s documentation&lt;/a&gt; made it very clear,&lt;/p&gt;
+<p>I knew I had to mount a volume to make the database persist across redeploys and not be wiped fresh every time. <a href="https://coolify.io/docs/knowledge-base/persistent-storage">Coolify’s documentation</a> made it very clear,</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;The base directory inside the container is /app.
-So if you need to store your files under storage directory, you need to define /app/storage as the destination path.&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>The base directory inside the container is /app.
+So if you need to store your files under storage directory, you need to define /app/storage as the destination path.</p>
+</blockquote>
 
-&lt;p&gt;So, I changed the settings to make sure that things were stored under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/app&lt;/code&gt;&lt;/p&gt;
+<p>So, I changed the settings to make sure that things were stored under <code class="language-plaintext highlighter-rouge">/app</code></p>
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;gotosocial&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;s&quot;&gt;...&lt;/span&gt;
-      &lt;span class=&quot;s&quot;&gt;GTS_DB_ADDRESS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/app/storage/sqlite.db&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;~/gotosocial/data:/app/storage&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">gotosocial</span><span class="pi">:</span>
+    <span class="s">...</span>
+    <span class="s">environment</span><span class="err">:</span>
+      <span class="s">...</span>
+      <span class="s">GTS_DB_ADDRESS</span><span class="err">:</span> <span class="s">/app/storage/sqlite.db</span>
+    <span class="s">volumes</span><span class="err">:</span>
+      <span class="pi">-</span> <span class="s">~/gotosocial/data:/app/storage</span>
+</code></pre></div></div>
 
-&lt;p&gt;Which worked, except!&lt;br /&gt;
-I hadn’t realized that media storage also defaulted to the same (first) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/gotosocial/storage&lt;/code&gt; directory. Since this directory was no longer being bound, it was wiped clean after every redeploy.
-Remote media was fine because it could be fetched again, but images I uploaded were lost.&lt;/p&gt;
+<p>Which worked, except!<br />
+I hadn’t realized that media storage also defaulted to the same (first) <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> directory. Since this directory was no longer being bound, it was wiped clean after every redeploy.
+Remote media was fine because it could be fetched again, but images I uploaded were lost.</p>
 
-&lt;p&gt;I poked around in the terminal and saw that both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/app/storage&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/gotosocial/storage&lt;/code&gt; were being created and used with no issues, so I just switched the database address back to the default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/gotosocial/storage&lt;/code&gt;… and everything worked as expected.&lt;/p&gt;
+<p>I poked around in the terminal and saw that both <code class="language-plaintext highlighter-rouge">/app/storage</code> and <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> were being created and used with no issues, so I just switched the database address back to the default <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code>… and everything worked as expected.</p>
 
-&lt;p&gt;So, I don’t quite understand what the Coolify docs were trying to tell me.&lt;/p&gt;
+<p>So, I don’t quite understand what the Coolify docs were trying to tell me.</p>
 
-&lt;h1 id=&quot;end&quot;&gt;End&lt;/h1&gt;
+<h1 id="end">End</h1>
 
-&lt;p&gt;Things seem to be working fine now, and I’m using mostly &lt;a href=&quot;http://semaphore.social&quot;&gt;Semaphore&lt;/a&gt; to interact with the instance.&lt;br /&gt;
-You can follow me &lt;a href=&quot;https://social.alexonsager.com/@alex&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fediverse" /><category term="gotosocial" /><category term="mastodon" /><category term="server" /><category term="coolify" /><summary type="html">Following up to my earlier post about the fediverse, I discovered GoToSocial. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very lightweight: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold! This would let me set up my own single-user server, which solves all of my misgivings about Mastodon. Disclaimer I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here. Please take my experience with a grain of salt, and correct me if you can. I have a VPS with Coolify to manage the multiple apps I have running, and all things considered it makes things very easy. I used a docker-compose file to deploy GoToSocial, and their example file was almost perfect as-is.</summary></entry><entry><title type="html">Adguard was preventing sites from loading in Safari sometimes</title><link href="https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html" rel="alternate" type="text/html" title="Adguard was preventing sites from loading in Safari sometimes" /><published>2024-12-25T00:00:00+09:00</published><updated>2024-12-25T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html">&lt;p&gt;For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy.&lt;/p&gt;
+<p>Things seem to be working fine now, and I’m using mostly <a href="http://semaphore.social">Semaphore</a> to interact with the instance.<br />
+You can follow me <a href="https://social.alexonsager.com/@alex">here!</a></p>]]></content><author><name></name></author><category term="fediverse" /><category term="gotosocial" /><category term="mastodon" /><category term="server" /><category term="coolify" /><summary type="html"><![CDATA[Following up to my earlier post about the fediverse, I discovered GoToSocial. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very lightweight: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold! This would let me set up my own single-user server, which solves all of my misgivings about Mastodon. Disclaimer I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here. Please take my experience with a grain of salt, and correct me if you can. I have a VPS with Coolify to manage the multiple apps I have running, and all things considered it makes things very easy. I used a docker-compose file to deploy GoToSocial, and their example file was almost perfect as-is.]]></summary></entry><entry><title type="html">Adguard was preventing sites from loading in Safari sometimes</title><link href="https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html" rel="alternate" type="text/html" title="Adguard was preventing sites from loading in Safari sometimes" /><published>2024-12-25T00:00:00+09:00</published><updated>2024-12-25T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html"><![CDATA[<p>For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy.</p>
 
-&lt;p&gt;I think I finally caught the culprit: Adguard’s network filtering.&lt;/p&gt;
+<p>I think I finally caught the culprit: Adguard’s network filtering.</p>
 
-&lt;p&gt;Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic.&lt;/p&gt;
+<p>Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic.</p>
 
-&lt;p&gt;For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good!&lt;/p&gt;
+<p>For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good!</p>
 
-&lt;p&gt;See Adguard’s documentation &lt;a href=&quot;https://adguard.com/kb/adguard-for-mac/features/network/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="safari" /><category term="adguard" /><category term="vpn" /><category term="filtering" /><category term="cdn" /><summary type="html">For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy. I think I finally caught the culprit: Adguard’s network filtering. Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic. For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good! See Adguard’s documentation here.</summary></entry><entry><title type="html">Litestack: All your data infrastructure</title><link href="https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure.html" rel="alternate" type="text/html" title="Litestack: All your data infrastructure" /><published>2024-12-24T00:00:00+09:00</published><updated>2024-12-24T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure.html">&lt;p&gt;From the repository:&lt;/p&gt;
+<p>See Adguard’s documentation <a href="https://adguard.com/kb/adguard-for-mac/features/network/">here</a>.</p>]]></content><author><name></name></author><category term="safari" /><category term="adguard" /><category term="vpn" /><category term="filtering" /><category term="cdn" /><summary type="html"><![CDATA[For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy. I think I finally caught the culprit: Adguard’s network filtering. Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic. For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good! See Adguard’s documentation here.]]></summary></entry><entry><title type="html">Litestack: All your data infrastructure</title><link href="https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure.html" rel="alternate" type="text/html" title="Litestack: All your data infrastructure" /><published>2024-12-24T00:00:00+09:00</published><updated>2024-12-24T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/24/litestack-all-your-data-infrastructure.html"><![CDATA[<p>From the repository:</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;Litestack is a Ruby gem that provides both Ruby and Ruby on Rails applications an all-in-one solution for web application data infrastructure. It exploits the power and embeddedness of SQLite to deliver a full-fledged SQL database, a fast cache , a robust job queue, a reliable message broker, a full text search engine and a metrics platform all in a single package.&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>Litestack is a Ruby gem that provides both Ruby and Ruby on Rails applications an all-in-one solution for web application data infrastructure. It exploits the power and embeddedness of SQLite to deliver a full-fledged SQL database, a fast cache , a robust job queue, a reliable message broker, a full text search engine and a metrics platform all in a single package.</p>
+</blockquote>
 
-&lt;p&gt;I’ve been learning Python for my small projects recently, but for something that wants a full stack I’ll definitely be checking this out.&lt;/p&gt;</content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="sqlite" /><category term="database" /><category term="gem" /><summary type="html">From the repository: Litestack is a Ruby gem that provides both Ruby and Ruby on Rails applications an all-in-one solution for web application data infrastructure. It exploits the power and embeddedness of SQLite to deliver a full-fledged SQL database, a fast cache , a robust job queue, a reliable message broker, a full text search engine and a metrics platform all in a single package. I’ve been learning Python for my small projects recently, but for something that wants a full stack I’ll definitely be checking this out.</summary></entry><entry><title type="html">I want to love Mastodon…</title><link href="https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon.html" rel="alternate" type="text/html" title="I want to love Mastodon…" /><published>2024-12-02T00:00:00+09:00</published><updated>2024-12-02T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon.html">&lt;p&gt;But it’s just not doing it for me.&lt;/p&gt;
+<p>I’ve been learning Python for my small projects recently, but for something that wants a full stack I’ll definitely be checking this out.</p>]]></content><author><name></name></author><category term="ruby" /><category term="rails" /><category term="sqlite" /><category term="database" /><category term="gem" /><summary type="html"><![CDATA[From the repository: Litestack is a Ruby gem that provides both Ruby and Ruby on Rails applications an all-in-one solution for web application data infrastructure. It exploits the power and embeddedness of SQLite to deliver a full-fledged SQL database, a fast cache , a robust job queue, a reliable message broker, a full text search engine and a metrics platform all in a single package. I’ve been learning Python for my small projects recently, but for something that wants a full stack I’ll definitely be checking this out.]]></summary></entry><entry><title type="html">I want to love Mastodon…</title><link href="https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon.html" rel="alternate" type="text/html" title="I want to love Mastodon…" /><published>2024-12-02T00:00:00+09:00</published><updated>2024-12-02T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon</id><content type="html" xml:base="https://www.alexonsager.com/2024/12/02/i-want-to-love-mastodon.html"><![CDATA[<p>But it’s just not doing it for me.</p>
 
-&lt;div class=&quot;callout&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;Update 2024/12/27&lt;/div&gt;
-I have set up my own instance of GoToSocial, and have written about it &lt;a href=&quot;/2024/12/27/installing-gotosocial-on-coolify.html&quot;&gt;here&lt;/a&gt;. 
+<div class="callout">
+<div class="title">Update 2024/12/27</div>
+I have set up my own instance of GoToSocial, and have written about it <a href="/2024/12/27/installing-gotosocial-on-coolify.html">here</a>. 
 This seems like the best solution for me.
-&lt;/div&gt;
+</div>
 
-&lt;p&gt;The main selling point of Mastodon is its &lt;a href=&quot;https://docs.joinmastodon.org/#federation&quot;&gt;federation&lt;/a&gt; I think, and I tend to agree with &lt;a href=&quot;https://www.tbray.org/ongoing/When/202x/2024/11/15/Not-Bluesky&quot;&gt;Tim Bray’s points&lt;/a&gt; that some kind of decentralized, protocol-based network for social exchange is what will endure. Having one service run by one group of people is brittle. Having many services run by many groups of people is resilient.&lt;/p&gt;
+<p>The main selling point of Mastodon is its <a href="https://docs.joinmastodon.org/#federation">federation</a> I think, and I tend to agree with <a href="https://www.tbray.org/ongoing/When/202x/2024/11/15/Not-Bluesky">Tim Bray’s points</a> that some kind of decentralized, protocol-based network for social exchange is what will endure. Having one service run by one group of people is brittle. Having many services run by many groups of people is resilient.</p>
 
-&lt;p&gt;People explain that Mastodon and the Fediverse are similar to email. You can make an account with any provider, and it lets you speak to anyone on a different service. You can have a Gmail account and still send emails to a Fastmail account.&lt;/p&gt;
+<p>People explain that Mastodon and the Fediverse are similar to email. You can make an account with any provider, and it lets you speak to anyone on a different service. You can have a Gmail account and still send emails to a Fastmail account.</p>
 
-&lt;p&gt;But for me, the analogy is not apt, mainly because of server rules and moderation.&lt;/p&gt;
+<p>But for me, the analogy is not apt, mainly because of server rules and moderation.</p>
 
-&lt;h2 id=&quot;moderation-of-mastodon&quot;&gt;Moderation of Mastodon&lt;/h2&gt;
+<h2 id="moderation-of-mastodon">Moderation of Mastodon</h2>
 
-&lt;p&gt;Each Mastodon server has its own set of rules and moderation guidelines. There are things you can’t say on certain servers, and servers can even blacklist other servers if they notice a strong trend of bad activity. Let’s be clear, I prefer keeping angry Nazis away. But it’s not the same as an email provider.&lt;/p&gt;
+<p>Each Mastodon server has its own set of rules and moderation guidelines. There are things you can’t say on certain servers, and servers can even blacklist other servers if they notice a strong trend of bad activity. Let’s be clear, I prefer keeping angry Nazis away. But it’s not the same as an email provider.</p>
 
-&lt;p&gt;Imagine if Gmail didn’t allow you to send emails that made derogatory comments. Or emails that contained copyrighted images. Or if Fastmail stopped allowing you to send emails to Hotmail users because there was too much spam coming from it.&lt;/p&gt;
+<p>Imagine if Gmail didn’t allow you to send emails that made derogatory comments. Or emails that contained copyrighted images. Or if Fastmail stopped allowing you to send emails to Hotmail users because there was too much spam coming from it.</p>
 
-&lt;p&gt;The point is not whether those are good or bad decisions, but that it &lt;em&gt;does&lt;/em&gt; matter who you sign up with.&lt;/p&gt;
+<p>The point is not whether those are good or bad decisions, but that it <em>does</em> matter who you sign up with.</p>
 
-&lt;h2 id=&quot;who-do-i-want-moderating-my-experience&quot;&gt;Who do I want moderating my experience?&lt;/h2&gt;
+<h2 id="who-do-i-want-moderating-my-experience">Who do I want moderating my experience?</h2>
 
-&lt;p&gt;When comparing Bluesky to Mastodon, one point brought up often is that it is venture-backed. The service needs to generate money, and in the long run, for-profit services &lt;a href=&quot;https://en.wikipedia.org/wiki/Enshittification&quot;&gt;will go to shit&lt;/a&gt;. This is probably true.&lt;/p&gt;
+<p>When comparing Bluesky to Mastodon, one point brought up often is that it is venture-backed. The service needs to generate money, and in the long run, for-profit services <a href="https://en.wikipedia.org/wiki/Enshittification">will go to shit</a>. This is probably true.</p>
 
-&lt;p&gt;Honestly, I’m OK with staying while it’s good and getting out when it gets bad. That’s what I’ve done with Facebook and Twitter and Instagram and whatever else. That’s life online.&lt;/p&gt;
+<p>Honestly, I’m OK with staying while it’s good and getting out when it gets bad. That’s what I’ve done with Facebook and Twitter and Instagram and whatever else. That’s life online.</p>
 
-&lt;p&gt;The more pressing issue in the short term is who I want to be running the service I sign up for. The unpaid volunteers of a particular Mastodon instance who want to keep the service good because they care? Or paid employees of a publically scrutinized company who want to keep the service good for a strong salary?&lt;/p&gt;
+<p>The more pressing issue in the short term is who I want to be running the service I sign up for. The unpaid volunteers of a particular Mastodon instance who want to keep the service good because they care? Or paid employees of a publically scrutinized company who want to keep the service good for a strong salary?</p>
 
-&lt;p&gt;Am I crazy to say that the latter feels more stable and reliable?&lt;/p&gt;
+<p>Am I crazy to say that the latter feels more stable and reliable?</p>
 
-&lt;p&gt;Passion projects fizzle out when the passion dies, but money keeps the wheels turning. Bluesky’s mission now is agreeable to me, so I’ll stay on their service and feel peace of mind. As the service strays from this ideal in the future, as it most likely will, I’ll look around for whatever better option is available then.&lt;/p&gt;
+<p>Passion projects fizzle out when the passion dies, but money keeps the wheels turning. Bluesky’s mission now is agreeable to me, so I’ll stay on their service and feel peace of mind. As the service strays from this ideal in the future, as it most likely will, I’ll look around for whatever better option is available then.</p>
 
-&lt;h2 id=&quot;the-actual-best-solution&quot;&gt;The actual best solution&lt;/h2&gt;
+<h2 id="the-actual-best-solution">The actual best solution</h2>
 
-&lt;p&gt;If I want freedom and permanence together, the best solution is probably to run my own Mastodon server. And that does seem like the answer I’m looking for. I’m in control of my data and can do with it as I please. I can connect to other Mastodon instances and participate in the larger community. And while the small details may change, I can bet on a federated future that continues to let me maintain a node that plugs into a larger network.&lt;/p&gt;
+<p>If I want freedom and permanence together, the best solution is probably to run my own Mastodon server. And that does seem like the answer I’m looking for. I’m in control of my data and can do with it as I please. I can connect to other Mastodon instances and participate in the larger community. And while the small details may change, I can bet on a federated future that continues to let me maintain a node that plugs into a larger network.</p>
 
-&lt;p&gt;The only problem, and it’s kind of a big one, is the price and the hassle. Setting up a Maston server is still kind of a lot of work, and the cost of upkeep is significant. I hope that entry costs will continue to go down because that is the future that I am most excited to see.&lt;/p&gt;</content><author><name></name></author><category term="mastodon" /><category term="federation" /><category term="moderation" /><category term="community" /><category term="bluesky" /><category term="social" /><summary type="html">But it’s just not doing it for me. Update 2024/12/27 I have set up my own instance of GoToSocial, and have written about it here. This seems like the best solution for me. The main selling point of Mastodon is its federation I think, and I tend to agree with Tim Bray’s points that some kind of decentralized, protocol-based network for social exchange is what will endure. Having one service run by one group of people is brittle. Having many services run by many groups of people is resilient. People explain that Mastodon and the Fediverse are similar to email. You can make an account with any provider, and it lets you speak to anyone on a different service. You can have a Gmail account and still send emails to a Fastmail account. But for me, the analogy is not apt, mainly because of server rules and moderation. Moderation of Mastodon Each Mastodon server has its own set of rules and moderation guidelines. There are things you can’t say on certain servers, and servers can even blacklist other servers if they notice a strong trend of bad activity. Let’s be clear, I prefer keeping angry Nazis away. But it’s not the same as an email provider. Imagine if Gmail didn’t allow you to send emails that made derogatory comments. Or emails that contained copyrighted images. Or if Fastmail stopped allowing you to send emails to Hotmail users because there was too much spam coming from it. The point is not whether those are good or bad decisions, but that it does matter who you sign up with. Who do I want moderating my experience? When comparing Bluesky to Mastodon, one point brought up often is that it is venture-backed. The service needs to generate money, and in the long run, for-profit services will go to shit. This is probably true. Honestly, I’m OK with staying while it’s good and getting out when it gets bad. That’s what I’ve done with Facebook and Twitter and Instagram and whatever else. That’s life online. The more pressing issue in the short term is who I want to be running the service I sign up for. The unpaid volunteers of a particular Mastodon instance who want to keep the service good because they care? Or paid employees of a publically scrutinized company who want to keep the service good for a strong salary? Am I crazy to say that the latter feels more stable and reliable? Passion projects fizzle out when the passion dies, but money keeps the wheels turning. Bluesky’s mission now is agreeable to me, so I’ll stay on their service and feel peace of mind. As the service strays from this ideal in the future, as it most likely will, I’ll look around for whatever better option is available then. The actual best solution If I want freedom and permanence together, the best solution is probably to run my own Mastodon server. And that does seem like the answer I’m looking for. I’m in control of my data and can do with it as I please. I can connect to other Mastodon instances and participate in the larger community. And while the small details may change, I can bet on a federated future that continues to let me maintain a node that plugs into a larger network. The only problem, and it’s kind of a big one, is the price and the hassle. Setting up a Maston server is still kind of a lot of work, and the cost of upkeep is significant. I hope that entry costs will continue to go down because that is the future that I am most excited to see.</summary></entry><entry><title type="html">Comments are back</title><link href="https://www.alexonsager.com/2024/11/27/comments-are-back.html" rel="alternate" type="text/html" title="Comments are back" /><published>2024-11-27T00:00:00+09:00</published><updated>2024-11-27T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/11/27/comments-are-back</id><content type="html" xml:base="https://www.alexonsager.com/2024/11/27/comments-are-back.html">&lt;p&gt;This site has gone through many forms, and comments have come and gone. Now they are back, made possible by &lt;a href=&quot;https://github.com/souramoo/commentoplusplus&quot;&gt;commento++&lt;/a&gt;. &lt;a href=&quot;https://commento.io&quot;&gt;Commento&lt;/a&gt; was popular and on my radar for a while, but the original repository has been dead for a while. Commento++ is a fork that has been dead for… a little bit less of a while. But it has a few improvements from the original, and as long as it’s stable I don’t care so much.&lt;/p&gt;
+<p>The only problem, and it’s kind of a big one, is the price and the hassle. Setting up a Maston server is still kind of a lot of work, and the cost of upkeep is significant. I hope that entry costs will continue to go down because that is the future that I am most excited to see.</p>]]></content><author><name></name></author><category term="mastodon" /><category term="federation" /><category term="moderation" /><category term="community" /><category term="bluesky" /><category term="social" /><summary type="html"><![CDATA[But it’s just not doing it for me. Update 2024/12/27 I have set up my own instance of GoToSocial, and have written about it here. This seems like the best solution for me. The main selling point of Mastodon is its federation I think, and I tend to agree with Tim Bray’s points that some kind of decentralized, protocol-based network for social exchange is what will endure. Having one service run by one group of people is brittle. Having many services run by many groups of people is resilient. People explain that Mastodon and the Fediverse are similar to email. You can make an account with any provider, and it lets you speak to anyone on a different service. You can have a Gmail account and still send emails to a Fastmail account. But for me, the analogy is not apt, mainly because of server rules and moderation. Moderation of Mastodon Each Mastodon server has its own set of rules and moderation guidelines. There are things you can’t say on certain servers, and servers can even blacklist other servers if they notice a strong trend of bad activity. Let’s be clear, I prefer keeping angry Nazis away. But it’s not the same as an email provider. Imagine if Gmail didn’t allow you to send emails that made derogatory comments. Or emails that contained copyrighted images. Or if Fastmail stopped allowing you to send emails to Hotmail users because there was too much spam coming from it. The point is not whether those are good or bad decisions, but that it does matter who you sign up with. Who do I want moderating my experience? When comparing Bluesky to Mastodon, one point brought up often is that it is venture-backed. The service needs to generate money, and in the long run, for-profit services will go to shit. This is probably true. Honestly, I’m OK with staying while it’s good and getting out when it gets bad. That’s what I’ve done with Facebook and Twitter and Instagram and whatever else. That’s life online. The more pressing issue in the short term is who I want to be running the service I sign up for. The unpaid volunteers of a particular Mastodon instance who want to keep the service good because they care? Or paid employees of a publically scrutinized company who want to keep the service good for a strong salary? Am I crazy to say that the latter feels more stable and reliable? Passion projects fizzle out when the passion dies, but money keeps the wheels turning. Bluesky’s mission now is agreeable to me, so I’ll stay on their service and feel peace of mind. As the service strays from this ideal in the future, as it most likely will, I’ll look around for whatever better option is available then. The actual best solution If I want freedom and permanence together, the best solution is probably to run my own Mastodon server. And that does seem like the answer I’m looking for. I’m in control of my data and can do with it as I please. I can connect to other Mastodon instances and participate in the larger community. And while the small details may change, I can bet on a federated future that continues to let me maintain a node that plugs into a larger network. The only problem, and it’s kind of a big one, is the price and the hassle. Setting up a Maston server is still kind of a lot of work, and the cost of upkeep is significant. I hope that entry costs will continue to go down because that is the future that I am most excited to see.]]></summary></entry><entry><title type="html">Comments are back</title><link href="https://www.alexonsager.com/2024/11/27/comments-are-back.html" rel="alternate" type="text/html" title="Comments are back" /><published>2024-11-27T00:00:00+09:00</published><updated>2024-11-27T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/11/27/comments-are-back</id><content type="html" xml:base="https://www.alexonsager.com/2024/11/27/comments-are-back.html"><![CDATA[<p>This site has gone through many forms, and comments have come and gone. Now they are back, made possible by <a href="https://github.com/souramoo/commentoplusplus">commento++</a>. <a href="https://commento.io">Commento</a> was popular and on my radar for a while, but the original repository has been dead for a while. Commento++ is a fork that has been dead for… a little bit less of a while. But it has a few improvements from the original, and as long as it’s stable I don’t care so much.</p>
 
-&lt;p&gt;But the better question is not &lt;em&gt;how&lt;/em&gt;, but &lt;em&gt;why have comments&lt;/em&gt;? (Or why not to?)&lt;/p&gt;
+<p>But the better question is not <em>how</em>, but <em>why have comments</em>? (Or why not to?)</p>
 
-&lt;p&gt;I didn’t have comments for a long time, because I decided that this blog was a place where I didn’t care what other people said. It was a space for me to write and save things, just for myself. That’s fine, too.&lt;/p&gt;
+<p>I didn’t have comments for a long time, because I decided that this blog was a place where I didn’t care what other people said. It was a space for me to write and save things, just for myself. That’s fine, too.</p>
 
-&lt;p&gt;But I’ve been thinking a lot about what it means for me to write on this blog, espeically in the context of generative AI getting so good at replacing mediocre writers. Paul Graham’s post &lt;a href=&quot;https://paulgraham.com/writes.html&quot;&gt;Writes and Write-Nots&lt;/a&gt; resonated with me. The ability to write well is equivalent to the ability to think well. By continuing to write, on my own, I hope I can keep up my ability to think well.&lt;/p&gt;
+<p>But I’ve been thinking a lot about what it means for me to write on this blog, espeically in the context of generative AI getting so good at replacing mediocre writers. Paul Graham’s post <a href="https://paulgraham.com/writes.html">Writes and Write-Nots</a> resonated with me. The ability to write well is equivalent to the ability to think well. By continuing to write, on my own, I hope I can keep up my ability to think well.</p>
 
-&lt;p&gt;And in many contexts, writing is also the ability to turn your thoughts into words and share them with other people. It is the ability to communicate. Writing in a personal journal might be good for my thinking, but I want to focus on my communication too. So, comments.&lt;/p&gt;
+<p>And in many contexts, writing is also the ability to turn your thoughts into words and share them with other people. It is the ability to communicate. Writing in a personal journal might be good for my thinking, but I want to focus on my communication too. So, comments.</p>
 
-&lt;p&gt;I’ll write articles on this blog with the intent of communciating my thoughts to my readers, few as they are. And since communication is a two-way street, I wanted some kind of commenting system to get feedback and discourse. So I hope you find my posts here engaging, and would be very happy if you left me a comment, too.&lt;/p&gt;</content><author><name></name></author><category term="comments" /><category term="writing" /><category term="communication" /><category term="blog" /><category term="discourse" /><summary type="html">This site has gone through many forms, and comments have come and gone. Now they are back, made possible by commento++. Commento was popular and on my radar for a while, but the original repository has been dead for a while. Commento++ is a fork that has been dead for… a little bit less of a while. But it has a few improvements from the original, and as long as it’s stable I don’t care so much. But the better question is not how, but why have comments? (Or why not to?) I didn’t have comments for a long time, because I decided that this blog was a place where I didn’t care what other people said. It was a space for me to write and save things, just for myself. That’s fine, too. But I’ve been thinking a lot about what it means for me to write on this blog, espeically in the context of generative AI getting so good at replacing mediocre writers. Paul Graham’s post Writes and Write-Nots resonated with me. The ability to write well is equivalent to the ability to think well. By continuing to write, on my own, I hope I can keep up my ability to think well. And in many contexts, writing is also the ability to turn your thoughts into words and share them with other people. It is the ability to communicate. Writing in a personal journal might be good for my thinking, but I want to focus on my communication too. So, comments. I’ll write articles on this blog with the intent of communciating my thoughts to my readers, few as they are. And since communication is a two-way street, I wanted some kind of commenting system to get feedback and discourse. So I hope you find my posts here engaging, and would be very happy if you left me a comment, too.</summary></entry><entry><title type="html">Installing Python3 modules on Macs in 2024</title><link href="https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024.html" rel="alternate" type="text/html" title="Installing Python3 modules on Macs in 2024" /><published>2024-11-21T00:00:00+09:00</published><updated>2024-11-21T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024</id><content type="html" xml:base="https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024.html">&lt;p&gt;When trying to install python modules on a new Mac, I kept getting thwarted by this error:&lt;/p&gt;
+<p>I’ll write articles on this blog with the intent of communciating my thoughts to my readers, few as they are. And since communication is a two-way street, I wanted some kind of commenting system to get feedback and discourse. So I hope you find my posts here engaging, and would be very happy if you left me a comment, too.</p>]]></content><author><name></name></author><category term="comments" /><category term="writing" /><category term="communication" /><category term="blog" /><category term="discourse" /><summary type="html"><![CDATA[This site has gone through many forms, and comments have come and gone. Now they are back, made possible by commento++. Commento was popular and on my radar for a while, but the original repository has been dead for a while. Commento++ is a fork that has been dead for… a little bit less of a while. But it has a few improvements from the original, and as long as it’s stable I don’t care so much. But the better question is not how, but why have comments? (Or why not to?) I didn’t have comments for a long time, because I decided that this blog was a place where I didn’t care what other people said. It was a space for me to write and save things, just for myself. That’s fine, too. But I’ve been thinking a lot about what it means for me to write on this blog, espeically in the context of generative AI getting so good at replacing mediocre writers. Paul Graham’s post Writes and Write-Nots resonated with me. The ability to write well is equivalent to the ability to think well. By continuing to write, on my own, I hope I can keep up my ability to think well. And in many contexts, writing is also the ability to turn your thoughts into words and share them with other people. It is the ability to communicate. Writing in a personal journal might be good for my thinking, but I want to focus on my communication too. So, comments. I’ll write articles on this blog with the intent of communciating my thoughts to my readers, few as they are. And since communication is a two-way street, I wanted some kind of commenting system to get feedback and discourse. So I hope you find my posts here engaging, and would be very happy if you left me a comment, too.]]></summary></entry><entry><title type="html">Installing Python3 modules on Macs in 2024</title><link href="https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024.html" rel="alternate" type="text/html" title="Installing Python3 modules on Macs in 2024" /><published>2024-11-21T00:00:00+09:00</published><updated>2024-11-21T00:00:00+09:00</updated><id>https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024</id><content type="html" xml:base="https://www.alexonsager.com/2024/11/21/installing-python3-modules-on-macs-in-2024.html"><![CDATA[<p>When trying to install python modules on a new Mac, I kept getting thwarted by this error:</p>
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;error: externally-managed-environment
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: externally-managed-environment
 
 × This environment is externally managed
-╰─&amp;gt; To &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;Python packages system-wide, try brew &lt;span class=&quot;nb&quot;&gt;install
-    &lt;/span&gt;xyz, where xyz is the package you are trying to
+╰─&gt; To <span class="nb">install </span>Python packages system-wide, try brew <span class="nb">install
+    </span>xyz, where xyz is the package you are trying to
     install.
     
-    If you wish to &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;a non-brew-packaged Python package,
-    create a virtual environment using python3 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; venv path/to/venv.
+    If you wish to <span class="nb">install </span>a non-brew-packaged Python package,
+    create a virtual environment using python3 <span class="nt">-m</span> venv path/to/venv.
     Then use path/to/venv/bin/python and path/to/venv/bin/pip.
     
-    If you wish to &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;a non-brew packaged Python application,
-    it may be easiest to use pipx &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;xyz, which will manage a
-    virtual environment &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;you. Make sure you have pipx installed.
+    If you wish to <span class="nb">install </span>a non-brew packaged Python application,
+    it may be easiest to use pipx <span class="nb">install </span>xyz, which will manage a
+    virtual environment <span class="k">for </span>you. Make sure you have pipx installed.
 
-note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing &lt;span class=&quot;nt&quot;&gt;--break-system-packages&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-hint: See PEP 668 &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;the detailed specification.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing <span class="nt">--break-system-packages</span><span class="nb">.</span>
+hint: See PEP 668 <span class="k">for </span>the detailed specification.
+</code></pre></div></div>
 
-&lt;p&gt;It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.&lt;/p&gt;
+<p>It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.</p>
 
-&lt;h2 id=&quot;create-a-virtualenv-in-a-central-place-that-is-easy-to-access&quot;&gt;Create a virtualenv in a central place that is easy to access&lt;/h2&gt;
+<h2 id="create-a-virtualenv-in-a-central-place-that-is-easy-to-access">Create a virtualenv in a central place that is easy to access</h2>
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; venv ~/.virtualenvs/python3
-&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.virtualenvs/python3/bin/activate
-pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;xyz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv ~/.virtualenvs/python3
+<span class="nb">source</span> ~/.virtualenvs/python3/bin/activate
+pip <span class="nb">install </span>xyz
+</code></pre></div></div>
 
-&lt;h2 id=&quot;use-this-virtualenv-whenever-i-run-the-script&quot;&gt;Use this virtualenv whenever I run the script&lt;/h2&gt;
+<h2 id="use-this-virtualenv-whenever-i-run-the-script">Use this virtualenv whenever I run the script</h2>
 
-&lt;p&gt;By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/.virtualenvs/python3/bin/python /path/to/my/script.py &lt;span class=&quot;s2&quot;&gt;&quot;{query}&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="python" /><category term="mac" /><category term="virtualenv" /><category term="installation" /><summary type="html">When trying to install python modules on a new Mac, I kept getting thwarted by this error: error: externally-managed-environment × This environment is externally managed ╰─&amp;gt; To install Python packages system-wide, try brew install xyz, where xyz is the package you are trying to install. If you wish to install a non-brew-packaged Python package, create a virtual environment using python3 -m venv path/to/venv. Then use path/to/venv/bin/python and path/to/venv/bin/pip. If you wish to install a non-brew packaged Python application, it may be easiest to use pipx install xyz, which will manage a virtual environment for you. Make sure you have pipx installed. note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages. hint: See PEP 668 for the detailed specification. It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows. Create a virtualenv in a central place that is easy to access python3 -m venv ~/.virtualenvs/python3 source ~/.virtualenvs/python3/bin/activate pip install xyz Use this virtualenv whenever I run the script By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there. ~/.virtualenvs/python3/bin/python /path/to/my/script.py &quot;{query}&quot;</summary></entry><entry><title type="html">Web Links - November 2022</title><link href="https://www.alexonsager.com/2022/12/02/web-links-november-2022.html" rel="alternate" type="text/html" title="Web Links - November 2022" /><published>2022-12-02T00:00:00+09:00</published><updated>2022-12-02T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/12/02/web-links---november-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/12/02/web-links-november-2022.html">&lt;dl&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://anlucas.neocities.org/88x31Buttons.html&quot;&gt;A.N. Lucas&apos;s 88x31 button Collection&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(anlucas.neocities.org)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;A collection of classic web banner images.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.howtogeek.com/830179/how-to-run-stable-diffusion-on-your-pc-to-generate-ai-images/&quot;&gt;How to Run Stable Diffusion on Your PC to Generate AI Images&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.howtogeek.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;For personal reference.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=uL0atQFZzL8&quot;&gt;If You Can&apos;t Answer These 6 Questions You Don&apos;t Have A Story - Glenn Gers&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.youtube.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.&lt;/dd&gt;
-&lt;/dl&gt;</content><author><name></name></author><category term="collection" /><category term="images" /><category term="ai" /><category term="story" /><category term="narrative" /><summary type="html">A.N. Lucas&apos;s 88x31 button Collection (anlucas.neocities.org) A collection of classic web banner images. How to Run Stable Diffusion on Your PC to Generate AI Images (www.howtogeek.com) For personal reference. If You Can&apos;t Answer These 6 Questions You Don&apos;t Have A Story - Glenn Gers (www.youtube.com) The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.</summary></entry><entry><title type="html">Web Links - October 2022</title><link href="https://www.alexonsager.com/2022/11/01/web-links-october-2022.html" rel="alternate" type="text/html" title="Web Links - October 2022" /><published>2022-11-01T00:00:00+09:00</published><updated>2022-11-01T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/11/01/web-links---october-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/11/01/web-links-october-2022.html">&lt;dl&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.gamedeveloper.com/design/how-to-make-a-roguelike&quot;&gt;How to Make a Roguelike&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.gamedeveloper.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Practical tips for how to plan and structure a new Roguelike game.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b&quot;&gt;&quot;Mechanical Neural Network&quot; Learns to Respond to Its Environment&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.hackster.io)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Flexible parts within a pattern of beams move and bend by reacting to magnetic fields. Future uses may include efficient aircraft wings or earthquake-resistant buildings.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://variety.com/2022/tv/news/william-shatner-space-boldly-go-excerpt-1235395113/&quot;&gt;William Shatner: My Trip to Space Filled Me With Sadness&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(variety.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Expecting beauty, William Shatner looked out into space and saw only death. Life and beauty only exists on Earth, and its tininess and fragility was overwhelming.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://jalammar.github.io/illustrated-stable-diffusion/&quot;&gt;The Illustrated Stable Diffusion&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(jalammar.github.io)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;An illustrated guide explaining how Stable Diffusion works&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://coolify.io/&quot;&gt;Coolify&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(coolify.io)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;An open-source &amp;amp; self-hostable Heroku / Netlify alternative&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://thereformedbroker.com/2022/10/02/you-werent-supposed-to-see-that/&quot;&gt;You weren&apos;t supposed to see that&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(thereformedbroker.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Powerful economic stimulus during the pandemic worked a little too well and made everyone&apos;s lives better. But we need to have both winners and losers, so now were are backpedaling to bring things back to normal, i.e. worse for the bottom rung.&lt;/dd&gt;
-&lt;/dl&gt;</content><author><name></name></author><category term="roguelike" /><category term="gaming" /><category term="ai" /><category term="space" /><category term="economics" /><summary type="html">How to Make a Roguelike (www.gamedeveloper.com) Practical tips for how to plan and structure a new Roguelike game. &quot;Mechanical Neural Network&quot; Learns to Respond to Its Environment (www.hackster.io) Flexible parts within a pattern of beams move and bend by reacting to magnetic fields. Future uses may include efficient aircraft wings or earthquake-resistant buildings. William Shatner: My Trip to Space Filled Me With Sadness (variety.com) Expecting beauty, William Shatner looked out into space and saw only death. Life and beauty only exists on Earth, and its tininess and fragility was overwhelming. The Illustrated Stable Diffusion (jalammar.github.io) An illustrated guide explaining how Stable Diffusion works Coolify (coolify.io) An open-source &amp;amp; self-hostable Heroku / Netlify alternative You weren&apos;t supposed to see that (thereformedbroker.com) Powerful economic stimulus during the pandemic worked a little too well and made everyone&apos;s lives better. But we need to have both winners and losers, so now were are backpedaling to bring things back to normal, i.e. worse for the bottom rung.</summary></entry><entry><title type="html">Obsidian iCloud sync between Mac and iPhone</title><link href="https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html" rel="alternate" type="text/html" title="Obsidian iCloud sync between Mac and iPhone" /><published>2022-10-05T00:00:00+09:00</published><updated>2022-10-05T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone</id><content type="html" xml:base="https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">&lt;p&gt;Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one.&lt;/p&gt;
+<p>By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.virtualenvs/python3/bin/python /path/to/my/script.py <span class="s2">"{query}"</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="python" /><category term="mac" /><category term="virtualenv" /><category term="installation" /><summary type="html"><![CDATA[When trying to install python modules on a new Mac, I kept getting thwarted by this error: error: externally-managed-environment × This environment is externally managed ╰─&gt; To install Python packages system-wide, try brew install xyz, where xyz is the package you are trying to install. If you wish to install a non-brew-packaged Python package, create a virtual environment using python3 -m venv path/to/venv. Then use path/to/venv/bin/python and path/to/venv/bin/pip. If you wish to install a non-brew packaged Python application, it may be easiest to use pipx install xyz, which will manage a virtual environment for you. Make sure you have pipx installed. note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages. hint: See PEP 668 for the detailed specification. It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows. Create a virtualenv in a central place that is easy to access python3 -m venv ~/.virtualenvs/python3 source ~/.virtualenvs/python3/bin/activate pip install xyz Use this virtualenv whenever I run the script By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there. ~/.virtualenvs/python3/bin/python /path/to/my/script.py "{query}"]]></summary></entry><entry><title type="html">Web Links - November 2022</title><link href="https://www.alexonsager.com/2022/12/02/web-links-november-2022.html" rel="alternate" type="text/html" title="Web Links - November 2022" /><published>2022-12-02T00:00:00+09:00</published><updated>2022-12-02T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/12/02/web-links---november-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/12/02/web-links-november-2022.html"><![CDATA[<dl>
+  <dt>
+    <a href="https://anlucas.neocities.org/88x31Buttons.html">A.N. Lucas's 88x31 button Collection</a>
+    <span class="post-meta">(anlucas.neocities.org)</span>
+  </dt>
+  <dd>A collection of classic web banner images.</dd>
+  <dt>
+    <a href="https://www.howtogeek.com/830179/how-to-run-stable-diffusion-on-your-pc-to-generate-ai-images/">How to Run Stable Diffusion on Your PC to Generate AI Images</a>
+    <span class="post-meta">(www.howtogeek.com)</span>
+  </dt>
+  <dd>For personal reference.</dd>
+  <dt>
+    <a href="https://www.youtube.com/watch?v=uL0atQFZzL8">If You Can't Answer These 6 Questions You Don't Have A Story - Glenn Gers</a>
+    <span class="post-meta">(www.youtube.com)</span>
+  </dt>
+  <dd>The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.</dd>
+</dl>]]></content><author><name></name></author><category term="collection" /><category term="images" /><category term="ai" /><category term="story" /><category term="narrative" /><summary type="html"><![CDATA[A.N. Lucas's 88x31 button Collection (anlucas.neocities.org) A collection of classic web banner images. How to Run Stable Diffusion on Your PC to Generate AI Images (www.howtogeek.com) For personal reference. If You Can't Answer These 6 Questions You Don't Have A Story - Glenn Gers (www.youtube.com) The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.]]></summary></entry><entry><title type="html">Web Links - October 2022</title><link href="https://www.alexonsager.com/2022/11/01/web-links-october-2022.html" rel="alternate" type="text/html" title="Web Links - October 2022" /><published>2022-11-01T00:00:00+09:00</published><updated>2022-11-01T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/11/01/web-links---october-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/11/01/web-links-october-2022.html"><![CDATA[<dl>
+  <dt>
+    <a href="https://www.gamedeveloper.com/design/how-to-make-a-roguelike">How to Make a Roguelike</a>
+    <span class="post-meta">(www.gamedeveloper.com)</span>
+  </dt>
+  <dd>Practical tips for how to plan and structure a new Roguelike game.</dd>
+  <dt>
+    <a href="https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b">"Mechanical Neural Network" Learns to Respond to Its Environment</a>
+    <span class="post-meta">(www.hackster.io)</span>
+  </dt>
+  <dd>Flexible parts within a pattern of beams move and bend by reacting to magnetic fields. Future uses may include efficient aircraft wings or earthquake-resistant buildings.</dd>
+  <dt>
+    <a href="https://variety.com/2022/tv/news/william-shatner-space-boldly-go-excerpt-1235395113/">William Shatner: My Trip to Space Filled Me With Sadness</a>
+    <span class="post-meta">(variety.com)</span>
+  </dt>
+  <dd>Expecting beauty, William Shatner looked out into space and saw only death. Life and beauty only exists on Earth, and its tininess and fragility was overwhelming.</dd>
+  <dt>
+    <a href="https://jalammar.github.io/illustrated-stable-diffusion/">The Illustrated Stable Diffusion</a>
+    <span class="post-meta">(jalammar.github.io)</span>
+  </dt>
+  <dd>An illustrated guide explaining how Stable Diffusion works</dd>
+  <dt>
+    <a href="https://coolify.io/">Coolify</a>
+    <span class="post-meta">(coolify.io)</span>
+  </dt>
+  <dd>An open-source &amp; self-hostable Heroku / Netlify alternative</dd>
+  <dt>
+    <a href="https://thereformedbroker.com/2022/10/02/you-werent-supposed-to-see-that/">You weren't supposed to see that</a>
+    <span class="post-meta">(thereformedbroker.com)</span>
+  </dt>
+  <dd>Powerful economic stimulus during the pandemic worked a little too well and made everyone's lives better. But we need to have both winners and losers, so now were are backpedaling to bring things back to normal, i.e. worse for the bottom rung.</dd>
+</dl>]]></content><author><name></name></author><category term="roguelike" /><category term="gaming" /><category term="ai" /><category term="space" /><category term="economics" /><summary type="html"><![CDATA[How to Make a Roguelike (www.gamedeveloper.com) Practical tips for how to plan and structure a new Roguelike game. "Mechanical Neural Network" Learns to Respond to Its Environment (www.hackster.io) Flexible parts within a pattern of beams move and bend by reacting to magnetic fields. Future uses may include efficient aircraft wings or earthquake-resistant buildings. William Shatner: My Trip to Space Filled Me With Sadness (variety.com) Expecting beauty, William Shatner looked out into space and saw only death. Life and beauty only exists on Earth, and its tininess and fragility was overwhelming. The Illustrated Stable Diffusion (jalammar.github.io) An illustrated guide explaining how Stable Diffusion works Coolify (coolify.io) An open-source &amp; self-hostable Heroku / Netlify alternative You weren't supposed to see that (thereformedbroker.com) Powerful economic stimulus during the pandemic worked a little too well and made everyone's lives better. But we need to have both winners and losers, so now were are backpedaling to bring things back to normal, i.e. worse for the bottom rung.]]></summary></entry><entry><title type="html">Obsidian iCloud sync between Mac and iPhone</title><link href="https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html" rel="alternate" type="text/html" title="Obsidian iCloud sync between Mac and iPhone" /><published>2022-10-05T00:00:00+09:00</published><updated>2022-10-05T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone</id><content type="html" xml:base="https://www.alexonsager.com/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html"><![CDATA[<p>Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one.</p>
 
-&lt;p&gt;Because the entire Obsidian folder lives inside of iCloud, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.obsidian&lt;/code&gt; settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone.&lt;/p&gt;
+<p>Because the entire Obsidian folder lives inside of iCloud, the <code class="language-plaintext highlighter-rouge">.obsidian</code> settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone.</p>
 
-&lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
+<h2 id="the-solution">The solution</h2>
 
-&lt;p&gt;The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.&lt;/p&gt;
+<p>The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.</p>
 
-&lt;!-- more --&gt;
+<!-- more -->
 
-&lt;p&gt;In &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preferences &amp;gt; About&lt;/code&gt; there is an option to “Override config folder” and specify a different folder location. It seems that this setting is set locally and isn’t synced along with the rest of the data.&lt;/p&gt;
+<p>In <code class="language-plaintext highlighter-rouge">Preferences &gt; About</code> there is an option to “Override config folder” and specify a different folder location. It seems that this setting is set locally and isn’t synced along with the rest of the data.</p>
 
-&lt;p&gt;First I created a copy of the existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.obsidian&lt;/code&gt; config folder to somewhere else on my computer.&lt;/p&gt;
+<p>First I created a copy of the existing <code class="language-plaintext highlighter-rouge">.obsidian</code> config folder to somewhere else on my computer.</p>
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Vault location&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/.obsidian ~/Documents/.obsidian_desktop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /<span class="o">{</span>Vault location<span class="o">}</span>/.obsidian ~/Documents/.obsidian_desktop
+</code></pre></div></div>
 
-&lt;p&gt;Then, I create a symlink to that new config folder within my Obsidian vault. This will exist on the mobile vault too, but should just be ignored&lt;/p&gt;
+<p>Then, I create a symlink to that new config folder within my Obsidian vault. This will exist on the mobile vault too, but should just be ignored</p>
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; ~/Documents/.obsidian_desktop /&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Vault location&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/.obsidian_desktop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-s</span> ~/Documents/.obsidian_desktop /<span class="o">{</span>Vault location<span class="o">}</span>/.obsidian_desktop
+</code></pre></div></div>
 
-&lt;p&gt;Then, within the Obsidian desktop app I override the config folder and set it to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.obsidian_desktop&lt;/code&gt;&lt;/p&gt;
+<p>Then, within the Obsidian desktop app I override the config folder and set it to <code class="language-plaintext highlighter-rouge">.obsidian_desktop</code></p>
 
-&lt;p&gt;Because I created  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.obsidian_desktop&lt;/code&gt; inside my Documents folder, which is synced to iCloud, my second desktop will get the folder automatically. I just need to change the settings within the Obsidian desktop app there too, to get it to start looking at the new config.&lt;/p&gt;
+<p>Because I created  <code class="language-plaintext highlighter-rouge">.obsidian_desktop</code> inside my Documents folder, which is synced to iCloud, my second desktop will get the folder automatically. I just need to change the settings within the Obsidian desktop app there too, to get it to start looking at the new config.</p>
 
-&lt;p&gt;There is nothing to do for the mobile app, and now the desktop and mobile versions will be looking at different configs so layouts will remain independent.&lt;/p&gt;
+<p>There is nothing to do for the mobile app, and now the desktop and mobile versions will be looking at different configs so layouts will remain independent.</p>
 
-&lt;p&gt;The only thing I have to be careful of is that adding plugins and changing settings will not transfer between desktop and mobile, so I will need to make changes to both manually. This probably won’t be annoying for me because I have things mostly setup the way I like them now, but is something to keep in mind.&lt;/p&gt;</content><author><name></name></author><category term="obsidian" /><category term="notes" /><category term="productivity" /><category term="sync" /><category term="icloud" /><summary type="html">Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one. Because the entire Obsidian folder lives inside of iCloud, the .obsidian settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone. The solution The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.</summary></entry><entry><title type="html">Web Links - September 2022</title><link href="https://www.alexonsager.com/2022/10/01/web-links-september-2022.html" rel="alternate" type="text/html" title="Web Links - September 2022" /><published>2022-10-01T00:00:00+09:00</published><updated>2022-10-01T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/10/01/web-links---september-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/10/01/web-links-september-2022.html">&lt;dl&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://github.com/RootMyTV/RootMyTV.github.io&quot;&gt;RootMyTV&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(RootMyTV.github.io)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;A user-friendly exploit for rooting/jailbreaking LG webOS smart TVs.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.lamag.com/citythinkblog/zodiac-killer-paul-alfred-doerr/&quot;&gt;Has The Zodiac Killer Mystery Been Solved (Again)&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.lamag.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning&quot;&gt;examples/stable-diffusion-finetuning at main · LambdaLabsML/examples&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(github.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Fine tune Stable Diffusion to generate pokemon images&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://brickit.app/&quot;&gt;Brickit&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(brickit.app)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;App scans a pile of your legos and gives you ideas to create, complete with detailed instructions.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://twofergoofer.com/&quot;&gt;Twofer Goofer&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(twofergoofer.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Guess a pair of rhyming words based on their fictional definition.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://experimentalhistory.substack.com/p/excuse-me-but-why-are-you-eating&quot;&gt;Excuse me but why are you eating so many frogs&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(experimentalhistory.substack.com)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;Productivity hacks imply that you can trick yourself into doing things you don&apos;t want to do, in favor of things you&apos;d rather be doing. The author suggests that maybe you should instead stop forcing yourself to do so many unpleasant things.&lt;/dd&gt;
-  &lt;dt&gt;
-    &lt;a href=&quot;https://www.fast.ai/2022/09/06/homeschooling/&quot;&gt;My family&apos;s unlikely homeschooling journey · fast.ai&lt;/a&gt;
-    &lt;span class=&quot;post-meta&quot;&gt;(www.fast.ai)&lt;/span&gt;
-  &lt;/dt&gt;
-  &lt;dd&gt;The pandemic forced this family into experimenting with homeschooling. With good resources and a strong local support system, they found that their new arrangement seemed to work better for their kids than traditional schools do.&lt;/dd&gt;
-&lt;/dl&gt;</content><author><name></name></author><category term="technology" /><category term="exploit" /><category term="rooting" /><category term="education" /><category term="creativity" /><summary type="html">RootMyTV (RootMyTV.github.io) A user-friendly exploit for rooting/jailbreaking LG webOS smart TVs. Has The Zodiac Killer Mystery Been Solved (Again) (www.lamag.com) examples/stable-diffusion-finetuning at main · LambdaLabsML/examples (github.com) Fine tune Stable Diffusion to generate pokemon images Brickit (brickit.app) App scans a pile of your legos and gives you ideas to create, complete with detailed instructions. Twofer Goofer (twofergoofer.com) Guess a pair of rhyming words based on their fictional definition. Excuse me but why are you eating so many frogs (experimentalhistory.substack.com) Productivity hacks imply that you can trick yourself into doing things you don&apos;t want to do, in favor of things you&apos;d rather be doing. The author suggests that maybe you should instead stop forcing yourself to do so many unpleasant things. My family&apos;s unlikely homeschooling journey · fast.ai (www.fast.ai) The pandemic forced this family into experimenting with homeschooling. With good resources and a strong local support system, they found that their new arrangement seemed to work better for their kids than traditional schools do.</summary></entry></feed>
+<p>The only thing I have to be careful of is that adding plugins and changing settings will not transfer between desktop and mobile, so I will need to make changes to both manually. This probably won’t be annoying for me because I have things mostly setup the way I like them now, but is something to keep in mind.</p>]]></content><author><name></name></author><category term="obsidian" /><category term="notes" /><category term="productivity" /><category term="sync" /><category term="icloud" /><summary type="html"><![CDATA[Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one. Because the entire Obsidian folder lives inside of iCloud, the .obsidian settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone. The solution The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.]]></summary></entry><entry><title type="html">Web Links - September 2022</title><link href="https://www.alexonsager.com/2022/10/01/web-links-september-2022.html" rel="alternate" type="text/html" title="Web Links - September 2022" /><published>2022-10-01T00:00:00+09:00</published><updated>2022-10-01T00:00:00+09:00</updated><id>https://www.alexonsager.com/2022/10/01/web-links---september-2022</id><content type="html" xml:base="https://www.alexonsager.com/2022/10/01/web-links-september-2022.html"><![CDATA[<dl>
+  <dt>
+    <a href="https://github.com/RootMyTV/RootMyTV.github.io">RootMyTV</a>
+    <span class="post-meta">(RootMyTV.github.io)</span>
+  </dt>
+  <dd>A user-friendly exploit for rooting/jailbreaking LG webOS smart TVs.</dd>
+  <dt>
+    <a href="https://www.lamag.com/citythinkblog/zodiac-killer-paul-alfred-doerr/">Has The Zodiac Killer Mystery Been Solved (Again)</a>
+    <span class="post-meta">(www.lamag.com)</span>
+  </dt>
+  <dd></dd>
+  <dt>
+    <a href="https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning">examples/stable-diffusion-finetuning at main · LambdaLabsML/examples</a>
+    <span class="post-meta">(github.com)</span>
+  </dt>
+  <dd>Fine tune Stable Diffusion to generate pokemon images</dd>
+  <dt>
+    <a href="https://brickit.app/">Brickit</a>
+    <span class="post-meta">(brickit.app)</span>
+  </dt>
+  <dd>App scans a pile of your legos and gives you ideas to create, complete with detailed instructions.</dd>
+  <dt>
+    <a href="https://twofergoofer.com/">Twofer Goofer</a>
+    <span class="post-meta">(twofergoofer.com)</span>
+  </dt>
+  <dd>Guess a pair of rhyming words based on their fictional definition.</dd>
+  <dt>
+    <a href="https://experimentalhistory.substack.com/p/excuse-me-but-why-are-you-eating">Excuse me but why are you eating so many frogs</a>
+    <span class="post-meta">(experimentalhistory.substack.com)</span>
+  </dt>
+  <dd>Productivity hacks imply that you can trick yourself into doing things you don't want to do, in favor of things you'd rather be doing. The author suggests that maybe you should instead stop forcing yourself to do so many unpleasant things.</dd>
+  <dt>
+    <a href="https://www.fast.ai/2022/09/06/homeschooling/">My family's unlikely homeschooling journey · fast.ai</a>
+    <span class="post-meta">(www.fast.ai)</span>
+  </dt>
+  <dd>The pandemic forced this family into experimenting with homeschooling. With good resources and a strong local support system, they found that their new arrangement seemed to work better for their kids than traditional schools do.</dd>
+</dl>]]></content><author><name></name></author><category term="technology" /><category term="exploit" /><category term="rooting" /><category term="education" /><category term="creativity" /><summary type="html"><![CDATA[RootMyTV (RootMyTV.github.io) A user-friendly exploit for rooting/jailbreaking LG webOS smart TVs. Has The Zodiac Killer Mystery Been Solved (Again) (www.lamag.com) examples/stable-diffusion-finetuning at main · LambdaLabsML/examples (github.com) Fine tune Stable Diffusion to generate pokemon images Brickit (brickit.app) App scans a pile of your legos and gives you ideas to create, complete with detailed instructions. Twofer Goofer (twofergoofer.com) Guess a pair of rhyming words based on their fictional definition. Excuse me but why are you eating so many frogs (experimentalhistory.substack.com) Productivity hacks imply that you can trick yourself into doing things you don't want to do, in favor of things you'd rather be doing. The author suggests that maybe you should instead stop forcing yourself to do so many unpleasant things. My family's unlikely homeschooling journey · fast.ai (www.fast.ai) The pandemic forced this family into experimenting with homeschooling. With good resources and a strong local support system, they found that their new arrangement seemed to work better for their kids than traditional schools do.]]></summary></entry></feed>

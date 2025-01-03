@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "Ostrich Sans Rounded";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Ostrich Sans Rounded"), url("https://invisibleparade.com/assets/fonts/OstrichSansRoundedMedium.woff") format("woff");
-}
+@import url("https://fonts.cdnfonts.com/css/ostrich-sans-2");
 /**
  * Reset some basic elements
  */

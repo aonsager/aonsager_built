@@ -97,6 +97,29 @@
           
           <span class="post-meta">Apr 12, 2014</span>
           <h1>
+            <a class="post-link" href="/2014/04/12/cinemagraph-water.html">Water - Cinemagraph</a>
+          </h1>
+          
+          <div class="post-content" itemprop="articleBody">
+            
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #9D9F95, #4D4B52, #4A2F2D, #4C4C50, #112B59)"></div>
+
+
+
+
+            <iframe src="https://gfycat.com/ifr/AcidicAlertGharial" frameborder="0" scrolling="no" width="480" height="270"></iframe>
+
+            
+            <p><a href="/2014/04/12/cinemagraph-water.html#commento"></a></p>
+          </div>
+        </div>
+      </li>
+    
+      <li>
+        <div class="wrapper">
+          
+          <span class="post-meta">Apr 12, 2014</span>
+          <h1>
             <a class="post-link" href="/2014/04/12/yozakura.html">夜桜</a>
           </h1>
           
@@ -364,58 +387,6 @@
 
             
             <p><a href="/2014/02/03/tokyos-cityscape-recreated-with-stickers.html#commento"></a></p>
-          </div>
-        </div>
-      </li>
-    
-      <li>
-        <div class="wrapper">
-          
-          <span class="post-meta">Nov 29, 2013</span>
-          <h1>
-            <a class="post-link" href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">Rake task to backup MySQL to Amazon S3</a>
-          </h1>
-          
-          <div class="post-content" itemprop="articleBody">
-            
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #B0B0B0, #A8ABB1, #35276B, #56CA09, #919191)"></div>
-
-
-
-
-            <p>A simple rake task to dump the contents of a MySQL database and save it to an Amazon S3 bucket. Use together with <a href="https://github.com/javan/whenever">whenever</a> to automate it.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:backup</span> <span class="k">do</span>
-
-  <span class="n">task</span> <span class="ss">:nightly</span> <span class="k">do</span>
-    <span class="n">timestamp</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-%d_%H-%M-%S"</span><span class="p">)</span>
-    <span class="n">backup_file</span> <span class="o">=</span> <span class="s2">"tmp/backups/</span><span class="si">#{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">_dump.sql.gz"</span>
-    <span class="sb">`mkdir -p tmp/backups`</span>
-    <span class="sb">`mysqldump -u root {DATABASE_NAME} | gzip -c &gt; </span><span class="si">#{</span><span class="n">backup_file</span><span class="si">}</span><span class="sb">`</span>
-
-    <span class="n">send_to_s3</span> <span class="n">backup_file</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">send_to_s3</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-    <span class="n">bucket</span> <span class="o">=</span> <span class="s2">"{BUCKET_NAME}"</span>
-    <span class="n">file_name</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">DEFAULT_HOST</span><span class="p">.</span><span class="nf">replace</span> <span class="s2">"s3-us-west-2.amazonaws.com"</span>
-
-    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection!</span><span class="p">(</span>
-      <span class="ss">:access_key_id</span> <span class="o">=&gt;</span> <span class="s1">'{KEY}'</span><span class="p">,</span>
-      <span class="ss">:secret_access_key</span> <span class="o">=&gt;</span> <span class="s1">'{SECRET}'</span><span class="p">)</span>
-
-    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">S3Object</span><span class="p">.</span><span class="nf">store</span><span class="p">(</span>
-      <span class="s2">"backups/</span><span class="si">#{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-      <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>
-      <span class="n">bucket</span><span class="p">)</span>
-  <span class="k">end</span>
-
-<span class="k">end</span>
-</code></pre></div></div>
-
-            
-            <p><a href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html#commento"></a></p>
           </div>
         </div>
       </li>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @font-face {
   font-family: "Ostrich Sans Rounded";
   font-style: normal;
@@ -18,7 +19,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 17px/1.6 -apple-system, "Helvetica Neue", sans-serif;
+  font: 400 17px/1.6 "Lato", "Helvetica", sans-serif;
   color: #333;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -313,6 +314,9 @@ pre > code {
  * Site footer
  */
 .site-footer {
+  border-top: 1px solid rgb(232.75, 232.75, 232.75);
+  margin-top: 30px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
@@ -333,8 +337,8 @@ pre > code {
 }
 
 .footer-col-wrapper {
-  font-size: 15.9375px;
-  color: #A9A9A9;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin-left: -15px;
 }
 
@@ -392,10 +396,10 @@ pre > code {
   margin-left: 0;
   list-style: none;
 }
-.post-list > li {
+.post-list > li .wrapper {
+  border-bottom: 1px solid rgb(232.75, 232.75, 232.75);
   padding-bottom: 60px;
   margin-bottom: 90px;
-  border-bottom: 1px solid rgb(232.75, 232.75, 232.75);
 }
 
 .post-meta {
@@ -497,8 +501,7 @@ pre > code {
 }
 
 p.archive-categories {
-  margin-top: -15px;
-  text-align: center;
+  text-align: left;
 }
 p.archive-categories a {
   text-decoration: none;

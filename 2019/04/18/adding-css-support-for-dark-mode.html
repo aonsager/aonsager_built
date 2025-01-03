@@ -9,14 +9,14 @@
   <title>Adding CSS Support for Dark Mode</title>
   <meta name="description" content="macOS Mojave added a system-wide Dark Mode, but it doesn’t do much if all of the websites you see are still bright white. To address this, there is a new CSS...">
   
-  <link rel="stylesheet" href="/assets/css/main.css?v=20241227">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250102">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://www.alexonsager.com/2019/04/18/adding-css-support-for-dark-mode.html">
-  <link rel="alternate" type="application/rss+xml" title="Alex Onsager" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
   <link rel="apple-touch-icon-precomposed" href="/assets/touchicon.png">
-  <meta content="Alex Onsager" property="og:site_name">
+  <meta content="Invisible Parade" property="og:site_name">
 
   <meta content="Adding CSS Support for Dark Mode" property="og:title">
 
@@ -40,33 +40,48 @@
   <body>
 
     <header class="site-header" role="banner">
-  <div class="wrapper">
+  <div class="wrapper" style="position:relative;">
     
     
-    <a class="site-title" href="/">Alex Onsager</a>
-
-    
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          <a class="page-link" href="/about/">About</a>
-          <a class="page-link" href="/projects/">Projects</a>
-          <a class="page-link" href="/archive/">Archive</a>
-          <a class="page-link" href="/feed.xml">RSS</a>
+    <a class="site-title" href="/">
+      <div class="logo-container">
+        <div class="full" style="float:left;">
+          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
+          </svg>
         </div>
-      </nav>
-    
+        <div class="compact" style="float:left;">
+          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
+          </svg>
+        </div>
+        <div style="float:left;">
+          Invisible Parade
+        </div>
+      </div>
+    </a>
   </div>
+  <div class="header-banner"></div>
+  
+  <div class="wrapper">
+    <nav class="site-nav">
+      <a class="page-link" href="/about/">About</a>
+      <!-- <a class="page-link" href="/projects/">Projects</a> -->
+      <a class="page-link" href="/archive/">Archive</a>
+      <a class="page-link" href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+
 </header>
 
 

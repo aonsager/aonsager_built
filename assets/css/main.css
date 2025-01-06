@@ -5,6 +5,17 @@
   font-weight: 500;
   src: local("Ostrich Sans Rounded"), url("https://invisibleparade.com/assets/images/OstrichSansRoundedMedium.woff") format("woff");
 }
+.footer-col-wrapper, .wrapper {
+  *zoom: 1;
+}
+.footer-col-wrapper:before, .wrapper:before, .footer-col-wrapper:after, .wrapper:after {
+  content: " ";
+  display: table;
+}
+.footer-col-wrapper:after, .wrapper:after {
+  clear: both;
+}
+
 /**
  * Reset some basic elements
  */
@@ -44,8 +55,7 @@ body {
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
-ul, ol, dl, figure,
-.highlight {
+ul, ol, dl, figure {
   margin-bottom: 30px;
 }
 
@@ -128,7 +138,6 @@ blockquote {
   border: 1px solid rgb(232.75, 232.75, 232.75);
   border-left: 8px solid #c3c3c3;
   padding: 15px 30px;
-  font-size: 17px;
 }
 blockquote > :last-child {
   margin-bottom: 0;
@@ -139,7 +148,6 @@ blockquote > :last-child {
  */
 pre,
 code {
-  font-size: 15.9375px;
   border-radius: 3px;
 }
 
@@ -180,7 +188,7 @@ pre > code {
 /**
  * Clearfix
  */
-.footer-col-wrapper:after, .wrapper:after {
+.wrapper:after {
   content: "";
   display: table;
   clear: both;
@@ -215,13 +223,13 @@ pre > code {
     background-color: #2d2d2d;
   }
   a {
-    color: rgb(86.8884297521, 150.0289256198, 232.1115702479);
+    color: rgb(109.3326446281, 164.0433884298, 235.1673553719);
   }
   a:visited {
-    color: rgb(86.8884297521, 150.0289256198, 232.1115702479);
+    color: rgb(109.3326446281, 164.0433884298, 235.1673553719);
   }
   a:hover {
-    color: rgb(154.2210743802, 192.0723140496, 241.2789256198);
+    color: rgb(109.3326446281, 164.0433884298, 235.1673553719);
   }
   a.post-link {
     color: #c8c4bc;
@@ -615,7 +623,7 @@ form button {
   .post-comments {
     border-top: 1px solid rgb(105.25, 105.25, 105.25);
   }
-  .post-list > li {
+  .post-list > li .wrapper {
     border-bottom: 1px solid rgb(105.25, 105.25, 105.25);
   }
   p.archive-categories a {
@@ -656,7 +664,7 @@ code {
 }
 .highlight .err {
   color: #EA5F66;
-  background-color: rgb(254.75, 254.75, 254.75);
+  background-color: #FDFDFD;
 }
 .highlight .k {
   color: #BF83C0;

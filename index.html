@@ -95,6 +95,35 @@
       <li>
         <div class="wrapper">
           
+          <span class="post-meta">Jan 28, 2025</span>
+          <h1>
+            <a class="post-link" href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html">Dragonsweeper - A lovely minesweeper game</a>
+          </h1>
+          
+            <p class="post-meta link">
+              <span itemprop="link"><a href="https://danielben.itch.io/dragonsweeper">https://danielben.itch.io/dragonsweeper</a></span>
+            </p>
+          
+          <div class="post-content" itemprop="articleBody">
+            
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #475556, #AFAFAF, #5C0F11, #34504B, #612021)"></div>
+
+
+
+
+            <p>This is a really excellent take on minesweeper. Spaces can contain monsters of various strength, and you need to spend HP to defeat them. By collecting EXP and hearts to level up and heal yourself, the goal is to become strong enough to slay the dragon.</p>
+
+<p>It took me a few tries to get a handle on the strategy, but this is super fun!</p>
+
+            
+            <p><a href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html#commento"></a></p>
+          </div>
+        </div>
+      </li>
+    
+      <li>
+        <div class="wrapper">
+          
           <span class="post-meta">Jan 27, 2025</span>
           <h1>
             <a class="post-link" href="/2025/01/27/the-sociable-weaver.html">The Sociable Weaver</a>
@@ -467,70 +496,6 @@ This seems like the best solution for me.
 
             
             <p><a href="/2024/11/27/comments-are-back.html#commento"></a></p>
-          </div>
-        </div>
-      </li>
-    
-      <li>
-        <div class="wrapper">
-          
-          <span class="post-meta">Nov 21, 2024</span>
-          <h1>
-            <a class="post-link" href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Installing Python3 modules on Macs in 2024</a>
-          </h1>
-          
-          <div class="post-content" itemprop="articleBody">
-            
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #AB0001, #AFAEAF, #B20001, #056B97, #B80000)"></div>
-
-
-
-
-            <p>When trying to install python modules on a new Mac, I kept getting thwarted by this error:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: externally-managed-environment
-
-× This environment is externally managed
-╰─&gt; To <span class="nb">install </span>Python packages system-wide, try brew <span class="nb">install
-    </span>xyz, where xyz is the package you are trying to
-    install.
-    
-    If you wish to <span class="nb">install </span>a non-brew-packaged Python package,
-    create a virtual environment using python3 <span class="nt">-m</span> venv path/to/venv.
-    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
-    
-    If you wish to <span class="nb">install </span>a non-brew packaged Python application,
-    it may be easiest to use pipx <span class="nb">install </span>xyz, which will manage a
-    virtual environment <span class="k">for </span>you. Make sure you have pipx installed.
-
-note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing <span class="nt">--break-system-packages</span><span class="nb">.</span>
-hint: See PEP 668 <span class="k">for </span>the detailed specification.
-</code></pre></div></div>
-
-<p>It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.</p>
-
-<h2 id="create-a-virtualenv-in-a-central-place-that-is-easy-to-access">Create a virtualenv in a central place that is easy to access</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv ~/.virtualenvs/python3
-<span class="nb">source</span> ~/.virtualenvs/python3/bin/activate
-pip <span class="nb">install </span>xyz
-</code></pre></div></div>
-
-<h2 id="use-this-virtualenv-whenever-i-run-the-script">Use this virtualenv whenever I run the script</h2>
-
-<p>By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.virtualenvs/python3/bin/python /path/to/my/script.py <span class="s2">"{query}"</span>
-</code></pre></div></div>
-
-<h2 id="bonus">Bonus</h2>
-
-<p>Add an alias to my <code class="language-plaintext highlighter-rouge">~/.zshrc</code> so that can just type <code class="language-plaintext highlighter-rouge">vpython /path/to/my/script.py</code></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">vpython</span><span class="o">=</span><span class="s1">'~/.virtualenvs/python3/bin/python'</span>
-</code></pre></div></div>
-
-            
-            <p><a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html#commento"></a></p>
           </div>
         </div>
       </li>

@@ -9,7 +9,7 @@
   <title>Adding CSS Support for Dark Mode</title>
   <meta name="description" content="macOS Mojave added a system-wide Dark Mode, but it doesn’t do much if all of the websites you see are still bright white. To address this, there is a new CSS...">
   
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250116">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250128">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/2019/04/18/adding-css-support-for-dark-mode.html">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -86,22 +86,28 @@
 
 
     <main class="page-content" aria-label="Content">
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="wrapper">
+      
+<article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        Adding CSS Support for Dark Mode
+      
+      <h1>
+        <a class="post-link" href="/2019/04/18/adding-css-support-for-dark-mode.html">Adding CSS Support for Dark Mode</a>
       </h1>
       
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
+    
+      
+      <div class="post-meta">
+        Apr 18, 2019
+      </div>
       
 
 
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #56595F, #979596, #4C4C4C, #16165D, #6F6D6E)"></div>
 
 
+    </header>
+
+    <div class="post-content single" itemprop="articleBody">
       <p><img src="https://invisibleparade.com/assets/images/darkmode.png" alt="" class="center-image" /></p>
 
 <p>macOS Mojave added a system-wide Dark Mode, but it doesn’t do much if all of the websites you see are still bright white. To address this, there is a new CSS media query <code class="language-plaintext highlighter-rouge">prefers-color-scheme</code> that can detect Dark Mode and change styles accordingly. There are three possible values: <code class="language-plaintext highlighter-rouge">no-preference</code>, <code class="language-plaintext highlighter-rouge">light</code>, and <code class="language-plaintext highlighter-rouge">dark</code>. You can read more in the <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme">W3C specification</a>.</p>
@@ -126,13 +132,6 @@
 <p>You should probably tweak colors a bit more than simply switching black and white to keep things looking nice, and I found that reducing image opacity can help to reduce the contrast with bright pictures.</p>
 
     </div>
-    <div class="post-meta">
-      <time datetime="2019-04-18T00:00:00+09:00" itemprop="datePublished">
-        
-        Apr 18, 2019
-      </time>
-    </div>
-  </div>
 
   
     <div class="post-tag">css</div>
@@ -146,8 +145,9 @@
     <div class="post-tag">color</div>
   
 
+  <hr />
+
   <div class="post-related">
-    <div class="wrapper">
       
 
 
@@ -2559,17 +2559,17 @@
   
     
 </ul>
-    </div>
   </div>
 
+  <hr />
+
   <div class="post-comments">
-    <div class="wrapper">
       <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
 <div id="commento"></div>
 
-    </div>
   </div>
 </article>
+
     </main>
 
     <footer class="site-footer">

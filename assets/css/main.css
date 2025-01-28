@@ -5,14 +5,14 @@
   font-weight: 500;
   src: local("Ostrich Sans Rounded"), url("https://invisibleparade.com/assets/images/OstrichSansRoundedMedium.woff") format("woff");
 }
-.footer-col-wrapper, .wrapper {
+.wrapper {
   *zoom: 1;
 }
-.footer-col-wrapper:before, .wrapper:before, .footer-col-wrapper:after, .wrapper:after {
+.wrapper:before, .wrapper:after {
   content: " ";
   display: table;
 }
-.footer-col-wrapper:after, .wrapper:after {
+.wrapper:after {
   clear: both;
 }
 
@@ -343,12 +343,6 @@ pre > code {
   margin: 0 15px;
 }
 
-.footer-col-wrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: -15px;
-}
-
 .footer-col {
   float: left;
   margin-bottom: 15px;
@@ -399,31 +393,40 @@ pre > code {
   font-size: 25.5px;
 }
 
+.wrapper.toot .post-meta {
+  margin-top: 0px;
+}
+
+hr {
+  border: none;
+  background-color: rgb(232.75, 232.75, 232.75);
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  clear: both;
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;
 }
-.post-list > li .wrapper {
-  border-bottom: 1px solid rgb(232.75, 232.75, 232.75);
-  padding-top: 60px;
-  padding-bottom: 90px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.post-list > li .wrapper.toot {
-  padding-top: 15px;
+.post-list li.post {
+  padding-top: 30px;
   padding-bottom: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
-.post-list > li .wrapper.toot > .post-content p {
-  margin-left: 30px;
-  margin-right: 30px;
+.post-list li:first-of-type {
+  padding-top: 0px;
+}
+
+.post-header h1 {
+  margin-bottom: 0px;
 }
 
 .post-meta {
   font-size: 14.875px;
   color: #A9A9A9;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .post-meta a {
   color: #A9A9A9;
@@ -433,7 +436,8 @@ pre > code {
   color: rgb(105.25, 105.25, 105.25);
 }
 .post-meta.link {
-  margin-top: -30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .paginator {
@@ -464,13 +468,18 @@ pre > code {
 }
 
 .post-banner {
-  margin-top: -15px;
   margin-bottom: 30px;
   height: 3px;
   width: 100%;
   opacity: 0.8;
 }
 
+.post-content.single {
+  padding-bottom: 30px;
+}
+.post-content a {
+  word-wrap: break-word;
+}
 .post-content h2 {
   font-size: 25.5px;
   letter-spacing: -1px;
@@ -510,18 +519,12 @@ pre > code {
 
 .post-related {
   margin-top: 60px;
-}
-.post-related .wrapper {
-  padding-top: 60px;
-  border-top: 1px solid rgb(232.75, 232.75, 232.75);
+  margin-bottom: 60px;
 }
 
 .post-comments {
   margin-top: 60px;
-}
-.post-comments .wrapper {
-  padding-top: 60px;
-  border-top: 1px solid rgb(232.75, 232.75, 232.75);
+  margin-bottom: 60px;
 }
 
 p.archive-categories {
@@ -610,6 +613,15 @@ form button {
   .header-banner {
     margin-top: -45px;
   }
+  .post-list li.toot .post-meta {
+    width: 120px;
+    float: left;
+    margin: 0px;
+  }
+  .post-list li.toot .post-content {
+    width: calc(100% - 120px);
+    float: right;
+  }
 }
 @media (prefers-color-scheme: dark) {
   .site-header {
@@ -630,17 +642,11 @@ form button {
   #header-logo-black {
     display: none;
   }
+  hr {
+    background-color: rgb(105.25, 105.25, 105.25);
+  }
   .site-nav .page-link {
     color: #c8c4bc;
-  }
-  .post-related {
-    border-top: 1px solid rgb(105.25, 105.25, 105.25);
-  }
-  .post-comments {
-    border-top: 1px solid rgb(105.25, 105.25, 105.25);
-  }
-  .post-list > li .wrapper {
-    border-bottom: 1px solid rgb(105.25, 105.25, 105.25);
   }
   p.archive-categories a {
     color: #c8c4bc;

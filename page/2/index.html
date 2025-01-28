@@ -11,7 +11,7 @@
   
   <link rel="stylesheet" href="/assets/css/main.css?v=20250116">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-  <link rel="canonical" href="https://www.alexonsager.com/page/2/">
+  <link rel="canonical" href="https://invisibleparade.com/page/2/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
@@ -27,10 +27,10 @@
   <meta content="My personal webpage and blog." property="og:description">
 
 
-  <meta content="https://www.alexonsager.com/page/2/" property="og:url">
+  <meta content="https://invisibleparade.com/page/2/" property="og:url">
 
 
-  <meta content="https://www.alexonsager.com/assets/touchicon.png" property="og:image">
+  <meta content="https://invisibleparade.com/assets/touchicon.png" property="og:image">
 
 
   <script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
@@ -76,7 +76,7 @@
   <div class="wrapper">
     <nav class="site-nav">
       <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/workshop/">Workshop</a>
+      <a class="page-link" href="/projects/">Projects</a>
       <a class="page-link" href="/archive/">Archive</a>
       <a class="page-link" href="/feed.xml">RSS</a>
     </nav>
@@ -92,447 +92,330 @@
 
   <ul class="post-list">
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Nov 21, 2024</span>
-          <h1>
-            <a class="post-link" href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Installing Python3 modules on Macs in 2024</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #AB0001, #AFAEAF, #B20001, #056B97, #B80000)"></div>
 
 
 
+            <p>An analogy:<br />I join a social network with the goal of building a space that I like, out of lego pieces.<br /><br />The fediverse slowly gives me a few pieces at a time, and I choose what I want. I slowly build out a nice lego structure.<br /><br />Networks with algorithmic feeds dump me in a room full of legos, and say I have my pick. Most pieces aren't what I want, and a good number are even broken. I spend most of my time sifting through pieces, looking for something I can work with.</p>
 
-            <p>When trying to install python modules on a new Mac, I kept getting thwarted by this error:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: externally-managed-environment
-
-× This environment is externally managed
-╰─&gt; To <span class="nb">install </span>Python packages system-wide, try brew <span class="nb">install
-    </span>xyz, where xyz is the package you are trying to
-    install.
-    
-    If you wish to <span class="nb">install </span>a non-brew-packaged Python package,
-    create a virtual environment using python3 <span class="nt">-m</span> venv path/to/venv.
-    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
-    
-    If you wish to <span class="nb">install </span>a non-brew packaged Python application,
-    it may be easiest to use pipx <span class="nb">install </span>xyz, which will manage a
-    virtual environment <span class="k">for </span>you. Make sure you have pipx installed.
-
-note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing <span class="nt">--break-system-packages</span><span class="nb">.</span>
-hint: See PEP 668 <span class="k">for </span>the detailed specification.
-</code></pre></div></div>
-
-<p>It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.</p>
-
-<h2 id="create-a-virtualenv-in-a-central-place-that-is-easy-to-access">Create a virtualenv in a central place that is easy to access</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv ~/.virtualenvs/python3
-<span class="nb">source</span> ~/.virtualenvs/python3/bin/activate
-pip <span class="nb">install </span>xyz
-</code></pre></div></div>
-
-<h2 id="use-this-virtualenv-whenever-i-run-the-script">Use this virtualenv whenever I run the script</h2>
-
-<p>By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.virtualenvs/python3/bin/python /path/to/my/script.py <span class="s2">"{query}"</span>
-</code></pre></div></div>
-
-<h2 id="bonus">Bonus</h2>
-
-<p>Add an alias to my <code class="language-plaintext highlighter-rouge">~/.zshrc</code> so that can just type <code class="language-plaintext highlighter-rouge">vpython /path/to/my/script.py</code></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">vpython</span><span class="o">=</span><span class="s1">'~/.virtualenvs/python3/bin/python'</span>
-</code></pre></div></div>
 
             
-            <p><a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/09/2025-01-09-01JH4GPK1KBHAJER3CK7NZ3G1R.html">Jan 9, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Dec 2, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/12/02/web-links-november-2022.html">Web Links - November 2022</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #84848B, #575C5D, #323233, #A29E9E, #1B1CF5)"></div>
 
 
 
+            <p>I've been really enjoying the slow pace of joining the fediverse. Find a few interesting people to follow, see who they interact with and slowly branch out connections from there.<br /><br />In networks with algorithmic feeds, you're presented first with EVERYTHING, and are tasked with filtering out what you don't want until you have a nice curated space. It's stimulating by design, but a little overwhelming. Conversely on the fediverse, you start with NOTHING and slowly add content you like.<br /><br />Everything is a preference for sure, this just feels so refreshing to me.</p>
 
-            <dl>
-  <dt>
-    <a href="https://anlucas.neocities.org/88x31Buttons.html">A.N. Lucas's 88x31 button Collection</a>
-    <span class="post-meta">(anlucas.neocities.org)</span>
-  </dt>
-  <dd>A collection of classic web banner images.</dd>
-  <dt>
-    <a href="https://www.howtogeek.com/830179/how-to-run-stable-diffusion-on-your-pc-to-generate-ai-images/">How to Run Stable Diffusion on Your PC to Generate AI Images</a>
-    <span class="post-meta">(www.howtogeek.com)</span>
-  </dt>
-  <dd>For personal reference.</dd>
-  <dt>
-    <a href="https://www.youtube.com/watch?v=uL0atQFZzL8">If You Can't Answer These 6 Questions You Don't Have A Story - Glenn Gers</a>
-    <span class="post-meta">(www.youtube.com)</span>
-  </dt>
-  <dd>The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.</dd>
-</dl>
 
             
-            <p><a href="/2022/12/02/web-links-november-2022.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/09/2025-01-09-01JH4GF5BBB6XCJK88E8F9ZW25.html">Jan 9, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
+        
         <div class="wrapper">
+        
           
-          <span class="post-meta">Nov 1, 2022</span>
           <h1>
-            <a class="post-link" href="/2022/11/01/web-links-october-2022.html">Web Links - October 2022</a>
+            <a class="post-link" href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Squirrel - Archive webpages so I can find them again</a>
           </h1>
+          
+          
+            <p class="post-meta link">
+              <span itemprop="link"><a href="https://github.com/aonsager/squirrel-archiver">https://github.com/aonsager/squirrel-archiver</a></span>
+            </p>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #E45665, #AFAFB1, #2B2D4B, #909090, #8C020E)"></div>
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #5B5958, #06276E, #60512E, #B8AF8A, #493630)"></div>
 
 
 
 
-            <dl>
-  <dt>
-    <a href="https://www.gamedeveloper.com/design/how-to-make-a-roguelike">How to Make a Roguelike</a>
-    <span class="post-meta">(www.gamedeveloper.com)</span>
-  </dt>
-  <dd>Practical tips for how to plan and structure a new Roguelike game.</dd>
-  <dt>
-    <a href="https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b">"Mechanical Neural Network" Learns to Respond to Its Environment</a>
-    <span class="post-meta">(www.hackster.io)</span>
-  </dt>
-  <dd>Flexible parts within a pattern of beams move and bend by reacting to magnetic fields. Future uses may include efficient aircraft wings or earthquake-resistant buildings.</dd>
-  <dt>
-    <a href="https://variety.com/2022/tv/news/william-shatner-space-boldly-go-excerpt-1235395113/">William Shatner: My Trip to Space Filled Me With Sadness</a>
-    <span class="post-meta">(variety.com)</span>
-  </dt>
-  <dd>Expecting beauty, William Shatner looked out into space and saw only death. Life and beauty only exists on Earth, and its tininess and fragility was overwhelming.</dd>
-  <dt>
-    <a href="https://jalammar.github.io/illustrated-stable-diffusion/">The Illustrated Stable Diffusion</a>
-    <span class="post-meta">(jalammar.github.io)</span>
-  </dt>
-  <dd>An illustrated guide explaining how Stable Diffusion works</dd>
-  <dt>
-    <a href="https://coolify.io/">Coolify</a>
-    <span class="post-meta">(coolify.io)</span>
-  </dt>
-  <dd>An open-source &amp; self-hostable Heroku / Netlify alternative</dd>
-  <dt>
-    <a href="https://thereformedbroker.com/2022/10/02/you-werent-supposed-to-see-that/">You weren't supposed to see that</a>
-    <span class="post-meta">(thereformedbroker.com)</span>
-  </dt>
-  <dd>Powerful economic stimulus during the pandemic worked a little too well and made everyone's lives better. But we need to have both winners and losers, so now were are backpedaling to bring things back to normal, i.e. worse for the bottom rung.</dd>
-</dl>
+            <p><img src="https://invisibleparade.com/assets/images/2025/squirrel.png" alt="" class="center-image" /></p>
 
-            
-            <p><a href="/2022/11/01/web-links-october-2022.html#commento"></a></p>
-          </div>
-        </div>
-      </li>
-    
-      <li>
-        <div class="wrapper">
-          
-          <span class="post-meta">Oct 5, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Obsidian iCloud sync between Mac and iPhone</a>
-          </h1>
-          
-          <div class="post-content" itemprop="articleBody">
-            
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #1A6BF0, #E2D0AA, #8E3303, #232457, #C8C6BE)"></div>
+<p>I created a thing that lets me save webpage contents in a smart way. I know, there are a million bookmark managers and web archivers out there, but this one is for me.</p>
 
+<h2 id="the-motivation">The Motivation</h2>
 
+<p>From <a href="https://pinboard.in/about/">Pinboard</a>:</p>
 
+<blockquote>
+  <p>Do you half-remember interesting things you saw online six months ago, but struggle to find them in a search engine?</p>
+</blockquote>
 
-            <p>Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one.</p>
+<p>Yes, yes, a hundred times yes. This happens to me all the time. Searching my history doesn’t work because usually the keywords I remember are not in the title. Google et al. aren’t much help either.</p>
 
-<p>Because the entire Obsidian folder lives inside of iCloud, the <code class="language-plaintext highlighter-rouge">.obsidian</code> settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone.</p>
-
-<h2 id="the-solution">The solution</h2>
-
-<p>The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.</p>
+<p>I want a way to have the <em>contents</em> of the pages I visit be searchable, in a smart way.</p>
 
 
             
               <p>
-  <a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Continue reading &rarr;</a>
+  <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Continue reading &rarr;</a>
   <!-- <span class="post-meta">
     
     
-      (2 mins) 
+      (5 mins) 
     
   </span> -->
 </p>
 
             
-            <p><a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Jan 9, 2025</a>
+              
+                <div class="comment-link"><a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html#commento"></a></div>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Oct 1, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/10/01/web-links-september-2022.html">Web Links - September 2022</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #615757, #B2B2B2, #E45665, #554D32, #626164)"></div>
 
 
 
+            <p>Tontie is the reason I can still type numbers very quickly on a 10-key keypad. Anybody else play this?<br /><br /><a href="https://www.eyezmaze.com/game/tontie.html" rel="nofollow noreferrer noopener" target="_blank">https://www.eyezmaze.com/game/tontie.html</a></p>
 
-            <dl>
-  <dt>
-    <a href="https://github.com/RootMyTV/RootMyTV.github.io">RootMyTV</a>
-    <span class="post-meta">(RootMyTV.github.io)</span>
-  </dt>
-  <dd>A user-friendly exploit for rooting/jailbreaking LG webOS smart TVs.</dd>
-  <dt>
-    <a href="https://www.lamag.com/citythinkblog/zodiac-killer-paul-alfred-doerr/">Has The Zodiac Killer Mystery Been Solved (Again)</a>
-    <span class="post-meta">(www.lamag.com)</span>
-  </dt>
-  <dd></dd>
-  <dt>
-    <a href="https://github.com/LambdaLabsML/examples/tree/main/stable-diffusion-finetuning">examples/stable-diffusion-finetuning at main · LambdaLabsML/examples</a>
-    <span class="post-meta">(github.com)</span>
-  </dt>
-  <dd>Fine tune Stable Diffusion to generate pokemon images</dd>
-  <dt>
-    <a href="https://brickit.app/">Brickit</a>
-    <span class="post-meta">(brickit.app)</span>
-  </dt>
-  <dd>App scans a pile of your legos and gives you ideas to create, complete with detailed instructions.</dd>
-  <dt>
-    <a href="https://twofergoofer.com/">Twofer Goofer</a>
-    <span class="post-meta">(twofergoofer.com)</span>
-  </dt>
-  <dd>Guess a pair of rhyming words based on their fictional definition.</dd>
-  <dt>
-    <a href="https://experimentalhistory.substack.com/p/excuse-me-but-why-are-you-eating">Excuse me but why are you eating so many frogs</a>
-    <span class="post-meta">(experimentalhistory.substack.com)</span>
-  </dt>
-  <dd>Productivity hacks imply that you can trick yourself into doing things you don't want to do, in favor of things you'd rather be doing. The author suggests that maybe you should instead stop forcing yourself to do so many unpleasant things.</dd>
-  <dt>
-    <a href="https://www.fast.ai/2022/09/06/homeschooling/">My family's unlikely homeschooling journey · fast.ai</a>
-    <span class="post-meta">(www.fast.ai)</span>
-  </dt>
-  <dd>The pandemic forced this family into experimenting with homeschooling. With good resources and a strong local support system, they found that their new arrangement seemed to work better for their kids than traditional schools do.</dd>
-</dl>
 
             
-            <p><a href="/2022/10/01/web-links-september-2022.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/07/2025-01-07-01JGZ4B29MHVSR14RPGX641AHW.html">Jan 7, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Sep 1, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/09/01/web-links-august-2022.html">Web Links - August 2022</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #F66C03, #020202, #0E5EB1, #9FA0A0, #A2A5E2)"></div>
 
 
 
+            <p>📕 Finished The Haunting of Hill House.<br /><br />First half was gripping and excellent, second half kind of lost me. Overall very good though! It made me appreciate that literature ages very well, and that scary stories will always be scary.</p>
 
-            <dl>
-  <dt>
-    <a href="https://rentry.org/SDInstallGuide">Stable Diffusion install guide</a>
-    <span class="post-meta">(rentry.org)</span>
-  </dt>
-  <dd>Install and run Stable Diffusion locally</dd>
-  <dt>
-    <a href="https://sambleckley.com/writing/church-of-interruption.html">The Church of Interruption</a>
-    <span class="post-meta">(sambleckley.com)</span>
-  </dt>
-  <dd>There are four conversational styles, divided on two axes. Most people who interrupt others are willing to be interrupted themselves, while other people dislike interrupting and being interrupted. These fundamental differences can cause awkwardness in conversation.</dd>
-  <dt>
-    <a href="https://diagrams.app/">Diagrams: A Native Diagram Editor for Mac</a>
-    <span class="post-meta">(diagrams.app)</span>
-  </dt>
-  <dd>I was just looking for a good way to create flowcharts, and this looks just right</dd>
-</dl>
 
             
-            <p><a href="/2022/09/01/web-links-august-2022.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/07/2025-01-07-01JGYWA2E10XKTTTD1417VGA8H.html">Jan 7, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Aug 1, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/08/01/web-links-july-2022.html">Web links - July 2022</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #996F55, #F66C03, #A09DA0, #628BB9, #555A5C)"></div>
 
 
 
+            <p>Next pet-project to tackle: Minimal-friction searchable archive of webpages I visit.</p>
 
-            <dl>
-	<dt>
-		<a href="https://edition.cnn.com/style/article/magic-mirror-cincinnati-art-museum-scn/index.html">Magic mirror': Hidden image revealed in reflection of centuries-old artifact at Cincinnati Art Museum</a>
-		<span class="post-meta">(edition.cnn.com)</span>
-	</dt>
-	<dd>A seemingly blank bronze mirror reflects an image of Buddha when shining a bright light onto it. Aside from how amazing it is that this was discovered, the craftsmanship is incredible.</dd>
-	<dt>
-		<a href="https://johnedchristensen.github.io/WebbCompare/">Compare Webb's Images to Hubble's</a>
-		<span class="post-meta">(johnedchristensen.github.io)</span>
-	</dt>
-	<dd>Yes the images from the Webb telescope are beautiful, but direct comparisons like this really put it into perspective. And this shows the galaxy cluster as it was 4.6 billion years ago? I don't even know what to think about that.</dd>
-	<dt>
-		<a href="https://seandietrich.com/mendon-missouri/">Mendon, Missouri - Sean of the South</a>
-		<span class="post-meta">(seandietrich.com)</span>
-	</dt>
-	<dd>A short telling of how residents of a small town came together to help the victims of a rail road accident.</dd>
-</dl>
 
             
-            <p><a href="/2022/08/01/web-links-july-2022.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/06/2025-01-06-01JGWNE09CHYWKVJ26G5GE3A2Z.html">Jan 6, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Jun 30, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/06/30/web-links-june-2022.html">Web links - June 2022</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #B0AFB3, #D70202, #5F4A32, #AEB1B1, #D70203)"></div>
 
 
 
+            <p>1. Try to use Obsidian for everything.<br />2. Get overwhelmed.<br />3. Find a dedicated app to solve my need.<br />4. Start customizing things but can’t do everything.<br />5. Realize Obsidian can do exactly what I want.<br />6. Repeat.</p>
 
-            <dl>
-	<dt>
-		<a href="http://colinmorris.github.io/blog/compound-curse-words">Compound pejoratives on Reddit – from <i>buttface</i> to <i>wankpuffin</i></a>
-		<span class="post-meta">(colinmorris.github.io)</span>
-	</dt>
-	<dd>A thorough analysis of the distribution of derogatory terms used on Reddit. Fascinating and hilarious.</dd>
-	<dt>
-		<a href="https://nautil.us/my-out_of_body-experience-13509/">My Out-of-Body Experience - Nautilus</a>
-	<span class="post-meta">(nautil.us)</span>
-	</dt>
-	<dd>Reflections on the author's experience in a sensory deprivation tank.</dd>
-	<dt>
-		<a href="https://prompt.press/">prompt.press - AI generated artwork inspired by current events</a>
-		<span class="post-meta">(prompt.press)</span>
-	</dt>
-	<dd>The author mentioned that these are heavily curated, but nonetheless they are extremely compelling.</dd>
-	<dt>
-		<a href="https://www.grumpygamer.com/rtmi_trailer">Grumpy Gamer - Return to Monkey Island Trailer</a>
-		<span class="post-meta">(www.grumpygamer.com)</span>
-	</dt>
-	<dt>
-		<a href="https://serendeputy.com/about">Serendeputy: Newsfeed Engine for the open web</a>
-		<span class="post-meta">(serendeputy.com)</span>
-	</dt>
-	<dd>I've been thinking about a product like this for a very long time, so it must be a good idea. Depends heavily on who you follow though, so I would probably end up creating a separate account.</dd>
-	<dt>
-		<a href="https://www.sixthtone.com/news/1010653/she-spent-a-decade-writing-fake-russian-history.-wikipedia-just-noticed.-?source=channel_rising">She Spent a Decade Writing Fake Russian History. Wikipedia Just Noticed.</a>
-		<span class="post-meta">(www.sixthtone.com)</span>
-	</dt>
-</dl>
 
             
-            <p><a href="/2022/06/30/web-links-june-2022.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/05/2025-01-05-01JGSRVF9D0XK85ENY96G2FTTR.html">Jan 5, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">May 25, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/05/25/sorry-the-elevator-is-crowded.html">Sorry the Elevator is Crowded</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #03328B, white, #918D87, #A36B2A, #71706D)"></div>
 
 
 
+            <p>📝 The word “shampoo” is derived from the Hindi word cā̃pō (चाँपो, pronounced [tʃãːpoː]), itself derived from the Sanskrit root chapati (चपति), which means 'to press, knead, or soothe'.<br /><br /><a href="https://en.m.wikipedia.org/wiki/Shampoo" rel="nofollow noreferrer noopener" target="_blank">https://en.m.wikipedia.org/wiki/Shampoo</a></p>
 
-            <p>The elevator in our office building has a small LCD panel that shows information like the current floor, but when the total weight of passengers crosses a certain threshold it also adds a short note: “Sorry the elevator is crowded”.</p>
-
-<p>It struck me – of all possible features for an elevator display, how did they decide that they needed this one? It has no impact on the elevator’s function of moving people vertically. And a crowded elevator is not the elevator’s fault (although this is most likely just an example of Japan’s self-deprecating approach to hospitality). So why was this message deemed necessary?</p>
-
-<p>The answer, of course, is that when designing an elevator your customer is not the people riding the elevator. It’s the people <em>buying</em> the elevator, such as the owners of an office building. When they compare your elevator to competitors, “Ours will make your building more pleasant to visit” must be a key selling point.</p>
-
-<p>This was a little reminder for me that it’s crucial to identify your true customer because it will have an enormous effect on your product’s direction.</p>
 
             
-            <p><a href="/2022/05/25/sorry-the-elevator-is-crowded.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/04/2025-01-04-01JGQFF5VTJH3A6JPQ1W8Z2735.html">Jan 4, 2025</a>
+              
+            </div>
+            
           </div>
         </div>
       </li>
     
+      
       <li>
-        <div class="wrapper">
+        
+        <div class="wrapper toot">
+        
           
-          <span class="post-meta">Apr 12, 2022</span>
-          <h1>
-            <a class="post-link" href="/2022/04/12/procrastination-and-fear-of-failure.html">Procrastination and Fear of Failure</a>
-          </h1>
           
           <div class="post-content" itemprop="articleBody">
             
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #716E4E, #553320, #63639F, #B1B2B5, #CBB7A8)"></div>
 
 
 
+            <p>Pika Pulse is such a good idea! And applying each post’s custom theme (I’m assuming) is a really great look too. Makes me wish I had an account there too!<br /><br /><a href="https://pika.page/pulse" rel="nofollow noreferrer noopener" target="_blank">https://pika.page/pulse</a></p>
 
-            <p>I tend to procrastinate if I let myself, so I’ve tried my share of techniques to keep it in check. At some point, I read that a fear of failure can cause procrastination, and this really resonated with me. Realizing this has helped me understand where my urge to put things off is coming from.</p>
-
-<p>If I have a large task in front of me, my mind rushes through everything that needs to be done and affirms how difficult it will be. I imagine (mostly subconsciously) all the ways that my output will be less than ideal, and that is what keeps me from taking action.</p>
-
-<p>So as a quick mental technique, I recognize that this fear of failure is acting as a roadblock and tell myself that I’ll just bang out a first effort that will definitely be of poor quality. I know it will be bad, and that will be OK. Polishing that will be a task left for future me.</p>
-
-<p>In reality, it won’t be perfect, but neither will it be terrible. Polishing it into something that I can be proud of will not be as hard as it seems now, especially once I have a first draft to work with.</p>
 
             
-            <p><a href="/2022/04/12/procrastination-and-fear-of-failure.html#commento"></a></p>
+            
+            <div class="post-meta">
+              <a href="/2025/01/04/2025-01-04-01JGQ0DA7192XG7B8BX56KPS91.html">Jan 4, 2025</a>
+              
+            </div>
+            
+          </div>
+        </div>
+      </li>
+    
+      
+      <li>
+        
+        <div class="wrapper">
+        
+          
+          <h1>
+            <a class="post-link" href="/2025/01/03/rebranding-the-site-invisible-parade.html">Rebranding the site: Invisible Parade</a>
+          </h1>
+          
+          
+          <div class="post-content" itemprop="articleBody">
+            
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #6C1611, #184896, #463A37, #685352, #96B4D6)"></div>
+
+
+
+
+            <p>I first started this personal website just about 20 years ago. It began as a couple of html pages, and spent time as a Wordpress blog, a Tumblr page, and is now a static blog generated by Jekyll. Through that time, it had always just had my name, alexonsager.com. This year, I’m rebranding it to <strong>Invisible Parade</strong>.</p>
+
+<h2 id="being-online-then">Being online then</h2>
+
+<p>When I started this site I had just entered university, got my first MacBook, and was excited to become a full-fledged citizen of the internet. At the time, I thought it was cool to publish as much of yourself as possible. Tag yourself and your friends in the photos you take, scrobble the music you listen to, check in to the places you go, tweet your thoughts. Since I was broadcasting myself to the world, it made sense to put my name on my website. That’s how people would know me.</p>
+
+<p>At the same time though, <a href="https://daringfireball.net">Daring Fireball</a> was a cool site with the coolest name. <em>Daring Fireball</em> man, how do you top that?</p>
+
+<p>Envious, I found a site that generates random adjective + noun combinations and hoped for inspiration. The second or third result I got was “invisible parade,” and I immediately loved the oxymoron. The whole point of a parade is to be seen by all of the people. What then, is the point of an invisible parade?</p>
+
+<p>The name stuck in my head, and I think at one point I may have bought the .net. But I didn’t have anything to do with it, and eventually let it expire.</p>
+
+<h2 id="being-online-now">Being online now</h2>
+
+<p>It feels less in fashion to use your full name as a brand now. There is the risk of bad attention following you around, but also it’s just more useful to have a persona. There are literally a gazillion people online, so “hey I have a website” is not enough to make you interesting. You have to let people know people what you’re about, show some personality.</p>
+
+<p>My real-name domain feels like showing up to a costume party with a name tag that just says “Hi, my name is Alex”. It doesn’t feel fun anymore!</p>
+
+<h2 id="the-rebranding">The rebranding</h2>
+
+<p>On a whim I looked up the invisibleparade domain, and it was available. It felt right, so I nabbed it, and here we are. And it is kind of a perfect name for the site.</p>
+
+<p>I’m creating this parade of posts, if you will, and I’m putting in a real effort to make it interesting and nice to look at. But who’s even looking at it? What is the point of an invisible parade, or an invisible blog?</p>
+
+<p>Well, it’s fun! I like putting it together. And if anybody happens to stumble across it, I’ll be happy to show it off. So here’s to another 20 years of parading.</p>
+
+            
+            
+            <div class="post-meta">
+              <a href="/2025/01/03/rebranding-the-site-invisible-parade.html">Jan 3, 2025</a>
+              
+                <div class="comment-link"><a href="/2025/01/03/rebranding-the-site-invisible-parade.html#commento"></a></div>
+              
+            </div>
+            
           </div>
         </div>
       </li>

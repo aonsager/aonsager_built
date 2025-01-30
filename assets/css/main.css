@@ -327,61 +327,6 @@ pre > code {
   text-align: center;
 }
 
-.footer-heading {
-  font-size: 19.125px;
-  margin-bottom: 15px;
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  text-align: center;
-}
-.contact-list a,
-.social-media-list a {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: 15px;
-  padding-left: 15px;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (30px / 2));
-  width: calc(35% - 30px / 2);
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (30px / 2));
-  width: calc(20% - 30px / 2);
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (30px / 2));
-  width: calc(45% - 30px / 2);
-}
-
-@media screen and (max-width: 800px) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (30px / 2));
-    width: calc(50% - 30px / 2);
-  }
-  .footer-col-3 {
-    width: -webkit-calc(100% - (30px / 2));
-    width: calc(100% - 30px / 2);
-  }
-}
-@media screen and (max-width: 600px) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (30px / 2));
-    width: calc(100% - 30px / 2);
-  }
-}
 /**
  * Page content
  */
@@ -410,7 +355,7 @@ hr {
   margin-left: 0;
   list-style: none;
 }
-.post-list li.post {
+.post-list li .post {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -425,8 +370,7 @@ hr {
 .post-meta {
   font-size: 14.875px;
   color: #A9A9A9;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  text-align: right;
 }
 .post-meta a {
   color: #A9A9A9;
@@ -438,6 +382,7 @@ hr {
 .post-meta.link {
   margin-top: 0px;
   margin-bottom: 0px;
+  text-align: left;
 }
 
 .paginator {
@@ -468,6 +413,7 @@ hr {
 }
 
 .post-banner {
+  margin-top: 15px;
   margin-bottom: 30px;
   height: 3px;
   width: 100%;
@@ -505,7 +451,6 @@ hr {
 
 .post-tag {
   display: none;
-  /* display: inline-block; */
   padding: 2px 5px;
   margin-left: 5px;
   background-color: rgb(232.75, 232.75, 232.75);
@@ -612,15 +557,6 @@ form button {
   }
   .header-banner {
     margin-top: -45px;
-  }
-  .post-list li.toot .post-meta {
-    width: 120px;
-    float: left;
-    margin: 0px;
-  }
-  .post-list li.toot .post-content {
-    width: calc(100% - 120px);
-    float: right;
   }
 }
 @media (prefers-color-scheme: dark) {

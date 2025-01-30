@@ -99,17 +99,134 @@
           <header class="post-header">
           
             <h1>
+              <a class="post-link" href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Installing Python3 modules on Macs in 2024</a>
+            </h1>
+            
+            
+            
+            
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #AB0001, #AFAEAF, #B20001, #056B97, #B80000)"></div>
+
+
+
+
+          </header>
+          <div class="post-content" itemprop="articleBody">
+            <p>When trying to install python modules on a new Mac, I kept getting thwarted by this error:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: externally-managed-environment
+
+× This environment is externally managed
+╰─&gt; To <span class="nb">install </span>Python packages system-wide, try brew <span class="nb">install
+    </span>xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to <span class="nb">install </span>a non-brew-packaged Python package,
+    create a virtual environment using python3 <span class="nt">-m</span> venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
+    
+    If you wish to <span class="nb">install </span>a non-brew packaged Python application,
+    it may be easiest to use pipx <span class="nb">install </span>xyz, which will manage a
+    virtual environment <span class="k">for </span>you. Make sure you have pipx installed.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing <span class="nt">--break-system-packages</span><span class="nb">.</span>
+hint: See PEP 668 <span class="k">for </span>the detailed specification.
+</code></pre></div></div>
+
+<p>It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.</p>
+
+<h2 id="create-a-virtualenv-in-a-central-place-that-is-easy-to-access">Create a virtualenv in a central place that is easy to access</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv ~/.virtualenvs/python3
+<span class="nb">source</span> ~/.virtualenvs/python3/bin/activate
+pip <span class="nb">install </span>xyz
+</code></pre></div></div>
+
+<h2 id="use-this-virtualenv-whenever-i-run-the-script">Use this virtualenv whenever I run the script</h2>
+
+<p>By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.virtualenvs/python3/bin/python /path/to/my/script.py <span class="s2">"{query}"</span>
+</code></pre></div></div>
+
+<h2 id="bonus">Bonus</h2>
+
+<p>Add an alias to my <code class="language-plaintext highlighter-rouge">~/.zshrc</code> so that can just type <code class="language-plaintext highlighter-rouge">vpython /path/to/my/script.py</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">vpython</span><span class="o">=</span><span class="s1">'~/.virtualenvs/python3/bin/python'</span>
+</code></pre></div></div>
+
+            
+          </div>
+          <div class="post-meta">
+            <a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Nov 21, 2024</a>
+            
+            <!-- <div class="comment-link"><a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html#commento"></a></div> -->
+            
+          </div>
+      </li>
+      <hr />
+    
+      
+      
+      <li class="post">
+      
+          <header class="post-header">
+          
+            <h1>
+              <a class="post-link" href="/2022/12/02/web-links-november-2022.html">Web Links - November 2022</a>
+            </h1>
+            
+            
+            
+            
+<div class="post-banner" style="background-image:linear-gradient(-45deg, #84848B, #575C5D, #323233, #A29E9E, #1B1CF5)"></div>
+
+
+
+
+          </header>
+          <div class="post-content" itemprop="articleBody">
+            <dl>
+  <dt>
+    <a href="https://anlucas.neocities.org/88x31Buttons.html">A.N. Lucas's 88x31 button Collection</a>
+    <span class="post-meta">(anlucas.neocities.org)</span>
+  </dt>
+  <dd>A collection of classic web banner images.</dd>
+  <dt>
+    <a href="https://www.howtogeek.com/830179/how-to-run-stable-diffusion-on-your-pc-to-generate-ai-images/">How to Run Stable Diffusion on Your PC to Generate AI Images</a>
+    <span class="post-meta">(www.howtogeek.com)</span>
+  </dt>
+  <dd>For personal reference.</dd>
+  <dt>
+    <a href="https://www.youtube.com/watch?v=uL0atQFZzL8">If You Can't Answer These 6 Questions You Don't Have A Story - Glenn Gers</a>
+    <span class="post-meta">(www.youtube.com)</span>
+  </dt>
+  <dd>The essence of a story is a character trying to accomplish something while people or things get in their way. Every character (not just the main one) is trying to accomplish something, and narrative is born each time they collide and get bumped off track, like billiard balls.</dd>
+</dl>
+
+            
+          </div>
+          <div class="post-meta">
+            <a href="/2022/12/02/web-links-november-2022.html">Dec 2, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/12/02/web-links-november-2022.html#commento"></a></div> -->
+            
+          </div>
+      </li>
+      <hr />
+    
+      
+      
+      <li class="post">
+      
+          <header class="post-header">
+          
+            <h1>
               <a class="post-link" href="/2022/11/01/web-links-october-2022.html">Web Links - October 2022</a>
             </h1>
             
             
             
-            <div class="post-meta">
-              <a href="/2022/11/01/web-links-october-2022.html">Nov 1, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/11/01/web-links-october-2022.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #E45665, #AFAFB1, #2B2D4B, #909090, #8C020E)"></div>
 
@@ -153,6 +270,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/11/01/web-links-october-2022.html">Nov 1, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/11/01/web-links-october-2022.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -168,12 +291,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Oct 5, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #1A6BF0, #E2D0AA, #8E3303, #232457, #C8C6BE)"></div>
 
@@ -204,6 +321,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Oct 5, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -219,12 +342,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/10/01/web-links-september-2022.html">Oct 1, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/10/01/web-links-september-2022.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #615757, #B2B2B2, #E45665, #554D32, #626164)"></div>
 
@@ -273,6 +390,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/10/01/web-links-september-2022.html">Oct 1, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/10/01/web-links-september-2022.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -288,12 +411,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/09/01/web-links-august-2022.html">Sep 1, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/09/01/web-links-august-2022.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #F66C03, #020202, #0E5EB1, #9FA0A0, #A2A5E2)"></div>
 
@@ -322,6 +439,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/09/01/web-links-august-2022.html">Sep 1, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/09/01/web-links-august-2022.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -337,12 +460,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/08/01/web-links-july-2022.html">Aug 1, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/08/01/web-links-july-2022.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #996F55, #F66C03, #A09DA0, #628BB9, #555A5C)"></div>
 
@@ -371,6 +488,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/08/01/web-links-july-2022.html">Aug 1, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/08/01/web-links-july-2022.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -386,12 +509,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/06/30/web-links-june-2022.html">Jun 30, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/06/30/web-links-june-2022.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #B0AFB3, #D70202, #5F4A32, #AEB1B1, #D70203)"></div>
 
@@ -433,6 +550,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/06/30/web-links-june-2022.html">Jun 30, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/06/30/web-links-june-2022.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -448,12 +571,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/05/25/sorry-the-elevator-is-crowded.html">May 25, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/05/25/sorry-the-elevator-is-crowded.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #03328B, white, #918D87, #A36B2A, #71706D)"></div>
 
@@ -472,6 +589,12 @@
 
             
           </div>
+          <div class="post-meta">
+            <a href="/2022/05/25/sorry-the-elevator-is-crowded.html">May 25, 2022</a>
+            
+            <!-- <div class="comment-link"><a href="/2022/05/25/sorry-the-elevator-is-crowded.html#commento"></a></div> -->
+            
+          </div>
       </li>
       <hr />
     
@@ -487,12 +610,6 @@
             
             
             
-            <div class="post-meta">
-              <a href="/2022/04/12/procrastination-and-fear-of-failure.html">Apr 12, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/04/12/procrastination-and-fear-of-failure.html#commento"></a></div>
-              
-            </div>
             
 <div class="post-banner" style="background-image:linear-gradient(-45deg, #716E4E, #553320, #63639F, #B1B2B5, #CBB7A8)"></div>
 
@@ -511,80 +628,10 @@
 
             
           </div>
-      </li>
-      <hr />
-    
-      
-      
-      <li class="post">
-      
-          <header class="post-header">
-          
-            <h1>
-              <a class="post-link" href="/2022/04/11/music-of-the-city-an-art-project-idea.html">Music of the City - an Art Project Idea</a>
-            </h1>
+          <div class="post-meta">
+            <a href="/2022/04/12/procrastination-and-fear-of-failure.html">Apr 12, 2022</a>
             
-            
-            
-            <div class="post-meta">
-              <a href="/2022/04/11/music-of-the-city-an-art-project-idea.html">Apr 11, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/04/11/music-of-the-city-an-art-project-idea.html#commento"></a></div>
-              
-            </div>
-            
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #744933, #8D7550, #4A4C50, #ACB2B5, #AC8D77)"></div>
-
-
-
-
-          </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I’ve had an idea for a fun art project in my head for many years now, and I don’t see myself going through with it any time soon, so I’ll compromise by just writing about it.</p>
-
-<p>The idea is to photograph people (with permission) who are wearing headphones in the city. Their photo will be shown along with the song they happened to be listening to. It would be interesting to see if a viewer would see any correlation between a person’s visual appearance and their taste in music. The prompt “What song was playing right now” is much more interesting than “What is your favorite music,” and some people might think that I caught them at just the wrong time, making things more fun for me.</p>
-
-<p>Since the subjects will generally be preoccupied, I imagine I’d design a small pamphlet that quickly describes the project and hand that out to people who don’t look too busy.</p>
-
-<p>Maybe one day.</p>
-
-            
-          </div>
-      </li>
-      <hr />
-    
-      
-      
-      <li class="post">
-      
-          <header class="post-header">
-          
-            <h1>
-              <a class="post-link" href="/2022/02/10/urban-isolation.html">Urban Isolation - Skateboarding in an empty L.A.</a>
-            </h1>
-            
-            
-            
-              <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://vimeo.com/91085172">https://vimeo.com/91085172</a></span>
-              </div>
-            
-            <div class="post-meta">
-              <a href="/2022/02/10/urban-isolation.html">Feb 10, 2022</a>
-              
-              <div class="comment-link"><a href="/2022/02/10/urban-isolation.html#commento"></a></div>
-              
-            </div>
-            
-<div class="post-banner" style="background-image:linear-gradient(-45deg, #B0B0B0, #3DA935, #576D8D, #60645E, #4A4235)"></div>
-
-
-
-
-          </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>A very relaxing video by <a href="http://www.russellhoughten.com/">Russell Houghten</a> showing skateboarders riding around L.A. with all of the cars edited out. It’s executed wonderfully. How much effort goes into something like this?</p>
-
+            <!-- <div class="comment-link"><a href="/2022/04/12/procrastination-and-fear-of-failure.html#commento"></a></div> -->
             
           </div>
       </li>

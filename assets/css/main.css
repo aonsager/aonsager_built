@@ -342,6 +342,11 @@ pre > code {
   margin-top: 0px;
 }
 
+.toot .post-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 hr {
   border: none;
   background-color: rgb(232.75, 232.75, 232.75);
@@ -420,9 +425,6 @@ hr {
   opacity: 0.8;
 }
 
-.post-content.single {
-  padding-bottom: 30px;
-}
 .post-content a {
   word-wrap: break-word;
 }
@@ -442,8 +444,7 @@ hr {
   display: block;
   max-width: 100%;
 }
-.post-content .image-caption {
-  margin-top: -28px;
+.post-content figcaption {
   text-align: center;
   font-size: 13.6px;
   font-style: italic;

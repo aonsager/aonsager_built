@@ -70,6 +70,31 @@
     <li class="post">
       <header class="post-header">
           <h1>
+              <a class="post-link" href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html">Adguard was preventing sites from loading in Safari sometimes</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #9ABCF1, #ADD2B5, #D20602, #B1B1B0, #84B252)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy.</p>
+
+<p>I think I finally caught the culprit: Adguard’s network filtering.</p>
+
+<p>Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic.</p>
+
+<p>For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good!</p>
+
+<p>See Adguard’s documentation <a href="https://adguard.com/kb/adguard-for-mac/features/network/">here</a>.</p>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html">Dec 25, 2024</a>
+            <!-- <div class="comment-link"><a href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html#commento"></a></div> -->
+            </div>
+      </li>
+      <hr />
+    <li class="post">
+      <header class="post-header">
+          <h1>
               <a class="post-link" href="/2024/12/24/litestack-all-your-data-infrastructure.html">Litestack: All your data infrastructure</a>
             </h1>
             <div class="post-meta link"> 
@@ -427,39 +452,6 @@ pip <span class="nb">install </span>xyz
           <div class="post-meta">
             <a href="/2022/09/01/web-links-august-2022.html">Sep 1, 2022</a>
             <!-- <div class="comment-link"><a href="/2022/09/01/web-links-august-2022.html#commento"></a></div> -->
-            </div>
-      </li>
-      <hr />
-    <li class="post">
-      <header class="post-header">
-          <h1>
-              <a class="post-link" href="/2022/08/01/web-links-july-2022.html">Web links - July 2022</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #996F55, #F66C03, #A09DA0, #628BB9, #555A5C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <dl>
-	<dt>
-		<a href="https://edition.cnn.com/style/article/magic-mirror-cincinnati-art-museum-scn/index.html">Magic mirror': Hidden image revealed in reflection of centuries-old artifact at Cincinnati Art Museum</a>
-		<span class="post-meta">(edition.cnn.com)</span>
-	</dt>
-	<dd>A seemingly blank bronze mirror reflects an image of Buddha when shining a bright light onto it. Aside from how amazing it is that this was discovered, the craftsmanship is incredible.</dd>
-	<dt>
-		<a href="https://johnedchristensen.github.io/WebbCompare/">Compare Webb's Images to Hubble's</a>
-		<span class="post-meta">(johnedchristensen.github.io)</span>
-	</dt>
-	<dd>Yes the images from the Webb telescope are beautiful, but direct comparisons like this really put it into perspective. And this shows the galaxy cluster as it was 4.6 billion years ago? I don't even know what to think about that.</dd>
-	<dt>
-		<a href="https://seandietrich.com/mendon-missouri/">Mendon, Missouri - Sean of the South</a>
-		<span class="post-meta">(seandietrich.com)</span>
-	</dt>
-	<dd>A short telling of how residents of a small town came together to help the victims of a rail road accident.</dd>
-</dl>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2022/08/01/web-links-july-2022.html">Aug 1, 2022</a>
-            <!-- <div class="comment-link"><a href="/2022/08/01/web-links-july-2022.html#commento"></a></div> -->
             </div>
       </li>
       <hr />

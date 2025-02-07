@@ -67,6 +67,44 @@
     <div class="home wrapper">
   
   <ul class="post-list">
+    <li class="post">
+      <header class="post-header">
+          <h1>
+              <a class="post-link" href="/2025/02/07/crosspooter.html">CrossPooter - Poot your toots around the web</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #AA5B31, #5E2F1D, #A35B31, #1F2859, #A95B30)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <figure>
+  <img src="https://invisibleparade.com/assets/images/projects/crosspooter.jpeg" alt="}" class="center-image" />
+  <figcaption>CrossPooter logo, showing a smiling cartoon face among arrows branching away</figcaption>
+  </figure>
+
+<p>CrossPooter is a simple script for personal use, that reads the RSS feed of this website and posts the latest article to GoToSocial and Bluesky. It was inspired by <a href="https://echofeed.app">EchoFeed</a>, but I wanted to try my hand at making something similar myself.</p>
+
+<p>You can see the <a href="https://github.com/aonsager/crosspooter">source code here</a>.</p>
+
+<h2 id="features">Features</h2>
+
+<p>CrossPooter reads the RSS feed of this website and checks if the latest article has been posted yet. If not, it will grab the article’s OpenGraph tags to construct a post.</p>
+
+<p>The post will include a link to the article, the article’s title, and the article’s description. It will also attach an image if one is available.</p>
+
+<p>The script is inteded to be run via cron every hour or so. I’m assuming that I won’t be posting new articles faster than that, so the script only checks the latest article.</p>
+
+<h2 id="things-i-learned-building-this">Things I learned building this</h2>
+
+<p>Bluesky was very straightforward since I just used the <a href="https://atproto.blue/en/latest/">official python sdk</a>. GoToSocial probably would have worked with the <a href="https://mastodonpy.readthedocs.io/en/stable/">Maston library</a>, but the API was simple enough that I wanted to try just sending HTTP requests.</p>
+
+<p>I’m still very inexperienced when it comes to creating complex HTTP requests, so I stumbled a lot with setting the correct headers and formatting the data in the correct way. But it was a good exercise in reading source code and documentation, and now I have a stronger handle on how to do it.</p>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2025/02/07/crosspooter.html">Feb 7, 2025</a>
+            <!-- <div class="comment-link"><a href="/2025/02/07/crosspooter.html#commento"></a></div> -->
+            </div>
+      </li>
+      <hr />
     <li class="toot">
       <header class="post-header">
           </header>
@@ -237,19 +275,6 @@
           <div class="post-meta">
             <a href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html">Jan 28, 2025</a>
             <!-- <div class="comment-link"><a href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html#commento"></a></div> -->
-            </div>
-      </li>
-      <hr />
-    <li class="toot">
-      <header class="post-header">
-          </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I've added my pronouns to my profile.<br /><br />I hadn't before, because my pronouns weren't important to me. I've learned, though, that this is because I am privileged.<br /><br />For many people, their pronouns are very important. And, unfortunately, there are many who are openly antagonistic towards these people. So it's important for people like me to be openly supportive, to balance the scales if you will.<br /><br />"I support your rights to feel however you want to feel about yourself" feels like such a ridiculous thing to say. In a sane world we would never *need* to say that. But look around, guess what. We do need to say it, and we need to say it loudly. So I will.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/27/2025-01-27-01JJJRTG2PVW2HJSM6095HG5TR.html">Jan 27, 2025</a>
             </div>
       </li>
       <hr />

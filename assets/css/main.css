@@ -347,6 +347,12 @@ pre > code {
   padding-right: 30px;
 }
 
+.toot .gallery {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
 hr {
   border: none;
   background-color: rgb(232.75, 232.75, 232.75);

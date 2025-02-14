@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Squirrel - Archive webpages so I can find them again</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250210">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250214">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta content="Invisible Parade" property="og:site_name">
@@ -133,20 +133,30 @@ The problem with this was that it ended up using <em>lots</em> of CPU, and the a
 
 <h3 id="other-things-that-arent-needed-but-might-be-nice">Other things that aren’t needed but might be nice</h3>
 
-<p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
-
-<p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
+<ol>
+  <li>
+    <p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
+  </li>
+  <li>
+    <p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
 Would a database be more byte-efficient and make searching faster? Maybe. But since I’m not going to be saving millions of files, it probably will not make much of a difference.</p>
+  </li>
+</ol>
 
-<h2 id="based-on-the-above-my-solution">Based on the Above, My Solution</h2>
+<h2 id="based-on-the-above-my-solution">Based on the above, my solution</h2>
 
-<h3 id="1-put-any-webpage-i-want-to-save-into-a-special-bookmark-folder">1. Put any webpage I want to save into a special bookmark folder</h3>
+<h3 id="1-put-any-webpage-i-want-to-save-into-a-text-file">1. Put any webpage I want to save into a text file</h3>
 
-<p>There are easy keystrokes and workflows that exist for creating new bookmarks. Bookmarks are automatically synced across my iDevices.</p>
+<div class="callout">
+<div class="title">Update 2025/02/14</div>
+I wanted to use a folder in Safari bookmarks to save URLs since the OS already has handy hotkeys and utilities, but unfortunately editing the plist file by hand caused sync issues, so I gave up.
+</div>
 
-<h3 id="2-run-a-script-that-periodically-looks-at-the-bookmark-folder-and-processes-new-items">2. Run a script that periodically looks at the bookmark folder and processes new items</h3>
+<p>I set up a Shortcut to grab Safari’s URL and add it to a text file <code class="language-plaintext highlighter-rouge">urls.txt</code>, which lives on my iCloud drive.</p>
 
-<p>Setting a cron task to run this script once per day is fine. Bookmarks are saved as a plist file and can be parsed as normal XML. Items processed successfully are deleted from the folder.</p>
+<h3 id="2-run-a-script-that-periodically-looks-at-urlstxt-and-processes-new-items">2. Run a script that periodically looks at urls.txt and processes new items</h3>
+
+<p>Setting a cron task to run this script once per day is fine. The text file is wiped after each run, and URLs that failed for some reason are saved to a separate file.</p>
 
 <h3 id="3-access-the-url-to-save-the-title-and-article-text">3. Access the URL to save the title and article text</h3>
 

@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250210">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250214">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/page/5/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta content="Invisible Parade" property="og:site_name">
@@ -70,6 +70,36 @@
     <div class="home wrapper">
   
   <ul class="post-list">
+    <li class="post">
+      <header class="post-header">
+          <h1>
+              <a class="post-link" href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Obsidian iCloud sync between Mac and iPhone</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #1A6BF0, #E2D0AA, #8E3303, #232457, #C8C6BE)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>Just using iCloud sync has been pretty solid in my experience. I have two Macs and one iPhone that share a single vault, and I’ve had no major issues… except for one.</p>
+
+<p>Because the entire Obsidian folder lives inside of iCloud, the <code class="language-plaintext highlighter-rouge">.obsidian</code> settings folder is also synced. Usually a good thing, except that the multi-pane view I have setup for desktop keeps getting pushed onto mobile. Because the panes all become tiny, and because Obsidian reverts to this view every time I use the app on desktop again, Obsidian basically became unusable on my phone.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>The strategy is to force the desktop and mobile versions to use different config files. I can create a desktop-specific config folder and tell my two desktops to look at that one instead of the default.</p>
+
+
+            <p>
+  <a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Continue reading &rarr;</a>
+  <!-- <span class="post-meta">
+    (2 mins) 
+    </span> -->
+</p>
+</div>
+          <div class="post-meta">
+            <a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html">Oct 5, 2022</a>
+            <!-- <div class="comment-link"><a href="/2022/10/05/obsidian-icloud-sync-between-mac-and-iphone.html#commento"></a></div> -->
+            </div>
+      </li>
+      <hr />
     <li class="post">
       <header class="post-header">
           <h1>
@@ -344,30 +374,6 @@
           <div class="post-meta">
             <a href="/2022/02/07/a-fathers-bookshelf.html">Feb 7, 2022</a>
             <!-- <div class="comment-link"><a href="/2022/02/07/a-fathers-bookshelf.html#commento"></a></div> -->
-            </div>
-      </li>
-      <hr />
-    <li class="post">
-      <header class="post-header">
-          <h1>
-              <a class="post-link" href="/2022/01/31/reimagining-chess-with-alphazero.html">Reimagining Chess with AlphaZero</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://cacm.acm.org/magazines/2022/2/258230-reimagining-chess-with-alphazero/fulltext">https://cacm.acm.org/magazines/2022/2/258230-reimagining-chess-with-alphazero/fulltext</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #00000000, #5E5857, #5F5C5C, #394352, #5F5B5B)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
-  <p>Modern chess is the culmination of centuries of experience, as well as an evolutionary sequence of rule adjustments from its inception in the 6th century to the modern rules we know today. While classical chess still captivates the minds of millions of players worldwide, the game is anything but static. Many variants have been proposed and played over the years by enthusiasts and theorists. They continue the evolutionary cycle by altering the board, piece placement, or the rules—offering players “something subtle, sparkling, or amusing which cannot be done in ordinary chess.”</p>
-</blockquote>
-
-<p>Using AlphaZero to evaluate modified rules, to see which would be the most productive is a really interesting application of the AI. You can evaluate beforehand whether a certain rule change would make the game less or more balanced.</p>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2022/01/31/reimagining-chess-with-alphazero.html">Jan 31, 2022</a>
-            <!-- <div class="comment-link"><a href="/2022/01/31/reimagining-chess-with-alphazero.html#commento"></a></div> -->
             </div>
       </li>
       <hr />

@@ -256,6 +256,14 @@ pre > code {
   display: block;
 }
 
+.right {
+  text-align: right;
+}
+
+pre {
+  font-size: 0.8em;
+}
+
 /**
  * Site header
  */
@@ -501,6 +509,13 @@ table.archive-list td {
   padding: 0px;
 }
 
+table.slashes td {
+  padding: 15px;
+}
+table.slashes h2, table.slashes p {
+  margin-bottom: 0px;
+}
+
 .date-text {
   display: inline-block;
   min-width: 60px;
@@ -541,6 +556,12 @@ form button {
 }
 .grid .grid-item {
   margin-bottom: 5px;
+}
+
+.indent {
+  border-left: 1px solid rgb(232.75, 232.75, 232.75);
+  padding-left: 30px;
+  margin-bottom: 30px;
 }
 
 @media (min-width: 480px) {

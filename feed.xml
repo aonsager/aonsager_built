@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://invisibleparade.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisibleparade.com/" rel="alternate" type="text/html" /><updated>2025-02-12T13:53:07+09:00</updated><id>https://invisibleparade.com/feed.xml</id><title type="html">Invisible Parade</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">Katamari Damacy postmortem</title><link href="https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem.html" rel="alternate" type="text/html" title="Katamari Damacy postmortem" /><link href="https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-" rel="related" type="text/html" title="https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-" /><published>2025-02-12T11:48:00+09:00</published><updated>2025-02-12T11:48:00+09:00</updated><id>https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem</id><content type="html" xml:base="https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem.html"><![CDATA[<p>By Game Developer Magazine:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://invisibleparade.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisibleparade.com/" rel="alternate" type="text/html" /><updated>2025-02-14T20:26:30+09:00</updated><id>https://invisibleparade.com/feed.xml</id><title type="html">Invisible Parade</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">What I’m doing /now</title><link href="https://invisibleparade.com/2025/02/13/what-im-doing-now.html" rel="alternate" type="text/html" title="What I’m doing /now" /><published>2025-02-13T14:34:00+09:00</published><updated>2025-02-13T14:34:00+09:00</updated><id>https://invisibleparade.com/2025/02/13/what-im-doing-now</id><content type="html" xml:base="https://invisibleparade.com/2025/02/13/what-im-doing-now.html"><![CDATA[<p>Nothing much has changed for us in these past few years, and that is by design. Work is stable, life is stable, everybody is happy. I am very thankful for that.</p>
+
+<p>Last year I set up <a href="https://gotosocial.org">GoToSocial</a> on my personal server to join the Fediverse, and that has been a lot of fun. It’s nice to be social on the internet again. I think this has helped motivate me to update this site more, and I’m having a lot of fun making little updates to the site as well.</p>
+
+<p>AI tools have been super useful for programming as a hobby. It has made it so much easier to finish and ship my little projects, and I have already developed a slew of little utilities that I use often. I’m still writing words by hand though, because I think being able to organize my thoughts into communicative sentences is such an important skill.</p>
+
+<p>I also started keeping a physical journal at the beginning of this year, and one month is the longest I have ever kept up the habit so I am hopeful that it will continue. I had always admired people who keep physical journals; I thought it was a wonderful habit. I never could get into it though, and had resigned myself to thinking that I just wasn’t that kind of person. But my wife convinced me that if that is the kind of person I <em>want</em> to be, then it’s worth putting in the effort to make the change. So far, I am really enjoying it. I’m using the most simple interpretation of <a href="https://bulletjournal.com">Bullet Journal</a>. It’s turning to be a super helpful framework to guide the kinds of information I should keep, and the format for recording it.</p>]]></content><author><name></name></author><category term="parenting" /><category term="preschool" /><category term="technology" /><category term="hobbies" /><category term="journaling" /><summary type="html"><![CDATA[Nothing much has changed for us in these past few years, and that is by design. Work is stable, life is stable, everybody is happy. I am very thankful for that. Last year I set up GoToSocial on my personal server to join the Fediverse, and that has been a lot of fun. It’s nice to be social on the internet again. I think this has helped motivate me to update this site more, and I’m having a lot of fun making little updates to the site as well. AI tools have been super useful for programming as a hobby. It has made it so much easier to finish and ship my little projects, and I have already developed a slew of little utilities that I use often. I’m still writing words by hand though, because I think being able to organize my thoughts into communicative sentences is such an important skill. I also started keeping a physical journal at the beginning of this year, and one month is the longest I have ever kept up the habit so I am hopeful that it will continue. I had always admired people who keep physical journals; I thought it was a wonderful habit. I never could get into it though, and had resigned myself to thinking that I just wasn’t that kind of person. But my wife convinced me that if that is the kind of person I want to be, then it’s worth putting in the effort to make the change. So far, I am really enjoying it. I’m using the most simple interpretation of Bullet Journal. It’s turning to be a super helpful framework to guide the kinds of information I should keep, and the format for recording it.]]></summary></entry><entry><title type="html">Katamari Damacy postmortem</title><link href="https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem.html" rel="alternate" type="text/html" title="Katamari Damacy postmortem" /><link href="https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-" rel="related" type="text/html" title="https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-" /><published>2025-02-12T11:48:00+09:00</published><updated>2025-02-12T11:48:00+09:00</updated><id>https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem</id><content type="html" xml:base="https://invisibleparade.com/2025/02/12/katamari-damacy-postmortem.html"><![CDATA[<p>By Game Developer Magazine:</p>
 
 <blockquote>
   <p>We recently received a request to publish the Katamari Damacy postmortem from the December 2004 issue of Game Developer. It has been posted here in full for the first time in 2024 to celebrate the game’s 20 year anniversary. Please enjoy.</p>
@@ -144,20 +150,30 @@ The problem with this was that it ended up using <em>lots</em> of CPU, and the a
 
 <h3 id="other-things-that-arent-needed-but-might-be-nice">Other things that aren’t needed but might be nice</h3>
 
-<p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
-
-<p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
+<ol>
+  <li>
+    <p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
+  </li>
+  <li>
+    <p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
 Would a database be more byte-efficient and make searching faster? Maybe. But since I’m not going to be saving millions of files, it probably will not make much of a difference.</p>
+  </li>
+</ol>
 
-<h2 id="based-on-the-above-my-solution">Based on the Above, My Solution</h2>
+<h2 id="based-on-the-above-my-solution">Based on the above, my solution</h2>
 
-<h3 id="1-put-any-webpage-i-want-to-save-into-a-special-bookmark-folder">1. Put any webpage I want to save into a special bookmark folder</h3>
+<h3 id="1-put-any-webpage-i-want-to-save-into-a-text-file">1. Put any webpage I want to save into a text file</h3>
 
-<p>There are easy keystrokes and workflows that exist for creating new bookmarks. Bookmarks are automatically synced across my iDevices.</p>
+<div class="callout">
+<div class="title">Update 2025/02/14</div>
+I wanted to use a folder in Safari bookmarks to save URLs since the OS already has handy hotkeys and utilities, but unfortunately editing the plist file by hand caused sync issues, so I gave up.
+</div>
 
-<h3 id="2-run-a-script-that-periodically-looks-at-the-bookmark-folder-and-processes-new-items">2. Run a script that periodically looks at the bookmark folder and processes new items</h3>
+<p>I set up a Shortcut to grab Safari’s URL and add it to a text file <code class="language-plaintext highlighter-rouge">urls.txt</code>, which lives on my iCloud drive.</p>
 
-<p>Setting a cron task to run this script once per day is fine. Bookmarks are saved as a plist file and can be parsed as normal XML. Items processed successfully are deleted from the folder.</p>
+<h3 id="2-run-a-script-that-periodically-looks-at-urlstxt-and-processes-new-items">2. Run a script that periodically looks at urls.txt and processes new items</h3>
+
+<p>Setting a cron task to run this script once per day is fine. The text file is wiped after each run, and URLs that failed for some reason are saved to a separate file.</p>
 
 <h3 id="3-access-the-url-to-save-the-title-and-article-text">3. Access the URL to save the title and article text</h3>
 
@@ -231,72 +247,4 @@ Would a database be more byte-efficient and make searching faster? Maybe. But si
 
 <p>I’m creating this parade of posts, if you will, and I’m putting in a real effort to make it interesting and nice to look at. But who’s even looking at it? What is the point of an invisible parade, or an invisible blog?</p>
 
-<p>Well, it’s fun! I like putting it together. And if anybody happens to stumble across it, I’ll be happy to show it off. So here’s to another 20 years of parading.</p>]]></content><author><name></name></author><category term="personal" /><category term="branding" /><category term="rebranding" /><category term="online" /><category term="nostalgia" /><summary type="html"><![CDATA[I first started this personal website just about 20 years ago. It began as a couple of html pages, and spent time as a Wordpress blog, a Tumblr page, and is now a static blog generated by Jekyll. Through that time, it had always just had my name, alexonsager.com. This year, I’m rebranding it to Invisible Parade. Being online then When I started this site I had just entered university, got my first MacBook, and was excited to become a full-fledged citizen of the internet. At the time, I thought it was cool to publish as much of yourself as possible. Tag yourself and your friends in the photos you take, scrobble the music you listen to, check in to the places you go, tweet your thoughts. Since I was broadcasting myself to the world, it made sense to put my name on my website. That’s how people would know me. At the same time though, Daring Fireball was a cool site with the coolest name. Daring Fireball man, how do you top that? Envious, I found a site that generates random adjective + noun combinations and hoped for inspiration. The second or third result I got was “invisible parade,” and I immediately loved the oxymoron. The whole point of a parade is to be seen by all of the people. What then, is the point of an invisible parade? The name stuck in my head, and I think at one point I may have bought the .net. But I didn’t have anything to do with it, and eventually let it expire. Being online now It feels less in fashion to use your full name as a brand now. There is the risk of bad attention following you around, but also it’s just more useful to have a persona. There are literally a gazillion people online, so “hey I have a website” is not enough to make you interesting. You have to let people know people what you’re about, show some personality. My real-name domain feels like showing up to a costume party with a name tag that just says “Hi, my name is Alex”. It doesn’t feel fun anymore! The rebranding On a whim I looked up the invisibleparade domain, and it was available. It felt right, so I nabbed it, and here we are. And it is kind of a perfect name for the site. I’m creating this parade of posts, if you will, and I’m putting in a real effort to make it interesting and nice to look at. But who’s even looking at it? What is the point of an invisible parade, or an invisible blog? Well, it’s fun! I like putting it together. And if anybody happens to stumble across it, I’ll be happy to show it off. So here’s to another 20 years of parading.]]></summary></entry><entry><title type="html">Installing GoToSocial on Coolify</title><link href="https://invisibleparade.com/2024/12/27/installing-gotosocial-on-coolify.html" rel="alternate" type="text/html" title="Installing GoToSocial on Coolify" /><published>2024-12-27T00:00:00+09:00</published><updated>2024-12-27T00:00:00+09:00</updated><id>https://invisibleparade.com/2024/12/27/installing-gotosocial-on-coolify</id><content type="html" xml:base="https://invisibleparade.com/2024/12/27/installing-gotosocial-on-coolify.html"><![CDATA[<p>Following up to my <a href="/2024/12/02/i-want-to-love-mastodon.html">earlier post about the fediverse</a>, I discovered <a href="https://gotosocial.org">GoToSocial</a>. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very <a href="https://docs.gotosocial.org/en/latest/getting_started/#server-vps">lightweight</a>: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold!</p>
-
-<p>This would let me set up my own single-user server, which solves all of my misgivings about Mastodon.</p>
-
-<div class="callout">
-<div class="title">Disclaimer</div>
-I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here.<br />
-Please take my experience with a grain of salt, and correct me if you can.
-</div>
-
-<p>I have a VPS with <a href="https://coolify.io">Coolify</a> to manage the multiple apps I have running, and all things considered it makes things very easy.<br />
-I used a docker-compose file to deploy GoToSocial, and their <a href="https://raw.githubusercontent.com/superseriousbusiness/gotosocial/main/example/docker-compose/docker-compose.yaml">example file</a> was almost perfect as-is.</p>
-
-<!-- more -->
-
-<h1 id="port-settings">Port settings</h1>
-
-<p>Coolify acts as a reverse proxy, so I used that part of the configuration:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
-  <span class="na">gotosocial</span><span class="pi">:</span>
-  <span class="s">...</span>
-    <span class="s">ports</span><span class="err">:</span>
-      <span class="c1"># - "443:8080"</span>
-      <span class="c1">## For letsencrypt:</span>
-      <span class="c1">#- "80:80"</span>
-      <span class="c1">## For reverse proxy setups:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">127.0.0.1:8002:8080"</span>
-</code></pre></div></div>
-
-<p>8002 was just an open port that I chose, and Coolify is smart enough to use that port to route traffic from my GoToSocial domain.</p>
-
-<h1 id="file-permissions">File permissions</h1>
-
-<p><a href="https://rknight.me/blog/installing-gotosocial-on-coolify/">Robb Knight’s blog post</a> showed me how to fix the sqlite database being unable to load because of a permissions issue. I had a similar issue with the Wazero compilation cache directory not being created, but I ended up just commenting that line out because it works without.</p>
-
-<h1 id="shooting-myself-in-the-foot">Shooting myself in the foot</h1>
-
-<p>I knew I had to mount a volume to make the database persist across redeploys and not be wiped fresh every time. <a href="https://coolify.io/docs/knowledge-base/persistent-storage">Coolify’s documentation</a> made it very clear,</p>
-
-<blockquote>
-  <p>The base directory inside the container is /app.
-So if you need to store your files under storage directory, you need to define /app/storage as the destination path.</p>
-</blockquote>
-
-<p>So, I changed the settings to make sure that things were stored under <code class="language-plaintext highlighter-rouge">/app</code></p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
-  <span class="na">gotosocial</span><span class="pi">:</span>
-    <span class="s">...</span>
-    <span class="s">environment</span><span class="err">:</span>
-      <span class="s">...</span>
-      <span class="s">GTS_DB_ADDRESS</span><span class="err">:</span> <span class="s">/app/storage/sqlite.db</span>
-    <span class="s">volumes</span><span class="err">:</span>
-      <span class="pi">-</span> <span class="s">~/gotosocial/data:/app/storage</span>
-</code></pre></div></div>
-
-<p>Which worked, except!<br />
-I hadn’t realized that media storage also defaulted to the same (first) <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> directory. Since this directory was no longer being bound, it was wiped clean after every redeploy.
-Remote media was fine because it could be fetched again, but images I uploaded were lost.</p>
-
-<p>I poked around in the terminal and saw that both <code class="language-plaintext highlighter-rouge">/app/storage</code> and <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> were being created and used with no issues, so I just switched the database address back to the default <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code>… and everything worked as expected.</p>
-
-<p>So, I don’t quite understand what the Coolify docs were trying to tell me.</p>
-
-<h1 id="end">End</h1>
-
-<p>Things seem to be working fine now, and I’m using mostly <a href="http://semaphore.social">Semaphore</a> to interact with the instance.<br />
-You can follow me <a href="https://gts.invisibleparade.com/@alex">here!</a></p>]]></content><author><name></name></author><category term="fediverse" /><category term="gotosocial" /><category term="mastodon" /><category term="server" /><category term="coolify" /><summary type="html"><![CDATA[Following up to my earlier post about the fediverse, I discovered GoToSocial. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very lightweight: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold! This would let me set up my own single-user server, which solves all of my misgivings about Mastodon. Disclaimer I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here. Please take my experience with a grain of salt, and correct me if you can. I have a VPS with Coolify to manage the multiple apps I have running, and all things considered it makes things very easy. I used a docker-compose file to deploy GoToSocial, and their example file was almost perfect as-is.]]></summary></entry></feed>
+<p>Well, it’s fun! I like putting it together. And if anybody happens to stumble across it, I’ll be happy to show it off. So here’s to another 20 years of parading.</p>]]></content><author><name></name></author><category term="personal" /><category term="branding" /><category term="rebranding" /><category term="online" /><category term="nostalgia" /><summary type="html"><![CDATA[I first started this personal website just about 20 years ago. It began as a couple of html pages, and spent time as a Wordpress blog, a Tumblr page, and is now a static blog generated by Jekyll. Through that time, it had always just had my name, alexonsager.com. This year, I’m rebranding it to Invisible Parade. Being online then When I started this site I had just entered university, got my first MacBook, and was excited to become a full-fledged citizen of the internet. At the time, I thought it was cool to publish as much of yourself as possible. Tag yourself and your friends in the photos you take, scrobble the music you listen to, check in to the places you go, tweet your thoughts. Since I was broadcasting myself to the world, it made sense to put my name on my website. That’s how people would know me. At the same time though, Daring Fireball was a cool site with the coolest name. Daring Fireball man, how do you top that? Envious, I found a site that generates random adjective + noun combinations and hoped for inspiration. The second or third result I got was “invisible parade,” and I immediately loved the oxymoron. The whole point of a parade is to be seen by all of the people. What then, is the point of an invisible parade? The name stuck in my head, and I think at one point I may have bought the .net. But I didn’t have anything to do with it, and eventually let it expire. Being online now It feels less in fashion to use your full name as a brand now. There is the risk of bad attention following you around, but also it’s just more useful to have a persona. There are literally a gazillion people online, so “hey I have a website” is not enough to make you interesting. You have to let people know people what you’re about, show some personality. My real-name domain feels like showing up to a costume party with a name tag that just says “Hi, my name is Alex”. It doesn’t feel fun anymore! The rebranding On a whim I looked up the invisibleparade domain, and it was available. It felt right, so I nabbed it, and here we are. And it is kind of a perfect name for the site. I’m creating this parade of posts, if you will, and I’m putting in a real effort to make it interesting and nice to look at. But who’s even looking at it? What is the point of an invisible parade, or an invisible blog? Well, it’s fun! I like putting it together. And if anybody happens to stumble across it, I’ll be happy to show it off. So here’s to another 20 years of parading.]]></summary></entry></feed>

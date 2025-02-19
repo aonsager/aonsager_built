@@ -370,6 +370,11 @@ hr {
   clear: both;
 }
 
+hr.large {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -424,6 +429,13 @@ hr {
 /**
  * Posts
  */
+h1.short, h2.short, h3.short {
+  margin: 0px;
+}
+h1.short a, h2.short a, h3.short a {
+  color: #333;
+}
+
 .post-title, .post-link {
   font-size: 34px;
   line-height: 1;
@@ -437,6 +449,11 @@ hr {
   height: 3px;
   width: 100%;
   opacity: 0.8;
+}
+
+.post-banner.short {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .post-content a {
@@ -492,7 +509,7 @@ p.archive-categories {
 }
 p.archive-categories a {
   text-decoration: none;
-  color: black;
+  color: #333;
   display: inline-block;
   padding: 2px 15px;
   margin: 0px 5px 10px 5px;
@@ -508,12 +525,15 @@ table.archive-list {
 table.archive-list td {
   padding: 0px;
 }
+table.archive-list h3 {
+  margin: 0px;
+}
 
 table.slashes td {
-  padding: 15px;
+  padding-right: 15px;
 }
 table.slashes h2, table.slashes p {
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
 .date-text {

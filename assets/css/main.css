@@ -379,7 +379,7 @@ hr.large {
   margin-left: 0;
   list-style: none;
 }
-.post-list li .post {
+.post-list li.post {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -479,6 +479,10 @@ h1.short a, h2.short a, h3.short a {
   text-align: center;
   font-size: 13.6px;
   font-style: italic;
+}
+
+p.short {
+  margin-bottom: 15px;
 }
 
 .post-tag {

@@ -5,14 +5,14 @@
   font-weight: 500;
   src: local("Ostrich Sans Rounded"), url("https://invisibleparade.com/assets/images/OstrichSansRoundedMedium.woff") format("woff");
 }
-.wrapper {
+.wrapper, .wide-wrapper {
   *zoom: 1;
 }
-.wrapper:before, .wrapper:after {
+.wrapper:before, .wide-wrapper:before, .wrapper:after, .wide-wrapper:after {
   content: " ";
   display: table;
 }
-.wrapper:after {
+.wrapper:after, .wide-wrapper:after {
   clear: both;
 }
 
@@ -45,7 +45,7 @@ body {
   padding: 15px;
   margin-bottom: 30px;
   background-color: rgb(232.75, 232.75, 232.75);
-  color: rgb(105.25, 105.25, 105.25);
+  color: #333;
   font-size: 0.9em;
   font-style: italic;
 }
@@ -185,10 +185,42 @@ pre > code {
   }
 }
 
+.wide-wrapper {
+  max-width: -webkit-calc(1200px - (30px * 2));
+  max-width: calc(1200px - 30px * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+@media screen and (max-width: 800px) {
+  .wide-wrapper {
+    max-width: -webkit-calc(1200px - (30px));
+    max-width: calc(1200px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.responsive-flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: row;
+}
+.responsive-flex-container > div {
+  flex-grow: 1;
+}
+@media screen and (max-width: 800px) {
+  .responsive-flex-container {
+    flex-direction: column;
+  }
+}
+
 /**
  * Clearfix
  */
-.wrapper:after {
+.wrapper:after, .wide-wrapper:after {
   content: "";
   display: table;
   clear: both;
@@ -410,20 +442,45 @@ hr.large {
 }
 
 .paginator {
-  float: left;
+  display: flex;
   width: 100%;
+  gap: 30px;
+  flex-direction: row;
+  margin-top: 60px;
 }
 .paginator .next-link {
-  float: right;
-  margin-right: 30px;
+  order: 3;
+  flex: 1 1 0px;
+  text-align: right;
 }
 .paginator .prev-link {
-  float: left;
-  margin-left: 30px;
+  order: 1;
+  flex: 1 1 0px;
+  text-align: left;
+}
+.paginator .archive-link {
+  order: 2;
+  flex: 1 1 0px;
+  text-align: center;
 }
 
 .comment-link {
   float: right;
+}
+
+.post-list-wrapper {
+  display: inline-block;
+}
+.post-list-wrapper a {
+  color: #333;
+}
+
+.post-list-child {
+  display: flex;
+}
+.post-list-child div, .post-list-child p {
+  flex-grow: 1;
+  width: 0;
 }
 
 /**
@@ -453,7 +510,7 @@ h1.short a, h2.short a, h3.short a {
 
 .post-banner.short {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
 .post-content a {

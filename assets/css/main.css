@@ -53,7 +53,10 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0px;
+}
+
 p, blockquote, pre,
 ul, ol, dl, figure {
   margin-bottom: 30px;
@@ -383,8 +386,16 @@ pre {
 }
 
 .toot .post-content {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 60px;
+  position: relative;
+}
+.toot .post-content::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+  content: url("/assets/images/chat.png");
 }
 
 .toot .gallery {
@@ -642,6 +653,7 @@ form button {
 .indent {
   border-left: 1px solid rgb(232.75, 232.75, 232.75);
   padding-left: 30px;
+  margin-top: 15px;
   margin-bottom: 30px;
 }
 
@@ -694,6 +706,9 @@ form button {
     color: #c8c4bc;
   }
   p.archive-categories a {
+    color: #c8c4bc;
+  }
+  .post-list-wrapper a {
     color: #c8c4bc;
   }
 }

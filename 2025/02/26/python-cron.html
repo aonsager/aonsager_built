@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python script failing via cron</title>
+  <meta name="description" content="Debugging a Python script that silently failed only when executed via cron.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/2025/02/26/python-cron.html">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Python script failing via cron" property="og:title">
+<meta content="article" property="og:type">
+<meta content="Debugging a Python script that silently failed only when executed via cron." property="og:description">
+<meta content="https://invisibleparade.com/2025/02/26/python-cron.html" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="wrapper" style="position:relative;">
+    <a class="site-title" href="/">
+      <div class="logo-container">
+        <div class="full" style="float:left;">
+          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
+          </svg>
+        </div>
+        <div class="compact" style="float:left;">
+          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
+          </svg>
+        </div>
+        <div style="float:left;">
+          Invisible Parade
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="header-banner"></div>
+  <div class="wrapper">
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/about/">About</a>
+      <a class="page-link" href="/posts/">Posts</a>
+      <a class="page-link" href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1>
+        <a class="post-link" href="/2025/02/26/python-cron.html">Python script failing via cron</a>
+      </h1>
+      <div class="post-banner" style="background-image:linear-gradient(-45deg, #080808, #595A5A, #777777, #452D39, #4D4A54)"></div>
+</header>
+    <div class="post-content single" itemprop="articleBody">
+      <h2 id="the-issue">The issue</h2>
+
+<p>I had setup a cron task to run my <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Squirrel Archiver</a> script once per day, but for some reason the task was not executing. Nothing, including any errors, was showing up in any logs. At first I thought there was something wrong with my crontab, but other scripts set up to run in the same way were running without issue.</p>
+
+<p>Copying the commands in crontab to the terminal and running it manually worked. It was only when cron was triggering the run that it failed.</p>
+
+<p>Just to be sure, I changed my script to just <code class="language-plaintext highlighter-rouge">print('hey')</code>, and this worked! So there must have been something wrong inside the script, and I started the tried and true debugging process of <em>deleting chunks of code until something works</em>.</p>
+
+<p>Side note: Since the script had to run via cron, while I was debugging it was set to run once per minute on the dot. I had to rush to make changes in time, but I also had to wait to see results, which made for an interesting experience.</p>
+
+<h2 id="the-culprit">The culprit</h2>
+
+<p>I had been declaring <code class="language-plaintext highlighter-rouge">openai_client = OpenAI()</code> as a global variable, outside of any function. This worked fine when running the script manually, but when cron triggered it, it failed silently.</p>
+
+<p>“<em>Why?</em>”<br />
+I have no idea.</p>
+
+<p>“<em>Is initializing objects outside of functions commonly known to be a bad practice?</em>”<br />
+Probably.</p>
+
+<p>I wish I knew more about the reasons, but moving the declaration inside a function fixed the issue.</p>
+
+<p>So, maybe to many it is obvious that “<em>yes of course you shouldn’t do that</em>”, but I’m recording it here in case anybody else out there is like me.</p>
+
+    </div>
+    <div class="post-meta">
+      Feb 26, 2025
+    </div>
+    <div class="post-tag">cron</div>
+    <div class="post-tag">debugging</div>
+    <div class="post-tag">python</div>
+    <div class="post-tag">scripting</div>
+    <div class="post-tag">bestpractices</div>
+    <hr />
+    <div class="post-related">
+        <h4>Related Posts</h4>
+<ul class="archive-list">
+<li><a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Installing Python3 modules on Macs in 2024</a></li>
+      </ul></div>
+    <hr />
+    <div class="post-comments">
+        <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrapper">
+    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

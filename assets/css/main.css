@@ -398,7 +398,7 @@ pre {
   content: url("/assets/images/chat.png");
 }
 
-.toot .gallery {
+.gallery {
   display: flex;
   gap: 15px;
   margin-bottom: 30px;

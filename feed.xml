@@ -1,4 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://invisibleparade.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisibleparade.com/" rel="alternate" type="text/html" /><updated>2025-03-03T15:56:48+09:00</updated><id>https://invisibleparade.com/feed.xml</id><title type="html">Invisible Parade</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">Python script failing via cron</title><link href="https://invisibleparade.com/2025/02/26/python-cron.html" rel="alternate" type="text/html" title="Python script failing via cron" /><published>2025-02-26T15:11:00+09:00</published><updated>2025-02-26T15:11:00+09:00</updated><id>https://invisibleparade.com/2025/02/26/python-cron</id><content type="html" xml:base="https://invisibleparade.com/2025/02/26/python-cron.html"><![CDATA[<h2 id="the-issue">The issue</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://invisibleparade.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://invisibleparade.com/" rel="alternate" type="text/html" /><updated>2025-03-24T20:58:21+09:00</updated><id>https://invisibleparade.com/feed.xml</id><title type="html">Invisible Parade</title><subtitle>My personal webpage and blog.</subtitle><entry><title type="html">The Photo Composition Challenge</title><link href="https://invisibleparade.com/2025/03/24/the-compo-challenge.html" rel="alternate" type="text/html" title="The Photo Composition Challenge" /><published>2025-03-24T20:56:00+09:00</published><updated>2025-03-24T20:56:00+09:00</updated><id>https://invisibleparade.com/2025/03/24/the-compo-challenge</id><content type="html" xml:base="https://invisibleparade.com/2025/03/24/the-compo-challenge.html"><![CDATA[<p>I am a mediocre photographer at best, but of course I want to improve. When I saw that <a href="https://social.lol/@hiro">@hiro</a> was putting together 5-week challenge to experiment with various compositional techniques and share our photos, I had to join.</p>
+
+<p>I don’t have fancy gear, or a lot of time to go hunting for photos, so almost all of my shots were scenes from my daily life, taken with an iPhone. I realized pretty quickly though, that being deliberate about composition gave a new perspective on even familiar scenes, and I was surprised at compelling some of the photos turned out.</p>
+
+<h2 id="week-1-the-rule-of-thirds">Week 1: The Rule of Thirds</h2>
+
+<blockquote>
+  <p>The Rule of Thirds challenge is all about getting your subject out of the middle of the frame.
+Imagine your frame is divided into three equal segments from left to right, and then again from top to bottom, creating a 3×3 grid. Try to place your subject along one of the lines dividing the thirds, so it’s not squarely in the middle third.</p>
+</blockquote>
+
+<p>This was a rule I was aware of! I even had the overlay turned on in my Camera app to divide the view into thirds, so now I just need to be deliberate about the positioning.</p>
+
+<h3 id="my-photos">My photos</h3>
+
+<div class="gallery">
+    <div>
+        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMDQSPTHFEZPCGZ5ARKRVW4D.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMDQSPTHFEZPCGZ5ARKRVW4D.jpeg" alt="A large Pikachu doll standing in front of our children’s bookshelf." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMKAPKEJP5JAPK77GRYXX0Y5.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMKAPKEJP5JAPK77GRYXX0Y5.jpeg" alt="A black pot in the foreground, filled with cabbage, potatoes, carrots, and cherry tomatoes. Various potted plants are visible in the background." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMPA2M7FP560PQE4PWVK4N13.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMPA2M7FP560PQE4PWVK4N13.jpeg" alt="A woven wall tapestry showing the words &quot;hello sunshine&quot; and a rising orange sun. The wallpaper behind is a matching orange color." />
+        </a>
+    </div>
+</div>
+
+<p>The third photo here is my favorite. It is from our kids’ bedroom, and I’m happy that I was able to capture it like this.</p>
+
+<h2 id="week-2-leading-and-diagonal-lines">Week 2: Leading and Diagonal Lines</h2>
+
+<blockquote>
+  <p>Leading lines are lines within the frame of your shot that naturally draw the viewer’s eye to your subject.
+Diagonal lines [. . .] create a sense of movement and tension [. . . and] can also enhance depth, adding a more three-dimensional quality to your composition.</p>
+</blockquote>
+
+<p>This may have been my favorite exercise. I learned that I really like the aesthetic of leading lines, but unfortunately couldn’t find many good subjects myself. This will be something that I will continue to look out for!</p>
+
+<h3 id="my-photos-1">My photos</h3>
+
+<div class="gallery">
+    <div>
+        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVG4J1HKR6WNBH78YQ3VB.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVG4J1HKR6WNBH78YQ3VB.jpeg" alt="A covered walkway with concrete columns leads alongside a grassy courtyard filled with bamboo plants. Sunlight casts intricate shadows on the tiled pathway. A modern building with large windows frames the background." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVKF1AJR4QX6T406N8QPX.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVKF1AJR4QX6T406N8QPX.jpeg" alt="A corridor with a tiled floor casts diagonal shadows from a slatted fence on the left. A wooden bench with a black metal frame is on the right. In the background, there is a staircase leading upwards. Sunlight illuminates the scene, and some plants are visible along the left wall." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVQ3QFWCHQVMC0RYM30RN.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVQ3QFWCHQVMC0RYM30RN.jpeg" alt="Low-angle view of two modern buildings with reflective glass surfaces set against a cloudy sky. The buildings create a sharp, angular perspective converging towards the center of the image. Subtle patterns can be seen on the facade of the left building, with both structures appearing dark and sleek." />
+        </a>
+    </div>
+</div>
+
+<p>I like the third photo here, again. I thought it would be neat to get a thin view of the sky between two tall buildings, and found the perfect spot. Then I spun the picture around in an editing app to find just the right claustrophobic angle.</p>
+
+<h2 id="week-3-frame-within-a-frame">Week 3: Frame Within A Frame</h2>
+
+<blockquote>
+  <p>Whereas Leading Lines used lines within your photo to point to the subject, this technique asks you to find ways to create a frame around your subject in your composition</p>
+</blockquote>
+
+<p>I had a hard time finding good subjects again, and 2/3 of my frames ended up just being long corridors. But they are cool shots!</p>
+
+<h3 id="my-photos-2">My photos</h3>
+
+<div class="gallery">
+    <div>
+        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBTHMYMC9N1QHDD9Y4272Q.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBTHMYMC9N1QHDD9Y4272Q.jpeg" alt="A young child wearing a cap and dark jacket stands near a white U-shaped barrier with orange stripes, holding a colorful mesh bag. A tennis ball lies on the pavement in front of the barrier. In the background, there is a white van parked beside a residential building on a cloudy day." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBV55A8BDNGQNKXDZFC6SV.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBV55A8BDNGQNKXDZFC6SV.jpeg" alt="A long, covered walkway with a wooden slatted roof and metal supports stretches between two buildings. The floor is paved with square tiles, and there are small plants lining the right side with gravel. The scene leads to an open area where two people are seen in the distance." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBVYTFGT15B4BKF3WYQ0G4.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBVYTFGT15B4BKF3WYQ0G4.jpeg" alt="A covered walkway with a dark ceiling and walls leads to an urban street. The path has textured flooring, with tactile paving lines. To the left, there's a small planted area. Outside, a parked car and buildings are visible, with sunlight illuminating the exit." />
+        </a>
+    </div>
+</div>
+
+<h2 id="week-4-subject-isolation--contrast">Week 4: Subject Isolation + Contrast</h2>
+
+<blockquote>
+  <p>[Contrast] could be very visual by putting a brightly lit subject against a dark background, or color based by contrasting a bright red rose against green foliage, or even conceptual with something like capturing someone who is clearly quite happy on a bus surrounded by dour fellow passengers.</p>
+</blockquote>
+
+<p>I was surprised that this exercise was the hardest for me. I tried not to rely on just using bokeh to highlight the subject, and it was hard to find things that just naturally stood out from their surroundings. Not only was I tardy in finishing this week, I only managed to take two photos that I was happy with. So it goes.</p>
+
+<div class="gallery">
+    <div>
+        <a data-lightbox="compo-week-4" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JPVQ73XJHM9MNRZET49RDBZJ.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JPVQ73XJHM9MNRZET49RDBZJ.jpeg" alt="A small giraffe figurine is nestled among vibrant green houseplants on a windowsill. The giraffe has a brown and white pattern, standing out against the lush leaves." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-4" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JPVQ7A2X1HG15046B5BYYYMV.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JPVQ7A2X1HG15046B5BYYYMV.jpeg" alt="A playground with a red and blue slide is in the left foreground. My shadow extends onto the dry grass. A clear blue sky with a few clouds is visible above, with a utility pole and wires in the distance." />
+        </a>
+    </div>
+</div>
+
+<h2 id="week-5-the-golden-spiral">Week 5: The Golden Spiral</h2>
+
+<blockquote>
+  <p>[The Golden Spiral is] about arranging the elements in your photos along the lines of an imaginary spiral, so that it offers an easy and natural flow for the viewer to follow those elements to your subject.</p>
+</blockquote>
+
+<figure>
+  <img src="https://invisibleparade.com/assets/images/2025/golden_spiral.png" alt="The Golden Spiral" class="center-image" />
+  <figcaption>The Golden Spiral</figcaption>
+  </figure>
+
+<p>In practice, this ended up being an exercise in imagination as much as photography, as finding subjects that lined up to this mathematically perfect spiral was pretty challenging.</p>
+
+<h3 id="my-photos-3">My photos</h3>
+
+<div class="gallery">
+    <div>
+        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TAR656RZC91ANX3Y75WW8.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TAR656RZC91ANX3Y75WW8.jpeg" alt="A building with a modern design features dark vertical panels and large windows. In the foreground, a tree with pink blossoms is in full bloom. The sky is mostly clear with a few fluffy clouds, and the sun is shining brightly behind the branches." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TBNGMZ9H2SCTJ65Z26SW5.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TBNGMZ9H2SCTJ65Z26SW5.jpeg" alt="A child wearing a light-colored cap, dark jacket, and jeans slides down a curved, green double slide at a playground. A bright blue sky and a building are visible in the distance." />
+        </a>
+    </div>
+    <div>
+        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TCWT14471HDGA25H20D7K.jpeg">
+            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TCWT14471HDGA25H20D7K.jpeg" alt="People are enjoying a spinning amusement park ride designed like spaceships. The ride has multiple colorful cars, with &quot;SPACESHIP 10&quot; written on a red car. The sky is clear and blue, with trees and a building visible in the background." />
+        </a>
+    </div>
+</div>
+
+<p>The spaceship photo is probably the one that follows the spiral the closest, and the your eyes naturally flow in the same direction, too. The photo itself could have been better, but that’s what learning is for.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>And that’s all! Thank you a hundred times to Hiro for organizing this! I had a wonderful time taking photos, as well as seeing everyone else’s submissions. If there is a next time, I will definitely be joining again.</p>]]></content><author><name></name></author><category term="photography" /><category term="composition" /><category term="techniques" /><category term="improvement" /><category term="challenge" /><summary type="html"><![CDATA[I am a mediocre photographer at best, but of course I want to improve. When I saw that @hiro was putting together 5-week challenge to experiment with various compositional techniques and share our photos, I had to join. I don’t have fancy gear, or a lot of time to go hunting for photos, so almost all of my shots were scenes from my daily life, taken with an iPhone. I realized pretty quickly though, that being deliberate about composition gave a new perspective on even familiar scenes, and I was surprised at compelling some of the photos turned out. Week 1: The Rule of Thirds The Rule of Thirds challenge is all about getting your subject out of the middle of the frame. Imagine your frame is divided into three equal segments from left to right, and then again from top to bottom, creating a 3×3 grid. Try to place your subject along one of the lines dividing the thirds, so it’s not squarely in the middle third. This was a rule I was aware of! I even had the overlay turned on in my Camera app to divide the view into thirds, so now I just need to be deliberate about the positioning. My photos The third photo here is my favorite. It is from our kids’ bedroom, and I’m happy that I was able to capture it like this. Week 2: Leading and Diagonal Lines Leading lines are lines within the frame of your shot that naturally draw the viewer’s eye to your subject. Diagonal lines [. . .] create a sense of movement and tension [. . . and] can also enhance depth, adding a more three-dimensional quality to your composition. This may have been my favorite exercise. I learned that I really like the aesthetic of leading lines, but unfortunately couldn’t find many good subjects myself. This will be something that I will continue to look out for! My photos I like the third photo here, again. I thought it would be neat to get a thin view of the sky between two tall buildings, and found the perfect spot. Then I spun the picture around in an editing app to find just the right claustrophobic angle. Week 3: Frame Within A Frame Whereas Leading Lines used lines within your photo to point to the subject, this technique asks you to find ways to create a frame around your subject in your composition I had a hard time finding good subjects again, and 2/3 of my frames ended up just being long corridors. But they are cool shots! My photos Week 4: Subject Isolation + Contrast [Contrast] could be very visual by putting a brightly lit subject against a dark background, or color based by contrasting a bright red rose against green foliage, or even conceptual with something like capturing someone who is clearly quite happy on a bus surrounded by dour fellow passengers. I was surprised that this exercise was the hardest for me. I tried not to rely on just using bokeh to highlight the subject, and it was hard to find things that just naturally stood out from their surroundings. Not only was I tardy in finishing this week, I only managed to take two photos that I was happy with. So it goes. Week 5: The Golden Spiral [The Golden Spiral is] about arranging the elements in your photos along the lines of an imaginary spiral, so that it offers an easy and natural flow for the viewer to follow those elements to your subject. The Golden Spiral In practice, this ended up being an exercise in imagination as much as photography, as finding subjects that lined up to this mathematically perfect spiral was pretty challenging. My photos The spaceship photo is probably the one that follows the spiral the closest, and the your eyes naturally flow in the same direction, too. The photo itself could have been better, but that’s what learning is for. Wrapping up And that’s all! Thank you a hundred times to Hiro for organizing this! I had a wonderful time taking photos, as well as seeing everyone else’s submissions. If there is a next time, I will definitely be joining again.]]></summary></entry><entry><title type="html">Python script failing via cron</title><link href="https://invisibleparade.com/2025/02/26/python-cron.html" rel="alternate" type="text/html" title="Python script failing via cron" /><published>2025-02-26T15:11:00+09:00</published><updated>2025-02-26T15:11:00+09:00</updated><id>https://invisibleparade.com/2025/02/26/python-cron</id><content type="html" xml:base="https://invisibleparade.com/2025/02/26/python-cron.html"><![CDATA[<h2 id="the-issue">The issue</h2>
 
 <p>I had setup a cron task to run my <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Squirrel Archiver</a> script once per day, but for some reason the task was not executing. Nothing, including any errors, was showing up in any logs. At first I thought there was something wrong with my crontab, but other scripts set up to run in the same way were running without issue.</p>
 
@@ -128,132 +280,4 @@ So far, I am really enjoying it. I’m using the most simple interpretation of <
 
 <p>But now, I am stressed out.</p>
 
-<p>But it will be worth it.</p>]]></content><author><name></name></author><category term="parenting" /><category term="stress" /><category term="emotions" /><category term="optimism" /><category term="mindfulness" /><summary type="html"><![CDATA[I have always been a calm and happy person. Aggressively optimistic, even. I made it through the first 1/3 of my life without feeling much stress, only getting angry on rare occasions. Anger management, emotional therapy, mindfulness exercises, these were all things that I had no need for. I thought that this was a personality trait, but now I realize that I was simply blessed with an easy life. It’s not that I was particularly good at dealing with stress, I just didn’t have much stress coming my way. Well, parenting is not easy. It is demanding. uncontrollable, scary, and stressful. I love my kids dearly and would not want them to change for the world, and that seems to make it even harder. I want so badly to be the parent they deserve, to guide them with a gentle hand and encourage their every exploration. But it is hard. And I am feeling the stress that had nothing to do with me until now. I feel frustrated when things don’t go the way I expected, I feel ashamed when I neglect opportunities to engage my kids, and I feel angry when situations get out of my control. I have to tell myself to take a deep breath and count to ten. I have to spend time with myself to sort out my feelings and learn what my needs are. All of these techniques that I had always overlooked as having nothing to do with me, are now suddenly instructive and eye-opening. In my head, I know that I am probably overestimating the impact that I have on my children’s growth. They are their own people, and they will live their lives to their fullest. They will learn from and be influenced by so many more sources than just their father. But I want to give them everything I can. I want to be a rock-solid, positive influence like my parents were for me. I want to teach them the names of flowers, and insects, and constellations, and construction trucks, and super-heroes, and inventors, and mountains, and countries, and exotic foods. I want to make things with them so that they can understand how things work, how they can take things apart and put them back together again. I want to show them that they are special, and that they have so many unique things to offer to the world. But I am not that father yet. I’ve learned how selfish and impatient I can be. I’m new to this, too, so of course it will take a lot of time, effort, and patience. I need to take things one step at a time, and also let myself recognize that I am already doing a fine job. But now, I am stressed out. But it will be worth it.]]></summary></entry><entry><title type="html">Squirrel - Archive webpages so I can find them again</title><link href="https://invisibleparade.com/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html" rel="alternate" type="text/html" title="Squirrel - Archive webpages so I can find them again" /><link href="https://github.com/aonsager/squirrel-archiver" rel="related" type="text/html" title="https://github.com/aonsager/squirrel-archiver" /><published>2025-01-09T00:00:00+09:00</published><updated>2025-01-09T00:00:00+09:00</updated><id>https://invisibleparade.com/2025/01/09/squirrel---archive-webpages-so-i-can-find-them-again</id><content type="html" xml:base="https://invisibleparade.com/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html"><![CDATA[<figure>
-  <img src="https://invisibleparade.com/assets/images/2025/squirrel.png" alt="" class="center-image" />
-  </figure>
-
-<p>I created a thing that lets me save webpage contents in a smart way. I know, there are a million bookmark managers and web archivers out there, but this one is for me.</p>
-
-<h2 id="the-motivation">The Motivation</h2>
-
-<p>From <a href="https://pinboard.in/about/">Pinboard</a>:</p>
-
-<blockquote>
-  <p>Do you half-remember interesting things you saw online six months ago, but struggle to find them in a search engine?</p>
-</blockquote>
-
-<p>Yes, yes, a hundred times yes. This happens to me all the time. Searching my history doesn’t work because usually the keywords I remember are not in the title. Google et al. aren’t much help either.</p>
-
-<p>I want a way to have the <em>contents</em> of the pages I visit be searchable, in a smart way.</p>
-
-<!-- more -->
-
-<h2 id="my-requirements">My Requirements</h2>
-
-<h3 id="1-minimal-friction-to-saving-content">1. Minimal friction to saving content</h3>
-
-<p>If I need to go through an entire workflow or remember some specific key combinations, I’m probably not going to use it. I want this to become a subconscious action whenever I finish reading something interesting.</p>
-
-<p>Pinboard’s javascript bookmarklet is very good, but unfortunately I then need to manually add tags and a description. I mean, I don’t have to, but the bookmark is significantly less useful if I don’t.</p>
-
-<p>I used the <a href="https://obsidian.md/clipper">Obsidian Web Clipper</a> for a while, and it was actually very good. The article text is saved in a new note, and tags and summaries are extracted from the page’s metadata <em>if they exist</em>. But, and I know this is a nitpick, it takes a few steps each time:</p>
-
-<ol>
-  <li>Click the button</li>
-  <li>Click “Add to Obsidian”</li>
-  <li>Say “Yes I want to allow this site to to open Obsidian”</li>
-  <li>Obsidian opens automatically with the new note</li>
-  <li>Navigate back to the browser, to continue what I was doing</li>
-</ol>
-
-<p>Every time. It’s friction.</p>
-
-<h3 id="2-easy-to-run-a-text-search-across-the-full-text">2. Easy to run a text search across the full text</h3>
-
-<p>Titles and URLs are not enough. I want to expose the full article text to search, too.</p>
-
-<p>Pinboard again, only allows me to search titles + manual summaries + bookmarks. I can pay $39 a year to enable full text search, but that’s kind of expensive and leads to the next point:</p>
-
-<h3 id="3-not-expensive">3. Not expensive</h3>
-
-<p>I mean, a couple of dollars a month isn’t <em>that</em> much. But they add up. This seems like the kind of problem that I, a non-power user, should be able to solve pretty cheaply.</p>
-
-<p>Tangentially, I also really liked the idea behind Browser Parrot, which seems to have been replaced by <a href="https://github.com/iansinnott/browser-gopher">Browser Gopher</a>. It automatically saves every page from your browser history, and can extract the full text.<br />
-The problem with this was that it ended up using <em>lots</em> of CPU, and the archive took up a lot of space, too. I think that in practice, 90% of the pages I visit are not worth saving.</p>
-
-<h3 id="other-things-that-arent-needed-but-might-be-nice">Other things that aren’t needed but might be nice</h3>
-
-<ol>
-  <li>
-    <p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
-  </li>
-  <li>
-    <p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
-Would a database be more byte-efficient and make searching faster? Maybe. But since I’m not going to be saving millions of files, it probably will not make much of a difference.</p>
-  </li>
-</ol>
-
-<h2 id="based-on-the-above-my-solution">Based on the above, my solution</h2>
-
-<h3 id="1-put-any-webpage-i-want-to-save-into-a-text-file">1. Put any webpage I want to save into a text file</h3>
-
-<div class="callout">
-<div class="title">Update 2025/02/14</div>
-I wanted to use a folder in Safari bookmarks to save URLs since the OS already has handy hotkeys and utilities, but unfortunately editing the plist file by hand caused sync issues, so I gave up.
-</div>
-
-<p>I set up a Shortcut to grab Safari’s URL and add it to a text file <code class="language-plaintext highlighter-rouge">urls.txt</code>, which lives on my iCloud drive.</p>
-
-<h3 id="2-run-a-script-that-periodically-looks-at-urlstxt-and-processes-new-items">2. Run a script that periodically looks at urls.txt and processes new items</h3>
-
-<p>Setting a cron task to run this script once per day is fine. The text file is wiped after each run, and URLs that failed for some reason are saved to a separate file.</p>
-
-<h3 id="3-access-the-url-to-save-the-title-and-article-text">3. Access the URL to save the title and article text</h3>
-
-<p>Python libraries can do this easily. There is a lot of optimization that could be done to check for errors and edge cases, but as a personal project I don’t need it to be bullet-proof. Just a simple grab and dump.</p>
-
-<h3 id="4-use-chatgpt-to-generate-tags-and-a-short-summary-automatically">4. Use ChatGPT to generate tags and a short summary automatically</h3>
-
-<p>This sort of thing is what AI was born to do. Having an automatic tagging system is such a luxury, and doing it directly through the API is dirt-cheap.</p>
-
-<h3 id="5-package-into-a-text-file-and-output-to-a-local-folder">5. Package into a text file, and output to a local folder</h3>
-
-<p>Now I have a single folder on my hard drive that holds all of the articles that I thought were worth reading.</p>
-
-<h3 id="6-open-the-folder-as-an-obsidian-vault">6. Open the folder as an Obsidian Vault</h3>
-
-<p>Searching the article contents is very fast, and I can use graph view to explore tags. I can probably do a lot to make it more useful, but for now it’s pretty.</p>
-
-<figure>
-  <img src="https://invisibleparade.com/assets/images/2025/squirrel-graph.png" alt="Obsidian graph view. Black nodes are notes, green nodes are tags" class="center-image" />
-  <figcaption>Obsidian graph view. Black nodes are notes, green nodes are tags</figcaption>
-  </figure>
-
-<h3 id="bonus">Bonus</h3>
-
-<p>It also was super easy to set up an edge case for YouTube videos. Instead of grabbing the page body’s text, it instead uses the YouTube API to grab transcripts from the video. This is turning out to be a great way in general to extract information from YouTube and make it accessible to me later.</p>
-
-<h2 id="the-script">The Script</h2>
-
-<p>Is on <a href="https://github.com/aonsager/squirrel-archiver">Github</a></p>
-
-<p>My intention is not to promote this for wide use, but you can feel free to fork it if you think it might work for you.</p>
-
-<h3 id="my-archive-now">My archive now</h3>
-
-<p>I went through the bookmarks I had saved in various places and ran them all through this script. After pruning dead links, I had about 500 articles saved over the course of 17 years. My most used tags are:</p>
-
-<ol>
-  <li>Technology</li>
-  <li>Innovation</li>
-  <li>Design</li>
-  <li>Sustainability</li>
-  <li>Environment</li>
-  <li>Development</li>
-  <li>AI</li>
-  <li>Community</li>
-  <li>Creativity</li>
-  <li>Javascript</li>
-</ol>
-
-<p>Sustainability and Environment were a surprise. I guess that when I read articles about those topics, I feel compelled to save them?</p>]]></content><author><name></name></author><category term="bookmarking" /><category term="saving" /><category term="automation" /><category term="searching" /><category term="content" /><summary type="html"><![CDATA[I created a thing that lets me save webpage contents in a smart way. I know, there are a million bookmark managers and web archivers out there, but this one is for me. The Motivation From Pinboard: Do you half-remember interesting things you saw online six months ago, but struggle to find them in a search engine? Yes, yes, a hundred times yes. This happens to me all the time. Searching my history doesn’t work because usually the keywords I remember are not in the title. Google et al. aren’t much help either. I want a way to have the contents of the pages I visit be searchable, in a smart way.]]></summary></entry></feed>
+<p>But it will be worth it.</p>]]></content><author><name></name></author><category term="parenting" /><category term="stress" /><category term="emotions" /><category term="optimism" /><category term="mindfulness" /><summary type="html"><![CDATA[I have always been a calm and happy person. Aggressively optimistic, even. I made it through the first 1/3 of my life without feeling much stress, only getting angry on rare occasions. Anger management, emotional therapy, mindfulness exercises, these were all things that I had no need for. I thought that this was a personality trait, but now I realize that I was simply blessed with an easy life. It’s not that I was particularly good at dealing with stress, I just didn’t have much stress coming my way. Well, parenting is not easy. It is demanding. uncontrollable, scary, and stressful. I love my kids dearly and would not want them to change for the world, and that seems to make it even harder. I want so badly to be the parent they deserve, to guide them with a gentle hand and encourage their every exploration. But it is hard. And I am feeling the stress that had nothing to do with me until now. I feel frustrated when things don’t go the way I expected, I feel ashamed when I neglect opportunities to engage my kids, and I feel angry when situations get out of my control. I have to tell myself to take a deep breath and count to ten. I have to spend time with myself to sort out my feelings and learn what my needs are. All of these techniques that I had always overlooked as having nothing to do with me, are now suddenly instructive and eye-opening. In my head, I know that I am probably overestimating the impact that I have on my children’s growth. They are their own people, and they will live their lives to their fullest. They will learn from and be influenced by so many more sources than just their father. But I want to give them everything I can. I want to be a rock-solid, positive influence like my parents were for me. I want to teach them the names of flowers, and insects, and constellations, and construction trucks, and super-heroes, and inventors, and mountains, and countries, and exotic foods. I want to make things with them so that they can understand how things work, how they can take things apart and put them back together again. I want to show them that they are special, and that they have so many unique things to offer to the world. But I am not that father yet. I’ve learned how selfish and impatient I can be. I’m new to this, too, so of course it will take a lot of time, effort, and patience. I need to take things one step at a time, and also let myself recognize that I am already doing a fine job. But now, I am stressed out. But it will be worth it.]]></summary></entry></feed>

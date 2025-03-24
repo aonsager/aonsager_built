@@ -232,19 +232,9 @@
         <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima24.jpg" alt="image" />
       </a>
     </div>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
-<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="/assets/js/masonry.pkgd.min.js"></script>
 <script>
-  // Lightbox
-  lightbox.option({
-    'alwaysShowNavOnTouchDevices': true,
-    'fadeDuration': 200,
-    'imageFadeDuration': 0,
-    'resizeDuration': 0,
-    'wrapAround': true
-  })
-
   // Masonry
   var grid = document.querySelector('.grid');
   var msnry;
@@ -294,5 +284,16 @@
   </div>
 </footer>
 
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
 </body>
 </html>

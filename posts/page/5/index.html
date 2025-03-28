@@ -73,6 +73,66 @@
     <li class="post">
       <header class="post-header"></header>
             <h1>
+              <a class="post-link" href="/2024/12/27/installing-gotosocial-on-coolify.html">Installing GoToSocial on Coolify</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #545454, #AEAFB2, #BCBEC4, #5D5B59, #444347)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>Following up to my <a href="/2024/12/02/i-want-to-love-mastodon.html">earlier post about the fediverse</a>, I discovered <a href="https://gotosocial.org">GoToSocial</a>. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very <a href="https://docs.gotosocial.org/en/latest/getting_started/#server-vps">lightweight</a>: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold!</p>
+
+<p>This would let me set up my own single-user server, which solves all of my misgivings about Mastodon.</p>
+
+<div class="callout">
+<div class="title">Disclaimer</div>
+I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here.<br />
+Please take my experience with a grain of salt, and correct me if you can.
+</div>
+
+<p>I have a VPS with <a href="https://coolify.io">Coolify</a> to manage the multiple apps I have running, and all things considered it makes things very easy.<br />
+I used a docker-compose file to deploy GoToSocial, and their <a href="https://raw.githubusercontent.com/superseriousbusiness/gotosocial/main/example/docker-compose/docker-compose.yaml">example file</a> was almost perfect as-is.</p>
+
+
+            <p>
+  <a href="/2024/12/27/installing-gotosocial-on-coolify.html">Continue reading &rarr;</a>
+  <!-- <span class="post-meta">
+    (3 mins) 
+    </span> -->
+</p>
+</div>
+          <div class="post-meta">
+            <a href="/2024/12/27/installing-gotosocial-on-coolify.html">Dec 27, 2024</a>
+            <!-- <div class="comment-link"><a href="/2024/12/27/installing-gotosocial-on-coolify.html#commento"></a></div> -->
+            </div>
+          </li>
+      <hr />
+    <li class="post">
+      <header class="post-header"></header>
+            <h1>
+              <a class="post-link" href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html">Adguard was preventing sites from loading in Safari sometimes</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #9ABCF1, #ADD2B5, #D20602, #B1B1B0, #84B252)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>For some reason, some sites would not load in Safari. Certain assets, often hosted on a CDN but not always, would hang forever and keep the page from loading. Other browsers worked, curl worked, so it didn’t seem like a DNS issue. It was driving me crazy.</p>
+
+<p>I think I finally caught the culprit: Adguard’s network filtering.</p>
+
+<p>Adguard gives you the option to filter all of your internet traffic for various apps on your computer. By default, it does so through a “Network Extension” that registers a local VPN to filter all traffic.</p>
+
+<p>For some reason, this was tripping up just Safari and stopping certain assets from loading. An alternative mode called “Automatic Proxy” is available to avoid conflicts with other VPN applications and such, and switching to this mode seems to have fixed the problem for me. Good!</p>
+
+<p>See Adguard’s documentation <a href="https://adguard.com/kb/adguard-for-mac/features/network/">here</a>.</p>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html">Dec 25, 2024</a>
+            <!-- <div class="comment-link"><a href="/2024/12/25/adguard-was-preventing-sites-from-loading-in-safari-sometimes.html#commento"></a></div> -->
+            </div>
+          </li>
+      <hr />
+    <li class="post">
+      <header class="post-header"></header>
+            <h1>
               <a class="post-link" href="/2024/12/24/litestack-all-your-data-infrastructure.html">Litestack: All your data infrastructure</a>
             </h1>
             <div class="post-meta link"> 
@@ -397,72 +457,6 @@ pip <span class="nb">install </span>xyz
           <div class="post-meta">
             <a href="/2022/10/01/web-links-september-2022.html">Oct 1, 2022</a>
             <!-- <div class="comment-link"><a href="/2022/10/01/web-links-september-2022.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2022/09/01/web-links-august-2022.html">Web Links - August 2022</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #F66C03, #020202, #0E5EB1, #9FA0A0, #A2A5E2)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <dl>
-  <dt>
-    <a href="https://rentry.org/SDInstallGuide">Stable Diffusion install guide</a>
-    <span class="post-meta">(rentry.org)</span>
-  </dt>
-  <dd>Install and run Stable Diffusion locally</dd>
-  <dt>
-    <a href="https://sambleckley.com/writing/church-of-interruption.html">The Church of Interruption</a>
-    <span class="post-meta">(sambleckley.com)</span>
-  </dt>
-  <dd>There are four conversational styles, divided on two axes. Most people who interrupt others are willing to be interrupted themselves, while other people dislike interrupting and being interrupted. These fundamental differences can cause awkwardness in conversation.</dd>
-  <dt>
-    <a href="https://diagrams.app/">Diagrams: A Native Diagram Editor for Mac</a>
-    <span class="post-meta">(diagrams.app)</span>
-  </dt>
-  <dd>I was just looking for a good way to create flowcharts, and this looks just right</dd>
-</dl>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2022/09/01/web-links-august-2022.html">Sep 1, 2022</a>
-            <!-- <div class="comment-link"><a href="/2022/09/01/web-links-august-2022.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2022/08/01/web-links-july-2022.html">Web links - July 2022</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #996F55, #F66C03, #A09DA0, #628BB9, #555A5C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <dl>
-	<dt>
-		<a href="https://edition.cnn.com/style/article/magic-mirror-cincinnati-art-museum-scn/index.html">Magic mirror': Hidden image revealed in reflection of centuries-old artifact at Cincinnati Art Museum</a>
-		<span class="post-meta">(edition.cnn.com)</span>
-	</dt>
-	<dd>A seemingly blank bronze mirror reflects an image of Buddha when shining a bright light onto it. Aside from how amazing it is that this was discovered, the craftsmanship is incredible.</dd>
-	<dt>
-		<a href="https://johnedchristensen.github.io/WebbCompare/">Compare Webb's Images to Hubble's</a>
-		<span class="post-meta">(johnedchristensen.github.io)</span>
-	</dt>
-	<dd>Yes the images from the Webb telescope are beautiful, but direct comparisons like this really put it into perspective. And this shows the galaxy cluster as it was 4.6 billion years ago? I don't even know what to think about that.</dd>
-	<dt>
-		<a href="https://seandietrich.com/mendon-missouri/">Mendon, Missouri - Sean of the South</a>
-		<span class="post-meta">(seandietrich.com)</span>
-	</dt>
-	<dd>A short telling of how residents of a small town came together to help the victims of a rail road accident.</dd>
-</dl>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2022/08/01/web-links-july-2022.html">Aug 1, 2022</a>
-            <!-- <div class="comment-link"><a href="/2022/08/01/web-links-july-2022.html#commento"></a></div> -->
             </div>
           </li>
       <hr />

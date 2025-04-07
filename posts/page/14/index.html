@@ -73,6 +73,74 @@
     <li class="post">
       <header class="post-header"></header>
             <h1>
+              <a class="post-link" href="/2014/02/03/tokyos-cityscape-recreated-with-stickers.html">Tokyo&#39;s Cityscape Recreated With Stickers</a>
+            </h1>
+            <div class="post-meta link"> 
+                <span itemprop="link"><a href="http://www.theverge.com/2014/2/3/5363676/yukino-ohmura-tokyo-sticker-artwork">http://www.theverge.com/2014/2/3/5363676/yukino-ohmura-tokyo-sticker-artwork</a></span>
+              </div>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #CDA98E, #5E616E, #4E4734, #0654B0, #4C4E4F)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>By artist <a href="http://yukinoart.wix.com/home#!__news">Yukino Ohmura</a>.</p>
+
+<p><img src="/assets/images/tokyo-sticker.jpg" alt="Rainbow Bridge" /></p>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2014/02/03/tokyos-cityscape-recreated-with-stickers.html">Feb 3, 2014</a>
+            <!-- <div class="comment-link"><a href="/2014/02/03/tokyos-cityscape-recreated-with-stickers.html#commento"></a></div> -->
+            </div>
+          </li>
+      <hr />
+    <li class="post">
+      <header class="post-header"></header>
+            <h1>
+              <a class="post-link" href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">Rake task to backup MySQL to Amazon S3</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #B0B0B0, #A8ABB1, #35276B, #56CA09, #919191)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>A simple rake task to dump the contents of a MySQL database and save it to an Amazon S3 bucket. Use together with <a href="https://github.com/javan/whenever">whenever</a> to automate it.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:backup</span> <span class="k">do</span>
+
+  <span class="n">task</span> <span class="ss">:nightly</span> <span class="k">do</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-%d_%H-%M-%S"</span><span class="p">)</span>
+    <span class="n">backup_file</span> <span class="o">=</span> <span class="s2">"tmp/backups/</span><span class="si">#{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">_dump.sql.gz"</span>
+    <span class="sb">`mkdir -p tmp/backups`</span>
+    <span class="sb">`mysqldump -u root {DATABASE_NAME} | gzip -c &gt; </span><span class="si">#{</span><span class="n">backup_file</span><span class="si">}</span><span class="sb">`</span>
+
+    <span class="n">send_to_s3</span> <span class="n">backup_file</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">send_to_s3</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">bucket</span> <span class="o">=</span> <span class="s2">"{BUCKET_NAME}"</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">DEFAULT_HOST</span><span class="p">.</span><span class="nf">replace</span> <span class="s2">"s3-us-west-2.amazonaws.com"</span>
+
+    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection!</span><span class="p">(</span>
+      <span class="ss">:access_key_id</span> <span class="o">=&gt;</span> <span class="s1">'{KEY}'</span><span class="p">,</span>
+      <span class="ss">:secret_access_key</span> <span class="o">=&gt;</span> <span class="s1">'{SECRET}'</span><span class="p">)</span>
+
+    <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="o">::</span><span class="no">S3Object</span><span class="p">.</span><span class="nf">store</span><span class="p">(</span>
+      <span class="s2">"backups/</span><span class="si">#{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+      <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>
+      <span class="n">bucket</span><span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">Nov 29, 2013</a>
+            <!-- <div class="comment-link"><a href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html#commento"></a></div> -->
+            </div>
+          </li>
+      <hr />
+    <li class="post">
+      <header class="post-header"></header>
+            <h1>
               <a class="post-link" href="/2013/06/09/zach-sobiech.html">My Last Days: Meet Zach Sobiech</a>
             </h1>
             <div class="post-meta link"> 
@@ -262,48 +330,6 @@ I just hope that because of the pain we are suffering, the eyes of the world wil
           <div class="post-meta">
             <a href="/2013/04/12/north-korea-missle-launch-delayed-by-windows-8.html">Apr 12, 2013</a>
             <!-- <div class="comment-link"><a href="/2013/04/12/north-korea-missle-launch-delayed-by-windows-8.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2013/04/10/daft-punk-skrillex-remix-conte.html">Daft Punk Skrillex Remix - Conte</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.youtube.com/watch?v=kXpn8thEGbE">http://www.youtube.com/watch?v=kXpn8thEGbE</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #685A57, #542D1F, #6E6960, #5D5D5B, #5E5E5E)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I’ve always been a fan of Jack’s solo work and his work as part of <a href="http://www.youtube.com/user/PomplamooseMusic">Pomplamoose</a>. His new electronic sound is excellent as well.</p>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2013/04/10/daft-punk-skrillex-remix-conte.html">Apr 10, 2013</a>
-            <!-- <div class="comment-link"><a href="/2013/04/10/daft-punk-skrillex-remix-conte.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2013/04/09/skycons-free-html5-weather-icons.html">Skycons - Free HTML5 weather icons</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://darkskyapp.github.io/skycons/">http://darkskyapp.github.io/skycons/</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #FF0C01, #333333, #5E5E5E, #505050, #B1B1B1)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
-  <p>Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag.</p>
-</blockquote>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2013/04/09/skycons-free-html5-weather-icons.html">Apr 9, 2013</a>
-            <!-- <div class="comment-link"><a href="/2013/04/09/skycons-free-html5-weather-icons.html#commento"></a></div> -->
             </div>
           </li>
       <hr />

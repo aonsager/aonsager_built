@@ -73,6 +73,72 @@
     <li class="post">
       <header class="post-header"></header>
             <h1>
+              <a class="post-link" href="/2025/04/07/outgrowing-coolify.html">I may have outgrown Coolify</a>
+            </h1>
+            <div class="post-banner" style="background-image:linear-gradient(-45deg, #A39B99, #535354, #F79008, #727172, #5A6257)"></div>
+</header>
+          <div class="post-content" itemprop="articleBody">
+            <p>I initially chose <a href="https://coolify.io/">Coolify</a> as a self-hosted alternative to Heroku when it got too expensive. Coolify makes a lot of things very easy, but I ended up having to dig in to the details and learn a lot to fix things that didn’t work. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’s hand-holding.</p>
+
+<h2 id="venturing-into-self-hosting">Venturing into self-hosting</h2>
+
+<p>I knew next to nothing about Linux servers, Docker, reverse proxies, and the like. I had used Heroku for a long time, but its base price became restrictively expensive considering how small each of my little projects was, so I started looking for a service that could ease me into self-hosting my apps on a VPS.</p>
+
+<p>I started with <a href="https://dokku.com">Dokku</a>, but the lack of a GUI made me uncomfortable because I really had no idea what I was doing. I was running with my eyes closed, hoping I didn’t trip. <a href="https://coolify.io/">Coolify</a> seemed to make deployments easy, and had a lot of handy tools to let me manage all aspects of my services through a web GUI, so I jumped in.</p>
+
+<h2 id="coolify-was-good-until-it-wasnt">Coolify was good, until it wasn’t</h2>
+
+<p>A lot things were very easy! Go to an open-source project’s repository, find a sample Docker Compose file, paste it into a box, and hit “Go”. It handled URLs, SSL certificates, routing, and probably a lot of other things that I wasn’t fully aware of.</p>
+
+<p>But there were plenty of things that did not go so smoothly. In these cases I had to stumble my way to a working solution, learning about what Docker Compose files do, where files are placed on my server, how to install packages that I need, and so on.</p>
+
+<p>When something went wrong with one of my apps, I would SSH into the server’s root and go digging through the files there to figure out what is happening. I learned how different containers are managed on the server, Docker’s command line utilities to ask each container what it is doing, various ways to change settings and reboot apps on the fly.</p>
+
+<h2 id="the-last-battle">The last battle</h2>
+
+<p>My <a href="http://gotosocial.org">GoToSocial</a> <a href="http://gts.invisibleparade.com">instance</a> had a problem where it would randomly become unresponsive once every couple of days. I would realize that everything was timing out, and restarting the service was the only way to get things running again. It took me months of “debugging”, where I would dump out service logs, sift through documentation, and dig into every line of configuration that looked like it might be related to the problem in any way.</p>
+
+<p>At last, I tracked down the problem.</p>
+
+<p>My GoToSocial compose file defined a Docker network called <code class="language-plaintext highlighter-rouge">gotosocial</code>, as a network is required for the application and the database to communicate with each other. However, because a network is of course required, Coolify <em>conveniently</em> was also defining its own unique network, automatically and behind the scenes. And for some reason, a <em>third</em> network was also being created as the result of some combination of settings (I never did figure out why this was happening).</p>
+
+<p>Of these multiple redundant networks, the GoToSocial application was attached to only two, and the reverse proxy was attached to <em>a different two</em>. Something at some point would trigger some load balancing in the reverse proxy, and it would switch to its second known network, which did not have the application attached. Hence the unresponsiveness.</p>
+
+<p>All I had to do to fix this was to delete the <code class="language-plaintext highlighter-rouge">gotosocial</code> network declaration in the Docker Compose file. But in discovering that solution, I ended learning a lot about how reverse proxies and Docker networks work, and walking around in a lot of code. Now, I feel pretty confident that I would be able to manage Docker-based deploys without Coolify in the middle.</p>
+
+<p>Which brings me to my latest realization.</p>
+
+<h2 id="now-i-can-do-this-myself">Now, I can do this myself</h2>
+
+<p>Coolify does a lot of (most of the time) convenient things behind the scenes, but sometimes they aren’t what I need. To understand what these conveniences are, how to work with them, when they are good and when they are not, and how to change things when I need to, I had to learn a lot about all of the moving parts of a Linux server with multiple docker containers running various services.</p>
+
+<p>Now that I have this experience, it seems like Coolify’s behind-the-scenes actions might be causing more trouble than convenience.</p>
+
+<p>I think I will get myself a fresh new VPN and start trying to replicate my apps with just manual Docker deployments + a simple <a href="https://caddyserver.com">Caddy</a> configuration. Or maybe <a href="https://dokku.com">Dokku</a> again, that’s worth a revisit.</p>
+
+<p>So, thanks to Coolify for bringing me here, but I think our time together will be ending.</p>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2025/04/07/outgrowing-coolify.html">Apr 7, 2025</a>
+            <!-- <div class="comment-link"><a href="/2025/04/07/outgrowing-coolify.html#commento"></a></div> -->
+            </div>
+          </li>
+      <hr />
+    <li class="toot">
+      </header>
+          <div class="post-content" itemprop="articleBody">
+            <p>Watched Adolescence, and wow what a ride. I was gripped from start to finish and was pretty emotionally battered at the end.</p>
+<div class="gallery"></div>
+
+            </div>
+          <div class="post-meta">
+            <a href="/2025/04/04/2025-04-04-01JQYT3E6VR2DC7MM633WPB2MG.html">Apr 4, 2025</a>
+            </li>
+      <hr />
+    <li class="post">
+      <header class="post-header"></header>
+            <h1>
               <a class="post-link" href="/2025/03/28/ai-manifesto.html">My AI manifesto</a>
             </h1>
             <div class="post-banner" style="background-image:linear-gradient(-45deg, #172267, #A2A0A2, #182368, #E42B00, #49464B)"></div>
@@ -391,68 +457,6 @@ Probably.</p>
           <div class="post-meta">
             <a href="/2025/02/26/python-cron.html">Feb 26, 2025</a>
             <!-- <div class="comment-link"><a href="/2025/02/26/python-cron.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/02/13/what-im-doing-now.html">What I&#39;m doing /now</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #B00D14, #50514D, #75A39A, #9A674F, #AF9C8C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <h2 id="personal-life">Personal Life</h2>
-
-<p>Nothing much has changed for our family these past few years, and that is by design. Work is stable, life is stable, everybody is happy. I am very thankful for that.</p>
-
-<h2 id="work">Work</h2>
-
-<p>Since 2022 I have been leading a department that is tasked with making the company better at creating new games. This involves encouraging all staff to submit game ideas at any time, working with people to strengthen game ideas and create attractive pitches, coaching teams through early development phases, maintaining a corporate strategy for the release of new games, and more. It allows me to work directly with a lot of people throughout the company, and has been tremendously fun.</p>
-
-<h2 id="hobbies">Hobbies</h2>
-
-<p>In 2022 I joined a Haiku study group. We decide on a few prompts every month and submit our poems in advance of a meet-up, where we comment on each other’s pieces and have our teacher critique them. Haiku is fascinating because its extreme minimalism (only 17 characters allowed) makes it feel like putting together a puzzle. It is also a great way to learn about nature and Japanese culture.</p>
-
-<p>Last year I set up <a href="https://gotosocial.org">GoToSocial</a> as a <a href="https://gts.invisibleparade.com">solo instance</a> to join the Fediverse, and that has been a lot of fun. It’s nice to be social on the internet again. I think this has helped motivate me to update this site more, and I’m having a lot of fun making little updates to the site as well.</p>
-
-<p>AI tools have been super useful for programming as a hobby. It has made it so much easier to finish and ship my little <a href="/projects">projects</a>, and I have already developed a slew of little utilities that I use often. I’m still writing words by hand though, because I think being able to organize my thoughts into communicative sentences is such an important skill.</p>
-
-<p>I also started keeping a physical journal at the beginning of this year, and one month is the longest I have ever kept up the habit so I am hopeful that it will continue. I had always admired people who keep physical journals; I thought it was a wonderful habit. I never could get into it though, and had resigned myself to thinking that I just wasn’t that kind of person. But my wife convinced me that if that is the kind of person I <em>want</em> to be, then it’s worth putting in the effort to make the change.<br />
-So far, I am really enjoying it. I’m using the most simple interpretation of <a href="https://bulletjournal.com">Bullet Journal</a>. It’s turning to be a super helpful framework to guide the kinds of information I should keep, and the format for recording it.</p>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/02/13/what-im-doing-now.html">Feb 13, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/02/13/what-im-doing-now.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/02/12/katamari-damacy-postmortem.html">Katamari Damacy postmortem</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-">https://www.gamedeveloper.com/design/postmortem-the-singular-design-of-namco-s-katamari-damacy-2004-</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #4E2F21, #E8D798, #E49A19, #5B231F, #632B1F)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>By Game Developer Magazine:</p>
-
-<blockquote>
-  <p>We recently received a request to publish the Katamari Damacy postmortem from the December 2004 issue of Game Developer. It has been posted here in full for the first time in 2024 to celebrate the game’s 20 year anniversary. Please enjoy.</p>
-</blockquote>
-
-<p>This article was written by the game’s director, Keita Takahashi, and has been translated into English from the original Japanese. I wish I could find the original text, but this is a great read regardless.</p>
-
-<p>It’s easy to take a successful game and say “Here are its unique features and the reasons why we think they led to success.” But this portmortem also includes regrets from the game’s development, which gives a really rare, close look into what the team’s ambitions were and how they thought about the game’s design.</p>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/02/12/katamari-damacy-postmortem.html">Feb 12, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/02/12/katamari-damacy-postmortem.html#commento"></a></div> -->
             </div>
           </li>
       <hr />

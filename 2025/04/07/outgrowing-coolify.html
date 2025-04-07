@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I may have outgrown Coolify</title>
+  <meta name="description" content="I initially chose Coolify as a self-hosted alternative to Heroku when it got too expensive. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’...">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/2025/04/07/outgrowing-coolify.html">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="I may have outgrown Coolify" property="og:title">
+<meta content="article" property="og:type">
+<meta content="I initially chose Coolify as a self-hosted alternative to Heroku when it got too expensive. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’..." property="og:description">
+<meta content="https://invisibleparade.com/2025/04/07/outgrowing-coolify.html" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+  <div class="wrapper" style="position:relative;">
+    <a class="site-title" href="/">
+      <div class="logo-container">
+        <div class="full" style="float:left;">
+          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
+          </svg>
+        </div>
+        <div class="compact" style="float:left;">
+          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="black" />
+          </svg>
+          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
+            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
+          </svg>
+        </div>
+        <div style="float:left;">
+          Invisible Parade
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="header-banner"></div>
+  <div class="wrapper">
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/about/">About</a>
+      <a class="page-link" href="/posts/">Posts</a>
+      <a class="page-link" href="/feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="page-content" aria-label="Content">
+    <article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1>
+        <a class="post-link" href="/2025/04/07/outgrowing-coolify.html">I may have outgrown Coolify</a>
+      </h1>
+      <div class="post-banner" style="background-image:linear-gradient(-45deg, #A39B99, #535354, #F79008, #727172, #5A6257)"></div>
+</header>
+    <div class="post-content single" itemprop="articleBody">
+      <p>I initially chose <a href="https://coolify.io/">Coolify</a> as a self-hosted alternative to Heroku when it got too expensive. Coolify makes a lot of things very easy, but I ended up having to dig in to the details and learn a lot to fix things that didn’t work. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’s hand-holding.</p>
+
+<h2 id="venturing-into-self-hosting">Venturing into self-hosting</h2>
+
+<p>I knew next to nothing about Linux servers, Docker, reverse proxies, and the like. I had used Heroku for a long time, but its base price became restrictively expensive considering how small each of my little projects was, so I started looking for a service that could ease me into self-hosting my apps on a VPS.</p>
+
+<p>I started with <a href="https://dokku.com">Dokku</a>, but the lack of a GUI made me uncomfortable because I really had no idea what I was doing. I was running with my eyes closed, hoping I didn’t trip. <a href="https://coolify.io/">Coolify</a> seemed to make deployments easy, and had a lot of handy tools to let me manage all aspects of my services through a web GUI, so I jumped in.</p>
+
+<h2 id="coolify-was-good-until-it-wasnt">Coolify was good, until it wasn’t</h2>
+
+<p>A lot things were very easy! Go to an open-source project’s repository, find a sample Docker Compose file, paste it into a box, and hit “Go”. It handled URLs, SSL certificates, routing, and probably a lot of other things that I wasn’t fully aware of.</p>
+
+<p>But there were plenty of things that did not go so smoothly. In these cases I had to stumble my way to a working solution, learning about what Docker Compose files do, where files are placed on my server, how to install packages that I need, and so on.</p>
+
+<p>When something went wrong with one of my apps, I would SSH into the server’s root and go digging through the files there to figure out what is happening. I learned how different containers are managed on the server, Docker’s command line utilities to ask each container what it is doing, various ways to change settings and reboot apps on the fly.</p>
+
+<h2 id="the-last-battle">The last battle</h2>
+
+<p>My <a href="http://gotosocial.org">GoToSocial</a> <a href="http://gts.invisibleparade.com">instance</a> had a problem where it would randomly become unresponsive once every couple of days. I would realize that everything was timing out, and restarting the service was the only way to get things running again. It took me months of “debugging”, where I would dump out service logs, sift through documentation, and dig into every line of configuration that looked like it might be related to the problem in any way.</p>
+
+<p>At last, I tracked down the problem.</p>
+
+<p>My GoToSocial compose file defined a Docker network called <code class="language-plaintext highlighter-rouge">gotosocial</code>, as a network is required for the application and the database to communicate with each other. However, because a network is of course required, Coolify <em>conveniently</em> was also defining its own unique network, automatically and behind the scenes. And for some reason, a <em>third</em> network was also being created as the result of some combination of settings (I never did figure out why this was happening).</p>
+
+<p>Of these multiple redundant networks, the GoToSocial application was attached to only two, and the reverse proxy was attached to <em>a different two</em>. Something at some point would trigger some load balancing in the reverse proxy, and it would switch to its second known network, which did not have the application attached. Hence the unresponsiveness.</p>
+
+<p>All I had to do to fix this was to delete the <code class="language-plaintext highlighter-rouge">gotosocial</code> network declaration in the Docker Compose file. But in discovering that solution, I ended learning a lot about how reverse proxies and Docker networks work, and walking around in a lot of code. Now, I feel pretty confident that I would be able to manage Docker-based deploys without Coolify in the middle.</p>
+
+<p>Which brings me to my latest realization.</p>
+
+<h2 id="now-i-can-do-this-myself">Now, I can do this myself</h2>
+
+<p>Coolify does a lot of (most of the time) convenient things behind the scenes, but sometimes they aren’t what I need. To understand what these conveniences are, how to work with them, when they are good and when they are not, and how to change things when I need to, I had to learn a lot about all of the moving parts of a Linux server with multiple docker containers running various services.</p>
+
+<p>Now that I have this experience, it seems like Coolify’s behind-the-scenes actions might be causing more trouble than convenience.</p>
+
+<p>I think I will get myself a fresh new VPN and start trying to replicate my apps with just manual Docker deployments + a simple <a href="https://caddyserver.com">Caddy</a> configuration. Or maybe <a href="https://dokku.com">Dokku</a> again, that’s worth a revisit.</p>
+
+<p>So, thanks to Coolify for bringing me here, but I think our time together will be ending.</p>
+
+    </div>
+    <div class="post-meta">
+      Apr 7, 2025
+    </div>
+    <div class="post-tag">self-hosting</div>
+    <div class="post-tag">docker</div>
+    <div class="post-tag">coolify</div>
+    <div class="post-tag">linux</div>
+    <div class="post-tag">vps</div>
+    <hr />
+    <div class="post-related">
+        <h4>Related Posts</h4>
+<ul class="archive-list">
+<li><a href="/2024/12/27/installing-gotosocial-on-coolify.html">Installing GoToSocial on Coolify</a></li>
+      </ul></div>
+    <hr />
+    <div class="post-comments">
+        <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrapper">
+    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250408">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/2/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -70,6 +70,48 @@
     <div class="home wrapper">
   
   <ul class="post-list">
+    <li class="post">
+      <article style="background-image: linear-gradient(45deg, #080808, #595A5A, #777777, #452D39, #4D4A54);"class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="wrapper">
+              <header class="post-header">
+                <h1>
+                  <a class="post-link" href="/2025/02/26/python-cron.html">Python script failing via cron</a>
+                </h1>
+                </header>
+              <div class="post-content" itemprop="articleBody">
+                <h2 id="the-issue">The issue</h2>
+
+<p>I had setup a cron task to run my <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Squirrel Archiver</a> script once per day, but for some reason the task was not executing. Nothing, including any errors, was showing up in any logs. At first I thought there was something wrong with my crontab, but other scripts set up to run in the same way were running without issue.</p>
+
+<p>Copying the commands in crontab to the terminal and running it manually worked. It was only when cron was triggering the run that it failed.</p>
+
+<p>Just to be sure, I changed my script to just <code class="language-plaintext highlighter-rouge">print('hey')</code>, and this worked! So there must have been something wrong inside the script, and I started the tried and true debugging process of <em>deleting chunks of code until something works</em>.</p>
+
+<p>Side note: Since the script had to run via cron, while I was debugging it was set to run once per minute on the dot. I had to rush to make changes in time, but I also had to wait to see results, which made for an interesting experience.</p>
+
+<h2 id="the-culprit">The culprit</h2>
+
+<p>I had been declaring <code class="language-plaintext highlighter-rouge">openai_client = OpenAI()</code> as a global variable, outside of any function. This worked fine when running the script manually, but when cron triggered it, it failed silently.</p>
+
+<p>“<em>Why?</em>”<br />
+I have no idea.</p>
+
+<p>“<em>Is initializing objects outside of functions commonly known to be a bad practice?</em>”<br />
+Probably.</p>
+
+<p>I wish I knew more about the reasons, but moving the declaration inside a function fixed the issue.</p>
+
+<p>So, maybe to many it is obvious that “<em>yes of course you shouldn’t do that</em>”, but I’m recording it here in case anybody else out there is like me.</p>
+
+                </div>
+              <div class="post-meta">
+                <a href="/2025/02/26/python-cron.html">Feb 26, 2025</a>
+                <!-- <div class="comment-link"><a href="/2025/02/26/python-cron.html#commento"></a></div> -->
+                </div>
+              </div>
+            </article>
+          </li>
+      <hr />
     <li class="post">
       <article style="background-image: linear-gradient(45deg, #B00D14, #50514D, #75A39A, #9A674F, #AF9C8C);"class="post" itemscope itemtype="http://schema.org/BlogPosting">
             <div class="wrapper">
@@ -300,17 +342,6 @@ So far, I am really enjoying it. I’m using the most simple interpretation of <
                 </div>
               <div class="post-meta">
                 <a href="/2025/01/29/2025-01-29-01JJQDSJSNMTQ0HVMT8VQN138H.html">Jan 29, 2025</a>
-                </li>
-      <hr />
-    <li class="toot">
-      </header>
-              <div class="post-content" itemprop="articleBody">
-                <p>The solution I've landed on:<br /><br />1. Post to fediverse from nice mobile clients.<br />2. Blog pulls latest posts when building, and includes them in the generated site.<br /><br />The order is backwards from a POSSE standpoint, but it's easy and it works.</p>
-
-
-                </div>
-              <div class="post-meta">
-                <a href="/2025/01/28/2025-01-28-01JJNQ044W3RD3HQQ6V0NNMVKD.html">Jan 28, 2025</a>
                 </li>
       <hr />
     </ul>

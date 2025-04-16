@@ -5,14 +5,14 @@
   font-weight: 500;
   src: local("Ostrich Sans Rounded"), url("https://invisibleparade.com/assets/images/OstrichSansRoundedMedium.woff") format("woff");
 }
-article, .wrapper, .wide-wrapper {
+.wrapper, .wide-wrapper {
   *zoom: 1;
 }
-article:before, .wrapper:before, .wide-wrapper:before, article:after, .wrapper:after, .wide-wrapper:after {
+.wrapper:before, .wide-wrapper:before, .wrapper:after, .wide-wrapper:after {
   content: " ";
   display: table;
 }
-article:after, .wrapper:after, .wide-wrapper:after {
+.wrapper:after, .wide-wrapper:after {
   clear: both;
 }
 
@@ -178,7 +178,6 @@ pre > code {
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px;
-  background-color: #fdfdfd;
 }
 @media screen and (max-width: 800px) {
   .wrapper {
@@ -196,7 +195,6 @@ pre > code {
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px;
-  background-color: #fdfdfd;
 }
 @media screen and (max-width: 800px) {
   .wide-wrapper {
@@ -299,27 +297,6 @@ pre > code {
 
 pre {
   font-size: 0.8em;
-}
-
-article {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - 30px * 2);
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0px 0px 0px 5px;
-  border-radius: 5px;
-}
-article .wrapper {
-  padding-top: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 0px;
-}
-@media screen and (max-width: 800px) {
-  article {
-    max-width: -webkit-calc(800px - (30px));
-    max-width: calc(800px - (30px));
-  }
 }
 
 /**
@@ -454,7 +431,7 @@ hr.large {
 }
 
 .post-header h1 {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .post-meta {

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rake task to backup MySQL to Amazon S3</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250408">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -26,7 +26,7 @@
 
 <body>
   <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative; background: none;">
+  <div class="wrapper" style="position:relative;">
     <a class="site-title" href="/">
       <div class="logo-container">
         <div class="full" style="float:left;">
@@ -67,16 +67,15 @@
 </header>
 
   <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-    <article style="background-image: linear-gradient(45deg, #B0B0B0, #A8ABB1, #35276B, #56CA09, #919191);"class="post" itemscope itemtype="http://schema.org/BlogPosting">
-      <div class="wrapper">
-        <header class="post-header">
-          <h1>
-            <a class="post-link" href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">Rake task to backup MySQL to Amazon S3</a>
-          </h1>
-          </header>
-        <div class="post-content single" itemprop="articleBody">
-          <p>A simple rake task to dump the contents of a MySQL database and save it to an Amazon S3 bucket. Use together with <a href="https://github.com/javan/whenever">whenever</a> to automate it.</p>
+    <article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1>
+        <a class="post-link" href="/2013/11/29/rake-task-to-backup-mysql-to-amazon-s3.html">Rake task to backup MySQL to Amazon S3</a>
+      </h1>
+      <div class="post-banner" style="background-image:linear-gradient(-45deg, #B0B0B0, #A8ABB1, #35276B, #56CA09, #919191)"></div>
+</header>
+    <div class="post-content single" itemprop="articleBody">
+      <p>A simple rake task to dump the contents of a MySQL database and save it to an Amazon S3 bucket. Use together with <a href="https://github.com/javan/whenever">whenever</a> to automate it.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">namespace</span> <span class="ss">:backup</span> <span class="k">do</span>
 
@@ -107,21 +106,18 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-        </div>
-        <div class="post-meta">
-          Nov 29, 2013
-        </div>
-        <div class="post-tag">programming</div>
-        <div class="post-tag">ruby</div>
-        <div class="post-tag">tech</div>
-        <div class="post-tag">script</div>
-        <div class="post-tag">aws</div>
-        </div>
-    </article>
-    <div class="wrapper">
-      <hr />
-      <div class="post-related">
-          <h4>Related Posts</h4>
+    </div>
+    <div class="post-meta">
+      Nov 29, 2013
+    </div>
+    <div class="post-tag">programming</div>
+    <div class="post-tag">ruby</div>
+    <div class="post-tag">tech</div>
+    <div class="post-tag">script</div>
+    <div class="post-tag">aws</div>
+    <hr />
+    <div class="post-related">
+        <h4>Related Posts</h4>
 <ul class="archive-list">
 <li><a href="/2013/06/04/behind-the-scenes-pokemon-fusion.html">Pokemon Fusion: Behind the Scenes</a></li>
       <li><a href="/2014/11/14/aws-lambda.html">AWS Lambda</a></li>
@@ -129,13 +125,13 @@
       <li><a href="/2014/03/31/replace-text-in-file-osx-service.html">Replace Text in File - OSX Service</a></li>
       <li><a href="/2013/05/22/save-to-pocket-osx-service.html">Save to Pocket - OSX Service</a></li>
       </ul></div>
-      <hr />
-      <div class="post-comments">
-          <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+    <hr />
+    <div class="post-comments">
+        <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
 <div id="commento"></div>
 </div>
-    </div>
-  </div>
+  </article>
+
   </main>
   <footer class="site-footer">
   <div class="wrapper">

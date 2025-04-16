@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Python script failing via cron</title>
   <meta name="description" content="Debugging a Python script that silently failed only when executed via cron.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250408">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/2025/02/26/python-cron.html">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -26,7 +26,7 @@
 
 <body>
   <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative; background: none;">
+  <div class="wrapper" style="position:relative;">
     <a class="site-title" href="/">
       <div class="logo-container">
         <div class="full" style="float:left;">
@@ -67,16 +67,15 @@
 </header>
 
   <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-    <article style="background-image: linear-gradient(45deg, #080808, #595A5A, #777777, #452D39, #4D4A54);"class="post" itemscope itemtype="http://schema.org/BlogPosting">
-      <div class="wrapper">
-        <header class="post-header">
-          <h1>
-            <a class="post-link" href="/2025/02/26/python-cron.html">Python script failing via cron</a>
-          </h1>
-          </header>
-        <div class="post-content single" itemprop="articleBody">
-          <h2 id="the-issue">The issue</h2>
+    <article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1>
+        <a class="post-link" href="/2025/02/26/python-cron.html">Python script failing via cron</a>
+      </h1>
+      <div class="post-banner" style="background-image:linear-gradient(-45deg, #080808, #595A5A, #777777, #452D39, #4D4A54)"></div>
+</header>
+    <div class="post-content single" itemprop="articleBody">
+      <h2 id="the-issue">The issue</h2>
 
 <p>I had setup a cron task to run my <a href="/2025/01/09/squirrel-archive-webpages-so-i-can-find-them-again.html">Squirrel Archiver</a> script once per day, but for some reason the task was not executing. Nothing, including any errors, was showing up in any logs. At first I thought there was something wrong with my crontab, but other scripts set up to run in the same way were running without issue.</p>
 
@@ -100,31 +99,28 @@ Probably.</p>
 
 <p>So, maybe to many it is obvious that “<em>yes of course you shouldn’t do that</em>”, but I’m recording it here in case anybody else out there is like me.</p>
 
-        </div>
-        <div class="post-meta">
-          Feb 26, 2025
-        </div>
-        <div class="post-tag">cron</div>
-        <div class="post-tag">debugging</div>
-        <div class="post-tag">python</div>
-        <div class="post-tag">scripting</div>
-        <div class="post-tag">bestpractices</div>
-        </div>
-    </article>
-    <div class="wrapper">
-      <hr />
-      <div class="post-related">
-          <h4>Related Posts</h4>
+    </div>
+    <div class="post-meta">
+      Feb 26, 2025
+    </div>
+    <div class="post-tag">cron</div>
+    <div class="post-tag">debugging</div>
+    <div class="post-tag">python</div>
+    <div class="post-tag">scripting</div>
+    <div class="post-tag">bestpractices</div>
+    <hr />
+    <div class="post-related">
+        <h4>Related Posts</h4>
 <ul class="archive-list">
 <li><a href="/2024/11/21/installing-python3-modules-on-macs-in-2024.html">Installing Python3 modules on Macs in 2024</a></li>
       </ul></div>
-      <hr />
-      <div class="post-comments">
-          <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+    <hr />
+    <div class="post-comments">
+        <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
 <div id="commento"></div>
 </div>
-    </div>
-  </div>
+  </article>
+
   </main>
   <footer class="site-footer">
   <div class="wrapper">

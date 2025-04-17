@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/16/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,131 +25,166 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
-  </div>
-</header>
-
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
   
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2010/10/23/chrono-trigger-retrospective.html">Chrono Trigger Retrospective</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://socksmakepeoplesexy.net/index.php?a=trigger">http://socksmakepeoplesexy.net/index.php?a=trigger</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #572117, #685F56, #57230E, #645112, #56281E)"></div>
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/16</span></span>
+      </div>
+    </div>
+  </div>
 </header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
-  <p>Chrono Trigger basically began as a jam session — a couple of star designers and a manga artist getting together to brainstorm and seeing what they might produce. No pressure. No cynicism.</p>
 
-  <p>[ . . . ]</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
 
-  <p>Ultimately, the best thing about Chrono Trigger is something that can’t quite be quantified in terms of mechanics, aesthetics, or plot. It’s impossible to play without getting the sense that that its designers really had a lot of fun in conceiving it (barring a stomach ulcer or two) and were wholly dedicated to making sure they got it right. Chrono Trigger is a labor of love effected by a group of very talented game designers, and their enthusiasm for the project permeates every aspect of the experience.</p>
-</blockquote>
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
 
-<p>Talk about nostalgia. I still consider Chrono Trigger to be the best game of all time, and this article expresses its appeal perfectly. If you haven’t played it before, fire up the emulator. If you have played it before, reading this will make you want to play again.</p>
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
 
-            </div>
-          <div class="post-meta">
-            <a href="/2010/10/23/chrono-trigger-retrospective.html">Oct 23, 2010</a>
-            <!-- <div class="comment-link"><a href="/2010/10/23/chrono-trigger-retrospective.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2010/06/06/i-grew-up-in-high-school.html">I Grew Up in High School</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #26334A, #C8CCA9, #55482B, #748B8B, #573114)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I might even say that I didn’t grow up in any meaningful way before I started high school.</p>
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
 
-<p>I’ve always felt like I have very limited memories of middle school and elementary school. The problem, as I realized recently, isn’t that I have few memories. Rather, it is that my memories don’t seem to include my thoughts – what I wondered, what I thought about, and how I felt about certain things. When probing my memories I get plenty of clear images, but I can’t help but feel like an observer; I can see my past-self doing things and reacting to events, but I have no idea what that child was thinking. I mean, I can guess. I’m sure I’d be pretty good at guessing, since I know the kid well, but it’s strange that this isn’t part of the memory.</p>
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
 
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
 
-            <p>
-  <a href="/2010/06/06/i-grew-up-in-high-school.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2010/06/06/i-grew-up-in-high-school.html">Jun 6, 2010</a>
-            <!-- <div class="comment-link"><a href="/2010/06/06/i-grew-up-in-high-school.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/12/21/the-incredible-network-of-children.html">The Incredible Network of Children</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #FF8219, #938977, #B0AFAF, #68574F, #47AFCA)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>When we were kids, we didn’t use online forums, message boards, or FAQs. Yet somehow, every single child knew that if your videogame wasn’t working, you just needed to blow in the cartridge. And it’s not like anybody documented Red Rover or Wall Ball or Groundies/Lava Monster. Kids just talked to each other and figured it out.</p>
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #FF8219, #938977, #B0AFAF, #68574F, #47AFCA);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-incredible-network-of-children">The Incredible Network of Children</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>When we were kids, we didn’t use online forums, message boards, or FAQs. Yet somehow, every single child knew that if your videogame wasn’t working, you just needed to blow in the cartridge. And it’s not like anybody documented Red Rover or Wall Ball or Groundies/Lava Monster. Kids just talked to each other and figured it out.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/12/21/the-incredible-network-of-children.html">Dec 21, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/12/21/the-incredible-network-of-children.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/12/10/three-cups-of-tea.html">Three Cups of Tea</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #615D62, #B1B1AD, #B5A419, #928C8E, #655C5E)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><em>Three Cups of Tea</em> is the most inspiring book I have ever read.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-incredible-network-of-children">Dec 21, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #615D62, #B1B1AD, #B5A419, #928C8E, #655C5E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/three-cups-of-tea">Three Cups of Tea</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><em>Three Cups of Tea</em> is the most inspiring book I have ever read.</p>
 
 <p>It is the true story following Greg Mortenson, a mountaineer who attempts to climb K2. On his way down, he stumbles into a tiny village in Pakistan and vows to return one day to build a school for the children there. He is successful, and is urged by others to continue building schools for underprivileged children across Pakistan. His story is remarkable, and the amount of impact he has managed to bring as one man with audacious goals is astounding.</p>
 
@@ -157,95 +192,114 @@
 
 <p>This book reaffirmed my desire to do good, and I encourage you to find a copy.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/12/10/three-cups-of-tea.html">Dec 10, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/12/10/three-cups-of-tea.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/12/10/five-steps-to-an-effective-tech-team.html">Five Steps to an Effective Tech Team</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #02366B, #6C8D91, #9F9F9F, #E56003, #A8A8A7)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I recently experienced two of the most informative and useful meetings of my life. Lloyd Taylor, the former VP of Technical Operations at LinkedIn, and Olana Khan, the former COO of Kiva, graciously donated their time to speak to us about how to organize our technology goals. We had been in the process of formalizing our thoughts for an upcoming board meeting, but their expert feedback allowed us to cement in some much-needed structure. In addition, we also were given invaluable advice about how to lead an effective technology team in general.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/three-cups-of-tea">Dec 10, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #02366B, #6C8D91, #9F9F9F, #E56003, #A8A8A7);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/five-steps-to-an-effective-tech-team">Five Steps to an Effective Tech Team</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I recently experienced two of the most informative and useful meetings of my life. Lloyd Taylor, the former VP of Technical Operations at LinkedIn, and Olana Khan, the former COO of Kiva, graciously donated their time to speak to us about how to organize our technology goals. We had been in the process of formalizing our thoughts for an upcoming board meeting, but their expert feedback allowed us to cement in some much-needed structure. In addition, we also were given invaluable advice about how to lead an effective technology team in general.</p>
 
 <h3 id="preface--agile-development">Preface – Agile Development</h3>
 
 <p>First, I should set the stage by describing our new development process. Because Samasource is a tiny organization with no shortage of exciting new ventures to pursue, we adopted an agile development framework. This idea has gotten a lot of traction, and Eric lead us through the implementation. He actually wrote up a monster post about it <a href="http://mindtangle.net/2009/12/04/how-to-use-basecamp-for-agile-development/">on his blog</a>, but I’ll briefly summarize here.</p>
 
+<p>We divide our attention into short <strong>sprints</strong>, each lasting one or two weeks. Sprints represent all of the tasks that we will be focusing on during that time, and allow us to keep our minds off of other distractions until it comes time to organize the next sprint.</p>
 
-            <p>
-  <a href="/2009/12/10/five-steps-to-an-effective-tech-team.html">Continue reading &rarr;</a>
+<p>Each sprint is comprised of various <strong>user stories</strong>, which encapsulate a qualitative end-goal. For example, one user story from our first sprint was “Website Visitors Understand the Mission and Trust the Org”. What this does is it allows us to focus on the real impact that our work will be making. We will not be blindly executing tasks from stale to-do lists, and will make sure that each project has tangible impact.</p>
+
+<p>And each user story is made up of <strong>tasks</strong>, which are small, discrete items of work that take a short amount of time to complete. This allows us to quantify the work that will be done.</p>
+
+<p>This system of agile development allows us to be flexible from week to week with what we prioritize, ensures us that we are working towards a real goal with measurable impact, and breaks the work down into bite-size pieces. With this basic system in place, we can begin talking about business organization and the steps we can take to make the engineering team as effective as possible.</p>
+
+
+      <p>
+  <a href="/posts/five-steps-to-an-effective-tech-team">Continue reading &rarr;</a>
   <!-- <span class="post-meta">
     (9 mins) 
     </span> -->
 </p>
 </div>
-          <div class="post-meta">
-            <a href="/2009/12/10/five-steps-to-an-effective-tech-team.html">Dec 10, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/12/10/five-steps-to-an-effective-tech-team.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/10/26/gogol-bordello-oakland-2009.html">Gogol Bordello – Oakland 2009</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #323931, #E1D2AA, #591E24, #6F2C02, #E2CEAC)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I recently saw Gogol Bordello perform live for the second time. The first was a year (two years?) ago in San Francisco, and it was the wildest, most exhilarating event I have ever attended. Many concerts have “that one song,” that brings the entire audience together in a fever of enthusiasm to focus entirely on the music and the performance. Gogol Bordello managed to maintain this state for the entire 2 hour show. The rush of being in a huge crowd of people screaming in unison and immersed in the moment, led by the gods of gypsy punk, was indescribable. But enough about last year.</p>
+    <div class="post-meta">
+      <a href="/posts/five-steps-to-an-effective-tech-team">Dec 10, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #323931, #E1D2AA, #591E24, #6F2C02, #E2CEAC);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/gogol-bordello-oakland-2009">Gogol Bordello – Oakland 2009</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I recently saw Gogol Bordello perform live for the second time. The first was a year (two years?) ago in San Francisco, and it was the wildest, most exhilarating event I have ever attended. Many concerts have “that one song,” that brings the entire audience together in a fever of enthusiasm to focus entirely on the music and the performance. Gogol Bordello managed to maintain this state for the entire 2 hour show. The rush of being in a huge crowd of people screaming in unison and immersed in the moment, led by the gods of gypsy punk, was indescribable. But enough about last year.</p>
 
 <p>The Oakland show was pretty good. The guys brought us a show as wild and passionate as ever before, so I think the crowd was the missing factor. There was nothing wrong with it per se – A few too many sweaty, angry men in the mosh pit for my tastes but that’s almost unavoidable – so I’m willing to bet that the San Francisco crowd that night was just too good to follow. Everybody in that theater was there to see the band, and loved – lusted, even – the music they performed. That just doesn’t happen every day, and it has earned Gogol Bordello a permanent place in my heart.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/10/26/gogol-bordello-oakland-2009.html">Oct 26, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/10/26/gogol-bordello-oakland-2009.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/08/21/facebook-and-non-profits-revolutionizing-with-samasource.html">Facebook and Non-Profits: Revolutionizing with Samasource</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5C5C5C, #1E314A, #A5A5A5, #132A60, #F75F25)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><em>Originally posted on the <a href="http://fbfund.com/facebook-and-non-profits-revolutionizing-with-samasource/">fbFund blog</a></em></p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/gogol-bordello-oakland-2009">Oct 26, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5C5C5C, #1E314A, #A5A5A5, #132A60, #F75F25);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/facebook-and-non-profits-revolutionizing-with-samasource">Facebook and Non-Profits: Revolutionizing with Samasource</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><em>Originally posted on the <a href="http://fbfund.com/facebook-and-non-profits-revolutionizing-with-samasource/">fbFund blog</a></em></p>
 
 <p>While a Stanford undergrad, I began my online career with gleeful audacity. The Monday after Facebook Platform launched, my friend and I released Facebook’s original Graffiti application. We were unexperienced and had no viral component, so we soon lost the battle to Mark Kantor et al.’s version. But Graffiti gave us excitement and hunger. The following fall we enrolled in Stanford’s course on Facebook applications, using the opportunity to develop Send Hotness. This time, we nailed the virality. A few advertising payouts later, we were the proud owners of two companies. Doped up on adrenaline, we loved every minute. I stepped down eventually once I remembered that I had schoolwork to do, but I felt sure that this was my path.</p>
 
+<p>Fast forward to April 2009. Graduation is pending, and I have the thrilling chance to commit my waking hours to some product. As it turns out, I basically had one choice:</p>
 
-            <p>
-  <a href="/2009/08/21/facebook-and-non-profits-revolutionizing-with-samasource.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (3 mins) 
-    </span> -->
-</p>
+<blockquote>
+  <p>We’re developing a real-time, web 2.0, social algorithm-based consumer-facing interface that will revolutionize what users do when they [blank]</p>
+</blockquote>
+
+<p>Many were great products, but I was saddened by those whose blanks were literal. They revolutionized where there was no value, turning a frivolous activity into a a well-designed and sexy frivolous activity. I needed more than that, and I looked for a way off of this path to inconsequence.</p>
+
+<p>This is when I met Leila Chirayath Janah, the founder and CEO of <a href="https://www.samasource.org/">Samasource</a>. Having been in operations for 6 months at the time, Samasource’s mission was to bring dignified, computer-based work to women, youth, and refugees living in poverty. They recognized the tremendous untapped talent in impoverished countries and strove to bring prosperity by providing a sustainable livelihood. This is an idea that will change the world, and I was hooked from the start.</p>
+
+<p>I now have the privilege of being Samasource’s VP of Technology, and we have truly been blessed by being invited to participate in fbFund REV this summer. It’s an unexpected meeting of my past and current passions, and it has been tremendously fruitful. The Facebook platform, as well as other social channels, have a huge potential to effect social change and support these initiatives.</p>
+
+<p>Samasource’s project this summer is to bring our services to the Facebook platform by allowing partners in rural Asia and sub-Saharan Africa to offer quality assurance and testing to application developers. I believe that Facebook can bring together resourceful entrepreneurs and skilled rural workers in a way that was previously unheard of. As an application developer you are working one-on-one with a real person from across the world. This is a very moving realization, as I found when first inviting our service partners to join the site. For these individuals, having a Facebook profile is itself a powerful first step. Many have little or no web presence, and this will be their first chance to build a legitimate online reputation. Imagine the excitement of becoming plugged into such a dynamic international network for the first time, seeing no limit to where your work can take you.</p>
+
+<p>So as it turns out, I am now committing my waking hours to a great product. We are remodeling the means by which an individual can rise out of poverty. We are enabling people to make socially responsible decisions that will change a life forever. Samasource is revolutionizing by giving work.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/facebook-and-non-profits-revolutionizing-with-samasource">Aug 21, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #FFD606, #555555, #959595, #67636B, #6E3F2D);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/programmers-stop-whining-be-productive">Programmers: Stop Whining, Be Productive</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <div class="callout">
+    <div class="title">Update 2019</div>
+    10 years later, I have posted a reflection on this piece <a href="/posts/the-maker's-schedule-a-ten-year-retrospective">here</a>
+    
 </div>
-          <div class="post-meta">
-            <a href="/2009/08/21/facebook-and-non-profits-revolutionizing-with-samasource.html">Aug 21, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/08/21/facebook-and-non-profits-revolutionizing-with-samasource.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/07/24/programmers-stop-whining-be-productive.html">Programmers: Stop Whining, Be Productive</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #FFD606, #555555, #959595, #67636B, #6E3F2D)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I was pointed to <a href="http://paulgraham.com/makersschedule.html">Paul Graham’s post</a> about programmers running on a separate schedule than other people. Programmers run on the “maker’s schedule” and prefer to work in large chunks of time, with units of at least half a day. Others, particularly their bosses, operate on the “manager’s schedule” and have things defined into hour-long chunks. Interactions between the two typically cause friction:</p>
+
+<p>I was pointed to <a href="http://paulgraham.com/makersschedule.html">Paul Graham’s post</a> about programmers running on a separate schedule than other people. Programmers run on the “maker’s schedule” and prefer to work in large chunks of time, with units of at least half a day. Others, particularly their bosses, operate on the “manager’s schedule” and have things defined into hour-long chunks. Interactions between the two typically cause friction:</p>
 
 <blockquote>
   <p>I find one meeting can sometimes affect a whole day. A meeting commonly blows at least half a day, by breaking up a morning or afternoon. But in addition there’s sometimes a cascading effect. If I know the afternoon is going to be broken up, I’m slightly less likely to start something ambitious in the morning. I know this may sound oversensitive, but if you’re a maker, think of your own case. Don’t your spirits rise at the thought of having an entire day free to work, with no appointments at all? Well, that means your spirits are correspondingly depressed when you don’t. And ambitious projects are by definition close to the limits of your capacity. A small decrease in morale is enough to kill them off.</p>
@@ -253,55 +307,55 @@
 
 <p>This is bullshit.</p>
 
+<p>I’m not attacking Graham; he is merely pointing out the problem and explaining how he responds: by placing managers on the maker’s schedule. But this mentality is held by too many programmers, each of whom strokes his or her ego by running on a special schedule and taking advantage of the night, while the inferior mortals sleep.</p>
 
-            <p>
-  <a href="/2009/07/24/programmers-stop-whining-be-productive.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (4 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2009/07/24/programmers-stop-whining-be-productive.html">Jul 24, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/07/24/programmers-stop-whining-be-productive.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/07/08/the-elegance-of-the-hedgehog.html">The Elegance of the Hedgehog</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #D79D26, #D19A2E, #0F295C, #B0A3BF, #D09C2F)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><strong>Profoundly moving</strong></p>
+<p>Come on people, wake up (seriously, it’s 11 am already). This is not an issue of inability; it is an issue of discipline. I admit that interruptions are hard to recover from, and that a ten hour block is more productive than five two-hour blocks. But wasting an entire afternoon because you have an appointment at 3 is childish. Programmers get into a mode of thinking where they believe that the work they do is somehow more intense and more specialized than that of others. “I’m going to strap myself down and work for twenty hours,” they say, “because this is serious business. You can’t just scoot into your chair and tippy-tap for a few hours. You could really hurt yourself.” Again, bullshit.</p>
+
+<p>I had the pleasure of attending Eric Ries’ presentation on The Lean Startup. Among the huge wealth of insight he had to share, one particular anecdote stuck with me. His company had traced the root of a particular problem to insufficient training procedures for new hires. Upon speaking to a manager about this, the manager explained that he agreed the problem was there but that he had so much to do he couldn’t possibly devote several days to setting up a training program. Ries suggested that the manager take one hour right then to do whatever he would have done for the first hour of establishing the training program. The manager retorted by highlighting the absurdity of this response, but Ries persisted, and off he went. The result of his hour of work was the creation of a new wiki page with a dozen bullet points stating some things that were good to know. This turns out to be reasonably useful, and more importantly, a subsequent hour of work the next week could expand this and get a lot more done.</p>
+
+<p>I know it doesn’t always apply, but it’s commendable and inspiring. At work the next week, I found myself with 2 hours before a lunchtime meeting. I could have putzed around the internet for a couple of hours and saved my productivity to increase momentum in the afternoon, but I didn’t do that. Instead, I set up a quick database table and enabled logins on the website. After lunch I had a few minutes before a phone call, so I enabled logouts on the website. Rinse and repeat, you’ve got a social networking site by supper.</p>
+
+<p>My point here is that anybody can be productive in any amount of time. It’s difficult, sure, and requires discipline. But productivity feels great, and it makes you far more flexible as a worker. It’s comparable to the sensation of waking up early to exercise and realizing how much time you had been wasting by sleeping past lunch. If you haven’t experienced this yet, I highly recommend it as well.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/programmers-stop-whining-be-productive">Jul 24, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #D79D26, #D19A2E, #0F295C, #B0A3BF, #D09C2F);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-elegance-of-the-hedgehog">The Elegance of the Hedgehog</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><strong>Profoundly moving</strong></p>
 
 <p>By Muriel Barbery, this novel is the story of two hyper-intelligent individuals living among Paris’ high society: Renée Michel, the concierge of the apartment building, and Paloma Josse, the shockingly perceptive 12-year-old. They seem to embody everything that the privileged elite should be but isn’t; the juxtaposition of their wisdom and class against the frivolous and shallow natures of those around them constantly lashes out at the empty finicking of the bourgeois lifestyles.</p>
 
+<p>At the same time, this tiresome emptiness is contrasted with Japanese aesthetics, which often find beauty in simplicity. The line between nullness and emptiness is a thin but important distinction. Japanese art and culture are a constant source of peace for the two. Surely it is no coincidence that the arrival of the Japanese man is what brings new meaning into their lives.</p>
 
-            <p>
-  <a href="/2009/07/08/the-elegance-of-the-hedgehog.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2009/07/08/the-elegance-of-the-hedgehog.html">Jul 8, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/07/08/the-elegance-of-the-hedgehog.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/07/08/extremely-loud-and-incredibly-close.html">Extremely Loud and Incredibly Close</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #C6262B, #A17361, #C6373D, #FA0F20, #C64943)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><strong>Amazingly imaginative</strong></p>
+<p>The book is incredibly dense with wonderful material. Most of the book is structured to have one profound thought per chapter, and this adds up to a huge mass of wisdom and perceptiveness. Most authors, having arrived at one of these insights, would probably attempt to write a book about it, a masterpiece (they hope) which pivots around a truly thought-provoking idea. Barbery, on the other hand, had the audacity to fill the book with these thoughts and reveal one per chapter. It almost feels wasteful, seeing myself briefly appreciate the beauty of one chapter before hurrying off with excitement to see what will come next.</p>
+
+<p>I wish I could comment more on the significance of Tolstoy, but I am grossly ill-versed. Maybe I’ll revisit this after reading <em>Anna Karenina</em> and re-reading <em>The Hedgehog and the Fox</em>.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-elegance-of-the-hedgehog">Jul 8, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #C6262B, #A17361, #C6373D, #FA0F20, #C64943);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/extremely-loud-and-incredibly-close">Extremely Loud and Incredibly Close</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><strong>Amazingly imaginative</strong></p>
 
 <p>This is the story of Oskar Schell, a young boy who is on a quest around New York City, attempting to solve a mystery left in the wake of his father’s death in the 9/11 attacks. The story is told in the form of narratives, letters, and journal entries from the perspective of three individuals, and their interwoven stories are revealed expertly in parallel. The book works as a scrapbook, with the reader discovering elements from the story appearing on the pages, as though they had been pasted in.</p>
 
@@ -309,33 +363,85 @@
 
 <p>This, I believe, is my absolute favorite book. I recommend it to everybody. Written by Jonathan Safran Foer, I believe it to be far superior to <em>Everything is Illuminated</em>.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/07/08/extremely-loud-and-incredibly-close.html">Jul 8, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/07/08/extremely-loud-and-incredibly-close.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/extremely-loud-and-incredibly-close">Jul 8, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #614E25, #5C5C5C, #B3B3B3, #4D4946, #5D5D5D);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/samasource-selected-for-fbfund-rev">Samasource Selected for fbFund REV</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Hooray! Along with 18 companies and one other non-profit, <strong>Samasource was chosen to participate in fbFund’s incubator program this summer</strong>. Check out the full list of winners on <a href="http://venturebeat.com/2009/05/28/fbfund-17-companies-and-2-nonprofits-win-head-to-palo-alto/">VentureBeat</a> or <a href="http://www.insidefacebook.com/2009/05/28/facebook-announces-19-2009-fbfund-winners/">InsideFacebook</a>.</p>
+
+<p>What this means is that we’ll have Palo Alto office space, lots of media attention, an official Facebook seal of approval, and possibly free lunches <em>/crossfingers</em>. The catch?</p>
+
+<blockquote>
+  <p>Due to the way fbFund is structured, the non-profit startups cannot receive funding (<a href="http://developers.facebook.com/news.php?blog=1&amp;story=249">Facebook dev blog</a>).</p>
+</blockquote>
+
+<p>Bummer…</p>
+
+<p>Samasource’s Facebook product will allow developers to create work opportunities for underprivileged workers by setting up periodic testing for their active applications. <strong>With Samasource, developers lower costs, reduce poverty, and improve their applications</strong>. Being chosen as a fbFund winner, despite not entailing cash, is extremely significant. Samasource, along with Vittana, the other non-profit winner, is poised to be a frontrunner of social entrepreneurship within the Facebook ecosystem. Being able to work with Facebook officially should greatly increase product quality, market penetration, and overall social impact. Samasource also will provide a valuable service to application developers, so I have high hopes for the success of this project.</p>
+
+<p>Now a quick word about changes within fbFund. Previously the fund awarded grants to the winners, but this year the funding is in the form of an equity investment (more coverage <a href="http://venturebeat.com/2009/04/16/facebooks-fbfund-incubator-program-looks-to-cash-in-on-the-sites-growth/">here</a>). This makes sense, and I think it’s a reasonable change. It does put the non-profits in an awkward spot, but I believe that’s just growing pains. Two non-profits were chosen this year, and that’s a big deal. Optimism tells me that <strong>social entrepreneurship will hold a much more prominent position in the years to come</strong>. Exciting things are happening in the world of social change, and Samasource is fortunate enough to be able to make an impact in a high-visibility environment. We will not disappoint.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/samasource-selected-for-fbfund-rev">May 31, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5A281B, #576865, #566865, #55615C, #526E6E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/meals-as-a-social-activity">Meals as a Social Activity</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Today I ate dinner alone. I think there is nothing wrong with that, but you just don’t see people alone in restaurants all that often (Aren’t you going to be bored? Do you want a magazine or something?). Eating meals, in most cultures everywhere, is regarded as a social activity. I would like to explore why, and have a few hypotheses.</p>
+
+<p><strong>Everybody has to do it</strong>. Three times a day, nearly everybody will eat food at roughly the same time. People share this activity, and so it makes sense for that time to be designated for social interaction. If everybody had tea at 3, or went to the gym at 4, then those would just as strongly be considered a social activity.</p>
+
+<p><strong>We are forced to sit down</strong>. In our busy lives, we are either doing something or are on our way elsewhere to do something. We need to eat though, and eating takes a few minutes, so we take a break and sit down. Meals become social times because they are the only times when social interaction is reliably possible.</p>
+
+<p>For some, the social aspect of meals is essential. I have friends who refuse to spend meals alone, going out of their way to seek a companion or else not eating at all. This may even be the norm. Again, you never see people eating alone at restaurants. Why is this? When did conversation turn from a pleasant circumstance into an essential feature? If hypothesis two is true, then it may be because we depend upon meals for interaction. That doesn’t explain not eating, though. If you are forced to eat dinner alone, the conclusion ought to be, “Oh well, I guess I’ll eat alone today,” and not, “My meal is ruined, so I’ll settle for a quick sandwich.” Conversation is so essential that in its absence we lose all motivation to put effort into a meal. Solitude is preventative of food consumption.</p>
+
+<p>No. That’s not true. Solitude prevents meals, and we resort to mere food consumption. A meal then, ought to be defined as an instance of eating food with others. We have redefined our culinary habits to be inherently social.</p>
+
+<p>Where, then, does that put me? I usually eat meals very quickly, eager to get on with more interesting and productive parts of my life. Conversation is enjoyed, but only in the capacity of my minimal meal time. On the other hand, I enjoy good food and will seize any chance to eat well, even at the cost of doing so alone. It seems I regard meals primarily as food consumption, and enjoy it for gustatory factors. It is probably indicative that I required this posting to realize that meals are inherently social.</p>
+
+<p>But I don’t think there’s anything wrong with that. I am a sociable person who appreciates food. I enjoy conversation at irregular intervals and don’t mind time spent alone. Don’t get me wrong though, I would love to have dinner together. In fact, let’s do it soon.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/meals-as-a-social-activity">May 23, 2009</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/15/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/17/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

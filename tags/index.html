@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tags</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/tags/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,49 +25,141 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index ">/<span class=""></span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-  <main class="page-content" aria-label="Content">
-    
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue ">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
 
   <span class="site-tag">
     <a href="/tag/ai/"
@@ -379,8 +471,8 @@
 
   <span class="site-tag">
     <a href="/tag/cinemagraph/"
-        style="font-size: 92%">
-            cinemagraph (3)
+        style="font-size: 84%">
+            cinemagraph (1)
     </a>
   </span>
 
@@ -925,8 +1017,8 @@
 
   <span class="site-tag">
     <a href="/tag/japan/"
-        style="font-size: 120%">
-            japan (10)
+        style="font-size: 116%">
+            japan (9)
     </a>
   </span>
 
@@ -967,8 +1059,8 @@
 
   <span class="site-tag">
     <a href="/tag/kyoto/"
-        style="font-size: 92%">
-            kyoto (3)
+        style="font-size: 88%">
+            kyoto (2)
     </a>
   </span>
 
@@ -1373,8 +1465,8 @@
 
   <span class="site-tag">
     <a href="/tag/photo/"
-        style="font-size: 116%">
-            photo (9)
+        style="font-size: 108%">
+            photo (7)
     </a>
   </span>
 
@@ -2015,10 +2107,11 @@
     </a>
   </span>
 
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

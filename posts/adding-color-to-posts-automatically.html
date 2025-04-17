@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating Colors from Post Titles</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/adding-color-to-posts-automatically">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Generating Colors from Post Titles" property="og:title">
+<meta content="article" property="og:type">
+<meta content="This blog has an intentionally simple design, but lately I’ve been thinking that it needs more color. A lot of the posts don’t have images and are just text, so large areas of the page are black an..." property="og:description">
+<meta content="https://invisibleparade.com/posts/adding-color-to-posts-automatically" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/adding-color-to-posts-automatically</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #A27D7A, #927D67, #EFAB4D, #24919A, #535E5E);"></div>
+  <header class="post-header">
+    <h1>Generating Colors from Post Titles</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>This blog has an intentionally simple design, but lately I’ve been thinking that it needs more color. A lot of the posts don’t have images and are just text, so large areas of the page are black and white with nothing visually interesting. That said, trying to include an image with every post is a pain. I would probably spend more time browsing stock images than actually writing the posts.</p>
+
+<p><a href="https://picular.co">Picular</a> was a big inspiration. Generating colors from text by searching for images is a great idea, and I decided to automatically get a set of colors based on each post’s title. Picular doesn’t have an API that I could use, so I wrote a quick script that does something similar. Unless I’ve changed things since I published this post, there should now be a row of colors next to each post’s title.</p>
+
+<h2 id="getting-colors-from-images">Getting colors from images</h2>
+
+<p>I’ve included the script itself at the end of the post so you can the details of how it works, but the general process is as follows:</p>
+
+<ol>
+  <li>Do a Google Image search for the title of the post</li>
+  <li>Get the first five images</li>
+  <li>For each image, find the color that is most prominent</li>
+  <li>Save the list of colors to the post</li>
+</ol>
+
+<p>Here are the results for the title “My Vacation in Tahiti”:</p>
+
+<table>
+  <tr>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti1.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti2.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti3.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti4.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti5.jpg" /></td>
+  </tr>
+  <tr>
+    <td style="width:20%;text-align:center;background-color:#626E6F;color:white">#626E6F</td>
+    <td style="width:20%;text-align:center;background-color:#53C2D6">#53C2D6</td>
+    <td style="width:20%;text-align:center;background-color:#7693C6">#7693C6</td>
+    <td style="width:20%;text-align:center;background-color:#39547B;color:white">#39547B</td>
+    <td style="width:20%;text-align:center;background-color:#515E65;color:white">#515E65</td>
+  </tr>
+</table>
+<p><br /></p>
+
+<p>After playing around with it, I found that just looking at the most frequently used color usually isn’t good enough. Most of the time you just end up with a lot of black and white. Instead of looking for the most common color, I should instead look for the most interesting color. There is a lot of room for optimization here, and Picular probably does a lot behind the scenes to make its results visually appealing. For now, I’m just ignoring any colors that are close to black or close to white. So far it’s working well enough for my uses.</p>
+
+<p>Even with these adjustments, this method tends to find a lot of colors that are either very dark or very bright. The colors often felt too strong compared to the rest of the site’s design. I thought about doing some adjustments to the colors to tone them down, but realized that it’s much easier to cheat by reducing the opacity of the colorful bars via CSS.</p>
+
+<p>I now also include this script in the rake task that generates my post files for Jekyll, so after I write a post it will automatically fetch colors before publishing. I might write another post about how that works, but for now you can see the file <a href="https://github.com/aonsager/aonsager.github.io/blob/master/Rakefile">here</a> (sorry if I’ve changed things since I wrote this and it’s no longer there).</p>
+
+<!-- more -->
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li><a href="https://cse.google.com/cse/create/new">Create a custom search engine</a> powered by google</li>
+  <li><a href="https://developers.google.com/custom-search/v1/overview">Get an API key</a> for the Custom Search JSON API</li>
+</ul>
+
+<p>This is the only good way that I have found to get image search results without using a credit card. The custom search engine requires that you specify a site to search when you create it, but you can change the settings to search the entire web afterwards and it works fine.</p>
+
+<h2 id="the-script">The Script</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'net/https'</span>
+<span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+<span class="nb">require</span> <span class="s1">'yaml'</span>
+<span class="nb">require</span> <span class="s1">'rmagick'</span>
+
+<span class="no">CONFIG</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load_file</span><span class="p">(</span><span class="s2">"_local_config.yml"</span><span class="p">)</span>
+
+<span class="c1"># Does an image search for the post title</span>
+<span class="c1"># and returns 5 prominent colors</span>
+<span class="k">def</span> <span class="nf">colors_from_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+  <span class="c1"># Make the search query</span>
+  <span class="n">uri</span>  <span class="o">=</span> <span class="s2">"https://www.googleapis.com"</span>
+  <span class="n">path</span> <span class="o">=</span> <span class="s2">"/customsearch/v1"</span>
+  <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="n">uri</span> <span class="o">+</span> <span class="n">path</span> <span class="o">+</span>
+            <span class="s2">"?key="</span> <span class="o">+</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s1">'google_api_key'</span><span class="p">]</span> <span class="o">+</span>
+            <span class="s2">"&amp;q="</span> <span class="o">+</span> <span class="no">URI</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">"&amp;cx="</span> <span class="o">+</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s1">'search_cx'</span><span class="p">]</span> <span class="o">+</span>
+            <span class="s2">"&amp;searchType=image&amp;num=5"</span><span class="p">)</span>
+  <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span>
+    <span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">,</span> <span class="ss">:use_ssl</span> <span class="o">=&gt;</span> <span class="n">uri</span><span class="p">.</span><span class="nf">scheme</span> <span class="o">==</span> <span class="s1">'https'</span>
+  <span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">http</span><span class="o">|</span>
+    <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Get the image results.</span>
+  <span class="c1"># Using the thumbnails makes processing faster</span>
+  <span class="n">image_urls</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">parsed_json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">)</span>
+  <span class="n">parsed_json</span><span class="p">[</span><span class="s1">'items'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
+    <span class="n">image_urls</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">[</span><span class="s1">'image'</span><span class="p">][</span><span class="s1">'thumbnailLink'</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Process each image and get its most dominant color</span>
+  <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">image_urls</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">image_url</span><span class="o">|</span>
+    <span class="n">original</span> <span class="o">=</span> <span class="no">Magick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">image_url</span><span class="p">).</span><span class="nf">first</span>
+    <span class="c1"># Reduce to 16 colors to speed up processing</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">original</span><span class="p">.</span><span class="nf">quantize</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="no">Magick</span><span class="o">::</span><span class="no">RGBColorspace</span><span class="p">)</span>
+    <span class="c1"># Sort colors in order of frequency</span>
+    <span class="n">palette</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="nf">color_histogram</span><span class="p">.</span><span class="nf">sort</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+    <span class="c1"># Default to most common value, will try to replace</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="nf">to_color</span><span class="p">(</span><span class="n">palette</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">palette</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+      <span class="n">pixel</span> <span class="o">=</span> <span class="nb">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">hsl</span> <span class="o">=</span> <span class="n">pixel</span><span class="p">.</span><span class="nf">to_HSL</span>
+      <span class="k">if</span> <span class="n">hsl</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.3</span>
+        <span class="c1"># Skip this color because too dark</span>
+        <span class="k">next</span>
+      <span class="k">elsif</span> <span class="n">hsl</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.8</span>
+        <span class="c1"># Skip this color because too light</span>
+        <span class="k">next</span>
+      <span class="k">else</span>
+        <span class="c1"># Use this color</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="nf">to_color</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+        <span class="k">break</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">colors</span> <span class="o">&lt;&lt;</span> <span class="n">color</span>
+  <span class="k">end</span>
+  <span class="n">colors</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+    <div class="post-meta">
+      <time datetime="2019-03-20T00:00:00+09:00" itemprop="datePublished">
+        Mar 20, 2019
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/adding-css-support-for-dark-mode">Adding CSS Support for Dark Mode</a></li>
+      <li><a href="/posts/picular">Picular - Google, but for Colors</a></li>
+      <li><a href="/posts/terminal-theme">Terminal Theme</a></li>
+      <li><a href="/posts/squirrel-archive-webpages-so-i-can-find-them-again">Squirrel - Archive webpages so I can find them again</a></li>
+      <li><a href="/posts/comments-are-back">Comments are back</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

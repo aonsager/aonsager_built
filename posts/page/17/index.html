@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/17/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,281 +25,360 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
-  </div>
-</header>
-
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
   
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/05/31/samasource-selected-for-fbfund-rev.html">Samasource Selected for fbFund REV</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #614E25, #5C5C5C, #B3B3B3, #4D4946, #5D5D5D)"></div>
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/17</span></span>
+      </div>
+    </div>
+  </div>
 </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Hooray! Along with 18 companies and one other non-profit, <strong>Samasource was chosen to participate in fbFund’s incubator program this summer</strong>. Check out the full list of winners on <a href="http://venturebeat.com/2009/05/28/fbfund-17-companies-and-2-nonprofits-win-head-to-palo-alto/">VentureBeat</a> or <a href="http://www.insidefacebook.com/2009/05/28/facebook-announces-19-2009-fbfund-winners/">InsideFacebook</a>.</p>
 
-<p>What this means is that we’ll have Palo Alto office space, lots of media attention, an official Facebook seal of approval, and possibly free lunches <em>/crossfingers</em>. The catch?</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
 
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
 
-            <p>
-  <a href="/2009/05/31/samasource-selected-for-fbfund-rev.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2009/05/31/samasource-selected-for-fbfund-rev.html">May 31, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/05/31/samasource-selected-for-fbfund-rev.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/05/23/meals-as-a-social-activity.html">Meals as a Social Activity</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5A281B, #576865, #566865, #55615C, #526E6E)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Today I ate dinner alone. I think there is nothing wrong with that, but you just don’t see people alone in restaurants all that often (Aren’t you going to be bored? Do you want a magazine or something?). Eating meals, in most cultures everywhere, is regarded as a social activity. I would like to explore why, and have a few hypotheses.</p>
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
 
-<p><strong>Everybody has to do it</strong>. Three times a day, nearly everybody will eat food at roughly the same time. People share this activity, and so it makes sense for that time to be designated for social interaction. If everybody had tea at 3, or went to the gym at 4, then those would just as strongly be considered a social activity.</p>
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
 
-<p><strong>We are forced to sit down</strong>. In our busy lives, we are either doing something or are on our way elsewhere to do something. We need to eat though, and eating takes a few minutes, so we take a break and sit down. Meals become social times because they are the only times when social interaction is reliably possible.</p>
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
 
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
 
-            <p>
-  <a href="/2009/05/23/meals-as-a-social-activity.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2009/05/23/meals-as-a-social-activity.html">May 23, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/05/23/meals-as-a-social-activity.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/05/10/is-that-a-cigarette-or-a-lollipop.html">Is that a Cigarette or a Lollipop?</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #705F54, #A19C9B, #F38E98, #797979, #E59667)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I saw a girl at a bus stop who appeared to have a cigarette in her mouth. “Yuck,” I thought. Then, I realized it was a lollipop. I immediately wanted to become her friend.</p>
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #705F54, #A19C9B, #F38E98, #797979, #E59667);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/is-that-a-cigarette-or-a-lollipop">Is that a Cigarette or a Lollipop?</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I saw a girl at a bus stop who appeared to have a cigarette in her mouth. “Yuck,” I thought. Then, I realized it was a lollipop. I immediately wanted to become her friend.</p>
 
 <p>You see, there is something special about lollipops. As far as your mouth is concerned, you could just as well be eating a normal hard candy. But the stick makes a world’s difference. You are proclaiming to the world, <em>“I am enjoying a candy.”</em> There is no way to be inconspicuous about eating a lollipop. You have committed to this act, and do so with no shame.</p>
 
 <p>And anybody who feels such passion for candy is all right in my book.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/05/10/is-that-a-cigarette-or-a-lollipop.html">May 10, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/05/10/is-that-a-cigarette-or-a-lollipop.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/05/09/gravity-summit-stanford-wrap-up.html">Gravity Summit Stanford: Wrap-up</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #50251F, #0D3397, #F54606, #514C4D, #F54706)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Tuesday, May 5th was Gravity Summit&rsquo;s &ldquo;Social Media Marketing for Business&rdquo; at Stanford. I&rsquo;ve known Rodney Rumford since Joachim and I made Graffiti for Facebook, and he was kind enough to save me a spot.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/is-that-a-cigarette-or-a-lollipop">May 10, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #50251F, #0D3397, #F54606, #514C4D, #F54706);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/gravity-summit-stanford-wrap-up">Gravity Summit Stanford: Wrap-up</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Tuesday, May 5th was Gravity Summit&rsquo;s &ldquo;Social Media Marketing for Business&rdquo; at Stanford. I&rsquo;ve known Rodney Rumford since Joachim and I made Graffiti for Facebook, and he was kind enough to save me a spot.</p>
 <p>The focus of the talks was very much aimed towards large businesses; presentations were given by such notable people as Bob Pearson of Dell, Inc. and Charles Miller from DIRECTV. That said, it seemed there were plenty of small business owners attending, and many of the points were generalizable. The main idea is:</p>
 <p><b>Social Media is conversation.</b> When a business or individual understands this, they can do great things.</p>
 <p>Bob Pearson pointed out that &ldquo;the majority of customers don&rsquo;t call you.&rdquo; Businesses have largely been detached from consumers, interacting only when the customer pursues a purchase. This no longer should be the case, as businesses now have the tools to actively engage in conversation with their customers and meet them halfway.</p>
 <p>Social Media brings conversations into the open, and allows businesses to <b>be aware</b> of what people are saying. They then need to actively engage in these conversations and <b>be involved</b> in the dialogue. In doing so, businesses will learn more about the community and share more about themselves. In short, they must learn to <b>be transparent. </b></p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/05/09/gravity-summit-stanford-wrap-up.html">May 9, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/05/09/gravity-summit-stanford-wrap-up.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/03/25/becoming-a-better-writer.html">Becoming a Better Writer</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #AEA394, #6C6C6C, #F9F46D, #4A372A, #F8F46E)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I just ordered Strunk &amp; White&rsquo;s &ldquo;The Elements of Style,&rdquo; 50th anniversary edition. I don&rsquo;t have the book yet, but the purchase inspired me to pay more attention to writing. Hopefully this can be someplace where I can practice writing, incorporating new ideas and polishing my prose. No high hopes yet, as I don&rsquo;t often continue such things for long, but we&rsquo;ll see how it goes :)</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/gravity-summit-stanford-wrap-up">May 9, 2009</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/03/25/becoming-a-better-writer.html">Mar 25, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/03/25/becoming-a-better-writer.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2009/02/24/thelonius-monks-advice-to-saxophonist-steve-lacy.html">Thelonius Monk’s advice to saxophonist Steve Lacy (1960)</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #939393, #C8C8C8, #C7C7C7, #B1B1B1, #B1B1B1)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><img src="/tumblr_files/inm2EB4i2kbb8ti9XtGHBKF5o1_500.jpg" /><br /></p>
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #AEA394, #6C6C6C, #F9F46D, #4A372A, #F8F46E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/becoming-a-better-writer">Becoming a Better Writer</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I just ordered Strunk &amp; White&rsquo;s &ldquo;The Elements of Style,&rdquo; 50th anniversary edition. I don&rsquo;t have the book yet, but the purchase inspired me to pay more attention to writing. Hopefully this can be someplace where I can practice writing, incorporating new ideas and polishing my prose. No high hopes yet, as I don&rsquo;t often continue such things for long, but we&rsquo;ll see how it goes :)</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/becoming-a-better-writer">Mar 25, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #939393, #C8C8C8, #C7C7C7, #B1B1B1, #B1B1B1);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/thelonius-monks-advice-to-saxophonist-steve-lacy">Thelonius Monk’s advice to saxophonist Steve Lacy (1960)</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><img src="/tumblr_files/inm2EB4i2kbb8ti9XtGHBKF5o1_500.jpg" /><br /></p>
 
 <p>Found <a href="http://tinyurl.com/dmuf26" target="_blank">here</a> first</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2009/02/24/thelonius-monks-advice-to-saxophonist-steve-lacy.html">Feb 24, 2009</a>
-            <!-- <div class="comment-link"><a href="/2009/02/24/thelonius-monks-advice-to-saxophonist-steve-lacy.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2008/03/28/dinner-for-2.html">Dinner for 2</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #AAA6A1, #5C3315, #49474F, #9F6623, #99230B)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I was at a restaurant last night and saw a couple having dinner together. At a few points, the guy was texting on his phone and the girl was looking really bored. Boo on him. </p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/thelonius-monks-advice-to-saxophonist-steve-lacy">Feb 24, 2009</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #AAA6A1, #5C3315, #49474F, #9F6623, #99230B);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/dinner-for-2">Dinner for 2</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I was at a restaurant last night and saw a couple having dinner together. At a few points, the guy was texting on his phone and the girl was looking really bored. Boo on him. </p>
 <p>And then once he finished he left his phone sitting open on the table. I guess he was expecting replies? Maybe that sort of thing is commonplace now, but I still think it&rsquo;s rude.  </p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2008/03/28/dinner-for-2.html">Mar 28, 2008</a>
-            <!-- <div class="comment-link"><a href="/2008/03/28/dinner-for-2.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2008/03/19/original-ichat-ui.html">Original iChat UI</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://mooseyard.com/Jens/2008/03/the-origin-of-the-ichat-ui">http://mooseyard.com/Jens/2008/03/the-origin-of-the-ichat-ui</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #AFB0AF, #B1B7C0, #A0A2A4, #EAD197, #291D5E)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>It's always exciting to see original prototypes of good products. Not to mention the sample conversation going on in there is rather delightful.  </p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/dinner-for-2">Mar 28, 2008</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2008/03/19/original-ichat-ui.html">Mar 19, 2008</a>
-            <!-- <div class="comment-link"><a href="/2008/03/19/original-ichat-ui.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2008/03/12/a-boy-named-sue-and-a-theory-of-names.html">A Boy Named Sue, and a Theory of Names</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.nytimes.com/2008/03/11/science/11tier.html">http://www.nytimes.com/2008/03/11/science/11tier.html</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5A1516, #966D6A, #979797, #4F4F4F, #8F8453)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>What will you name your child? </p>
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #AFB0AF, #B1B7C0, #A0A2A4, #EAD197, #291D5E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/original-ichat-ui">Original iChat UI</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://mooseyard.com/Jens/2008/03/the-origin-of-the-ichat-ui">http://mooseyard.com/Jens/2008/03/the-origin-of-the-ichat-ui</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>It's always exciting to see original prototypes of good products. Not to mention the sample conversation going on in there is rather delightful.  </p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2008/03/12/a-boy-named-sue-and-a-theory-of-names.html">Mar 12, 2008</a>
-            <!-- <div class="comment-link"><a href="/2008/03/12/a-boy-named-sue-and-a-theory-of-names.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2008/03/12/donkey-kong-and-me.html">Donkey Kong and Me</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.dadhacker.com/blog/?p=987">http://www.dadhacker.com/blog/?p=987</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #77DAFB, #163855, #89286F, #5E1E13, #A0CEE3)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>An excellent story about the making of Donkey Kong and what it was like to work in an early video game company. </p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/original-ichat-ui">Mar 19, 2008</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2008/03/12/donkey-kong-and-me.html">Mar 12, 2008</a>
-            <!-- <div class="comment-link"><a href="/2008/03/12/donkey-kong-and-me.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5A1516, #966D6A, #979797, #4F4F4F, #8F8453);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/a-boy-named-sue-and-a-theory-of-names">A Boy Named Sue, and a Theory of Names</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.nytimes.com/2008/03/11/science/11tier.html">http://www.nytimes.com/2008/03/11/science/11tier.html</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>What will you name your child? </p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/a-boy-named-sue-and-a-theory-of-names">Mar 12, 2008</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #77DAFB, #163855, #89286F, #5E1E13, #A0CEE3);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/donkey-kong-and-me">Donkey Kong and Me</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.dadhacker.com/blog/?p=987">http://www.dadhacker.com/blog/?p=987</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>An excellent story about the making of Donkey Kong and what it was like to work in an early video game company. </p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/donkey-kong-and-me">Mar 12, 2008</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #65615D, #0E245B, #55251B, #072772, #1C565E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/upcoming-movie-watch">Upcoming Movie Watch</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><u><b>The Documentary Type</b></u></p>
+<p><a href="http://www.apple.com/trailers/weinstein/whereintheworldisosamabinladen/trailer/" target="_blank"> Where in the World is Osama Bin Laden?</a> - Before you write this movie off as one that sounds like it was done by those guys that make stupid teen movies (I almost did), go watch the trailer. It&rsquo;s done by the guy who made Supersize Me, and chronicles his quest to find Osama Bin Laden. And the trailer plays Gogol Bordello music.</p>
+<p> <a href="http://www.apple.com/trailers/independent/planetbboy/trailer/" target="_blank">Planet B-Boy</a> - A documentary on the breakdancing culture. This movie looks awesome.</p>
+<p> <a href="http://www.apple.com/trailers/fox_searchlight/youngatheart/trailera/" target="_blank">Young at Heart</a> - A group of elderly people in New England sing covers of great rock songs. This is a must-see.</p>
+<p><u><b>The Artsy Type</b></u></p>
+<p><a href="http://www.apple.com/trailers/independent/lovesongs/trailer/" target="_blank">Les Chansons D'Amour</a> - I&rsquo;m really excited about this one. Three people are each in love with the other two and have a fascinating relationship. French musicals ftw. </p>
+<p> <a href="http://www.apple.com/trailers/independent/thevisitor/trailer/" target="_blank">The Visitor</a> - College professor with a ho-hum life accidentally meets a young couple, and his life gets turned around when as they become friends. This movie looks really good.</p>
+<p><a href="http://www.apple.com/trailers/miramax/smartpeople/trailer/" target="_blank">Smart People</a> - The trailer didn&rsquo;t impress me all that much, but I really want this movie to be a good one. I&rsquo;ll keep my fingers crossed.</p>
+<p> <a href="http://www.apple.com/trailers/independent/theyearmyparentswentonvacation/trailer/" target="_blank">O Ano em que Meus Pais Saíram De Férias</a> - A Brazilian boy is taken in by his Jewish grandfather&rsquo;s neighbor (?) when his parents are exiled. I can&rsquo;t put my finger on it, but something about this movie really appeals to me. </p>
+<p><a href="http://www.apple.com/trailers/independent/backseat/trailer/" target="_blank">Backseat</a> - Two guys go on a roadtrip to get away from life and have wild antics along the way. This movie will probably either be really good or pretty dumb, so I hope for the former. </p>
+<p><a href="http://www.apple.com/trailers/paramount_vantage/sonoframbow/trailer/" target="_blank">Son of Rambow</a> - A movie about two boys filming a movie. It wowed the crowds at Sundance, and I think &ldquo;delightful&rdquo; would be a good word to describe it. They asked us to help promote the movie through Graffiti, and I wish we could&rsquo;ve :(. </p>
+<p><b> </b><u><b>The Exciting Type</b></u><b> </b></p>
+<p><a href="http://www.apple.com/trailers/independent/romandegare/trailerb/" target="_blank">Roman De Gare</a> - Follows the stories of three people, who may not be exactly who they claim to be. I&rsquo;m not sure if this is going to be a thriller, but it seems pretty exciting, and clever. I&rsquo;m excited to see Dominique Pinon.</p>
+<p><a href="http://www.apple.com/trailers/magnolia/flawless/trailer/" target="_blank">Flawless</a> - I love bank robbery movies! This one stars an unlikely duo trying to pull an inside job. </p>
+<p><a href="http://www.apple.com/trailers/independent/spiral/trailer/" target="_blank">Spiral</a> - I personally will not be watching this, but if you&rsquo;re into creepy, disturbing horror movies then this one&rsquo;s for you.</p>
+<p><u><b>The Funny Type</b></u></p>
+<p><a href="http://www.apple.com/trailers/independent/priceless/trailer/" target="_blank">Priceless</a> - Huzzah! Another rockstar French cast. It&rsquo;s a remake of Breakfast at Tiffany&rsquo;s, and it looks like it won&rsquo;t disappoint. That, and I love Audrey Tautou.</p>
+<p> <a href="http://www.apple.com/trailers/universal/forgettingsarahmarshall/large.html" target="_blank">Forgetting Sarah Marshall</a> - 40 Year Old Virgin? Knocked Up? Superbad? Yeah, their new one is coming out. Go watch it. </p>
+<p><a href="http://www.apple.com/trailers/sony_pictures/youdontmesswiththezohan/high.html" target="_blank">You Don&rsquo;t Mess with the Zohan</a> - I haven&rsquo;t been excited for an Adam Sandler movie in a while, but this one sure does look fun.</p>
+<p><a href="http://www.apple.com/trailers/newline/bekindrewind/large.html" target="_blank">Be Kind Rewind</a> - A movie about Jack Black making movies? Heck yes! </p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/upcoming-movie-watch">Mar 4, 2008</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #A3A5A3, #2549C3, #BB3429, #5C2C23, #C40C06);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/iterations-of-googles-logo">Iterations of Google&#39;s logo</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.wired.com/techbiz/startups/multimedia/2008/02/gallery_google_logos">http://www.wired.com/techbiz/startups/multimedia/2008/02/gallery_google_logos</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I'm definitely glad they keep iterating until they got to the current version, but that 2nd revision&rsquo;s pretty neat too.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/iterations-of-googles-logo">Feb 25, 2008</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/16/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/18/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

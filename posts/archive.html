@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archive</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/archive">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Archive" property="og:title">
+<meta content="article" property="og:type">
+<meta content="My personal webpage and blog." property="og:description">
+<meta content="https://invisibleparade.com/posts/archive" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/archive</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue ">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light selected">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single">
+  <header class="post-header">
+    <h1>Archive</h1>
+  </header>
+  <div class="post-content">
+    <div class="post-flair default"></div>
+
+<section class="archive-post-list">
+  <table>
+  
+  
+    
+    
+      </table>
+      <h2>2025</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Apr 7</td>
+      <td><a href="/posts/outgrowing-coolify">I may have outgrown Coolify</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 28</td>
+      <td><a href="/posts/ai-manifesto">My AI manifesto</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 24</td>
+      <td><a href="/posts/the-compo-challenge">The Photo Composition Challenge</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 26</td>
+      <td><a href="/posts/python-cron">Python script failing via cron</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 13</td>
+      <td><a href="/posts/what-im-doing-now">What I'm doing /now</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 12</td>
+      <td><a href="/posts/katamari-damacy-postmortem">Katamari Damacy postmortem</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 7</td>
+      <td><a href="/posts/crosspooter">CrossPooter - Poot your toots around the web</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 4</td>
+      <td><a href="/posts/the-geometric-nests-of-the-white-spotted-pufferfish">The geometric nests of the white-spotted pufferfish</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 30</td>
+      <td><a href="/posts/hobbies-that-i-am-no-good-at">Hobbies that I am no good at</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 28</td>
+      <td><a href="/posts/dragonsweeper-a-lovely-minesweeper-game">Dragonsweeper - A lovely minesweeper game</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 27</td>
+      <td><a href="/posts/the-sociable-weaver">The Sociable Weaver</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 20</td>
+      <td><a href="/posts/becoming-a-parent-introduced-me-to-stress">Becoming a parent introduced me to stress</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 9</td>
+      <td><a href="/posts/squirrel-archive-webpages-so-i-can-find-them-again">Squirrel - Archive webpages so I can find them again</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 3</td>
+      <td><a href="/posts/rebranding-the-site-invisible-parade">Rebranding the site: Invisible Parade</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2024</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 27</td>
+      <td><a href="/posts/installing-gotosocial-on-coolify">Installing GoToSocial on Coolify</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 25</td>
+      <td><a href="/posts/adguard-was-preventing-sites-from-loading-in-safari-sometimes">Adguard was preventing sites from loading in Safari sometimes</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 24</td>
+      <td><a href="/posts/litestack-all-your-data-infrastructure">Litestack: All your data infrastructure</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 2</td>
+      <td><a href="/posts/i-want-to-love-mastodon">I want to love Mastodon...</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 27</td>
+      <td><a href="/posts/comments-are-back">Comments are back</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 21</td>
+      <td><a href="/posts/installing-python3-modules-on-macs-in-2024">Installing Python3 modules on Macs in 2024</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2022</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 2</td>
+      <td><a href="/posts/web-links-november-2022">Web Links - November 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 1</td>
+      <td><a href="/posts/web-links-october-2022">Web Links - October 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 5</td>
+      <td><a href="/posts/obsidian-icloud-sync-between-mac-and-iphone">Obsidian iCloud sync between Mac and iPhone</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 1</td>
+      <td><a href="/posts/web-links-september-2022">Web Links - September 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Sep 1</td>
+      <td><a href="/posts/web-links-august-2022">Web Links - August 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 1</td>
+      <td><a href="/posts/web-links-july-2022">Web links - July 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 30</td>
+      <td><a href="/posts/web-links-june-2022">Web links - June 2022</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 25</td>
+      <td><a href="/posts/sorry-the-elevator-is-crowded">Sorry the Elevator is Crowded</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 12</td>
+      <td><a href="/posts/procrastination-and-fear-of-failure">Procrastination and Fear of Failure</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 11</td>
+      <td><a href="/posts/music-of-the-city-an-art-project-idea">Music of the City - an Art Project Idea</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 10</td>
+      <td><a href="/posts/urban-isolation">Urban Isolation - Skateboarding in an empty L.A.</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 7</td>
+      <td><a href="/posts/a-fathers-bookshelf">A Father's Bookshelf</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 31</td>
+      <td><a href="/posts/reimagining-chess-with-alphazero">Reimagining Chess with AlphaZero</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 27</td>
+      <td><a href="/posts/why-switch-cartridges-taste-awful">Why Switch Cartridges Taste Awful</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2021</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 16</td>
+      <td><a href="/posts/beautiful-vs.-effective-prose">Beautiful vs. Effective Prose</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 21</td>
+      <td><a href="/posts/star-wars-oil-paintings">Star Wars Oil Paintings</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2020</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Jul 15</td>
+      <td><a href="/posts/detroit-become-human">Detroit: Become Human</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 21</td>
+      <td><a href="/posts/box-line-text-a-minimal-whiteboard-app">Box Line Text: A minimal whiteboard app</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 7</td>
+      <td><a href="/posts/what-staying-home-has-been-like-for-me-so-far">What staying home has been like for me so far</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2019</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 11</td>
+      <td><a href="/posts/wag-buys-shares-back-from-softbank">Wag Buys Shares Back from SoftBank</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 27</td>
+      <td><a href="/posts/leather-sneakers-by-spingle">Leather Sneakers by Spingle</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 21</td>
+      <td><a href="/posts/an-ai-that-begins-novels">An AI That Begins Novels</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 1</td>
+      <td><a href="/posts/shape-up-how-basecamp-does-product-development">Shape Up - How Basecamp does Product Development</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 2</td>
+      <td><a href="/posts/okunoshima-the-island-of-bunnies">Ōkunoshima - The Island of Bunnies</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 13</td>
+      <td><a href="/posts/nava-ora-unica-wristwatch">NAVA Ora Unica Wristwatch</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 18</td>
+      <td><a href="/posts/adding-css-support-for-dark-mode">Adding CSS Support for Dark Mode</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 11</td>
+      <td><a href="/posts/first-image-of-a-black-hole">The First Image of a Black Hole</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 8</td>
+      <td><a href="/posts/natural-lighting-in-the-office">Natural Lighting in the Office</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 20</td>
+      <td><a href="/posts/adding-color-to-posts-automatically">Generating Colors from Post Titles</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 19</td>
+      <td><a href="/posts/remove.bg">Remove.bg - Remove the Background of Any Photo</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 4</td>
+      <td><a href="/posts/the-maker's-schedule-a-ten-year-retrospective">The Maker's Schedule - A Ten Year Retrospective</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 1</td>
+      <td><a href="/posts/mental-training-and-learning-to-swim">Mental Training, and Learning to Swim</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 29</td>
+      <td><a href="/posts/one-cut-of-the-dead">One Cut of the Dead (カメラを止めるな！）</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 17</td>
+      <td><a href="/posts/the-world's-most-beautiful-data-center">The World's Most Beautiful Data Center</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2018</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 20</td>
+      <td><a href="/posts/automating-materials-science-with-machine-learning">Automating Materials Science with Machine Learning</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 18</td>
+      <td><a href="/posts/spaghetti-carbonara">Spaghetti Carbonara</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 14</td>
+      <td><a href="/posts/lucid-dreaming">Lucid Dreaming</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 5</td>
+      <td><a href="/posts/universal-basic-income">Universal Basic Income</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 18</td>
+      <td><a href="/posts/the-value-promise-of-subscription-games">The Value Promise of Subscription Games</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 7</td>
+      <td><a href="/posts/how-to-cook-popcorn-in-a-pan">How to Cook Popcorn in a Pan</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 30</td>
+      <td><a href="/posts/picular">Picular - Google, but for Colors</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 23</td>
+      <td><a href="/posts/pvp-pacman">Game Idea: PvP Pac-Man</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 2</td>
+      <td><a href="/posts/blockchain-platforms">The Value of Blockchain Platforms</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2017</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 21</td>
+      <td><a href="/posts/facebook-is-no-longer-a-communication-platform">Facebook Is No Longer a Communication Platform</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 15</td>
+      <td><a href="/posts/are-games-still-for-kids">Are Video Games Still For Kids?</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 6</td>
+      <td><a href="/posts/google-s-alphazero-destroys-stockfish-in-100-game-match">Google's AlphaZero Destroys Stockfish In 100-Game Match</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 30</td>
+      <td><a href="/posts/pay-to-win">Pay to Win</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2016</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Oct 24</td>
+      <td><a href="/posts/perils-of-eroded-civic-knowledge-forewarned-by-fmr">Perils of Eroded Civic Knowledge Forewarned by Former Justice Souter</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 13</td>
+      <td><a href="/posts/lets-stop-the-hate">Let’s stop the hate</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2015</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Jul 15</td>
+      <td><a href="/posts/pluto-closest-approach">Pluto - Closest Approach</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jul 9</td>
+      <td><a href="/posts/a-striking-perspective-on-new-york-city-property">A Striking Perspective on New York City Property Values | Metrocosm</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 5</td>
+      <td><a href="/posts/the-night-my-girlfriend-dissociated-and-forgot-who">The Night My Girlfriend Dissociated and Forgot Who I Was</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 4</td>
+      <td><a href="/posts/ricky-jays-magical-secrets">Ricky Jay’s Magical Secrets</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 3</td>
+      <td><a href="/posts/homers-last-theorem">Homer's Last Theorem</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 2</td>
+      <td><a href="/posts/pipino-gentleman-thief-epic-magazine-medium">Pipino: Gentleman Thief — EPIC MAGAZINE — Medium</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 2</td>
+      <td><a href="/posts/the-time-everyone-corrected-the-worlds-smartest">The Time Everyone “Corrected” the World’s Smartest Woman</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jan 8</td>
+      <td><a href="/posts/a-teenagers-view-on-social-media-backchannel">A Teenager’s View on Social Media — Backchannel — Medium</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2014</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Nov 25</td>
+      <td><a href="/posts/the-rise-of-the-professional-cyber-athlete">The Rise of the Professional Cyber Athlete</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 17</td>
+      <td><a href="/posts/%E7%9C%9F%E5%A6%82%E5%A0%82">真如堂</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 14</td>
+      <td><a href="/posts/aws-lambda">AWS Lambda</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 12</td>
+      <td><a href="/posts/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96">ゲームの空間認識と今後の進化</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Nov 11</td>
+      <td><a href="/posts/relationship-test-dataclysm">Relationship Test - Dataclysm</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Sep 17</td>
+      <td><a href="/posts/how-to-be-polite">How to Be Polite</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 10</td>
+      <td><a href="/posts/missingno-in-pokemon-fusion">Missingno. in Pokemon Fusion</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jul 23</td>
+      <td><a href="/posts/censoring-chinese-scammers">Censoring Chinese Scammers</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 25</td>
+      <td><a href="/posts/creating-fun">Creating Fun</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 25</td>
+      <td><a href="/posts/creating-fun-jp">「面白い」を創る</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 23</td>
+      <td><a href="/posts/euclid-the-game">Euclid The Game</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 9</td>
+      <td><a href="/posts/nobody-understands-punctuation">Nobody. Understands. Punctuation.</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 6</td>
+      <td><a href="/posts/the-internet-with-a-human-face">The Internet With A Human Face</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 25</td>
+      <td><a href="/posts/san-francisco-is-dead-long-live-san-francisco">San Francisco Is Dead. Long Live San Francisco</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 24</td>
+      <td><a href="/posts/iwatch-concept">iWatch Concept</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 12</td>
+      <td><a href="/posts/yozakura">夜桜</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 9</td>
+      <td><a href="/posts/iphone-5-wallpaper-stormtrooper-prism">iPhone 5 Wallpaper - Stormtrooper Prism</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 3</td>
+      <td><a href="/posts/love-is-overdrive">Love is Overdrive</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 3</td>
+      <td><a href="/posts/sexisim-on-the-red-carpet">Sexisim on the Red Carpet</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 31</td>
+      <td><a href="/posts/replace-text-in-file-osx-service">Replace Text in File - OSX Service</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 25</td>
+      <td><a href="/posts/if-the-moon-were-only-1-pixel">If The Moon Were Only 1 Pixel</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 24</td>
+      <td><a href="/posts/terminal-theme">Terminal Theme</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 20</td>
+      <td><a href="/posts/chargekey-review">Chargekey Review</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 3</td>
+      <td><a href="/posts/tokyos-cityscape-recreated-with-stickers">Tokyo's Cityscape Recreated With Stickers</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2013</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Nov 29</td>
+      <td><a href="/posts/rake-task-to-backup-mysql-to-amazon-s3">Rake task to backup MySQL to Amazon S3</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 9</td>
+      <td><a href="/posts/zach-sobiech">My Last Days: Meet Zach Sobiech</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 4</td>
+      <td><a href="/posts/behind-the-scenes-pokemon-fusion">Pokemon Fusion: Behind the Scenes</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 22</td>
+      <td><a href="/posts/geoguessr">Geoguessr</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 22</td>
+      <td><a href="/posts/save-to-pocket-osx-service">Save to Pocket - OSX Service</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 20</td>
+      <td><a href="/posts/guillaume-lorentz-dances-to-macklemores-cant-hold-us">Guillaume Lorentz dances to Macklemore's 'Can't Hold Us'</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 18</td>
+      <td><a href="/posts/gitmo-is-killing-me">'Gitmo is Killing Me'</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 13</td>
+      <td><a href="/posts/computer-program-that-learns-to-play-classic-nes-games">Computer program that learns to play classic NES games</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 12</td>
+      <td><a href="/posts/north-korea-missle-launch-delayed-by-windows-8">North Korea missle launch delayed by Windows 8</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 10</td>
+      <td><a href="/posts/daft-punk-skrillex-remix-conte">Daft Punk Skrillex Remix - Conte</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 9</td>
+      <td><a href="/posts/skycons-free-html5-weather-icons">Skycons - Free HTML5 weather icons</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 9</td>
+      <td><a href="/posts/postach-dot-io-uses-evernote-as-a-blogging-platform">Postach.io uses Evernote as a blogging platform</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Apr 9</td>
+      <td><a href="/posts/john-frusciante-wayne">John Frusciante - Wayne</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2012</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Apr 4</td>
+      <td><a href="/posts/thoughts-on-sourcecode">Thoughts on "Sourcecode"</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2011</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Oct 4</td>
+      <td><a href="/posts/amazing-crossword-puzzle">Amazing Crossword Puzzle</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Sep 28</td>
+      <td><a href="/posts/cinemagraphs">Cinemagraphs</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 14</td>
+      <td><a href="/posts/pray-for-japan">Pray for Japan</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2010</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Oct 23</td>
+      <td><a href="/posts/chrono-trigger-retrospective">Chrono Trigger Retrospective</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jun 6</td>
+      <td><a href="/posts/i-grew-up-in-high-school">I Grew Up in High School</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2009</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Dec 21</td>
+      <td><a href="/posts/the-incredible-network-of-children">The Incredible Network of Children</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 10</td>
+      <td><a href="/posts/three-cups-of-tea">Three Cups of Tea</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Dec 10</td>
+      <td><a href="/posts/five-steps-to-an-effective-tech-team">Five Steps to an Effective Tech Team</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Oct 26</td>
+      <td><a href="/posts/gogol-bordello-oakland-2009">Gogol Bordello – Oakland 2009</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Aug 21</td>
+      <td><a href="/posts/facebook-and-non-profits-revolutionizing-with-samasource">Facebook and Non-Profits: Revolutionizing with Samasource</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jul 24</td>
+      <td><a href="/posts/programmers-stop-whining-be-productive">Programmers: Stop Whining, Be Productive</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jul 8</td>
+      <td><a href="/posts/the-elegance-of-the-hedgehog">The Elegance of the Hedgehog</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Jul 8</td>
+      <td><a href="/posts/extremely-loud-and-incredibly-close">Extremely Loud and Incredibly Close</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 31</td>
+      <td><a href="/posts/samasource-selected-for-fbfund-rev">Samasource Selected for fbFund REV</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 23</td>
+      <td><a href="/posts/meals-as-a-social-activity">Meals as a Social Activity</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 10</td>
+      <td><a href="/posts/is-that-a-cigarette-or-a-lollipop">Is that a Cigarette or a Lollipop?</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">May 9</td>
+      <td><a href="/posts/gravity-summit-stanford-wrap-up">Gravity Summit Stanford: Wrap-up</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 25</td>
+      <td><a href="/posts/becoming-a-better-writer">Becoming a Better Writer</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 24</td>
+      <td><a href="/posts/thelonius-monks-advice-to-saxophonist-steve-lacy">Thelonius Monk’s advice to saxophonist Steve Lacy (1960)</a></td>
+    </tr>
+  
+    
+    
+      </table>
+      <h2>2008</h2>
+      <table class="archive-list">
+      
+    
+    <tr>
+      <td class="date-text">Mar 28</td>
+      <td><a href="/posts/dinner-for-2">Dinner for 2</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 19</td>
+      <td><a href="/posts/original-ichat-ui">Original iChat UI</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 12</td>
+      <td><a href="/posts/a-boy-named-sue-and-a-theory-of-names">A Boy Named Sue, and a Theory of Names</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 12</td>
+      <td><a href="/posts/donkey-kong-and-me">Donkey Kong and Me</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Mar 4</td>
+      <td><a href="/posts/upcoming-movie-watch">Upcoming Movie Watch</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 25</td>
+      <td><a href="/posts/iterations-of-googles-logo">Iterations of Google's logo</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 24</td>
+      <td><a href="/posts/outside-of-target">Outside of Target</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 13</td>
+      <td><a href="/posts/apple-sets-the-design-standard">Apple sets the design standard</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 12</td>
+      <td><a href="/posts/buy-a-mac">Buy a mac</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 7</td>
+      <td><a href="/posts/political-surveys">Political surveys</a></td>
+    </tr>
+  
+    
+    
+    <tr>
+      <td class="date-text">Feb 7</td>
+      <td><a href="/posts/why-vote">Why vote?</a></td>
+    </tr>
+  
+  </table>
+</section>
+
+  </div>
+</article>
+
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

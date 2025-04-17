@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,82 +25,174 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
-  </div>
-</header>
-
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
   
-  <ul class="post-list">
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>[Bracket City] was a fun puzzle!<br /><br /><a href="https://www.theatlantic.com/games/bracket-city/" rel="nofollow noreferrer noopener" target="_blank">https://www.theatlantic.com/games/bracket-city/</a></p>
-<div class="gallery"></div>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/04/09/2025-04-09-01JRBM7Y2VDRC4PB6XJK3Y5SJK.html">Apr 9, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I'm going to try automatically un-boosting statuses after one week.<br /><br />Until now, my usage of boosting was stuck in a mindset that is a remnant of Twitter's culture. Since boosted statuses are displayed on my timeline next to my own words, I find myself boosting statuses that resonate strongly with my own thoughts. "Had I thought of these words first, I may have been the one posting instead" is the metric.<br /><br />On Mastodon and the fediverse, I think the recommended usage of boosting is to increase visibility to statuses that I think should be seen more widely. This has noting to do with whether they specifically mirror my own thoughts. "This is good, people should see this" is the metric.<br /><br />At the same time I don't want my timeline to be filled with other people's words, so my solution is to automatically un-boost statuses after one week. After the initial boost of visibility, there shouldn't be a reason to have them stuck on my timeline forever. The aim is that this will give me the freedom to boost more widely, and not worry about diluting my own words.</p>
-<div class="gallery"></div>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/04/08/2025-04-08-01JRA0AX2J73PACFWBHSQJGGZY.html">Apr 8, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/04/07/outgrowing-coolify.html">I may have outgrown Coolify</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #A39B99, #535354, #F79008, #727172, #5A6257)"></div>
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class=""></span></span>
+      </div>
+    </div>
+  </div>
 </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I initially chose <a href="https://coolify.io/">Coolify</a> as a self-hosted alternative to Heroku when it got too expensive. Coolify makes a lot of things very easy, but I ended up having to dig in to the details and learn a lot to fix things that didn’t work. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’s hand-holding.</p>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>[Bracket City] was a fun puzzle!<br /><br /><a href="https://www.theatlantic.com/games/bracket-city/" rel="nofollow noreferrer noopener" target="_blank">https://www.theatlantic.com/games/bracket-city/</a></p>
+<div class="gallery"></div>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-04-09-01JRBM7Y2VDRC4PB6XJK3Y5SJK">Apr 9, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I'm going to try automatically un-boosting statuses after one week.<br /><br />Until now, my usage of boosting was stuck in a mindset that is a remnant of Twitter's culture. Since boosted statuses are displayed on my timeline next to my own words, I find myself boosting statuses that resonate strongly with my own thoughts. "Had I thought of these words first, I may have been the one posting instead" is the metric.<br /><br />On Mastodon and the fediverse, I think the recommended usage of boosting is to increase visibility to statuses that I think should be seen more widely. This has noting to do with whether they specifically mirror my own thoughts. "This is good, people should see this" is the metric.<br /><br />At the same time I don't want my timeline to be filled with other people's words, so my solution is to automatically un-boost statuses after one week. After the initial boost of visibility, there shouldn't be a reason to have them stuck on my timeline forever. The aim is that this will give me the freedom to boost more widely, and not worry about diluting my own words.</p>
+<div class="gallery"></div>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-04-08-01JRA0AX2J73PACFWBHSQJGGZY">Apr 8, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #A39B99, #535354, #F79008, #727172, #5A6257);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/outgrowing-coolify">I may have outgrown Coolify</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I initially chose <a href="https://coolify.io/">Coolify</a> as a self-hosted alternative to Heroku when it got too expensive. Coolify makes a lot of things very easy, but I ended up having to dig in to the details and learn a lot to fix things that didn’t work. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’s hand-holding.</p>
 
 <h2 id="venturing-into-self-hosting">Venturing into self-hosting</h2>
 
@@ -140,33 +232,33 @@
 
 <p>So, thanks to Coolify for bringing me here, but I think our time together will be ending.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/04/07/outgrowing-coolify.html">Apr 7, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/04/07/outgrowing-coolify.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Watched Adolescence, and wow what a ride. I was gripped from start to finish and was pretty emotionally battered at the end.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/outgrowing-coolify">Apr 7, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Watched Adolescence, and wow what a ride. I was gripped from start to finish and was pretty emotionally battered at the end.</p>
 <div class="gallery"></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/04/04/2025-04-04-01JQYT3E6VR2DC7MM633WPB2MG.html">Apr 4, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/03/28/ai-manifesto.html">My AI manifesto</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #172267, #A2A0A2, #182368, #E42B00, #49464B)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>This is my personal manifesto for how I will and will not use generative AI. I believe it can be an extremely useful tool in certain situations, but can also have many negative repurcussions if used incorrectly.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-04-04-01JQYT3E6VR2DC7MM633WPB2MG">Apr 4, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #172267, #A2A0A2, #182368, #E42B00, #49464B);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/ai-manifesto">My AI manifesto</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>This is my personal manifesto for how I will and will not use generative AI. I believe it can be an extremely useful tool in certain situations, but can also have many negative repurcussions if used incorrectly.</p>
 
 <h2 id="1-use-to-expand-my-abilities-not-as-a-crutch">1: Use to expand my abilities, not as a crutch.</h2>
 
@@ -212,245 +304,101 @@
 
 <p>Anything that I present as a finished product will be ultimately created by people who can take responsibility as creators. Delegating that role to an AI is irresponsible.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/28/ai-manifesto.html">Mar 28, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/03/28/ai-manifesto.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I may have just flipped a setting that will halve our utility bill. Equal parts happy that I discovered this, and annoyed that I had been pissing away money for so long.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/ai-manifesto">Mar 28, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I may have just flipped a setting that will halve our utility bill. Equal parts happy that I discovered this, and annoyed that I had been pissing away money for so long.</p>
 <div class="gallery"></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/26/2025-03-26-01JQ7QP9Q3SEQCRRVQJ7JRRZQX.html">Mar 26, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/03/24/the-compo-challenge.html">The Photo Composition Challenge</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #93928C, #8F8E8F, #59595A, #A8A699, #A7A19F)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I am a mediocre photographer at best, but of course I want to improve. When I saw that <a href="https://social.lol/@hiro">@hiro</a> was putting together 5-week challenge to experiment with various compositional techniques and share our photos, I had to join.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-03-26-01JQ7QP9Q3SEQCRRVQJ7JRRZQX">Mar 26, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #93928C, #8F8E8F, #59595A, #A8A699, #A7A19F);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-compo-challenge">The Photo Composition Challenge</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I am a mediocre photographer at best, but of course I want to improve. When I saw that <a href="https://social.lol/@hiro">@hiro</a> was putting together 5-week challenge to experiment with various compositional techniques and share our photos, I had to join.</p>
 
 <p>I don’t have fancy gear, or a lot of time to go hunting for photos, so almost all of my shots were scenes from my daily life, taken with an iPhone. I realized pretty quickly though, that being deliberate about composition gave a new perspective on even familiar scenes, and I was surprised at compelling some of the photos turned out.</p>
 
-<h2 id="week-1-the-rule-of-thirds">Week 1: The Rule of Thirds</h2>
 
-<blockquote>
-  <p>The Rule of Thirds challenge is all about getting your subject out of the middle of the frame.
-Imagine your frame is divided into three equal segments from left to right, and then again from top to bottom, creating a 3×3 grid. Try to place your subject along one of the lines dividing the thirds, so it’s not squarely in the middle third.</p>
-</blockquote>
-
-<p>This was a rule I was aware of! I even had the overlay turned on in my Camera app to divide the view into thirds, so now I just need to be deliberate about the positioning.</p>
-
-<h3 id="my-photos">My photos</h3>
-
-<div class="gallery">
-    <div>
-        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMDQSPTHFEZPCGZ5ARKRVW4D.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMDQSPTHFEZPCGZ5ARKRVW4D.jpeg" alt="A large Pikachu doll standing in front of our children’s bookshelf." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMKAPKEJP5JAPK77GRYXX0Y5.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMKAPKEJP5JAPK77GRYXX0Y5.jpeg" alt="A black pot in the foreground, filled with cabbage, potatoes, carrots, and cherry tomatoes. Various potted plants are visible in the background." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-1" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JMPA2M7FP560PQE4PWVK4N13.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JMPA2M7FP560PQE4PWVK4N13.jpeg" alt="A woven wall tapestry showing the words &quot;hello sunshine&quot; and a rising orange sun. The wallpaper behind is a matching orange color." />
-        </a>
-    </div>
+      <p>
+  <a href="/posts/the-compo-challenge">Continue reading &rarr;</a>
+  <!-- <span class="post-meta">
+    (7 mins) 
+    </span> -->
+</p>
 </div>
-
-<p>The third photo here is my favorite. It is from our kids’ bedroom, and I’m happy that I was able to capture it like this.</p>
-
-<h2 id="week-2-leading-and-diagonal-lines">Week 2: Leading and Diagonal Lines</h2>
-
-<blockquote>
-  <p>Leading lines are lines within the frame of your shot that naturally draw the viewer’s eye to your subject.
-Diagonal lines [. . .] create a sense of movement and tension [. . . and] can also enhance depth, adding a more three-dimensional quality to your composition.</p>
-</blockquote>
-
-<p>This may have been my favorite exercise. I learned that I really like the aesthetic of leading lines, but unfortunately couldn’t find many good subjects myself. This will be something that I will continue to look out for!</p>
-
-<h3 id="my-photos-1">My photos</h3>
-
-<div class="gallery">
-    <div>
-        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVG4J1HKR6WNBH78YQ3VB.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVG4J1HKR6WNBH78YQ3VB.jpeg" alt="A covered walkway with concrete columns leads alongside a grassy courtyard filled with bamboo plants. Sunlight casts intricate shadows on the tiled pathway. A modern building with large windows frames the background." />
-        </a>
+    <div class="post-meta">
+      <a href="/posts/the-compo-challenge">Mar 24, 2025</a>
     </div>
-    <div>
-        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVKF1AJR4QX6T406N8QPX.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVKF1AJR4QX6T406N8QPX.jpeg" alt="A corridor with a tiled floor casts diagonal shadows from a slatted fence on the left. A wooden bench with a black metal frame is on the right. In the background, there is a staircase leading upwards. Sunlight illuminates the scene, and some plants are visible along the left wall." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-2" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JN2MVQ3QFWCHQVMC0RYM30RN.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JN2MVQ3QFWCHQVMC0RYM30RN.jpeg" alt="Low-angle view of two modern buildings with reflective glass surfaces set against a cloudy sky. The buildings create a sharp, angular perspective converging towards the center of the image. Subtle patterns can be seen on the facade of the left building, with both structures appearing dark and sleek." />
-        </a>
-    </div>
-</div>
+  </article>
 
-<p>I like the third photo here, again. I thought it would be neat to get a thin view of the sky between two tall buildings, and found the perfect spot. Then I spun the picture around in an editing app to find just the right claustrophobic angle.</p>
-
-<h2 id="week-3-frame-within-a-frame">Week 3: Frame Within A Frame</h2>
-
-<blockquote>
-  <p>Whereas Leading Lines used lines within your photo to point to the subject, this technique asks you to find ways to create a frame around your subject in your composition</p>
-</blockquote>
-
-<p>I had a hard time finding good subjects again, and 2/3 of my frames ended up just being long corridors. But they are cool shots!</p>
-
-<h3 id="my-photos-2">My photos</h3>
-
-<div class="gallery">
-    <div>
-        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBTHMYMC9N1QHDD9Y4272Q.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBTHMYMC9N1QHDD9Y4272Q.jpeg" alt="A young child wearing a cap and dark jacket stands near a white U-shaped barrier with orange stripes, holding a colorful mesh bag. A tennis ball lies on the pavement in front of the barrier. In the background, there is a white van parked beside a residential building on a cloudy day." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBV55A8BDNGQNKXDZFC6SV.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBV55A8BDNGQNKXDZFC6SV.jpeg" alt="A long, covered walkway with a wooden slatted roof and metal supports stretches between two buildings. The floor is paved with square tiles, and there are small plants lining the right side with gravel. The scene leads to an open area where two people are seen in the distance." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-3" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JNWBVYTFGT15B4BKF3WYQ0G4.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JNWBVYTFGT15B4BKF3WYQ0G4.jpeg" alt="A covered walkway with a dark ceiling and walls leads to an urban street. The path has textured flooring, with tactile paving lines. To the left, there's a small planted area. Outside, a parked car and buildings are visible, with sunlight illuminating the exit." />
-        </a>
-    </div>
-</div>
-
-<h2 id="week-4-subject-isolation--contrast">Week 4: Subject Isolation + Contrast</h2>
-
-<blockquote>
-  <p>[Contrast] could be very visual by putting a brightly lit subject against a dark background, or color based by contrasting a bright red rose against green foliage, or even conceptual with something like capturing someone who is clearly quite happy on a bus surrounded by dour fellow passengers.</p>
-</blockquote>
-
-<p>I was surprised that this exercise was the hardest for me. I tried not to rely on just using bokeh to highlight the subject, and it was hard to find things that just naturally stood out from their surroundings. Not only was I tardy in finishing this week, I only managed to take two photos that I was happy with. So it goes.</p>
-
-<div class="gallery">
-    <div>
-        <a data-lightbox="compo-week-4" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JPVQ73XJHM9MNRZET49RDBZJ.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JPVQ73XJHM9MNRZET49RDBZJ.jpeg" alt="A small giraffe figurine is nestled among vibrant green houseplants on a windowsill. The giraffe has a brown and white pattern, standing out against the lush leaves." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-4" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JPVQ7A2X1HG15046B5BYYYMV.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JPVQ7A2X1HG15046B5BYYYMV.jpeg" alt="A playground with a red and blue slide is in the left foreground. My shadow extends onto the dry grass. A clear blue sky with a few clouds is visible above, with a utility pole and wires in the distance." />
-        </a>
-    </div>
-</div>
-
-<h2 id="week-5-the-golden-spiral">Week 5: The Golden Spiral</h2>
-
-<blockquote>
-  <p>[The Golden Spiral is] about arranging the elements in your photos along the lines of an imaginary spiral, so that it offers an easy and natural flow for the viewer to follow those elements to your subject.</p>
-</blockquote>
-
-<figure>
-  <img src="/assets/images/2025/golden_spiral.png" alt="The Golden Spiral" class="center-image" />
-  <figcaption>The Golden Spiral</figcaption>
-  </figure>
-
-<p>In practice, this ended up being an exercise in imagination as much as photography, as finding subjects that lined up to this mathematically perfect spiral was pretty challenging.</p>
-
-<h3 id="my-photos-3">My photos</h3>
-
-<div class="gallery">
-    <div>
-        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TAR656RZC91ANX3Y75WW8.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TAR656RZC91ANX3Y75WW8.jpeg" alt="A building with a modern design features dark vertical panels and large windows. In the foreground, a tree with pink blossoms is in full bloom. The sky is mostly clear with a few fluffy clouds, and the sun is shining brightly behind the branches." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TBNGMZ9H2SCTJ65Z26SW5.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TBNGMZ9H2SCTJ65Z26SW5.jpeg" alt="A child wearing a light-colored cap, dark jacket, and jeans slides down a curved, green double slide at a playground. A bright blue sky and a building are visible in the distance." />
-        </a>
-    </div>
-    <div>
-        <a data-lightbox="compo-week-5" href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JQ2TCWT14471HDGA25H20D7K.jpeg">
-            <img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JQ2TCWT14471HDGA25H20D7K.jpeg" alt="People are enjoying a spinning amusement park ride designed like spaceships. The ride has multiple colorful cars, with &quot;SPACESHIP 10&quot; written on a red car. The sky is clear and blue, with trees and a building visible in the background." />
-        </a>
-    </div>
-</div>
-
-<p>The spaceship photo is probably the one that follows the spiral the closest, and the your eyes naturally flow in the same direction, too. The photo itself could have been better, but that’s what learning is for.</p>
-
-<h2 id="wrapping-up">Wrapping up</h2>
-
-<p>And that’s all! Thank you a hundred times to Hiro for organizing this! I had a wonderful time taking photos, as well as seeing everyone else’s submissions. If there is a next time, I will definitely be joining again.</p>
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/24/the-compo-challenge.html">Mar 24, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/03/24/the-compo-challenge.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Backblaze randomly stopped backing up for many Mac users on 3/13 (myself included), and the only information about this problem and its fix is in this reddit thread(!?)<br /><br /><a href="https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/" rel="nofollow noreferrer noopener" target="_blank">https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/</a><br /><br />tl;dr:<br />1. Restart the computer<br />2. Manually update the app via the latest installer<br />3. Invoke a magic command to make it rescan your drive(!?)</p>
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Backblaze randomly stopped backing up for many Mac users on 3/13 (myself included), and the only information about this problem and its fix is in this reddit thread(!?)<br /><br /><a href="https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/" rel="nofollow noreferrer noopener" target="_blank">https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/</a><br /><br />tl;dr:<br />1. Restart the computer<br />2. Manually update the app via the latest installer<br />3. Invoke a magic command to make it rescan your drive(!?)</p>
 <div class="gallery"></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/21/2025-03-21-01JPVG0MYR1H869E1A3RE10M9K.html">Mar 21, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Sage words from the 4 year old:<br /><br />You need to be the first to tell mommy that she’s pretty. Say it first thing in the morning, as soon as she wakes up. That’s the kind of adult _I_ want to be</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-03-21-01JPVG0MYR1H869E1A3RE10M9K">Mar 21, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Sage words from the 4 year old:<br /><br />You need to be the first to tell mommy that she’s pretty. Say it first thing in the morning, as soon as she wakes up. That’s the kind of adult _I_ want to be</p>
 <div class="gallery"></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/18/2025-03-18-01JPKTXKMJAX49Q3KKMYF733NF.html">Mar 18, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>So what’s the best way to feed my car’s user manual to an LLM and have it answer all my questions? Or every appliance in my house, for that matter.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-03-18-01JPKTXKMJAX49Q3KKMYF733NF">Mar 18, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>So what’s the best way to feed my car’s user manual to an LLM and have it answer all my questions? Or every appliance in my house, for that matter.</p>
 <div class="gallery"></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/03/16/2025-03-16-01JPEAFJ12HGGJDR9FMSM4910Q.html">Mar 16, 2025</a>
-            </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-03-16-01JPEAFJ12HGGJDR9FMSM4910Q">Mar 16, 2025</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/2/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/3/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,140 +25,234 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
-  </div>
-</header>
-
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
   
-  <ul class="post-list">
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>What to call these short-form social media postings?<br /><br />They aren’t “tweets” anymore, “post” can’t distinguish from long-form content, and “toot” is just silly.<br /><br />The Japanese term for them means “murmur”, which is fantastic.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/29/2025-01-29-01JJQDSJSNMTQ0HVMT8VQN138H.html">Jan 29, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>The solution I've landed on:<br /><br />1. Post to fediverse from nice mobile clients.<br />2. Blog pulls latest posts when building, and includes them in the generated site.<br /><br />The order is backwards from a POSSE standpoint, but it's easy and it works.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/28/2025-01-28-01JJNQ044W3RD3HQQ6V0NNMVKD.html">Jan 28, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Maybe: use an iOS shortcut to<br />1. Type some text<br />2. Add yaml front matter to my text<br />3. Save the file into the git repo, which exists on my iCloud drive<br />4. Use Working Copy to commit &amp; push<br /><br />🫤</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/28/2025-01-28-01JJNBW8PG6P1M8VB45GGGK6XH.html">Jan 28, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Is there a best way to update a static blog from my phone?<br /><br />Opening the blog repo in a text editor and pushing to git will definitely be too much friction for me to do regularly.<br /><br />I want to just be able to just write text, save/send it somewhere, and have my home PC (I guess?) process it for me.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/28/2025-01-28-01JJNB20PC1P3EXC4BEYT0XXWF.html">Jan 28, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html">Dragonsweeper - A lovely minesweeper game</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://danielben.itch.io/dragonsweeper">https://danielben.itch.io/dragonsweeper</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #475556, #AFAFAF, #5C0F11, #34504B, #612021)"></div>
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/3</span></span>
+      </div>
+    </div>
+  </div>
 </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>This is a really excellent take on minesweeper. Spaces can contain monsters of various strength, and you need to spend HP to defeat them. By collecting EXP and hearts to level up and heal yourself, the goal is to become strong enough to slay the dragon.</p>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>What to call these short-form social media postings?<br /><br />They aren’t “tweets” anymore, “post” can’t distinguish from long-form content, and “toot” is just silly.<br /><br />The Japanese term for them means “murmur”, which is fantastic.</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-29-01JJQDSJSNMTQ0HVMT8VQN138H">Jan 29, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>The solution I've landed on:<br /><br />1. Post to fediverse from nice mobile clients.<br />2. Blog pulls latest posts when building, and includes them in the generated site.<br /><br />The order is backwards from a POSSE standpoint, but it's easy and it works.</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-28-01JJNQ044W3RD3HQQ6V0NNMVKD">Jan 28, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Maybe: use an iOS shortcut to<br />1. Type some text<br />2. Add yaml front matter to my text<br />3. Save the file into the git repo, which exists on my iCloud drive<br />4. Use Working Copy to commit &amp; push<br /><br />🫤</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-28-01JJNBW8PG6P1M8VB45GGGK6XH">Jan 28, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Is there a best way to update a static blog from my phone?<br /><br />Opening the blog repo in a text editor and pushing to git will definitely be too much friction for me to do regularly.<br /><br />I want to just be able to just write text, save/send it somewhere, and have my home PC (I guess?) process it for me.</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-28-01JJNB20PC1P3EXC4BEYT0XXWF">Jan 28, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #475556, #AFAFAF, #5C0F11, #34504B, #612021);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/dragonsweeper-a-lovely-minesweeper-game">Dragonsweeper - A lovely minesweeper game</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://danielben.itch.io/dragonsweeper">https://danielben.itch.io/dragonsweeper</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>This is a really excellent take on minesweeper. Spaces can contain monsters of various strength, and you need to spend HP to defeat them. By collecting EXP and hearts to level up and heal yourself, the goal is to become strong enough to slay the dragon.</p>
 
 <p>It took me a few tries to get a handle on the strategy, but this is super fun!</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html">Jan 28, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/01/28/dragonsweeper-a-lovely-minesweeper-game.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="toot">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/dragonsweeper-a-lovely-minesweeper-game">Jan 28, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I've added my pronouns to my profile.<br /><br />I hadn't before, because my pronouns weren't important to me. I've learned, though, that this is because I am privileged.<br /><br />For many people, their pronouns are very important. And, unfortunately, there are many who are openly antagonistic towards these people. So it's important for people like me to be openly supportive, to balance the scales if you will.<br /><br />"I support your rights to feel however you want to feel about yourself" feels like such a ridiculous thing to say. In a sane world we would never *need* to say that. But look around, guess what. We do need to say it, and we need to say it loudly. So I will.</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-27-01JJJRTG2PVW2HJSM6095HG5TR">Jan 27, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #734F44, #685B56, #734E45, #0F45B0, #AEADAF);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-sociable-weaver">The Sociable Weaver</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://en.wikipedia.org/wiki/Sociable_weaver">https://en.wikipedia.org/wiki/Sociable_weaver</a></span>
+        </div>
       </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I've added my pronouns to my profile.<br /><br />I hadn't before, because my pronouns weren't important to me. I've learned, though, that this is because I am privileged.<br /><br />For many people, their pronouns are very important. And, unfortunately, there are many who are openly antagonistic towards these people. So it's important for people like me to be openly supportive, to balance the scales if you will.<br /><br />"I support your rights to feel however you want to feel about yourself" feels like such a ridiculous thing to say. In a sane world we would never *need* to say that. But look around, guess what. We do need to say it, and we need to say it loudly. So I will.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/27/2025-01-27-01JJJRTG2PVW2HJSM6095HG5TR.html">Jan 27, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/01/27/the-sociable-weaver.html">The Sociable Weaver</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://en.wikipedia.org/wiki/Sociable_weaver">https://en.wikipedia.org/wiki/Sociable_weaver</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #734F44, #685B56, #734E45, #0F45B0, #AEADAF)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>The sociable weaver is an African bird that creates giant, community nests in trees. The nests look like a giant woolly mammoth hanging in a tree, and have many entry holes on the bottom. These nests can house over 100 pairs of birds, spanning multiple generations at a time.</p>
+    <div class="post-content" itemprop="articleBody">
+      <p>The sociable weaver is an African bird that creates giant, community nests in trees. The nests look like a giant woolly mammoth hanging in a tree, and have many entry holes on the bottom. These nests can house over 100 pairs of birds, spanning multiple generations at a time.</p>
 
 <figure>
   <img src="/assets/images/2025/sociable_weaver.jpg" alt="Photo from Wikipedia, by Harald Süpfle" class="center-image" />
@@ -166,44 +260,45 @@
   </figure>
 
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/27/the-sociable-weaver.html">Jan 27, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/01/27/the-sociable-weaver.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="toot">
-      </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>A good day to visit the strawberry farm.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-sociable-weaver">Jan 27, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>A good day to visit the strawberry farm.</p>
 <div class="gallery"><div><a href="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/original/01JJDWF1P3AB35RG5245YN1Y7T.jpeg"><img src="https://gts.invisibleparade.com/fileserver/01GH6B64M32N9Y4742YPSN8KAY/attachment/small/01JJDWF1P3AB35RG5245YN1Y7T.jpeg" title="Delicious strawberries waiting to be picked." /></a></div></div>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/25/2025-01-25-01JJDWGP9535HAMG4T1NJS93K4.html">Jan 25, 2025</a>
-            </li>
-      <hr />
-    <li class="toot">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-25-01JJDWGP9535HAMG4T1NJS93K4">Jan 25, 2025</a>
+    </div>
+  </article>
+
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Goodness. I live on the other side of the planet, and the anxiety coming from America is palpable. My heart is with everybody who is in pain now.</p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-23-01JJ8ATENGW4VV7RYZW8A47FYG">Jan 23, 2025</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #011270, #776B76, #32C774, #A55367, #909090);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/becoming-a-parent-introduced-me-to-stress">Becoming a parent introduced me to stress</a>
+        </h1>
       </header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Goodness. I live on the other side of the planet, and the anxiety coming from America is palpable. My heart is with everybody who is in pain now.</p>
-
-
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/23/2025-01-23-01JJ8ATENGW4VV7RYZW8A47FYG.html">Jan 23, 2025</a>
-            </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2025/01/20/becoming-a-parent-introduced-me-to-stress.html">Becoming a parent introduced me to stress</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #011270, #776B76, #32C774, #A55367, #909090)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I have always been a calm and happy person. Aggressively optimistic, even. I made it through the first 1/3 of my life without feeling much stress, only getting angry on rare occasions. Anger management, emotional therapy, mindfulness exercises, these were all things that I had no need for.</p>
+    <div class="post-content" itemprop="articleBody">
+      <p>I have always been a calm and happy person. Aggressively optimistic, even. I made it through the first 1/3 of my life without feeling much stress, only getting angry on rare occasions. Anger management, emotional therapy, mindfulness exercises, these were all things that I had no need for.</p>
 
 <p>I thought that this was a personality trait, but now I realize that I was simply blessed with an easy life. It’s not that I was particularly good at dealing with stress, I just didn’t have much stress coming my way.</p>
 
@@ -225,33 +320,29 @@
 
 <p>But it will be worth it.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2025/01/20/becoming-a-parent-introduced-me-to-stress.html">Jan 20, 2025</a>
-            <!-- <div class="comment-link"><a href="/2025/01/20/becoming-a-parent-introduced-me-to-stress.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/becoming-a-parent-introduced-me-to-stress">Jan 20, 2025</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/2/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/4/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

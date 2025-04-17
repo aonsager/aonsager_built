@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/9/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,112 +25,204 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/9</span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-  
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2019/02/04/the-maker's-schedule-a-ten-year-retrospective.html">The Maker&#39;s Schedule - A Ten Year Retrospective</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #0229E3, #55160F, #526269, #5E5D68, #5E575B)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>10 years ago, I was fresh out of college and encountered <a href="http://paulgraham.com/makersschedule.html">Paul Graham’s essay</a> about the maker’s schedule, and wrote <a href="/2009/07/24/programmers-stop-whining-be-productive.html">a response</a> disagreeing with the spirit of the article. While I knew and understood that programmers could be much more productive in one 10 hour chunk than in five 2 hour chunks, I felt like rearranging a business’s operations based on these preferences was going overboard. The typical programmer as described seemed undisciplined, and I wrote that programmers needed to find ways to work around distractions, which are simply a fact of life.</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #0229E3, #55160F, #526269, #5E5D68, #5E575B);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-maker's-schedule-a-ten-year-retrospective">The Maker&#39;s Schedule - A Ten Year Retrospective</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>10 years ago, I was fresh out of college and encountered <a href="http://paulgraham.com/makersschedule.html">Paul Graham’s essay</a> about the maker’s schedule, and wrote <a href="/posts/programmers-stop-whining-be-productive">a response</a> disagreeing with the spirit of the article. While I knew and understood that programmers could be much more productive in one 10 hour chunk than in five 2 hour chunks, I felt like rearranging a business’s operations based on these preferences was going overboard. The typical programmer as described seemed undisciplined, and I wrote that programmers needed to find ways to work around distractions, which are simply a fact of life.</p>
 
 <p>As expected the post got a lot of negative feedback, but it was all very informative. Rather than just telling me to shut up, many people shared their own views and explained where my reasoning might be shortsighted. One person said they would be interested in seeing how I would react to my own post in about 10 years time, so here I am.</p>
 
+<p>I wrote the post as a programmer and took advantage of that position to say some pretty harsh things about programmers in general. I was surprised to see that I wrote the post when I was only a few months out of college, so I definitely had far more ego than I deserved. While I can understand the points I was trying to make, if I were to try the same thing now I would be much more civil about it.</p>
 
-            <p>
-  <a href="/2019/02/04/the-maker's-schedule-a-ten-year-retrospective.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2019/02/04/the-maker's-schedule-a-ten-year-retrospective.html">Feb 4, 2019</a>
-            <!-- <div class="comment-link"><a href="/2019/02/04/the-maker's-schedule-a-ten-year-retrospective.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2019/02/01/mental-training-and-learning-to-swim.html">Mental Training, and Learning to Swim</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #F7F405, #4F9AFC, #F7D602, #022F6D, #B1B1B3)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>During my last year at university, I decided to learn to swim. I was reasonably confident in my ability to stay afloat in deep water and not die, but it wasn’t what you could call swimming. Luckily, two of my close friends were excellent swimmers and they agreed to work with me in the mornings before class.</p>
+<p>I didn’t disagree with PG’s main point, namely that distractions are always bad for productivity but probably affect programmers more than other professionals. I felt though, that resigning to losing an afternoon because of a one-hour meeting was too defeatist. It is possible to minimize setbacks. There always will be some room for productivity in a short window of time. You won’t be able to develop a large complex function, but there is probably something else you can do instead to spend the time productively.</p>
 
-<p>As an aside, I did take swimming lessons on and off for a few years when I was a kid, but apparently I retained nothing from those classes. Maybe I was just a terrible swimmer the entire time? Possibly related, <a href="/2010/06/06/i-grew-up-in-high-school.html">I have very few memories from my elementary and middle school years</a>, so I have a suspicion that I didn’t do a whole lot of thinking when I was a kid. In any case, I was essentially a total beginner to swimming when we started. I knew that you kicked your legs and paddled with your arms to go forward, but that was about it.</p>
+<p>Ironically, gaining some experience as a manager (or possibly just growing up a little) has made me more sympathetic to the makers’ needs. I used to see a list of demands as a sign of being pampered, but now I can appreciate that every effort to make a workplace better is important.</p>
 
+<p>So today, with 10 years of experience under my belt, I would say that I think the truth is somewhere in the middle. Both articles were describing an ideal. The reality is that everybody has to work together, be sympathetic to other people’s needs, and compromise. PG’s essay was much more valuable though because the managers are the ones with power, and the compromise was often lopsided.</p>
 
-            <p>
-  <a href="/2019/02/01/mental-training-and-learning-to-swim.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (3 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2019/02/01/mental-training-and-learning-to-swim.html">Feb 1, 2019</a>
-            <!-- <div class="comment-link"><a href="/2019/02/01/mental-training-and-learning-to-swim.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2019/01/29/one-cut-of-the-dead.html">One Cut of the Dead (カメラを止めるな！）</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #E9A432, #754C29, #686D5B, #EAB62B, #6C6B42)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><em><a href="http://kametome.net/index.html">One Cut of the Dead (カメラを止めるな！)</a></em> is a low budget Japanese zombie movie that became hugely popular here. I just watched it over the weekend and it was wonderful. The writing is very funny and very clever, and when it was over I found myself immediately wanting to watch it a second time.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-maker's-schedule-a-ten-year-retrospective">Feb 4, 2019</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #F7F405, #4F9AFC, #F7D602, #022F6D, #B1B1B3);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/mental-training-and-learning-to-swim">Mental Training, and Learning to Swim</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>During my last year at university, I decided to learn to swim. I was reasonably confident in my ability to stay afloat in deep water and not die, but it wasn’t what you could call swimming. Luckily, two of my close friends were excellent swimmers and they agreed to work with me in the mornings before class.</p>
+
+<p>As an aside, I did take swimming lessons on and off for a few years when I was a kid, but apparently I retained nothing from those classes. Maybe I was just a terrible swimmer the entire time? Possibly related, <a href="/posts/i-grew-up-in-high-school">I have very few memories from my elementary and middle school years</a>, so I have a suspicion that I didn’t do a whole lot of thinking when I was a kid. In any case, I was essentially a total beginner to swimming when we started. I knew that you kicked your legs and paddled with your arms to go forward, but that was about it.</p>
+
+<p>It turns out that learning how to swim as an adult is an interesting experience because you have developed a pretty good awareness of your body, and can pay close attention to what your limbs and muscles are doing. My friends watched me swim, pointed out parts of my body that weren’t being used correctly, and I adjusted my motions. While swimming, I tried to focus entirely on my body’s movement and ignore other things, like the water around me. Extend forward with your arm. Roll your body to bring the shoulder forward. Push down and back with the other arm. Turn your head up to take a breath. Reach forward with the back arm and extend. Repeat on the other side. Keep your legs kicking. This became my mantra, and I filled my head with it.</p>
+
+<p>I won’t pretend that it was easy, because it wasn’t. There were too many things to pay attention to, so I felt like I was always forgetting at least one thing. But I stuck with it. I was thinking about the movements enough that eventually I starting doing it even outside of the pool. Remembering how it felt to move through the water, I went through the motions in my mind while walking to class. Without actually moving my arms, I imagined stretching them forward, rolling my body, pushing back, and reaching forward again. I often had dreams about swimming too. It was pretty much the same thing, but in the dreams it felt more like I was really moving.</p>
+
+<p>We started my swimming lessons in the fall and only had access to an outdoor pool, so the lessons stopped once it got cold, after only a few weeks. But even then, I kept going through the movements in my mind and having swimming dreams. I didn’t decide to do this; it just seemed to be the front-most thing in my mind a lot of the time. The experience of learning how to swim was fascinating to me. I was using my entire body in ways I hadn’t before, and the careful introspection of my motions was a new, fun challenge.</p>
+
+<p>Come spring, we got in the pool again for the first time in a few months, and I swam my first lap. It felt good, and it felt familiar. The motions felt just the way I had been imagining them in my mind. When I asked my friends how my form looked, they seemed puzzled. “It’s crazy but it seems like you got… better? How did that happen?”</p>
+
+<p>I had heard of mental training for sports before, like boxers shadow-boxing while imagining their next opponent. I didn’t know too much about the technique but it seemed like I had been doing something similar for swimming. It sounds a little magical to get better at something without actually doing it, and it definitely felt that way too, but I haven’t been able to recreate it for anything else since then. Swimming must have been the perfect activity at the perfect time to capture my attention – both conscious and subconscious.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/mental-training-and-learning-to-swim">Feb 1, 2019</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #E9A432, #754C29, #686D5B, #EAB62B, #6C6B42);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/one-cut-of-the-dead">One Cut of the Dead (カメラを止めるな！）</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><em><a href="http://kametome.net/index.html">One Cut of the Dead (カメラを止めるな！)</a></em> is a low budget Japanese zombie movie that became hugely popular here. I just watched it over the weekend and it was wonderful. The writing is very funny and very clever, and when it was over I found myself immediately wanting to watch it a second time.</p>
 
 <p>From <a href="https://en.wikipedia.org/wiki/One_Cut_of_the_Dead">Wikipedia</a>:</p>
 
@@ -141,32 +233,36 @@
 It was showing at around 200 screens in Japan by March 2018 where it had officially grossed 800 million yen ($7.3 million)</p>
 </blockquote>
 
+<p>It had been a while since its popularity blew up, but I knew only 3 things about the movie before I watched it:</p>
 
-            <p>
-  <a href="/2019/01/29/one-cut-of-the-dead.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2019/01/29/one-cut-of-the-dead.html">Jan 29, 2019</a>
-            <!-- <div class="comment-link"><a href="/2019/01/29/one-cut-of-the-dead.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2019/01/17/the-world's-most-beautiful-data-center.html">The World&#39;s Most Beautiful Data Center</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://motherboard.vice.com/en_us/article/xwjegq/the-worlds-most-beautiful-data-center-is-a-supercomputer-housed-in-a-19th-century-church">https://motherboard.vice.com/en_us/article/xwjegq/the-worlds-most-beautiful-data-center-is-a-supercomputer-housed-in-a-19th-century-church</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #67696A, #B7CCD2, #6A6D74, #E69E6C, #394652)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <figure>
+<ol>
+  <li>It’s about zombies</li>
+  <li>It’s really good</li>
+  <li>It’s best to not spoil the plot</li>
+</ol>
+
+<p>It’s been remarkably easy to avoid spoilers. It helps that the plot takes some effort to describe, bue it felt like everybody genuinely wanted to share the unspoiled experience with others even as it spread through word of mouth.</p>
+
+<p>Apparently a <a href="https://gizmodo.com/a-bootleg-of-one-of-the-years-best-horror-films-just-my-1831392424">bootleg version was somehow released on Prime Video</a>, but the international release seems to be just starting. Hopefully this film will do well overseas, too.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/one-cut-of-the-dead">Jan 29, 2019</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #67696A, #B7CCD2, #6A6D74, #E69E6C, #394652);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-world's-most-beautiful-data-center">The World&#39;s Most Beautiful Data Center</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://motherboard.vice.com/en_us/article/xwjegq/the-worlds-most-beautiful-data-center-is-a-supercomputer-housed-in-a-19th-century-church">https://motherboard.vice.com/en_us/article/xwjegq/the-worlds-most-beautiful-data-center-is-a-supercomputer-housed-in-a-19th-century-church</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <figure>
   <img src="/assets/images/torre-girona.jpg" alt="Image: Barcelona Supercomputing Center" class="center-image" />
   <figcaption>Image: Barcelona Supercomputing Center</figcaption>
   </figure>
@@ -177,25 +273,24 @@ It was showing at around 200 screens in Japan by March 2018 where it had officia
   <p>“We were in need of hundreds of square meters without columns and the capacity to support 44.5 tons of weight,” Maspoch told me in an email. “At the time there was not much available space at the university and the only room that satisfied our requirements was the Torre Girona chapel. We did not doubt it for a moment and we installed a supercomputer in it. ”</p>
 </blockquote>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2019/01/17/the-world's-most-beautiful-data-center.html">Jan 17, 2019</a>
-            <!-- <div class="comment-link"><a href="/2019/01/17/the-world's-most-beautiful-data-center.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/12/20/automating-materials-science-with-machine-learning.html">Automating Materials Science with Machine Learning</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://www.technologyreview.com/s/612388/a-robot-scientist-will-dream-up-new-materials-to-advance-computing-and-fight-pollution/">https://www.technologyreview.com/s/612388/a-robot-scientist-will-dream-up-new-materials-to-advance-computing-and-fight-pollution/</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #AEAEAE, #4D311D, #A0A0A2, #8C9292, #B1AFAF)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-world's-most-beautiful-data-center">Jan 17, 2019</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #AEAEAE, #4D311D, #A0A0A2, #8C9292, #B1AFAF);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/automating-materials-science-with-machine-learning">Automating Materials Science with Machine Learning</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://www.technologyreview.com/s/612388/a-robot-scientist-will-dream-up-new-materials-to-advance-computing-and-fight-pollution/">https://www.technologyreview.com/s/612388/a-robot-scientist-will-dream-up-new-materials-to-advance-computing-and-fight-pollution/</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
   <p>A robot arm dips a pipette into a dish and transfers a tiny amount of bright liquid into one of many receptacles sitting in front of another machine. When all the samples are ready, the second machine tests their optical properties, and the results are fed to a computer that controls the arm. Software analyzes the results of these experiments, formulates a few hypotheses, and then starts the process over again. Humans are barely required.</p>
 
   <p>The setup, developed by a startup called Kebotix, hints at how machine learning and robotic automation may be poised to revolutionize materials science in coming years. The company believes it may find new compounds that could, among other things, absorb pollution, combat drug-resistant fungal infections, and serve as more efficient optoelectronic components.</p>
@@ -203,163 +298,272 @@ It was showing at around 200 screens in Japan by March 2018 where it had officia
 
 <p>This sounds like a perfect application for machine learning. It’s a great combination of smart design and brute force effort.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2018/12/20/automating-materials-science-with-machine-learning.html">Dec 20, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/12/20/automating-materials-science-with-machine-learning.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/12/18/spaghetti-carbonara.html">Spaghetti Carbonara</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #C7AC76, #ADAFB4, #CAAB72, #C7AC75, #ADA29F)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>For a long time I thought I didn’t like carbonara because the few I tried were too creamy and eggy. Recently I gave it another try because the picture in the menu looked delicious. It was excellent, and I decided I wanted to learn how to make it myself. I needed some practice before I felt comfortable with the timings, but overall it’s a pretty simple recipe that wasn’t hard to learn.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/automating-materials-science-with-machine-learning">Dec 20, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #C7AC76, #ADAFB4, #CAAB72, #C7AC75, #ADA29F);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/spaghetti-carbonara">Spaghetti Carbonara</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>For a long time I thought I didn’t like carbonara because the few I tried were too creamy and eggy. Recently I gave it another try because the picture in the menu looked delicious. It was excellent, and I decided I wanted to learn how to make it myself. I needed some practice before I felt comfortable with the timings, but overall it’s a pretty simple recipe that wasn’t hard to learn.</p>
 
 <figure>
   <img src="/assets/images/carbonara.jpg" alt="" class="center-image" />
   </figure>
 
+<h2 id="ingredients">Ingredients</h2>
 
-            <p>
-  <a href="/2018/12/18/spaghetti-carbonara.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/12/18/spaghetti-carbonara.html">Dec 18, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/12/18/spaghetti-carbonara.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/12/14/lucid-dreaming.html">Lucid Dreaming</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #29394B, #666062, #324951, #12256E, #5A5B64)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I was consistently able to have lucid dreams when I was in high school. Partway through a dream, I would realize that I was dreaming and could then control the rest of the dream to a small extent. As I’ve grown older though, this has become less and less common. Maybe age has changed something about my brain.</p>
+<ul>
+  <li>Spaghetti for 2</li>
+  <li>2 eggs</li>
+  <li>1 block of parmesan cheese</li>
+  <li>1 block of bacon, cut into chunks</li>
+  <li>1 clove of garlic</li>
+  <li>Pepper</li>
+  <li>Olive oil</li>
+</ul>
+
+<h3 id="notes">Notes</h3>
+
+<ul>
+  <li>There are no weights and volumes because I can’t be bothered to measure things.</li>
+  <li>You can use 3 egg yolks if you want the sauce to be thicker.</li>
+  <li>Pecorino cheese might be more authentic, but parmesan is totally fine.</li>
+  <li>Pancetta might be more authentic, but I personally prefer normal bacon (<em>gasp!</em>).</li>
+  <li>The cheese and pepper tastes better if it’s freshly grated/ground.</li>
+</ul>
+
+<h2 id="method">Method</h2>
+
+<ol>
+  <li>Start cooking the pasta in boiling salted water until al dente.</li>
+  <li>Beat the eggs in a bowl, and grate in the cheese.
+    <ul>
+      <li>Keep adding cheese until the sauce becomes thick and creamy.</li>
+      <li>Add pepper to taste.</li>
+    </ul>
+  </li>
+  <li>Heat the garlic with olive oil in a frying pan over medium heat, and cook the bacon.
+    <ul>
+      <li>Cook the bacon until it starts to crisp on the outside.</li>
+      <li>Take out the garlic once the bacon is done cooking.</li>
+    </ul>
+  </li>
+  <li>Once the pasta is ready, add it to the frying pan and mix well with the bacon.
+    <ul>
+      <li>Add the pasta directly to the pan with tongs (instead of using a strainer) to get a nice amount of pasta water as well.</li>
+      <li>Remove the pan from the heat here and take your time, so that the pan is not too hot when you add the sauce.</li>
+    </ul>
+  </li>
+  <li>Add the sauce and mix well.
+    <ul>
+      <li>The heat from the pasta will be enough to gently cook the egg.</li>
+      <li>If the pan is too hot here, you will get pasta with scrambled eggs (gross).</li>
+      <li>If the sauce seems too thick, add some more pasta water.</li>
+    </ul>
+  </li>
+  <li>Serve with some extra cheese and pepper on top.</li>
+</ol>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/spaghetti-carbonara">Dec 18, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #29394B, #666062, #324951, #12256E, #5A5B64);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/lucid-dreaming">Lucid Dreaming</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I was consistently able to have lucid dreams when I was in high school. Partway through a dream, I would realize that I was dreaming and could then control the rest of the dream to a small extent. As I’ve grown older though, this has become less and less common. Maybe age has changed something about my brain.</p>
 
 <p>Naturally, I’ve been interested in lucid dreaming and have read a lot about it. <a href="https://tim.blog/2009/09/21/how-to-lucid-dream/">Tim Ferriss has a fascinating beginner’s guide on his blog</a>. Different people seem to have different approaches and theories, so I thought I would write about my own experiences.</p>
 
+<h2 id="entering-a-lucid-dream">Entering a lucid dream</h2>
 
-            <p>
-  <a href="/2018/12/14/lucid-dreaming.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (4 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/12/14/lucid-dreaming.html">Dec 14, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/12/14/lucid-dreaming.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/12/05/universal-basic-income.html">Universal Basic Income</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #DA3C3D, #50504F, #A8C8B9, #777777, #58666D)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I wonder sometimes about what a better society than ours would be. What should our goals be as we try to improve?</p>
+<p>The breakthrough for me was trying to wake up from nightmares. I would pull my eyes open to try to force them to open in real life. Sometimes it worked, but other times the nightmare would already be over because I was focused so much on trying to open my eyes. At some point, I realized that if it’s all in my head, there’s no reason why I shouldn’t be able to change it to be less scary.</p>
+
+<p>The next time I had a nightmare, instead of trying to wake up I tried to change the dream. I tried to imagine myself on a calm beach. It didn’t work very well. The whole dream just became hazy, and I woke up right away. Still, progress!</p>
+
+<h3 id="signals-to-realize-you-are-dreaming">Signals to realize you are dreaming</h3>
+
+<p>In <em>Inception</em>, the characters have totems that they use to determine if they are in a dream. If the totem is slightly different from the way they remember, they know that it is an imperfect version of the totem that exists within a dream.</p>
+
+<p>It sounds like science fiction, but some people have similar methods of invoking lucid dreams before they even fall asleep. One of my friends in high school would hold an image of a French horn in his mind as he was falling asleep. He would then see the French horn in the dream, and it would be a sign for him to realize he is dreaming.</p>
+
+<p>One thing that I have read (and noticed personally) is that it’s common to not be able to read clocks in dreams. It’s hard to describe, but the clock face is hazy and it’s as if your mind can’t register what time is showing. Or if I ever am using a smartphone in a dream, I always struggle to get it to do what I want. I consistently mistype the same words over and over. These are all signals that can help me to realize that I am dreaming.</p>
+
+<h2 id="controlling-a-lucid-dream">Controlling a lucid dream</h2>
+
+<p>I read about people with tremendous control over their lucid dreams. People who fly through the air freely and visit beautiful places around the world. Athletes who perform their sport in their dreams to develop muscle memory without fear of injury. Mathematicians who use the dream-space to visualize multiple dimensions and work out complicated formulas.</p>
+
+<p>Even after becoming lucid within a dream, I had a hard time controlling them. I was never able to fly, for example. The closest I got was jumping far by falling slowly. Changing my location was generally impossible, too. Like my attempted visit to the beach, changing too much about the dream around me would just wake me up. Instead, I could look for a door that leads into a room with a pool, for example, but it would often take me some time and effort to find that door.</p>
+
+<p>It felt like my dreams had rules, and if I pushed too hard the dream would collapse and I would wake up. I had to be very careful to only make changes that fell within the dream’s rules to make sure that I could stay inside the dream.</p>
+
+<p>Once I realize that the dream is fading, I try to stop pushing against it and surrender myself to the dream’s natural flow. This usually lets the dream get back on track, but sometimes I get caught up in it and forget to become lucid again. Supposedly, spinning around or rubbing your hands together is a good way to make a dream more “solid” again if you’ve weakened it too much (who discovers these things?), but I’ve never been able to remember to test this technique. I’m sure there are other tricks that people have developed, but they probably all require a lot of practice.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/lucid-dreaming">Dec 14, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #DA3C3D, #50504F, #A8C8B9, #777777, #58666D);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/universal-basic-income">Universal Basic Income</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I wonder sometimes about what a better society than ours would be. What should our goals be as we try to improve?</p>
 
 <p>As our society improves and we get more efficient, I like to imagine a future where we don’t have to work as much. That seems like a nice thing to aim for. Universal basic income (UBI) seems like one possible solution. If we could afford to give everybody a fixed minimal income, people could work less and still have a basic amount of wealth needed to survive. But I’m not yet convinced whether UBI is the correct answer to describe an ideal future.</p>
 
+<p>Robots and machines can do a lot of work for us. This is progress that could be applauded, but it’s feared instead. The main reason why we’re afraid of offloading work to machines is that we can’t live without money, and we can’t get money unless we are productive members of society. Capitalism is set up to make us want to stay busy. We seem to be stuck in a rut where we <a href="https://www.youtube.com/watch?v=A4-3TKy2A28">never stop building more things</a> and <a href="https://strikemag.org/bullshit-jobs/">make up fake jobs to stay busy</a>.</p>
 
-            <p>
-  <a href="/2018/12/05/universal-basic-income.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/12/05/universal-basic-income.html">Dec 5, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/12/05/universal-basic-income.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/10/18/the-value-promise-of-subscription-games.html">The Value Promise of Subscription Games</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #F8EA93, #B5B5B5, #F7CD8E, #B0B0B0, #B0AFB0)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I had been playing World of Warcraft on and off for about 10 years, but I decided to stop playing again about a year ago. I quit because of a series of changes that were made to the game, and it motivated me to think about why I reacted that way as a paying customer.</p>
+<p>If we let robots and machines do a lot of work for us, the downside is that many people will lose their jobs. This is where UBI comes in. If robots and machines and other general improvements allow us to create value more efficiently, the government could then redistribute the extra value to everyone in the form of a basic income.  Unemployment will be feared less if you don’t have to worry about how you’ll feed your family. UBI in some form seems necessary if we want to make life easier for everyone while still using money to pay for things. But I’m not yet convinced whether it’s the correct answer to describe an ideal future.</p>
+
+<p>Making sure everyone has a basic ability to live a decent life sounds like a great goal for a government that exists to serve its citizens. On the other hand, capitalism promises rewards for great work, and that’s what motivated a lot of people to do great things. People spend millions of dollars researching medicine because a breakthrough drug could be worth billions. Redistribution of wealth will take away from those rewards, and a loss in motivation might lead to a decline in innovation.</p>
+
+<p>One interesting example of UBI is <a href="https://www.businessinsider.com/alaska-universal-basic-income-employment-2018-10">The Alaska Permanent Fund</a>. This program was set up as the Trans-Alaska Pipeline was being finished in 1977 and has been giving $1000-2000 to every citizen since 1982. This isn’t <em>exactly</em> UBI because it is tied to a new form of income that Alaska had access to, so it isn’t just redistribution of wealth. But in general, it has been working very well, and hasn’t increased unemployment or made people lazier.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/universal-basic-income">Dec 5, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #F8EA93, #B5B5B5, #F7CD8E, #B0B0B0, #B0AFB0);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-value-promise-of-subscription-games">The Value Promise of Subscription Games</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I had been playing World of Warcraft on and off for about 10 years, but I decided to stop playing again about a year ago. I quit because of a series of changes that were made to the game, and it motivated me to think about why I reacted that way as a paying customer.</p>
 
 <p>A series of recent changes made to WoW were designed to motivate players to play by ensuring they always gain something and grow a little every time they play. Unfortunately, a side effect of these changes was an increased pressure to spend many hours playing. This made me feel like my limited time spent in the game was less valuable, and is what ultimately led to me quitting the game.</p>
 
+<h2 id="what-makes-a-subscription-based-game-worth-its-price">What makes a subscription-based game worth its price?</h2>
 
-            <p>
-  <a href="/2018/10/18/the-value-promise-of-subscription-games.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (7 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/10/18/the-value-promise-of-subscription-games.html">Oct 18, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/10/18/the-value-promise-of-subscription-games.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/10/07/how-to-cook-popcorn-in-a-pan.html">How to Cook Popcorn in a Pan</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #959AA9, #F09790, #A25B16, #685956, #E3650C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>The best way to cook popcorn in a pan. The secret is to heat up the kernels evenly in hot oil first, before heating them over a flame to pop them quickly all at once.</p>
+<p>All games need to convince people that what they are buying (whether it’s a complete game, an item, or another month of game time) is worth the price. <a href="/posts/pay-to-win">I wrote previously</a> about what mobile games do to make people want to buy extra items. Online games where players pay a fixed amount every month have a very different strategy.</p>
 
+<p>Unlike games that sell items, games with a subscription model don’t need to maximize revenue per user because everybody pays the same price. Instead, the most important metric is how many people will keep playing the following month. The total revenue per user is determined by how many months they spend playing the game.</p>
 
-            <p>
-  <a href="/2018/10/07/how-to-cook-popcorn-in-a-pan.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/10/07/how-to-cook-popcorn-in-a-pan.html">Oct 7, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/10/07/how-to-cook-popcorn-in-a-pan.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
+<p>Traditional console games need to convince people to pay money just once. “$60 will get you more than 100 hours of fun gameplay!” On the other hand, subscription-based games need to convince people to pay money <strong>every month</strong>. One thing that helps people make a decision is whether they felt like the previous month was worth the price. So online games do their best to make sure that people are always satisfied with the time they have spent playing the game so far.</p>
+
+<h2 id="how-to-design-a-subscription-based-game">How to design a subscription-based game</h2>
+
+<p>Most online RPGs follow a basic progression system that can give players a fun game experience over a long period of time. You enter a dungeon, beat a few bosses, and get a few strong items. The dungeons reset each week, and since those new items make you a little bit stronger you can get a little further in the dungeon. After a few months you are strong enough to defeat the final boss, and by that time the game will (hopefully) soon release a new dungeon.</p>
+
+<p>You always have a challenge, and you are always making progress towards completing the challenge. It’s almost like you’re buying and playing a new small game every few months, but it’s much more meaningful because you keep the same character who is constantly growing stronger.</p>
+
+<p>So then, what can go wrong and make people want to stop playing?</p>
+
+<h2 id="people-pay-for-their-time-dont-make-them-waste-it">People pay for their time. Don’t make them waste it.</h2>
+
+<p>The most competitive players will defeat all of the game’s bosses very quickly, and have little to do inside the game until the next dungeon is released. If there is nothing meaningful to do inside the game, then there’s no reason to spend money to keep playing. Making social elements important or having players battle each other are possible solutions, but online games constantly struggle to make sure that high-ranked players will always have a reason to keep playing.</p>
+
+<p>In other cases, a player might have plenty left to do but still feel like their time in the game was not spent well. You could play for many hours fighting bosses, but never manage to get any new strong items just because you were unlucky. All of the time spent fighting bosses would feel lost because you gained nothing for your effort.</p>
+
+<p>At the end of the month, players will ask themselves, “Did I get my money’s worth last month?” If you spent $15 to play a game but didn’t make any progress, you might feel like that was a waste of money.</p>
+
+<p>So WoW started to reward people for the time they spend playing the game. Now you constantly get special experience points when you play, and this will make your items stronger. Because you are always gaining these experience points it is guaranteed that none of your time will be a total waste. People can spend more time playing the game and be satisfied that it was time well-spent. Problem solved, right?</p>
+
+<p>Not quite.</p>
+
+<h2 id="people-pay-for-their-time-dont-devalue-it">People pay for their time. Don’t devalue it.</h2>
+
+<p>The issue is that if every hour you spend in the game makes you stronger, you are now required to spend many hours playing the game if you want to be strong. Before, I could play for a few hours on the weekend fighting bosses and if I was lucky I would get some great items and be a strong player. I was happy with that. But now having the good items isn’t enough. I’m required to make my items stronger by spending many more hours gaining extra experience points to improve them.</p>
+
+<p>In that sense, the time I spend fighting bosses is only meaningful if I also spend more time making the items stronger. Without the extra time put in, I can only get weak items from bosses. And what if I can’t because I’m too busy during the rest of the week? My time spent in the game, which hasn’t changed, is now worth less because I get less benefit from it. I now feel like I’m no longer getting my money’s worth from the game. And ironically, the cause was a new system designed to make every hour spent in the game feel more valuable.</p>
+
+<h2 id="what-was-wrong-with-these-changes">What was wrong with these changes?</h2>
+
+<p><strong>Making all time spent in the game directly make you stronger doesn’t work well in MMOs</strong>. In mobile games, it’s fine to reward time spent playing because it works as an alternative to paying money. Competitive players can choose to spend either time or money to become stronger, and non-competitive players aren’t affected because they lose nothing by playing the game for free. But if you are paying a monthly subscription, then having a disadvantage because you don’t have extra time or money is a terrible experience. MMOs generally don’t allow people to pay money to become stronger, and allowing people to spend time to become stronger can lead to similar issues.</p>
+
+<p><strong>Giving an advantage to hard-core players is not a great business decision, <em>especially if it makes the game less fun for more casual players</em></strong>. This is because no matter how dedicated a player is, they will only spend the same amount of money as a casual player. If a game gets the majority of its revenue from a small group of hard-core players, it’s fine to focus on them. But in an online game where everybody spends the same amount of money, the majority of revenue will come from more casual players and they are the ones for whom the main gameplay should be designed.</p>
+
+<p>I’m not sure what circumstances motivated the changes to WoW, but I think there had to be better solutions. If hard-core players were running out of things to do, maybe add more cosmetic rewards, or create one insanely difficult version of the current dungeon that most people can not complete. Or if casual players were having a hard time progressing within a limited time, then you can add safety mechanics that guarantee a good item after a certain number of unlucky attempts with no rewards.</p>
+
+<p>The latest version of WoW added changes that affected the core gameplay for all users and unfortunately did it in a way that gave a disadvantage to many casual players. I would guess that these people made up a large portion of the game’s players, and worsening their game experience may prove to do more harm than good.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-value-promise-of-subscription-games">Oct 18, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #959AA9, #F09790, #A25B16, #685956, #E3650C);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/how-to-cook-popcorn-in-a-pan">How to Cook Popcorn in a Pan</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>The best way to cook popcorn in a pan. The secret is to heat up the kernels evenly in hot oil first, before heating them over a flame to pop them quickly all at once.</p>
+
+<ol>
+  <li>Coat the bottom of a pan with a small amount of oil and place over medium heat.</li>
+  <li>Put three popcorn kernels in the pan and wait for all three to pop.</li>
+  <li>Put the rest of the kernels in the pan, cover with a lid, and <strong>remove from the heat</strong> for 30 seconds.
+    <ul>
+      <li>This heats the kernels evenly, getting them all ready to pop together.</li>
     </ul>
-  <div class="paginator">
+  </li>
+  <li>Return the pan to the heat, where the popcorn should start popping right away.
+    <ul>
+      <li>It helps to keep the lid ajar and shake the pan occasionally to keep the popcorn dry.</li>
+    </ul>
+  </li>
+  <li>Once the popping slows to a few seconds between pops, pour the popcorn into a bowl.</li>
+  <li>Add salt to taste.</li>
+</ol>
+
+<figure>
+  <img src="/assets/images/popcorn.jpg" alt="Photo by Keegan Evans from Pexels" class="center-image" />
+  <figcaption>Photo by Keegan Evans from Pexels</figcaption>
+  </figure>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/how-to-cook-popcorn-in-a-pan">Oct 7, 2018</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/8/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/10/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

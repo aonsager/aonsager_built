@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/10/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,82 +25,171 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/10</span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-  
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/08/30/picular.html">Picular - Google, but for Colors</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://picular.co/">https://picular.co/</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #9B7056, #EB7C32, #2E6EAF, #983CE9, #D53D53)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><a href="https://picular.co/">Picular</a> is a site that lets you search for words like “water” or “summer” and see a list of related colors. It seems to work by running a Google image search and extracting the primary color of that image.</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #9B7056, #EB7C32, #2E6EAF, #983CE9, #D53D53);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/picular">Picular - Google, but for Colors</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://picular.co/">https://picular.co/</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="https://picular.co/">Picular</a> is a site that lets you search for words like “water” or “summer” and see a list of related colors. It seems to work by running a Google image search and extracting the primary color of that image.</p>
 
 <p>This is the kind of project I love. It’s simple and easy to understand, but fun to play with.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2018/08/30/picular.html">Aug 30, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/08/30/picular.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/08/23/pvp-pacman.html">Game Idea: PvP Pac-Man</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #4D4E4E, #054695, #5A5B5C, #5E5D55, #F66E04)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <h2 id="concept">Concept</h2>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/picular">Aug 30, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #4D4E4E, #054695, #5A5B5C, #5E5D55, #F66E04);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/pvp-pacman">Game Idea: PvP Pac-Man</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="concept">Concept</h2>
 
 <p>Play Pac-Man online against other players. 1 player plays as Pac-Man and 4 other players play as the ghosts. Pac-Man’s goal is to collect as many dots as possible, and the ghosts’ goal is to work together to catch Pac-Man. Players receive points at the end of the round based on performance, and roles are rotated for the next round.</p>
 
@@ -108,241 +197,293 @@
 
 <p>In terms of strategy, the ghosts will need to work together in order to win. Pac-Man will move faster than the ghosts, so the ghosts’ main strategy will be to trap Pac-Man in a corner. To encourage teamwork, all ghosts will receive the same amount of points at the end of round regardless of who actually caught Pac-Man.</p>
 
+<p>The fact that the ghosts can share information makes the game much harder for Pac-Man than the original, so he needs a new advantage too. We allow Pac-Man to see the entire map, but the ghosts can only see a small radius around them. The ghosts’ vision is shared with each other, so together they can see a large portion of the map.</p>
 
-            <p>
-  <a href="/2018/08/23/pvp-pacman.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/08/23/pvp-pacman.html">Aug 23, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/08/23/pvp-pacman.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2018/08/02/blockchain-platforms.html">The Value of Blockchain Platforms</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #48371F, #493720, #5D5765, #564A4C, #ACACAC)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I’ve been thinking a lot recently about what benefits there are to building a new product on a blockchain. Blockchains allow an app to be decentralized, and the biggest value they bring is a solid way to handle trust and consensus in an environment with no central authority. I was having a hard time thinking of products that would really benefit from being decentralized, but I came across an idea about decentralized platforms that makes a very strong case for using blockchains.</p>
+<p>The game then becomes a hide-and-seek game, where the ghosts spread out strategically to try to find Pac-Man. Pac-Man hides from them for as long as possible while collecting dots along the way. If the ghosts find an area with no dots, they will know that Pac-Man has already been there. Once Pac-Man is spotted, the ghosts converge on his position and Pac-Man must try to escape before becoming trapped.</p>
+
+<p>With the gameplay changes, the characters should be changed as well. Some other ideas are:</p>
+
+<ul>
+  <li>A squirrel collecting nuts vs. 4 wolves</li>
+  <li>A thief collecting coins vs. 4 policemen with flashlights</li>
+  <li>A human looking for supplies vs 4 zombies</li>
+</ul>
+
+<h2 id="mockups">Mockups</h2>
+
+<figure>
+  <img src="/assets/images/pacman-pac.jpg" alt="Pac-Man&#39;s point of view" class="center-image" />
+  <figcaption>Pac-Man's point of view</figcaption>
+  </figure>
+
+<figure>
+  <img src="/assets/images/pacman-ghosts.jpg" alt="The ghosts&#39; point of view" class="center-image" />
+  <figcaption>The ghosts' point of view</figcaption>
+  </figure>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/pvp-pacman">Aug 23, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #48371F, #493720, #5D5765, #564A4C, #ACACAC);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/blockchain-platforms">The Value of Blockchain Platforms</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I’ve been thinking a lot recently about what benefits there are to building a new product on a blockchain. Blockchains allow an app to be decentralized, and the biggest value they bring is a solid way to handle trust and consensus in an environment with no central authority. I was having a hard time thinking of products that would really benefit from being decentralized, but I came across an idea about decentralized platforms that makes a very strong case for using blockchains.</p>
 
 <p>The idea, introduced to me by <a href="https://marginalrevolution.com/marginalrevolution/2018/06/blockchains-opportunity-commons.html">this post by Alex Tabarrok</a>, is that a blockchain-based platform is uniquely able to align its needs with the needs of the users. If a traditional platform wants to create economic value for itself, it often needs to do things at the expense of its users. It can’t maximize value for both the users and the platform at the same time. But a blockchain-based platform can, through its tokens, increase its value directly by increasing value for its users.</p>
 
+<p>Facebook creates value for its users by making it easy for them to communicate and keep in touch with their friends. But if Facebook and its stockholders want to create value (= money) for themselves, they need to start selling data and adding advertisements. This doesn’t add any value to its users and actually creates negative value. There is a conflict of interest because the needs of the users and the needs of the platform are not aligned, and the company needs to find a balance so that everybody involved is just happy enough.</p>
 
-            <p>
-  <a href="/2018/08/02/blockchain-platforms.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2018/08/02/blockchain-platforms.html">Aug 2, 2018</a>
-            <!-- <div class="comment-link"><a href="/2018/08/02/blockchain-platforms.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2017/12/21/facebook-is-no-longer-a-communication-platform.html">Facebook Is No Longer a Communication Platform</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #C6C6C6, #6E7171, #A1A0B3, #575B5C, #545353)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>When I started using Facebook in 2005, it was exclusive to college students and was by far the best way to communicate with my classmates. It was the first time I could learn what my friends were up to without asking each one individually. Everything I wanted to know about my friends was in one easily accessible place.</p>
+<p>For a decentralized platform with tokens powering its blockchain, the value of the platform lives in the value of the token. Users of the platform give value to the token by using it and interacting with it, so a popular platform will have more valuable tokens. The best way to make a token more valuable is to increase the value that the platform provides to its users. There is no conflict of interest because there is no way to increase the value of the blockchain itself at the expense of the value it provides its users.</p>
+
+<p><a href="https://diasporafoundation.org/">Diaspora*</a> is a decentralized version of Facebook, and <a href="https://joinmastodon.org/">Mastadon</a> is a decentralized version of Twitter. These platforms don’t have anything like tokens, and there is no revenue involved in either of the projects. While this is refreshing, having no monetary incentive for the people involved makes it less likely for the project to grow. Blockchain might be the missing ingredient that allows a decentralized platform to really gain momentum and start a new era of user-centric services.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/blockchain-platforms">Aug 2, 2018</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #C6C6C6, #6E7171, #A1A0B3, #575B5C, #545353);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/facebook-is-no-longer-a-communication-platform">Facebook Is No Longer a Communication Platform</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>When I started using Facebook in 2005, it was exclusive to college students and was by far the best way to communicate with my classmates. It was the first time I could learn what my friends were up to without asking each one individually. Everything I wanted to know about my friends was in one easily accessible place.</p>
 
 <p>All recent updates were shown as one long list, but Facebook eventually introduced the News Feed. This was an effort to filter everyone’s updates to show just the most important ones. Facebook made educated guesses about whose updates were most important to you and hid the ones you wouldn’t care about. I think they also kept an option to see all updates in chronological order if you didn’t want to miss out on anything.</p>
 
+<p>News Feed seemed fine at first, but unfortunately it’s no longer useful as a way to keep in touch with people. Instead of showing you the updates that should be most important to you, Facebook now shows you the things that you are most likely to click on. Often, this means you only see pictures or videos on the home page.</p>
 
-            <p>
-  <a href="/2017/12/21/facebook-is-no-longer-a-communication-platform.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2017/12/21/facebook-is-no-longer-a-communication-platform.html">Dec 21, 2017</a>
-            <!-- <div class="comment-link"><a href="/2017/12/21/facebook-is-no-longer-a-communication-platform.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2017/12/15/are-games-still-for-kids.html">Are Video Games Still For Kids?</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5B718B, #562824, #5C718B, #584933, #5F676C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I grew up in the 90s, and back then video games were made for kids. Toys were for kids, and video games were just the newest, most exciting toys around.</p>
+<p>When people posted YouTube videos or links to articles, they got more clicks than regular status updates. Facebook liked that and started showing more and more videos and links in the News Feed, and this made them get even more clicks. At some point, people started noticing that posts about themselves got almost no attention, while links to content would get lots of reactions. People stopped posting about themselves and started posting links instead.</p>
+
+<p>Facebook prioritizes this kind of content so much that my News Feed doesn’t have any information about my friends anymore. It’s filled with posts by strangers that my friends have liked or commented on at some point. Because Facebook’s criteria for a good post is now so different from what we should expect, we have tragic situations like <a href="https://twitter.com/Hellchick/status/942863353403150336">people never noticing that their friends were dying</a>.</p>
+
+<p>Facebook no longer has any use to me as a communication platform. It has just turned into a click-generating machine.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/facebook-is-no-longer-a-communication-platform">Dec 21, 2017</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5B718B, #562824, #5C718B, #584933, #5F676C);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/are-games-still-for-kids">Are Video Games Still For Kids?</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I grew up in the 90s, and back then video games were made for kids. Toys were for kids, and video games were just the newest, most exciting toys around.</p>
 
 <p>But as my generation grew up, we never really stopped playing games. As we became adults, the game companies kept making games for us, and games shifted to targeting an older audience. It makes sense that these would be successful since adults have more money to spend on games than kids do. Video games became a form of entertainment just like movies, and they started using serious storylines and graphic violence in the same ways.</p>
 
+<p>While this is great for the adults, I can’t help but feel that the kids are being left behind. The young adults making exciting new things are mostly making them for people like themselves, and very few companies are still focusing on entertainment for children. So now kids play Call of Duty, sign up for Facebook, watch YouTube, and are bombarded with content that really isn’t appropriate for their age.</p>
 
-            <p>
-  <a href="/2017/12/15/are-games-still-for-kids.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2017/12/15/are-games-still-for-kids.html">Dec 15, 2017</a>
-            <!-- <div class="comment-link"><a href="/2017/12/15/are-games-still-for-kids.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2017/12/06/google-s-alphazero-destroys-stockfish-in-100-game-match.html">Google&#39;s AlphaZero Destroys Stockfish In 100-Game Match</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match">https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5F625C, #BBBBBB, #023A8D, #5B5B5B, #B55039)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Google’s AlphaZero program is a machine that plays chess, and it has managed to quickly become the strongest chess AI in the world by implementing machine learning techniques. While existing chess AIs have mostly been massive dictionaries of moves that are put together by humans, AlphaZero learned chess entirely on its own with minimal human input.</p>
+<p>Nintendo is a shining exception. The Switch is designed to be family-friendly and has many games suitable for young children. I was recently in a shopping mall that was holding an event for kids to try out the new Mario game, and they had a Mario there to greet them and take pictures.</p>
+
+<p>Nintendo’s first steps in the mobile app industry - which is notorious for promoting competition and bad spending habits - includes games like Animal Crossing that have minimal payment mechanics and have only positive interactions between players.</p>
+
+<p>Even Nintendo’s eSports efforts include a focus on kids. Splatoon has held national tournaments exclusive to Elementary School students, to find the best Splatoon-playing kids in the country.</p>
+
+<p>Cynics will say that Nintendo’s strategy is to start making life-long customers from a young age, but I just think it’s nice to see a giant game company that hasn’t forgotten about the children.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/are-games-still-for-kids">Dec 15, 2017</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5F625C, #BBBBBB, #023A8D, #5B5B5B, #B55039);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/google-s-alphazero-destroys-stockfish-in-100-game-match">Google&#39;s AlphaZero Destroys Stockfish In 100-Game Match</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match">https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Google’s AlphaZero program is a machine that plays chess, and it has managed to quickly become the strongest chess AI in the world by implementing machine learning techniques. While existing chess AIs have mostly been massive dictionaries of moves that are put together by humans, AlphaZero learned chess entirely on its own with minimal human input.</p>
 
 <p>As I understand it, the hardest part of creating an AI that solves problems like chess is finding some way to calculate if you’re winning or not. If that were easy to do, the program could just look at all of its possible moves (which is not very many for a computer) and see which one would leave it winning by more. The trouble is that it’s very hard to tell if you’re winning. You might need to consider all possible outcomes many moves in advance, which quickly becomes too many to calculate.</p>
 
+<p>Successful chess AI programs, of which Stockfish is the most popular, have a giant list of common board situations and good moves to make. An <a href="https://en.wikipedia.org/wiki/Chess_opening_theory_table">opening table</a> lists moves that can happen towards the beginning of a match, and an <a href="https://en.wikipedia.org/wiki/Endgame_tablebase">endgame tablebase</a> shows possible situations at the end of a match. The middle of a match is much more complicated and has far many more possibilities, so it’s difficult to create tables like this. The strength of a chess AI boils down to how big its tables are, and how quickly it can search them within the match’s time limits. But:</p>
 
-            <p>
-  <a href="/2017/12/06/google-s-alphazero-destroys-stockfish-in-100-game-match.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2017/12/06/google-s-alphazero-destroys-stockfish-in-100-game-match.html">Dec 6, 2017</a>
-            <!-- <div class="comment-link"><a href="/2017/12/06/google-s-alphazero-destroys-stockfish-in-100-game-match.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2017/11/30/pay-to-win.html">Pay to Win</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5C0C08, #4F3627, #612209, #6B3258, #F40102)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Mobile games can make a crazy amount of money. <a href="https://en.wikipedia.org/wiki/Puzzle_%26_Dragons">Puzzles and Dragons</a> at its peak was said to be earning <em>$100 million per month</em>! Why do people spend so much?</p>
+<blockquote>
+  <p>[I]t took AlphaZero only four hours to “learn” chess. Sorry humans, you had a good run.</p>
+
+  <p>That’s right – the programmers of AlphaZero, housed within the DeepMind division of Google, had it use “machine learning,” which is sometimes called “reinforced learning.” Put more plainly, AlphaZero was not “taught” the game in the traditional sense. No opening book, no endgame tables, and apparently no complicated algorithms dissecting minute differences between center pawns and side pawns.</p>
+</blockquote>
+
+<p>I think this means that the program just played a lot of chess games on its own, and learned for itself what positions and moves lead to more wins. It’s possible that it built an intuition of how much it is winning, or how likely it is to get more ahead, at any point in a match. It can learn which moves don’t pay off immediately but might give an advantage later. Programs like Stockfish can’t really plan ahead, which is why they need to search their tables for the best move on every turn. AlphaZero isn’t limited by whether or not it was explicitly taught a certain situation. This ability also makes the searches much more efficient:</p>
+
+<blockquote>
+  <p>Indeed, much like humans, AlphaZero searches fewer positions that its predecessors. The paper claims that it looks at “only” 80,000 positions per second, compared to Stockfish’s 70 million per second.</p>
+</blockquote>
+
+<p>That’s 0.01% of searching effort required, which gives a huge advantage over an entire match.</p>
+
+<p>If you’re interested, you can read the full paper <a href="https://arxiv.org/pdf/1712.01815.pdf">here</a>.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/google-s-alphazero-destroys-stockfish-in-100-game-match">Dec 6, 2017</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5C0C08, #4F3627, #612209, #6B3258, #F40102);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/pay-to-win">Pay to Win</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Mobile games can make a crazy amount of money. <a href="https://en.wikipedia.org/wiki/Puzzle_%26_Dragons">Puzzles and Dragons</a> at its peak was said to be earning <em>$100 million per month</em>! Why do people spend so much?</p>
 
 <p>Mobile games are generally much more simple than traditional video games, so they can’t provide the same rich experiences as traditional video games. Instead, they engage their core users by providing a satisfying experience of winning, especially against other players. Since people often play mobile games in their spare time, money is used as a shortcut to win quickly and efficiently. The entire game’s structure is built around creating an environment to support people who are willing to pay large amounts of money in order to win.</p>
 
+<h2 id="what-are-you-paying-for">What are you paying for?</h2>
 
-            <p>
-  <a href="/2017/11/30/pay-to-win.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (6 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2017/11/30/pay-to-win.html">Nov 30, 2017</a>
-            <!-- <div class="comment-link"><a href="/2017/11/30/pay-to-win.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2016/10/24/perils-of-eroded-civic-knowledge-forewarned-by-fmr.html">Perils of Eroded Civic Knowledge Forewarned by Former Justice Souter</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.msnbc.com/rachel-maddow/watch/perils-of-eroded-civic-knowledge-forewarned-790540867791">http://www.msnbc.com/rachel-maddow/watch/perils-of-eroded-civic-knowledge-forewarned-790540867791</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #E69FA1, #A4A4A5, #E2A1A2, #E69FA0, #B0B0B0)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>This is extremely important.</p>
+<p>Compared to more traditional games, mobile games at first glance don’t seem to be as fun. The storyline, if one exists, is usually kept simple. Skill is rarely a factor, and user interaction is limited; in many games, you just need to tap the screen repeatedly to progress.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2016/10/24/perils-of-eroded-civic-knowledge-forewarned-by-fmr.html">Oct 24, 2016</a>
-            <!-- <div class="comment-link"><a href="/2016/10/24/perils-of-eroded-civic-knowledge-forewarned-by-fmr.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2016/06/13/lets-stop-the-hate.html">Let’s stop the hate</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #363636, #C4A85A, #9E1A19, #CCA83A, #6F6F71)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I&rsquo;m a supporter of LGBT rights. I&rsquo;m generally not too vocal about it, but with recent events culminating in the Orlando mass shootings, I had to say something.</p>
+<p>If you buy a good video game, you are paying for an engaging experience. You become a part of the world that the game makers have created for you. You directly control what happens in that world, and through some combination of time, effort, and skill, you can eventually “win” - which feels great.</p>
 
-<p>I&rsquo;ve been thinking a lot about the LGBT rights movement recently. Hopefully this effort can be another step forward following the Civil Rights Movement, as we work towards equal rights and treatment for all.</p>
+<p>But a lot of people can’t invest much time and effort into games. Maybe they can only play for 5 minutes every morning while they wait for their bus, but they still want to have fun. And what’s more fun than winning? So games - especially the ones on your phone - started letting people pay money to skip all that time and effort, and start winning right away. They are paying for the experience of winning because winning is fun.</p>
 
+<p>Somebody who isn’t used to this idea might think that winning won’t feel good if you spend no time and effort. As it turns out though, many people are willing to spend a lot of money to win, and they feel good doing it. I think this is because people are able to think of time, effort, and money as resources that have comparative value. Time is money, as they say, and if you have some money but no time, then you spend what you can to have a good time.</p>
 
-            <p>
-  <a href="/2016/06/13/lets-stop-the-hate.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (2 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2016/06/13/lets-stop-the-hate.html">Jun 13, 2016</a>
-            <!-- <div class="comment-link"><a href="/2016/06/13/lets-stop-the-hate.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2015/07/15/pluto-closest-approach.html">Pluto - Closest Approach</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #4E4E4E, #4E4E4E, #59291D, #6E6E6E, #484848)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hello <a href="https://twitter.com/hashtag/Pluto?src=hash&amp;ref_src=twsrc%5Etfw">#Pluto</a>! We’re at closest approach. Congrats to all! Follow our story &amp; view new images using <a href="https://twitter.com/hashtag/PlutoFlyby?src=hash&amp;ref_src=twsrc%5Etfw">#PlutoFlyby</a>. <a href="http://t.co/8JVlJrcUkY">pic.twitter.com/8JVlJrcUkY</a></p>&mdash; NASA New Horizons (@NASANewHorizons) <a href="https://twitter.com/NASANewHorizons/status/620923200621412352?ref_src=twsrc%5Etfw">July 14, 2015</a></blockquote>
+<h2 id="games-built-for-players-who-pay-to-win">Games built for players who pay to win</h2>
+
+<p>The best kind of winning is against real people who are also trying to win, so games that let people battle other players quickly became the most profitable. But if you have winners you need to have losers, too. If everybody started paying to win, some of those people would lose to others who paid more, and they would have reason to complain that they weren’t getting what they paid for. So these games needed to collect a population of players who were there to always lose, to keep the winners winning. This meant that the games needed to be fun to play even if you never won.</p>
+
+<p>Many games became entirely free to play and featured a progression system that rewards you for every minute you spend playing. Even you if you only have a few minutes to play, you can make immediate progress which continues to add up over time. Because everything you do leads to you advancing in the game, there is the dream that after enough time you might be able to start winning too. Of course, you would only be able to win against those who aren’t paying money. The players who are paying to win are untouchable, and people generally understood and accepted this.</p>
+
+<p>This progression system by itself can feel rewarding enough that people are willing to spend small amounts of money to skip some of the required time. An example of this would be a city-building game where you can wait an hour for your building to finish, or spend a few coins to finish it right away. Again, money is used as a substitute for time and effort, and people are OK with it. Competition stops being a factor in these cases, so the game essentially becomes a single player game.</p>
+
+<h2 id="paying-to-win-in-console-games-the-worst-of-both-worlds">Paying to win in console games: the worst of both worlds</h2>
+
+<p>Because these pay-to-win mechanics have been making so much money, larger game companies are starting to add similar features to their console games. Star Wars Battlefront 2 is a recent example <a href="https://www.polygon.com/2017/11/13/16646692/star-wars-battlefront-2-loot-crate-controversy-ea">that has received a lot of backlash</a> for its payment mechanics. Some of the points that have caused the most trouble are:</p>
+
+<ul>
+  <li>The game costs $60 to play but tries to make you spend even more money within the game</li>
+  <li>To unlock key characters, you need to spend either money or a lot of time and effort</li>
+  <li>To upgrade your characters, you need to spend either money or a lot of time and effort</li>
+  <li>If you don’t have strong characters or strong upgrades, it’s almost impossible to win in multiplayer mode</li>
+</ul>
+
+<p><em>(The game also features lootboxes, which give a random item in exchange for currency. There is also a lot of backlash about the lootbox system in general since you can spend a lot of money and still not get what you want, but that’s a separate big topic that I won’t get into here)</em></p>
+
+<p>I actually think that the first 3 points aren’t a big problem by themselves. Just like with mobile games, it’s fine if people choose to spend money instead of time and effort. Of course, the game might be making time requirements extremely long on purpose to make people want to spend money instead, and that would be unfortunate. In general though, the money vs time/effort tradeoff is a fair one to make. <em>But this only works in single-player games</em>.</p>
+
+<p>Competitive multiplayer games offer something very different to the player. $60 buys you entry to a playing field with fixed rules. How much you win, which is connected to how much fun you have, depends on your skill and effort. It’s understood that not everybody will win, but you’re at least promised a fair chance. If you’re not winning then the fault is yours.</p>
+
+<p>When players can pay to win it breaks that trust. It negates what you bought with that $60 package. Now it’s impossible to win against a group of users, regardless of your skill and effort. Even a progression system that improves your character over time is controversial. It’s fine to reward people for the time they spend, but there is a fine line between that and creating artificial barriers to punish people who don’t.</p>
+
+<p>Paying extra money to unlock Darth Vader quickly is fine. Making it extremely hard to win without Darth Vader is not. People are buying this game to test their skill again other players. When the game starts rewarding money spent over skill, these people are not getting what they paid for, and they have every right to complain.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/pay-to-win">Nov 30, 2017</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #E69FA1, #A4A4A5, #E2A1A2, #E69FA0, #B0B0B0);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/perils-of-eroded-civic-knowledge-forewarned-by-fmr">Perils of Eroded Civic Knowledge Forewarned by Former Justice Souter</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.msnbc.com/rachel-maddow/watch/perils-of-eroded-civic-knowledge-forewarned-790540867791">http://www.msnbc.com/rachel-maddow/watch/perils-of-eroded-civic-knowledge-forewarned-790540867791</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>This is extremely important.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/perils-of-eroded-civic-knowledge-forewarned-by-fmr">Oct 24, 2016</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #363636, #C4A85A, #9E1A19, #CCA83A, #6F6F71);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/lets-stop-the-hate">Let’s stop the hate</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I'm a supporter of LGBT rights. I'm generally not too vocal about it, but with recent events culminating in the Orlando mass shootings, I had to say something.</p>
+
+<p>I've been thinking a lot about the LGBT rights movement recently. Hopefully this effort can be another step forward following the Civil Rights Movement, as we work towards equal rights and treatment for all.</p>
+
+<p>The Civil Rights Act made it illegal to discriminate based on race, color, religion, sex, or national origin. Setting religion aside for a moment, the rest are distinctions that generally lead to noticeable physical differences. The ease of identification is probably one factor that helped the prejudice spread so much, and led to institutional disenfranchisement as well as terrible acts of discrimination and violence.</p>
+
+<p>Gay rights, though. There's no real difference between gay people and straight people, transgender people and cisgender people. It's just a preference; it's how people feel. Why are we judging, discriminating, and even killing people based on how they think and feel? At this point an explicit anti-discrimination law is probably an essential step to stopping it, but honestly this feels like the sort of thing that we teach on posters in our primary school classrooms. It's depressing that it needs a place in the Constitution of the United States of America.</p>
+
+<p>I don't know if every anti-LGBT person comes from a religious perspective, but I think many do. If you believe that the Almighty says it's a sin for two people of the same sex to love each other, then that's a tough thing to reconcile. I get that. It's a tragic situation, and it's going to be hard to work out.</p>
+
+<p>But when it comes down to it, I believe that all major religions are centered around teaching love and respect. We can work together to make the world a better place, by cherishing our relationships with those around us. Religion can be a way to guide us, give us purpose, and achieve more than the sums of individual effort. That's why I have no patience for those who twist religion to teach hate. We need it to stop.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/lets-stop-the-hate">Jun 13, 2016</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #4E4E4E, #4E4E4E, #59291D, #6E6E6E, #484848);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/pluto-closest-approach">Pluto - Closest Approach</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hello <a href="https://twitter.com/hashtag/Pluto?src=hash&amp;ref_src=twsrc%5Etfw">#Pluto</a>! We’re at closest approach. Congrats to all! Follow our story &amp; view new images using <a href="https://twitter.com/hashtag/PlutoFlyby?src=hash&amp;ref_src=twsrc%5Etfw">#PlutoFlyby</a>. <a href="http://t.co/8JVlJrcUkY">pic.twitter.com/8JVlJrcUkY</a></p>&mdash; NASA New Horizons (@NASANewHorizons) <a href="https://twitter.com/NASANewHorizons/status/620923200621412352?ref_src=twsrc%5Etfw">July 14, 2015</a></blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <p>And here is the best picture we had previously, taken by Hubble. Pretty amazing stuff</p>
 
 <p><img src="/assets/images/pluto-hubble-01.jpg" alt="Pluto" width="400px" /></p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2015/07/15/pluto-closest-approach.html">Jul 15, 2015</a>
-            <!-- <div class="comment-link"><a href="/2015/07/15/pluto-closest-approach.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/pluto-closest-approach">Jul 15, 2015</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/9/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/11/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

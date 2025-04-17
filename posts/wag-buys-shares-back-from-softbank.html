@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wag Buys Shares Back from SoftBank</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/wag-buys-shares-back-from-softbank">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Wag Buys Shares Back from SoftBank" property="og:title">
+<meta content="article" property="og:type">
+<meta content="Wag was looking to raise $75 million. It went to SoftBank and was like “will you give us $75 million?” SoftBank was like “no haha we’ll give you $300 million,” because that is SoftBank’s whole thin..." property="og:description">
+<meta content="https://invisibleparade.com/posts/wag-buys-shares-back-from-softbank" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/wag-buys-shares-back-from-softbank</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #B8B9C5, #9F330A, #D11304, #363649, #D11304);"></div>
+  <header class="post-header">
+    <h1>Wag Buys Shares Back from SoftBank</h1>
+    <div class="post-meta link">
+      <span itemprop="link"><a href="https://www.bloomberg.com/opinion/articles/2019-12-10/the-dogs-ate-softbank-s-money">https://www.bloomberg.com/opinion/articles/2019-12-10/the-dogs-ate-softbank-s-money</a></span>
+    </div>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>Wag was looking to raise $75 million. It went to SoftBank and was like “will you give us $75 million?” SoftBank was like “no haha we’ll give you $300 million,” because that is SoftBank’s whole thing, it loves to give startups vastly more money than they want or need. And so Wag took the money. And then like a year and a half later Wag will get rid of SoftBank by giving back, I don’t know, but I am going to say some number less than $225 million (“well below” the valuation at which it invested). Wag got the $75 million it needed for free.</p>
+</blockquote>
+
+<p>So under the right circumstances, you can make more money with a flop than you can with a hit!</p>
+
+<p>Wag wasn’t exactly a flop, but SoftBank’s aggressive investment strategy does result in some pretty unusual situations.</p>
+
+    <div class="post-meta">
+      <time datetime="2019-12-11T00:00:00+09:00" itemprop="datePublished">
+        Dec 11, 2019
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/five-steps-to-an-effective-tech-team">Five Steps to an Effective Tech Team</a></li>
+      <li><a href="/posts/samasource-selected-for-fbfund-rev">Samasource Selected for fbFund REV</a></li>
+      <li><a href="/posts/first-image-of-a-black-hole">The First Image of a Black Hole</a></li>
+      <li><a href="/posts/the-maker's-schedule-a-ten-year-retrospective">The Maker's Schedule - A Ten Year Retrospective</a></li>
+      <li><a href="/posts/the-value-promise-of-subscription-games">The Value Promise of Subscription Games</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

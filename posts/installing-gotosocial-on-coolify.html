@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Installing GoToSocial on Coolify</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/installing-gotosocial-on-coolify">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Installing GoToSocial on Coolify" property="og:title">
+<meta content="article" property="og:type">
+<meta content="Following up to my earlier post about the fediverse, I discovered GoToSocial. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around..." property="og:description">
+<meta content="https://invisibleparade.com/posts/installing-gotosocial-on-coolify" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/installing-gotosocial-on-coolify</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #545454, #AEAFB2, #BCBEC4, #5D5B59, #444347);"></div>
+  <header class="post-header">
+    <h1>Installing GoToSocial on Coolify</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>Following up to my <a href="/2024/12/02/i-want-to-love-mastodon.html">earlier post about the fediverse</a>, I discovered <a href="https://gotosocial.org">GoToSocial</a>. Compared to Mastodon which required a fair amount of server overhead (more than I could justify for just playing around online), GoToSocial is very <a href="https://docs.gotosocial.org/en/latest/getting_started/#server-vps">lightweight</a>: 1 CPU, 1GB memory, and 15GB-20GB of storage space for the first year or so. Sold!</p>
+
+<p>This would let me set up my own single-user server, which solves all of my misgivings about Mastodon.</p>
+
+<div class="callout">
+<div class="title">Disclaimer:</div>
+I am a total novice at all things server-related! I am probably at least a little bit wrong about some of the things I write here. Please take my experience with a grain of salt, and correct me if you can.
+</div>
+
+<p>I have a VPS with <a href="https://coolify.io">Coolify</a> to manage the multiple apps I have running, and all things considered it makes things very easy.<br />
+I used a docker-compose file to deploy GoToSocial, and their <a href="https://raw.githubusercontent.com/superseriousbusiness/gotosocial/main/example/docker-compose/docker-compose.yaml">example file</a> was almost perfect as-is.</p>
+
+<h2 id="port-settings">Port settings</h2>
+
+<p>Coolify acts as a reverse proxy, so I used that part of the configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">gotosocial</span><span class="pi">:</span>
+  <span class="s">...</span>
+    <span class="s">ports</span><span class="err">:</span>
+      <span class="c1"># - "443:8080"</span>
+      <span class="c1">## For letsencrypt:</span>
+      <span class="c1">#- "80:80"</span>
+      <span class="c1">## For reverse proxy setups:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">127.0.0.1:8002:8080"</span>
+</code></pre></div></div>
+
+<p>8002 was just an open port that I chose, and Coolify is smart enough to use that port to route traffic from my GoToSocial domain.</p>
+
+<h2 id="file-permissions">File permissions</h2>
+
+<p><a href="https://rknight.me/blog/installing-gotosocial-on-coolify/">Robb Knight’s blog post</a> showed me how to fix the sqlite database being unable to load because of a permissions issue. I had a similar issue with the Wazero compilation cache directory not being created, but I ended up just commenting that line out because it works without.</p>
+
+<h2 id="shooting-myself-in-the-foot">Shooting myself in the foot</h2>
+
+<p>I knew I had to mount a volume to make the database persist across redeploys and not be wiped fresh every time. <a href="https://coolify.io/docs/knowledge-base/persistent-storage">Coolify’s documentation</a> made it very clear,</p>
+
+<blockquote>
+  <p>The base directory inside the container is /app.
+So if you need to store your files under storage directory, you need to define /app/storage as the destination path.</p>
+</blockquote>
+
+<p>So, I changed the settings to make sure that things were stored under <code class="language-plaintext highlighter-rouge">/app</code></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">gotosocial</span><span class="pi">:</span>
+    <span class="s">...</span>
+    <span class="s">environment</span><span class="err">:</span>
+      <span class="s">...</span>
+      <span class="s">GTS_DB_ADDRESS</span><span class="err">:</span> <span class="s">/app/storage/sqlite.db</span>
+    <span class="s">volumes</span><span class="err">:</span>
+      <span class="pi">-</span> <span class="s">~/gotosocial/data:/app/storage</span>
+</code></pre></div></div>
+
+<p>Which worked, except!<br />
+I hadn’t realized that media storage also defaulted to the same (first) <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> directory. Since this directory was no longer being bound, it was wiped clean after every redeploy.
+Remote media was fine because it could be fetched again, but images I uploaded were lost.</p>
+
+<p>I poked around in the terminal and saw that both <code class="language-plaintext highlighter-rouge">/app/storage</code> and <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code> were being created and used with no issues, so I just switched the database address back to the default <code class="language-plaintext highlighter-rouge">/gotosocial/storage</code>… and everything worked as expected.</p>
+
+<p>So, I don’t quite understand what the Coolify docs were trying to tell me.</p>
+
+<h2 id="end">End</h2>
+
+<p>Things seem to be working fine now, and I’m using mostly <a href="http://semaphore.social">Semaphore</a> to interact with the instance.<br />
+You can follow me <a href="https://gts.invisibleparade.com/@alex">here!</a></p>
+
+    <div class="post-meta">
+      <time datetime="2024-12-27T00:00:00+09:00" itemprop="datePublished">
+        Dec 27, 2024
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/outgrowing-coolify">I may have outgrown Coolify</a></li>
+      <li><a href="/posts/crosspooter">CrossPooter - Poot your toots around the web</a></li>
+      <li><a href="/posts/i-want-to-love-mastodon">I want to love Mastodon...</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

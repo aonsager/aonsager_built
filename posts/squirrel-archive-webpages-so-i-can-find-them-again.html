@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Squirrel - Archive webpages so I can find them again</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/squirrel-archive-webpages-so-i-can-find-them-again">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Squirrel - Archive webpages so I can find them again" property="og:title">
+<meta content="article" property="og:type">
+<meta content="I created a thing that lets me save webpage contents in a smart way. I know, there are a million bookmark managers and web archivers out there, but this one is for me. The Motivation From Pinboard:..." property="og:description">
+<meta content="https://invisibleparade.com/posts/squirrel-archive-webpages-so-i-can-find-them-again" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/squirrel---archive-webpages-so-i-can-find-them-again</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #5B5958, #06276E, #60512E, #B8AF8A, #493630);"></div>
+  <header class="post-header">
+    <h1>Squirrel - Archive webpages so I can find them again</h1>
+    <div class="post-meta link">
+      <span itemprop="link"><a href="https://github.com/aonsager/squirrel-archiver">https://github.com/aonsager/squirrel-archiver</a></span>
+    </div>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <figure>
+  <img src="/assets/images/2025/squirrel.png" alt="" class="center-image" />
+  </figure>
+
+<p>I created a thing that lets me save webpage contents in a smart way. I know, there are a million bookmark managers and web archivers out there, but this one is for me.</p>
+
+<h2 id="the-motivation">The Motivation</h2>
+
+<p>From <a href="https://pinboard.in/about/">Pinboard</a>:</p>
+
+<blockquote>
+  <p>Do you half-remember interesting things you saw online six months ago, but struggle to find them in a search engine?</p>
+</blockquote>
+
+<p>Yes, yes, a hundred times yes. This happens to me all the time. Searching my history doesn’t work because usually the keywords I remember are not in the title. Google et al. aren’t much help either.</p>
+
+<p>I want a way to have the <em>contents</em> of the pages I visit be searchable, in a smart way.</p>
+
+<!-- more -->
+
+<h2 id="my-requirements">My Requirements</h2>
+
+<h3 id="1-minimal-friction-to-saving-content">1. Minimal friction to saving content</h3>
+
+<p>If I need to go through an entire workflow or remember some specific key combinations, I’m probably not going to use it. I want this to become a subconscious action whenever I finish reading something interesting.</p>
+
+<p>Pinboard’s javascript bookmarklet is very good, but unfortunately I then need to manually add tags and a description. I mean, I don’t have to, but the bookmark is significantly less useful if I don’t.</p>
+
+<p>I used the <a href="https://obsidian.md/clipper">Obsidian Web Clipper</a> for a while, and it was actually very good. The article text is saved in a new note, and tags and summaries are extracted from the page’s metadata <em>if they exist</em>. But, and I know this is a nitpick, it takes a few steps each time:</p>
+
+<ol>
+  <li>Click the button</li>
+  <li>Click “Add to Obsidian”</li>
+  <li>Say “Yes I want to allow this site to to open Obsidian”</li>
+  <li>Obsidian opens automatically with the new note</li>
+  <li>Navigate back to the browser, to continue what I was doing</li>
+</ol>
+
+<p>Every time. It’s friction.</p>
+
+<h3 id="2-easy-to-run-a-text-search-across-the-full-text">2. Easy to run a text search across the full text</h3>
+
+<p>Titles and URLs are not enough. I want to expose the full article text to search, too.</p>
+
+<p>Pinboard again, only allows me to search titles + manual summaries + bookmarks. I can pay $39 a year to enable full text search, but that’s kind of expensive and leads to the next point:</p>
+
+<h3 id="3-not-expensive">3. Not expensive</h3>
+
+<p>I mean, a couple of dollars a month isn’t <em>that</em> much. But they add up. This seems like the kind of problem that I, a non-power user, should be able to solve pretty cheaply.</p>
+
+<p>Tangentially, I also really liked the idea behind Browser Parrot, which seems to have been replaced by <a href="https://github.com/iansinnott/browser-gopher">Browser Gopher</a>. It automatically saves every page from your browser history, and can extract the full text.<br />
+The problem with this was that it ended up using <em>lots</em> of CPU, and the archive took up a lot of space, too. I think that in practice, 90% of the pages I visit are not worth saving.</p>
+
+<h3 id="other-things-that-arent-needed-but-might-be-nice">Other things that aren’t needed but might be nice</h3>
+
+<ol>
+  <li>
+    <p>Some kind of tagging system (minimum friction of course) so that I can link related information and re-discover old items.</p>
+  </li>
+  <li>
+    <p>An accessible format to save the data. I prefer plain text to a database, because I can browse and open text files from Finder, or use them later for whatever I need.<br />
+Would a database be more byte-efficient and make searching faster? Maybe. But since I’m not going to be saving millions of files, it probably will not make much of a difference.</p>
+  </li>
+</ol>
+
+<h2 id="based-on-the-above-my-solution">Based on the above, my solution</h2>
+
+<h3 id="1-put-any-webpage-i-want-to-save-into-a-text-file">1. Put any webpage I want to save into a text file</h3>
+
+<div class="callout">
+<div class="title">Update 2025/02/14</div>
+I wanted to use a folder in Safari bookmarks to save URLs since the OS already has handy hotkeys and utilities, but unfortunately editing the plist file by hand caused sync issues, so I gave up.
+</div>
+
+<p>I set up a Shortcut to grab Safari’s URL and add it to a text file <code class="language-plaintext highlighter-rouge">urls.txt</code>, which lives on my iCloud drive.</p>
+
+<h3 id="2-run-a-script-that-periodically-looks-at-urlstxt-and-processes-new-items">2. Run a script that periodically looks at urls.txt and processes new items</h3>
+
+<p>Setting a cron task to run this script once per day is fine. The text file is wiped after each run, and URLs that failed for some reason are saved to a separate file.</p>
+
+<h3 id="3-access-the-url-to-save-the-title-and-article-text">3. Access the URL to save the title and article text</h3>
+
+<p>Python libraries can do this easily. There is a lot of optimization that could be done to check for errors and edge cases, but as a personal project I don’t need it to be bullet-proof. Just a simple grab and dump.</p>
+
+<h3 id="4-use-chatgpt-to-generate-tags-and-a-short-summary-automatically">4. Use ChatGPT to generate tags and a short summary automatically</h3>
+
+<p>This sort of thing is what AI was born to do. Having an automatic tagging system is such a luxury, and doing it directly through the API is dirt-cheap.</p>
+
+<h3 id="5-package-into-a-text-file-and-output-to-a-local-folder">5. Package into a text file, and output to a local folder</h3>
+
+<p>Now I have a single folder on my hard drive that holds all of the articles that I thought were worth reading.</p>
+
+<h3 id="6-open-the-folder-as-an-obsidian-vault">6. Open the folder as an Obsidian Vault</h3>
+
+<p>Searching the article contents is very fast, and I can use graph view to explore tags. I can probably do a lot to make it more useful, but for now it’s pretty.</p>
+
+<figure>
+  <img src="/assets/images/2025/squirrel-graph.png" alt="Obsidian graph view. Black nodes are notes, green nodes are tags" class="center-image" />
+  <figcaption>Obsidian graph view. Black nodes are notes, green nodes are tags</figcaption>
+  </figure>
+
+<h3 id="bonus">Bonus</h3>
+
+<p>It also was super easy to set up an edge case for YouTube videos. Instead of grabbing the page body’s text, it instead uses the YouTube API to grab transcripts from the video. This is turning out to be a great way in general to extract information from YouTube and make it accessible to me later.</p>
+
+<h2 id="the-script">The Script</h2>
+
+<p>Is on <a href="https://github.com/aonsager/squirrel-archiver">Github</a></p>
+
+<p>My intention is not to promote this for wide use, but you can feel free to fork it if you think it might work for you.</p>
+
+<h3 id="my-archive-now">My archive now</h3>
+
+<p>I went through the bookmarks I had saved in various places and ran them all through this script. After pruning dead links, I had about 500 articles saved over the course of 17 years. My most used tags are:</p>
+
+<ol>
+  <li>Technology</li>
+  <li>Innovation</li>
+  <li>Design</li>
+  <li>Sustainability</li>
+  <li>Environment</li>
+  <li>Development</li>
+  <li>AI</li>
+  <li>Community</li>
+  <li>Creativity</li>
+  <li>Javascript</li>
+</ol>
+
+<p>Sustainability and Environment were a surprise. I guess that when I read articles about those topics, I feel compelled to save them?</p>
+
+    <div class="post-meta">
+      <time datetime="2025-01-09T00:00:00+09:00" itemprop="datePublished">
+        Jan 9, 2025
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/adding-color-to-posts-automatically">Generating Colors from Post Titles</a></li>
+      <li><a href="/posts/aws-lambda">AWS Lambda</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

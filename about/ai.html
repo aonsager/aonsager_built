@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My AI manifesto</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/about/ai">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="My AI manifesto" property="og:title">
+<meta content="article" property="og:type">
+<meta content="My personal webpage and blog." property="og:description">
+<meta content="https://invisibleparade.com/about/ai" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index green">/about<span class="green-light">/ai</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light selected">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue ">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single">
+  <header class="post-header">
+    <h1>My AI manifesto</h1>
+  </header>
+  <div class="post-content">
+    <div class="post-flair default"></div>
+
+<div class="post-content single" itemprop="articleBody">
+    <p>This is my personal manifesto for how I will and will not use generative AI. I believe it can be an extremely useful tool in certain situations, but can also have many negative repurcussions if used incorrectly.</p>
+
+<h2 id="1-use-to-expand-my-abilities-not-as-a-crutch">1: Use to expand my abilities, not as a crutch.</h2>
+
+<h3 id="a-teach-me-new-things">A: Teach me new things</h3>
+
+<p>As a coding assistant, AI can quickly show me the correct syntax. It can suggest implementations, and teach me how to implement new functions. These are extremely useful, and help me to be exponentionally more productive as a hobby developer.</p>
+
+<p>I must take care to use this as a tool to help me learn and grow. Instead of receiving the AI’s solution and calling it done, I need to understand what it has suggested and why, so that next time I will be better able to produce that answer on my own.</p>
+
+<h3 id="b-do-things-i-cant-do">B: Do things I can’t do</h3>
+
+<p>If there is a trivial thing that I actually can’t do, and it is a progress blocker, I will use AI to fill in the gaps in my skill. Drawing a logo image for a silly pet project, creating a colorful, abstract background image, etc. It doesn’t make sense for me to learn how to do that for myself, so I feel comfortable delegating that to AI.</p>
+
+<h3 id="c-dont-do-things-i-can-do">C: Don’t do things I can do</h3>
+
+<p>I do not use AI to write for me. I am able to write for myself, to express my thoughts through words in order to share my ideas with others. I believe that skills deteriorate without practice, and I am afraid of ever losing that ability. I will never delegate my writing, my thinking, and my shaping of ideas.</p>
+
+<h2 id="2-treat-as-a-tool-for-creators-not-as-a-creator-unto-itself">2: Treat as a tool for creators, not as a creator unto itself.</h2>
+
+<p>I work in a very creative, collaborative environment so this is very relevant professionally as well. It’s possible for me have an AI generate ideas, texts, and images, and by doing make me seem self-sufficient without collaborators. I will not do that.</p>
+
+<h3 id="a-help-those-who-create">A: Help those who create</h3>
+
+<p>There are many ways for creative professionals to use AI as a tool within their process. If an artist uses AI somehow to help in the creation of their own art, that feels fine. As above, my hope is that they will use it as a way to expand their capabilities, and not as a crutch.</p>
+
+<h3 id="b-dont-try-to-be-a-creator">B: Don’t try to be a creator</h3>
+
+<p>It feels wrong for a non-artist to generate images using AI and treat it as creative output. If I need visual artwork as part of a product, it will be created by a human creator. AI creations will not replace human creations.</p>
+
+<p>AI can be used as a tool through the creative process, but will not be directly creating any part of the finished product. That is the responsibility of the creators, the people, and is too important to be delegated.</p>
+
+<h3 id="c-help-me-to-collaborate">C: Help me to collaborate</h3>
+
+<p>While I will always value my ability to communicate through words, sometimes an image can be far more efficient. Finding common ground through concept art, such as by generating many sample images to collectively define what is needed, can be a fast way to reach a shared understanding.</p>
+
+<p>The ease of producing many different formats for presenting an idea allows for experimentation in communication, which has possibilities that aren’t even fully explored yet.</p>
+
+<h2 id="corollaries">Corollaries</h2>
+
+<h3 id="1b--2b-do-what-i-cant-do-while-not-replacing-real-creators">1B + 2B: Do what I can’t do, while not replacing real creators</h3>
+
+<p>I will use AI to do things that I cannot do, but I will not treat the AI as a creator. Anything I create that directly uses something generated by AI will be presented as a proof-of-concept. I will not treat it as a finished product.</p>
+
+<p>Anything that I present as a finished product will be ultimately created by people who can take responsibility as creators. Delegating that role to an AI is irresponsible.</p>
+
+</div>
+<div class="post-meta">Updated Mar 28, 2025</div>
+
+  </div>
+</article>
+
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
   <meta charset="utf-8">
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -23,177 +24,241 @@
 <script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
 </head>
 
-  <body>
-    <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url  red">/<span class=""></span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-    <main class="page-content" aria-label="Content">
-      <article class="post">
-        <div class="wrapper">
-          <p>
-            Hello, and welcome to my website. Web development is one of my favorite hobbies, and becoming a proficient writer is one of my greatest ambitions. This is a space for me to practice the two.
-          </p>
-          <hr />
-          <div class="post-content">
-            <div class="responsive-flex-container">
-              <div>
-                <h2>Recent posts:</h2>
-                <div><div class="post-list-wrapper">
-                    <a href="/2025/04/07/outgrowing-coolify.html">I may have outgrown Coolify</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #A39B99, #535354, #F79008, #727172, #5A6257)"></div>
-                    </div>
-                  </div></div>
-                <div><div class="post-list-wrapper">
-                    <a href="/2025/03/28/ai-manifesto.html">My AI manifesto</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #172267, #A2A0A2, #182368, #E42B00, #49464B)"></div>
-                    </div>
-                  </div></div>
-                <div><div class="post-list-wrapper">
-                    <a href="/2025/03/24/the-compo-challenge.html">The Photo Composition Challenge</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #93928C, #8F8E8F, #59595A, #A8A699, #A7A19F)"></div>
-                    </div>
-                  </div></div>
-                <div><div class="post-list-wrapper">
-                    <a href="/2025/02/26/python-cron.html">Python script failing via cron</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #080808, #595A5A, #777777, #452D39, #4D4A54)"></div>
-                    </div>
-                  </div></div>
-                <div><div class="post-list-wrapper">
-                    <a href="/2025/02/13/what-im-doing-now.html">What I'm doing /now</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #B00D14, #50514D, #75A39A, #9A674F, #AF9C8C)"></div>
-                    </div>
-                  </div></div>
-                </div>
-              <div>
-                <h2>Favorite posts:</h2>
-                <div><div class="post-list-wrapper">
-                  <a href="2013/06/04/behind-the-scenes-pokemon-fusion.html">Pokemon Fusion: Behind the Scenes</a>
-                    <div class="post-list-child">
-                      <div class="post-banner short" style="background-image:linear-gradient(-45deg, #5D5E60, #E74F62, #F39C10, #B45932, #56472E)"></div>
-                    </div>
-                </div></div>
-                <div><div class="post-list-wrapper">
-                  <a href="2019/03/20/adding-color-to-posts-automatically.html">Generating Colors from Post Titles</a>
-                  <div class="post-list-child">
-                    <div class="post-banner short" style="background-image:linear-gradient(-45deg, #A27D7A, #927D67, #EFAB4D, #24919A, #535E5E)"></div>
-                  </div>
-                </div></div>
-                <div><div class="post-list-wrapper">
-                  <a href="2016/06/13/lets-stop-the-hate.html">Let's stop the hate</a>
-                  <div class="post-list-child">
-                    <div class="post-banner short" style="background-image:linear-gradient(-45deg, #363636, #C4A85A, #9E1A19, #CCA83A, #6F6F71)"></div>
-                  </div>
-                </div></div>
-                <div><div class="post-list-wrapper">
-                  <a href="2025/01/20/becoming-a-parent-introduced-me-to-stress.html">Becoming a parent introduced me to stress</a>
-                  <div class="post-list-child">
-                    <div class="post-banner short" style="background-image:linear-gradient(-45deg, #011270, #776B76, #32C774, #A55367, #909090)"></div>
-                  </div>
-                </div></div>
-                <div><div class="post-list-wrapper">
-                  <a href="2021/12/16/beautiful-vs.-effective-prose.html">Beautiful vs. Effective Prose</a>
-                  <div class="post-list-child">
-                    <div class="post-banner short" style="background-image:linear-gradient(-45deg, #5B5C65, #619C5E, #4D2719, #B0B0B0, #B0B0B0)"></div>
-                  </div>
-                </div></div>
-              </div>
-            </div>
-            <hr />
-          </div>  
-        </div>
-        <div class="wrapper">
-          <div class="post-content">
-            <h2>Learn more</h2>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
 
-            <table class="slashes">
-              <tr>
-                <td class="right">
-                  <h2><a href="/ai/">/ai</a></h2>
-                </td>
-                <td>
-                  <p>How I use and don't use AI</p>
-                </td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/now/">/now</a></h2></td>
-                <td><p>What I am doing now</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/posts/">/posts</a></h2></td>
-                <td><p>Things I wrote</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/about/">/about</a></h2></td>
-                <td><p>Who I am</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/archive/">/archive</a></h2></td>
-                <td><p>Everything I wrote</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/contact/">/contact</a></h2></td>
-                <td><p>How to contact me</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/projects/">/projects</a></h2></td>
-                <td><p>Fun things I have made</p></td>
-              </tr>
-              <tr>
-                <td class="right"><h2><a href="/colophon/">/colophon</a></h2></td>
-                <td><p>How this site is made</p></td>
-              </tr>
-              
-            </table>
-          </div>
-        </div>
-      </article>
-    </main>
-    <footer class="site-footer">
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red selected">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue ">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single">
+  <header class="post-header">
+    <h1>Invisible Parade</h1>
+  </header>
+  <div class="post-content">
+    <div class="post-flair default"></div>
+<p>
+  Hello, and welcome to my website. Web development is one of my favorite hobbies, and becoming a proficient writer is one of my greatest ambitions. This is a space for me to practice the two.
+</p>
+<hr />
+<div class="spaced">
+  <h2>Recent posts:</h2>
+  <div><div class="post-list-wrapper">
+      <h3><a href="/posts/outgrowing-coolify">I may have outgrown Coolify</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #A39B99, #535354, #F79008, #727172, #5A6257)"></div>
+      </div>
+    </div></div>
+    <div class="spaced">I initially chose Coolify as a self-hosted alternative to Heroku when it got too expensive. Now that I have learned a fair bit about server management, I've found that I may no longer need Coolify's hand-holding.</div>
+  <div><div class="post-list-wrapper">
+      <h3><a href="/posts/ai-manifesto">My AI manifesto</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #172267, #A2A0A2, #182368, #E42B00, #49464B)"></div>
+      </div>
+    </div></div>
+    <div class="spaced">My personal manifesto for how I will and will not use generative AI.</div>
+  <div><div class="post-list-wrapper">
+      <h3><a href="/posts/the-compo-challenge">The Photo Composition Challenge</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #93928C, #8F8E8F, #59595A, #A8A699, #A7A19F)"></div>
+      </div>
+    </div></div>
+    <div class="spaced">I had a great time participating taking photos as part of The Photo Composition Challenge. This is a recap of my experience, and shots taken.</div>
+  <div><div class="post-list-wrapper">
+      <h3><a href="/posts/python-cron">Python script failing via cron</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #080808, #595A5A, #777777, #452D39, #4D4A54)"></div>
+      </div>
+    </div></div>
+    <div class="spaced">Debugging a Python script that silently failed only when executed via cron.</div>
+  <div><div class="post-list-wrapper">
+      <h3><a href="/posts/what-im-doing-now">What I'm doing /now</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #B00D14, #50514D, #75A39A, #9A674F, #AF9C8C)"></div>
+      </div>
+    </div></div>
+    <div class="spaced">Joining the fediverse, digging into writing and programming as a hobby, and learning to keep a physical journal.</div>
+  </div>
+<hr />
+<div class="spaced">
+  <h2>Favorite posts:</h2>
+  <div><div class="post-list-wrapper">
+    <h3><a href="2013/06/04/behind-the-scenes-pokemon-fusion.html">Pokemon Fusion: Behind the Scenes</a></h3>
+      <div class="post-list-child">
+        <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #5D5E60, #E74F62, #F39C10, #B45932, #56472E)"></div>
+      </div>
+  </div></div>
+  <div class="spaced">How I generated sprites for Pokemon Fusion</div>
+
+  <div><div class="post-list-wrapper">
+    <h3><a href="2019/03/20/adding-color-to-posts-automatically.html">Generating Colors from Post Titles</a></h3>
+    <div class="post-list-child">
+      <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #A27D7A, #927D67, #EFAB4D, #24919A, #535E5E)"></div>
+    </div>
+  </div></div>
+  <div class="spaced">How I generated colors for each post based on their titles.</div>
+
+  <div><div class="post-list-wrapper">
+    <h3><a href="2016/06/13/lets-stop-the-hate.html">Let's stop the hate</a></h3>
+    <div class="post-list-child">
+      <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #363636, #C4A85A, #9E1A19, #CCA83A, #6F6F71)"></div>
+    </div>
+  </div></div>
+  <div class="spaced">Reflections on hatred towards the LGBTQ community.</div>
+
+  <div><div class="post-list-wrapper">
+    <h3><a href="2025/01/20/becoming-a-parent-introduced-me-to-stress.html">Becoming a parent introduced me to stress</a></h3>
+    <div class="post-list-child">
+      <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #011270, #776B76, #32C774, #A55367, #909090)"></div>
+    </div>
+  </div></div>
+  <div class="spaced">Reflections on the challenges and personal growth that comes with parenting.</div>
+
+  <div><div class="post-list-wrapper">
+    <h3><a href="2021/12/16/beautiful-vs.-effective-prose.html">Beautiful vs. Effective Prose</a></h3>
+    <div class="post-list-child">
+      <div class="post-banner-short" style="background-image:linear-gradient(-45deg, #5B5C65, #619C5E, #4D2719, #B0B0B0, #B0B0B0)"></div>
+    </div>
+  </div></div>
+  <div class="spaced">Thoughts on writing styles, and what I will aim for.</div>
+
+</div>
+  </div>
+</article>
+
+    </div>
+  </main>
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 
@@ -208,5 +273,5 @@
       'wrapAround': true
     })
 </script>
-  </body>
+</body>
 </html>

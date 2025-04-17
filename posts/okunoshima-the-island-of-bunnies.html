@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ōkunoshima - The Island of Bunnies</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/okunoshima-the-island-of-bunnies">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Ōkunoshima - The Island of Bunnies" property="og:title">
+<meta content="article" property="og:type">
+<meta content="Located east of Hiroshima in the Seto Inland Sea, Ōkunoshima (大久野島) is a small island home to over 700 rabbits. The rabbits are wild but friendly, and tourists arrive every day with bags full of fo..." property="og:description">
+<meta content="https://invisibleparade.com/posts/okunoshima-the-island-of-bunnies" property="og:url">
+<meta content="https://invisibleparade.com/assets/images/okunoshima/okunoshima24.jpg" property="og:image">
+  <meta content="" property="og:image_alt">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/okunoshima---the-island-of-bunnies</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #654B33, #53504B, #666564, #6C6561, #534736);"></div>
+  <header class="post-header">
+    <h1>Ōkunoshima - The Island of Bunnies</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <figure>
+  <img src="/assets/images/okunoshima/okunoshima24.jpg" alt="" class="center-image" />
+  </figure>
+
+<p>Located east of Hiroshima in the Seto Inland Sea, Ōkunoshima (大久野島) is a small island home to over 700 rabbits. The rabbits are wild but friendly, and tourists arrive every day with bags full of food and treats. The island was relatively unknown in Japan until recently when its populality among foreign visitors brought it into the spotlight.</p>
+
+<!-- more -->
+
+<h2 id="a-dark-history">A Dark History</h2>
+
+<p>Ōkunoshima today is a paradise of cuteness, but its origins are sinister. Chosen for its remote location, it contained secret facilities used to develop and produce poison gas for chemical weapons. The island was erased from maps at the time to hide its existence. The ruins of these facilities still exist, covered by moss and providing a grim backdrop for those who choose to explore the island.</p>
+
+<figure>
+  <img src="/assets/images/okunoshima/okunoshima06.jpg" alt="One of the ruins on the island" class="center-image" />
+  <figcaption>One of the ruins on the island</figcaption>
+  </figure>
+
+<p>Most visitors are here for the bunnies, but it is important to not forget these parts of history. There is also a small museum showing the history of the island as a chemical weapons plant, decorated with messages promoting peace sent from students around the country.</p>
+
+<h2 id="meeting-the-bunnies">Meeting the Bunnies</h2>
+
+<p>As soon as you get off the ferry, you will be greeted by adorable bunnies waiting for a snack. You are encouraged to bring food for the rabbits, as you will not be able to buy any on the island. You will find the rabbits relaxing in the shade, sitting in little holes they have dug, or foraging in the bushes. But once you approch and start to open your bag of pellets or vegetables, they will all come running and beg for a treat. If you come in the sping or autumn, you might see tiny baby bunnies come hopping with their mothers.</p>
+
+<figure>
+  <img src="/assets/images/okunoshima/okunoshima04_wide.jpg" alt="A baby bunny has come out for a bite to eat" class="center-image" />
+  <figcaption>A baby bunny has come out for a bite to eat</figcaption>
+  </figure>
+
+<p>Because the bunnies are so friendly it can be easy to forget that they are wild animals. You should never try to pick one up, and definitely never give them any food meant for people. As long as you remember that you are visiting them in their home, you should be able to spend a lovely day socializing with them.</p>
+
+<p>Rabbits are actually nocturnal! If you spend the night on the island, you can walk around at night or early in the morning to see rabbits much more energetic than during the day. Most tourists just visit for the day, so this is your chance to have the bunnies to yourself. There is only one hotel on the island so you might need to make reservations in advance if you want to do this.</p>
+
+<p>For anybody wishing to surround themselves with adorable bunnies, or just looking for a unique travel destination, Ōkunoshima is a wonderful island to visit. Remember to pack an extra bag for treats!</p>
+
+<div class="grid">
+<div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima01.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima01.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima02.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima02.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima03.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima03.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima04.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima04.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima05.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima05.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima06.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima06.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima07.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima07.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima08.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima08.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima09.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima09.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima10.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima10.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima11.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima11.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima12.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima12.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima13.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima13.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima14.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima14.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima15.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima15.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima16.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima16.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima17.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima17.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima18.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima18.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima19.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima19.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima20.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima20.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima21.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima21.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima22.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima22.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima23.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima23.jpg" alt="image" />
+      </a>
+    </div>
+  <div class="grid-item">
+      <a href="/assets/images/okunoshima/okunoshima24.jpg" data-lightbox="okunoshima">
+        <img width="160" src="/assets/images/okunoshima/thumbs/okunoshima24.jpg" alt="image" />
+      </a>
+    </div>
+  <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/masonry.pkgd.min.js"></script>
+<script>
+  // Masonry
+  var grid = document.querySelector('.grid');
+  var msnry;
+  imagesLoaded( grid, function() {
+    // init Isotope after all images have loaded
+    msnry = new Masonry( grid, {
+      itemSelector: '.grid-item',
+      columnWidth: 160,
+      fitWidth: true,
+      gutter: 5,
+    });
+  });
+</script>
+
+</div>
+
+    <div class="post-meta">
+      <time datetime="2019-06-02T00:00:00+09:00" itemprop="datePublished">
+        Jun 2, 2019
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/the-world's-most-beautiful-data-center">The World's Most Beautiful Data Center</a></li>
+      <li><a href="/posts/%E7%9C%9F%E5%A6%82%E5%A0%82">真如堂</a></li>
+      <li><a href="/posts/yozakura">夜桜</a></li>
+      <li><a href="/posts/tokyos-cityscape-recreated-with-stickers">Tokyo's Cityscape Recreated With Stickers</a></li>
+      <li><a href="/posts/the-geometric-nests-of-the-white-spotted-pufferfish">The geometric nests of the white-spotted pufferfish</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

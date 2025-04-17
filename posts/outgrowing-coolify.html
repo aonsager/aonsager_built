@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I may have outgrown Coolify</title>
+  <meta name="description" content="I initially chose Coolify as a self-hosted alternative to Heroku when it got too expensive. Now that I have learned a fair bit about server management, I&#39;ve found that I may no longer need Coolify&#39;...">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/outgrowing-coolify">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="I may have outgrown Coolify" property="og:title">
+<meta content="article" property="og:type">
+<meta content="I initially chose Coolify as a self-hosted alternative to Heroku when it got too expensive. Now that I have learned a fair bit about server management, I've found that I may no longer need Coolify'..." property="og:description">
+<meta content="https://invisibleparade.com/posts/outgrowing-coolify" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/outgrowing-coolify</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #A39B99, #535354, #F79008, #727172, #5A6257);"></div>
+  <header class="post-header">
+    <h1>I may have outgrown Coolify</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>I initially chose <a href="https://coolify.io/">Coolify</a> as a self-hosted alternative to Heroku when it got too expensive. Coolify makes a lot of things very easy, but I ended up having to dig in to the details and learn a lot to fix things that didn’t work. Now that I have learned a fair bit about server management, I’ve found that I may no longer need Coolify’s hand-holding.</p>
+
+<h2 id="venturing-into-self-hosting">Venturing into self-hosting</h2>
+
+<p>I knew next to nothing about Linux servers, Docker, reverse proxies, and the like. I had used Heroku for a long time, but its base price became restrictively expensive considering how small each of my little projects was, so I started looking for a service that could ease me into self-hosting my apps on a VPS.</p>
+
+<p>I started with <a href="https://dokku.com">Dokku</a>, but the lack of a GUI made me uncomfortable because I really had no idea what I was doing. I was running with my eyes closed, hoping I didn’t trip. <a href="https://coolify.io/">Coolify</a> seemed to make deployments easy, and had a lot of handy tools to let me manage all aspects of my services through a web GUI, so I jumped in.</p>
+
+<h2 id="coolify-was-good-until-it-wasnt">Coolify was good, until it wasn’t</h2>
+
+<p>A lot things were very easy! Go to an open-source project’s repository, find a sample Docker Compose file, paste it into a box, and hit “Go”. It handled URLs, SSL certificates, routing, and probably a lot of other things that I wasn’t fully aware of.</p>
+
+<p>But there were plenty of things that did not go so smoothly. In these cases I had to stumble my way to a working solution, learning about what Docker Compose files do, where files are placed on my server, how to install packages that I need, and so on.</p>
+
+<p>When something went wrong with one of my apps, I would SSH into the server’s root and go digging through the files there to figure out what is happening. I learned how different containers are managed on the server, Docker’s command line utilities to ask each container what it is doing, various ways to change settings and reboot apps on the fly.</p>
+
+<h2 id="the-last-battle">The last battle</h2>
+
+<p>My <a href="http://gotosocial.org">GoToSocial</a> <a href="http://gts.invisibleparade.com">instance</a> had a problem where it would randomly become unresponsive once every couple of days. I would realize that everything was timing out, and restarting the service was the only way to get things running again. It took me months of “debugging”, where I would dump out service logs, sift through documentation, and dig into every line of configuration that looked like it might be related to the problem in any way.</p>
+
+<p>At last, I tracked down the problem.</p>
+
+<p>My GoToSocial compose file defined a Docker network called <code class="language-plaintext highlighter-rouge">gotosocial</code>, as a network is required for the application and the database to communicate with each other. However, because a network is of course required, Coolify <em>conveniently</em> was also defining its own unique network, automatically and behind the scenes. And for some reason, a <em>third</em> network was also being created as the result of some combination of settings (I never did figure out why this was happening).</p>
+
+<p>Of these multiple redundant networks, the GoToSocial application was attached to only two, and the reverse proxy was attached to <em>a different two</em>. Something at some point would trigger some load balancing in the reverse proxy, and it would switch to its second known network, which did not have the application attached. Hence the unresponsiveness.</p>
+
+<p>All I had to do to fix this was to delete the <code class="language-plaintext highlighter-rouge">gotosocial</code> network declaration in the Docker Compose file. But in discovering that solution, I ended learning a lot about how reverse proxies and Docker networks work, and walking around in a lot of code. Now, I feel pretty confident that I would be able to manage Docker-based deploys without Coolify in the middle.</p>
+
+<p>Which brings me to my latest realization.</p>
+
+<h2 id="now-i-can-do-this-myself">Now, I can do this myself</h2>
+
+<p>Coolify does a lot of (most of the time) convenient things behind the scenes, but sometimes they aren’t what I need. To understand what these conveniences are, how to work with them, when they are good and when they are not, and how to change things when I need to, I had to learn a lot about all of the moving parts of a Linux server with multiple docker containers running various services.</p>
+
+<p>Now that I have this experience, it seems like Coolify’s behind-the-scenes actions might be causing more trouble than convenience.</p>
+
+<p>I think I will get myself a fresh new VPN and start trying to replicate my apps with just manual Docker deployments + a simple <a href="https://caddyserver.com">Caddy</a> configuration. Or maybe <a href="https://dokku.com">Dokku</a> again, that’s worth a revisit.</p>
+
+<p>So, thanks to Coolify for bringing me here, but I think our time together will be ending.</p>
+
+    <div class="post-meta">
+      <time datetime="2025-04-07T13:35:00+09:00" itemprop="datePublished">
+        Apr 7, 2025
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/installing-gotosocial-on-coolify">Installing GoToSocial on Coolify</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

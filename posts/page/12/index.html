@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/12/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,60 +25,150 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/12</span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-  
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/11/12/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96.html">ゲームの空間認識と今後の進化</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #E4A09A, #605C5C, #393835, #91522D, #532D16)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>チームラボの猪子氏がTEDxFukuokaで紹介した、日本と西洋での空間認識の違いについての話がとてもおもしろかったので紹介。</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #E4A09A, #605C5C, #393835, #91522D, #532D16);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96">ゲームの空間認識と今後の進化</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>チームラボの猪子氏がTEDxFukuokaで紹介した、日本と西洋での空間認識の違いについての話がとてもおもしろかったので紹介。</p>
 
 <p><a href="http://logmi.jp/23783" target="_blank">マリオはなぜ世界でヒットしたのか？　チームラボ・猪子氏が語る、日本的空間認識とクリエイティビティの関係性</a></p>
 
@@ -87,63 +177,72 @@
 <p>西洋の空間認識だと、パースペクティブを意識する。
 よって、絵の登場人物になりきると視点が変わって絵の全体を意識しなくなる。絵の全体の意識が変わる、と言う方が適切なのかもしれない。</p>
 
+<p>日本の空間認識だと、レイヤーで物を見て、重ねて表現する。
+絵の登場人物になりきっても、絵の認識が変わらず、絵の全体を意識し続ける。</p>
 
-            <p>
-  <a href="/2014/11/12/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/11/12/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96.html">Nov 12, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/11/12/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/11/11/relationship-test-dataclysm.html">Relationship Test - Dataclysm</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://dataclysm.org/relationshiptest">http://dataclysm.org/relationshiptest</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #959596, #A2A2A2, #0C2E59, #B2B2B2, #A59D9B)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+<p>これが、日本が産んだマリオやドラクエみたいなプラットフォーマーや、トップダウンRPGなどの表現を作ったゲームの原点で、アメリカではもっと登場人物の視点で遊ぶFPSなどが流行りやすい。</p>
+
+<p>とのこと。</p>
+
+<p>ハードのスペックで3Dの表現ができなかったことも大きい、と想像しつつも、とても興味深い話。</p>
+
+<p>Oculus Rift 用に開発中の<a href="http://www.wired.com/2014/06/oculus-luckys-tale/" target="_blank">Lucky’s Tale</a>の話を思い出した。</p>
+
+<p>Lucky&rsquo;s TaleはVR機能を活かした3Dのプラットフォーマーなのだが、自分が主人公になりきるわけではない。キャラクターの視点と自分の視点は完全に別で、自分が3Dの世界の中で、主人公の隣に居るという見せ方。</p>
+
+<p>開発者曰く、たくさんの案をとにかく作りまくっているうちに偶然出来上がったものだったが、少し遊んでみると体験の斬新さに全員が驚いた、とのこと。</p>
+
+<p>上の話に合わせると、VRなのでパースペクティブで入り込むのはほぼ必須として、それでもマリオのようにキャラと空間の全体の絵を意識し続けれるような、全く新しい形になっているような気がする。おそらく実際遊んでみないと体験を想像できないと思うので、リリースが楽しみだ。</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96">Nov 12, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #959596, #A2A2A2, #0C2E59, #B2B2B2, #A59D9B);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/relationship-test-dataclysm">Relationship Test - Dataclysm</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://dataclysm.org/relationshiptest">http://dataclysm.org/relationshiptest</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
 <p>My team and I wrote an app that will apply findings from a recent research paper to your Facebook graph. The app won’t post to your wall but it will show you both the shape of your friend network and which of your friends are most mathematically important to your life.</p>
 </blockquote>
 
 <p>Instead of looking at a metric like the number of friends you have in common, this algorithm takes it a step further. It looks at how well connected your mutual friends are with each other, and suggests that having more diverse mutual friends indicates a stronger, more important relationship.</p>
 
+<p>If everyone at work is connected via Facebook, then you will have many friends in common with your coworkers, but this doesn’t mean that these are your most important relationships. Since all of your common friends are within the same social circle, you know that these relationships are limited in scope.</p>
 
-            <p>
-  <a href="/2014/11/11/relationship-test-dataclysm.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/11/11/relationship-test-dataclysm.html">Nov 11, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/11/11/relationship-test-dataclysm.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/09/17/how-to-be-polite.html">How to Be Polite</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="https://medium.com/message/how-to-be-polite-9bf1e69e888c">https://medium.com/message/how-to-be-polite-9bf1e69e888c</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #5F5E5E, #73CDF4, #E6B439, #73CAFA, #73CEF4)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+<p>But if you and a friend’s mutual connections include coworkers, college roommates, and cycling buddies, then you know that your relationship with this person spans many social circles, and they are more likely to be important to you. This also is effective at picking out romantic relationships.</p>
+
+<p>There seemed to be issues with outliers when I tried it because there were a number of people with little or no mutual friends with very high scores, but in general the results were surprisingly accurate. </p>
+
+<p>It’s also fun to look at the graph of your network and see the clusters of different social circles.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/relationship-test-dataclysm">Nov 11, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #5F5E5E, #73CDF4, #E6B439, #73CAFA, #73CEF4);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/how-to-be-polite">How to Be Polite</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="https://medium.com/message/how-to-be-polite-9bf1e69e888c">https://medium.com/message/how-to-be-polite-9bf1e69e888c</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
   <p>Most people don’t notice I’m polite, which is sort of the point. I don’t look polite. I am big and droopy and need a haircut. No soul would associate me with watercress sandwiches. Still, every year or so someone takes me aside and says, you actually are weirdly polite, aren’t you? And I always thrill. They noticed.</p>
 </blockquote>
 
@@ -153,107 +252,143 @@
 
 <p>An excellent piece by Paul Ford on the often underestimated value of politeness.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/09/17/how-to-be-polite.html">Sep 17, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/09/17/how-to-be-polite.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/08/10/missingno-in-pokemon-fusion.html">Missingno. in Pokemon Fusion</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #9C9BA1, #605B62, #675A5C, #A29EA5, #696969)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>I’ve made a small update to the <a href="http://pokemon.alexonsager.net">Pokemon Fusion</a> site, and added Missingno. as a hidden pokemon.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/how-to-be-polite">Sep 17, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #9C9BA1, #605B62, #675A5C, #A29EA5, #696969);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/missingno-in-pokemon-fusion">Missingno. in Pokemon Fusion</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I’ve made a small update to the <a href="http://pokemon.alexonsager.net">Pokemon Fusion</a> site, and added Missingno. as a hidden pokemon.</p>
 
 <p>I was inspired by the incredible Mewtwo x Missingno. fusion artwork that was posted by StarvingStudents on his <a href="http://starvingstudents.deviantart.com/art/Mewssingno-472862222">deviantART page</a></p>
 
 <p>Missingno. appears whenever there is an invalid ID in the URL, so acts as a fun 404 page. You can try it out <a href="http://pokemon.alexonsager.net/25/0">here</a></p>
 
+<p><img src="/assets/images/pikassingno.png" alt="Pikassingno." /></p>
 
-            <p>
-  <a href="/2014/08/10/missingno-in-pokemon-fusion.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/08/10/missingno-in-pokemon-fusion.html">Aug 10, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/08/10/missingno-in-pokemon-fusion.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/07/23/censoring-chinese-scammers.html">Censoring Chinese Scammers</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #937067, #B30502, #5A655E, #ABABAB, #D9DAAA)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Q: What do you do when you’re being scammed by a Chinese scam artist?
+<p>The glich images were generated with ImageMagick (the Rmagick ruby gem in particular), using the spread function to displace pixels by a certain amount. In this case, I also shrunk the image first to exaggerate the pixelation, and it brought it back to normal size afterwards.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filename</span> <span class="o">=</span> <span class="s2">"pokemonimage.png"</span>
+<span class="n">img</span> <span class="o">=</span> <span class="no">Magick</span><span class="o">::</span><span class="no">ImageList</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">img</span><span class="p">.</span><span class="nf">resize!</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="no">Magick</span><span class="o">::</span><span class="no">PointFilter</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">spread</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">img</span><span class="p">.</span><span class="nf">resize!</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="no">Magick</span><span class="o">::</span><span class="no">PointFilter</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Magick::PointFilter</code> option is what allows us to preserve the blocky pixels when we resize, because otherwise ImageMagick will try to smooth out the edges for us.</p>
+
+<p>As a finishing touch, I also sprinkled in some pixels of the purple and orange that are used in Missingno.’s sprite.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/missingno-in-pokemon-fusion">Aug 10, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #937067, #B30502, #5A655E, #ABABAB, #D9DAAA);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/censoring-chinese-scammers">Censoring Chinese Scammers</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Q: What do you do when you’re being scammed by a Chinese scam artist?
 A: Use their country’s internet censorship against them.</p>
 
 <p>LINE, the hugely popular Japanese messaging app, has been seeing a recent surge in scamming activity. In the most common scenario, the scam artist will gain access to a user’s account and message their friends, asking them to purchase online gift cards and send the serial number. Many people were targeted by this scam, and it received some mainstream media attention.</p>
 
 <p>But once it was determined that the majority of the scam artists were Chinese, the users began fighting back in a hilarious way.</p>
 
+<p>The magic word is “Tiananmen Square Incident” (天安門事件). By sending this in the chat, the scam artists now risk having their network activity flagged by Chinese censors, and subsequently having their connections cut off. Most of the time, the scam artist will proactively delete their account to prevent this from happening.</p>
 
-            <p>
-  <a href="/2014/07/23/censoring-chinese-scammers.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/07/23/censoring-chinese-scammers.html">Jul 23, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/07/23/censoring-chinese-scammers.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/06/25/creating-fun.html">Creating Fun</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #624D33, #F7ED51, #A5A5A0, #A2A2A2, #B64336)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>My long-standing goal, in both work and personal life, is to create “fun”. I currently make games for a living, so I’ll be focusing on games for this post.</p>
+<p>Creative ways of dealing with scammers are always fun to see, but this is a wonderfully elegant solution that gets immediate results.</p>
+
+<p><img src="/assets/images/tiananmen1.png" alt="Scaring away the scam artist" /></p>
+
+<p><a href="https://twitter.com/16go_rider/status/483553229884502016">via @16go_rider</a></p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/censoring-chinese-scammers">Jul 23, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #624D33, #F7ED51, #A5A5A0, #A2A2A2, #B64336);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/creating-fun">Creating Fun</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>My long-standing goal, in both work and personal life, is to create “fun”. I currently make games for a living, so I’ll be focusing on games for this post.</p>
 
 <h2 id="what-is-fun">What is Fun?</h2>
 
 <p>Games like <a href="http://en.wikipedia.org/wiki/Flappy_Bird">Flappy Bird</a> and <a href="http://gabrielecirulli.github.io/2048/">2048</a> show that as long as you have one crucial element that provides fun, even the simplest of games can be a huge hit. And in fact, for games like these it is necessary that they be the simplest of games, with no other elements distracting from that core nugget of fun.</p>
 
+<p>The makers of <a href="http://asherv.com/threes/">Threes</a> went through a tremendous amount of creative iteration before publishing their game. They considered the game system that eventually would become 2048, but decided that it didn’t fit their criteria for what makes a game “good”. I would imagine that during the game design process they prioritized the game’s strategic depth, such as the lack of a clear <em>correct</em> way to play. They nixed 2048 because it’s relatively easy to score high if you stick to one corner, and they felt that this detracted from the game’s potential.</p>
 
-            <p>
-  <a href="/2014/06/25/creating-fun.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (3 mins) 
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/06/25/creating-fun.html">Jun 25, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/06/25/creating-fun.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/06/25/creating-fun-jp.html">「面白い」を創る</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #747474, #4E4E4E, #FA4E05, #9F9F9F, #F8D68D)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>仕事でも、プライベートでも、自分の昔からの目標は「面白い」を創ること。
+<p>As it turns out, those elements that they felt would make the game less <em>good</em> in fact ended up making the game more <em>fun</em>, and led to the huge success of 2048, which implements the simpler version. I’m not arguing against the quality of Threes, which was widely acclaimed for good reason. My point is simply that more people found 2048 to be more fun.</p>
+
+<h2 id="searching-for-fun">Searching for Fun</h2>
+
+<p>Unfortunately, fun is elusive. The harder you look, the harder it is to find. You need an extremely creative mindset, and inspiration that is stumbled upon is often the most fruitful.</p>
+
+<p>When I make a new thing, I will inevitably spend time imagining what might be fun. This doesn’t always work, and tends to get me in a rut.</p>
+
+<p>When you try to predict popular opinion, your inspiration comes from current popular opinion. You’re in a box before you’ve even begun. The process is something like this:</p>
+
+<blockquote>
+  <ol>
+    <li>See what is popular</li>
+    <li>Analyze why it is fun</li>
+    <li>Replicate that funness in an original product</li>
+  </ol>
+</blockquote>
+
+<p>People cutting corners on the originality bit is what leads to the epidemic of copycat games, but even if you give it an honest shot you’re still very limited in what the final product can be, because your thinking began within the confines of what already exists.</p>
+
+<h2 id="discovering-fun">Discovering Fun</h2>
+
+<p>This is what the process ought to be:</p>
+
+<blockquote>
+  <ol>
+    <li>Have an original idea</li>
+    <li>Find a way to make it fun</li>
+    <li>Focus on the funness and remove unnecessary parts</li>
+  </ol>
+</blockquote>
+
+<p>By some brilliant stroke of luck, I think that <a href="http://pokemon.alexonsager.net">Pokemon Fusion</a> managed to accomplish this. It was an exceedingly simply idea that appeared in my head one day, and a no-fluff website was enough to convey the funness that I had found.</p>
+
+<p>Having original ideas is hard, but I’m trying to find ways to make it easier. I think the most important thing is to follow what interests you. The road to <em>interesting</em> continues onward to <em>fun</em>, but you need passion to follow the path. And if you reach the funness that awaits, you will likely have discovered a “fun” that only you could find.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/creating-fun">Jun 25, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #747474, #4E4E4E, #FA4E05, #9F9F9F, #F8D68D);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/creating-fun-jp">「面白い」を創る</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>仕事でも、プライベートでも、自分の昔からの目標は「面白い」を創ること。
 ゲームを創る職についているので、今回はゲームの話が中心となる。</p>
 
 <h2 id="面白いとは">「面白い」とは？</h2>
@@ -262,52 +397,96 @@ A: Use their country’s internet censorship against them.</p>
 根本的な面白い要素さえあれば、どんなシンプルなゲームでも大ヒットする可能性がある。
 むしろ、これらのゲームは最もシンプルであることが必須で、根本の面白さの邪魔をする要素がない、というのも成功の要因だと言える。</p>
 
+<p><a href="http://asherv.com/threes/">Threes</a>の製作者は、凄まじい量のブレストと改善を行った上でゲームをリリースした。
+その途中で、いずれ2048としてリリースされるゲームシステムを検討したが、彼らの思う「良いゲーム」の定義に当てはまらなく、ボツにされた。
+2048のシステムだと、一つの角に寄せて操作すると簡単に高得点が出せるので、それが「正しい」遊び方になってしまう。
+おそらく、彼らはゲームとしての深みを重視して、それがゲームの良さを損なうと考え、別のシステムを創った。</p>
 
-            <p>
-  <a href="/2014/06/25/creating-fun-jp.html">Continue reading &rarr;</a>
-  <!-- <span class="post-meta">
-    (1 min)
-    </span> -->
-</p>
-</div>
-          <div class="post-meta">
-            <a href="/2014/06/25/creating-fun-jp.html">Jun 25, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/06/25/creating-fun-jp.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/06/23/euclid-the-game.html">Euclid The Game</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://euclidthegame.org/">http://euclidthegame.org/</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #4C4D4E, #9B8D77, #B1B1B1, #B1B1B3, #A6A296)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Euclid The Game is a puzzle game that challenges you to use simple methods like drawing circles, translating lines, and bisecting angles to solve geometric puzzles. Very addicting, and it made me remember just how powerful tools like a compass can be.</p>
+<p>結果としては、ゲームの「良さ」を損なうと疑われた要素はゲームの「面白さ」につながり、単純な方のシステムを適用した2048が全世界で大ヒットした。
+実際Threesのゲームとしてのクオリティーはかなり高く評価されていて、Threesを否定するわけではない。
+ただ、いくら客観的に見てThreesが良いゲームであっても、「2048の方が面白い」と思った人の方が多かった。</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/06/23/euclid-the-game.html">Jun 23, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/06/23/euclid-the-game.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/06/09/nobody-understands-punctuation.html">Nobody. Understands. Punctuation.</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://stilldrinking.org/nobody-understands-punctuation">http://stilldrinking.org/nobody-understands-punctuation</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #6F6F6F, #9D9C9B, #8C5A49, #707070, #717171)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><a href="http://stilldrinking.org">Peter Welch</a> has published an excellent piece on punctuation and writing style in the English language.</p>
+<h2 id="面白いを探す">「面白い」を探す</h2>
+
+<p>残念なことに、「面白い」は捕えにくい。一生懸命探せば探すほど、見つからない。
+それを見つけるにはとてもクリエイティブな思考が必要で、たまたま得た発想が案外、有益をもたらすことが多い。</p>
+
+<p>自分が新しい物を創る時、なにが面白くなりそうかを考えることに必ずなる。
+ただ、これがうまく行くとは限らず、面白い発想が出ない悪循環にもなり得る。</p>
+
+<p>万人の受けを予想しようとすると、現在万人受けしている物を参考にせざるを得ない。
+考え始める前から、すでに枠の中に入ってしまっているわけだ。
+プロセスはおそらく以下のようになる：</p>
+
+<blockquote>
+  <ol>
+    <li>人気がある物を見る</li>
+    <li>なぜそれが面白いかを分析する</li>
+    <li>その面白さを、新しい形で再現する</li>
+  </ol>
+</blockquote>
+
+<p>「新しい形」のところで近道をしている人がありふれたパクリゲームを作ることになるわけだが、
+真面目に新しく考えようとしても、既存の物から思考がスタートしている時点で、創れる物の幅が狭くなってしまう。</p>
+
+<h2 id="面白いを発見する">「面白い」を発見する</h2>
+
+<p>プロセスはこうあるべきだ：</p>
+
+<blockquote>
+  <ol>
+    <li>新しい発想を得る</li>
+    <li>それを面白くする方法を考える</li>
+    <li>その面白さに集中して、余計な要素を無くす</li>
+  </ol>
+</blockquote>
+
+<p>奇跡的に、<a href="http://pokemon.alexonsager.net">ポケモンフュージョン</a>はこれを果たしていると思う。
+ある日その単純な発想が頭に浮かんで、そこに見つけた面白さはシンプルなサイトでも伝わる物だった。</p>
+
+<p>新しい発想を得ることは簡単ではなく、自分ももっと簡単にする方法を探している。
+一番大事なことは、自分が興味のあるものを推し進めることだと思う。
+「興味深い」の先には必ず「面白い」があると考えていて、そこに行き着くためには自らの熱意が必要。</p>
+
+<p>その先で「面白い」を見つけることができたら、多分それは自分しか見つけることが出来なかった新しい「面白い」であろう。</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/creating-fun-jp">Jun 25, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #4C4D4E, #9B8D77, #B1B1B1, #B1B1B3, #A6A296);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/euclid-the-game">Euclid The Game</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://euclidthegame.org/">http://euclidthegame.org/</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Euclid The Game is a puzzle game that challenges you to use simple methods like drawing circles, translating lines, and bisecting angles to solve geometric puzzles. Very addicting, and it made me remember just how powerful tools like a compass can be.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/euclid-the-game">Jun 23, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #6F6F6F, #9D9C9B, #8C5A49, #707070, #717171);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/nobody-understands-punctuation">Nobody. Understands. Punctuation.</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://stilldrinking.org/nobody-understands-punctuation">http://stilldrinking.org/nobody-understands-punctuation</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="http://stilldrinking.org">Peter Welch</a> has published an excellent piece on punctuation and writing style in the English language.</p>
 
 <blockquote>
   <p>Yes, you can use punctuation in incorrect ways, but that does not mean there is only one way to use it. A friend recently told me publishers don’t care whether you use an oxford comma or not, as long as you pick one and stick with it. This is stupid. If punctuation obscures or distorts the meaning of a sentence in an unintended way, it is wrong, but apart from that, punctuation is about rhythm. An Oxford comma is not a flip switch in an author’s voice, it’s a decision made in the moment to maintain the flow of the idea. Momentum, syncopation, rhythm and pattern make a sentence flow, because writers are trying to transfer the voices in their heads into yours.</p>
@@ -317,53 +496,48 @@ A: Use their country’s internet censorship against them.</p>
 
 <p>I do believe that there can be a single guiding principle for good writing. At their core, the two contrasting works in fact have the same core message: be deliberate.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/06/09/nobody-understands-punctuation.html">Jun 9, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/06/09/nobody-understands-punctuation.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/06/06/the-internet-with-a-human-face.html">The Internet With A Human Face</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://idlewords.com/bt14.htm">http://idlewords.com/bt14.htm</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #532A19, #011268, #716659, #562F1F, #5A311A)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>An excellent talk by Maciej Cegłowski on the bleak state of mass surveillance the internet.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/nobody-understands-punctuation">Jun 9, 2014</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/06/06/the-internet-with-a-human-face.html">Jun 6, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/06/06/the-internet-with-a-human-face.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #532A19, #011268, #716659, #562F1F, #5A311A);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/the-internet-with-a-human-face">The Internet With A Human Face</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://idlewords.com/bt14.htm">http://idlewords.com/bt14.htm</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>An excellent talk by Maciej Cegłowski on the bleak state of mass surveillance the internet.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/the-internet-with-a-human-face">Jun 6, 2014</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/11/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/13/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

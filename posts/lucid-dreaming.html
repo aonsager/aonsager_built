@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucid Dreaming</title>
+  <meta name="description" content="My personal webpage and blog.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/lucid-dreaming">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Lucid Dreaming" property="og:title">
+<meta content="article" property="og:type">
+<meta content="I was consistently able to have lucid dreams when I was in high school. Partway through a dream, I would realize that I was dreaming and could then control the rest of the dream to a small extent. ..." property="og:description">
+<meta content="https://invisibleparade.com/posts/lucid-dreaming" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/lucid-dreaming</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #29394B, #666062, #324951, #12256E, #5A5B64);"></div>
+  <header class="post-header">
+    <h1>Lucid Dreaming</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <p>I was consistently able to have lucid dreams when I was in high school. Partway through a dream, I would realize that I was dreaming and could then control the rest of the dream to a small extent. As I’ve grown older though, this has become less and less common. Maybe age has changed something about my brain.</p>
+
+<p>Naturally, I’ve been interested in lucid dreaming and have read a lot about it. <a href="https://tim.blog/2009/09/21/how-to-lucid-dream/">Tim Ferriss has a fascinating beginner’s guide on his blog</a>. Different people seem to have different approaches and theories, so I thought I would write about my own experiences.</p>
+
+<h2 id="entering-a-lucid-dream">Entering a lucid dream</h2>
+
+<p>The breakthrough for me was trying to wake up from nightmares. I would pull my eyes open to try to force them to open in real life. Sometimes it worked, but other times the nightmare would already be over because I was focused so much on trying to open my eyes. At some point, I realized that if it’s all in my head, there’s no reason why I shouldn’t be able to change it to be less scary.</p>
+
+<p>The next time I had a nightmare, instead of trying to wake up I tried to change the dream. I tried to imagine myself on a calm beach. It didn’t work very well. The whole dream just became hazy, and I woke up right away. Still, progress!</p>
+
+<h3 id="signals-to-realize-you-are-dreaming">Signals to realize you are dreaming</h3>
+
+<p>In <em>Inception</em>, the characters have totems that they use to determine if they are in a dream. If the totem is slightly different from the way they remember, they know that it is an imperfect version of the totem that exists within a dream.</p>
+
+<p>It sounds like science fiction, but some people have similar methods of invoking lucid dreams before they even fall asleep. One of my friends in high school would hold an image of a French horn in his mind as he was falling asleep. He would then see the French horn in the dream, and it would be a sign for him to realize he is dreaming.</p>
+
+<p>One thing that I have read (and noticed personally) is that it’s common to not be able to read clocks in dreams. It’s hard to describe, but the clock face is hazy and it’s as if your mind can’t register what time is showing. Or if I ever am using a smartphone in a dream, I always struggle to get it to do what I want. I consistently mistype the same words over and over. These are all signals that can help me to realize that I am dreaming.</p>
+
+<h2 id="controlling-a-lucid-dream">Controlling a lucid dream</h2>
+
+<p>I read about people with tremendous control over their lucid dreams. People who fly through the air freely and visit beautiful places around the world. Athletes who perform their sport in their dreams to develop muscle memory without fear of injury. Mathematicians who use the dream-space to visualize multiple dimensions and work out complicated formulas.</p>
+
+<p>Even after becoming lucid within a dream, I had a hard time controlling them. I was never able to fly, for example. The closest I got was jumping far by falling slowly. Changing my location was generally impossible, too. Like my attempted visit to the beach, changing too much about the dream around me would just wake me up. Instead, I could look for a door that leads into a room with a pool, for example, but it would often take me some time and effort to find that door.</p>
+
+<p>It felt like my dreams had rules, and if I pushed too hard the dream would collapse and I would wake up. I had to be very careful to only make changes that fell within the dream’s rules to make sure that I could stay inside the dream.</p>
+
+<p>Once I realize that the dream is fading, I try to stop pushing against it and surrender myself to the dream’s natural flow. This usually lets the dream get back on track, but sometimes I get caught up in it and forget to become lucid again. Supposedly, spinning around or rubbing your hands together is a good way to make a dream more “solid” again if you’ve weakened it too much (who discovers these things?), but I’ve never been able to remember to test this technique. I’m sure there are other tricks that people have developed, but they probably all require a lot of practice.</p>
+
+    <div class="post-meta">
+      <time datetime="2018-12-14T00:00:00+09:00" itemprop="datePublished">
+        Dec 14, 2018
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/mental-training-and-learning-to-swim">Mental Training, and Learning to Swim</a></li>
+      <li><a href="/posts/rebranding-the-site-invisible-parade">Rebranding the site: Invisible Parade</a></li>
+      <li><a href="/posts/procrastination-and-fear-of-failure">Procrastination and Fear of Failure</a></li>
+      <li><a href="/posts/a-fathers-bookshelf">A Father's Bookshelf</a></li>
+      <li><a href="/posts/beautiful-vs.-effective-prose">Beautiful vs. Effective Prose</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

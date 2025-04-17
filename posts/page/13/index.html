@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20250221">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250417">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/13/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -25,63 +25,153 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-  <div class="wrapper" style="position:relative;">
-    <a class="site-title" href="/">
-      <div class="logo-container">
-        <div class="full" style="float:left;">
-          <svg id="header-logo-black" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="80" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="26" r="20" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="40" cy="26" r="20" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div class="compact" style="float:left;">
-          <svg id="header-logo-black" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#fdfdfd" stroke="black" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="black" />
-          </svg>
-          <svg id="header-logo-white" width="55" height="50" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="24" r="12" fill="#2d2d2d" stroke="#c8c4bc" stroke-width="2" stroke-dasharray="2, 2" />
-            <circle cx="30" cy="24" r="12" fill="#c8c4bc" />
-          </svg>
-        </div>
-        <div style="float:left;">
-          Invisible Parade
-        </div>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/page/13</span></span>
       </div>
-    </a>
-  </div>
-  <div class="header-banner"></div>
-  <div class="wrapper">
-    <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="/about/">About</a>
-      <a class="page-link" href="/posts/">Posts</a>
-      <a class="page-link" href="/feed.xml">RSS</a>
-    </nav>
+    </div>
   </div>
 </header>
 
-  <main class="page-content" aria-label="Content">
-    <div class="home wrapper">
-  
-  <ul class="post-list">
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/25/san-francisco-is-dead-long-live-san-francisco.html">San Francisco Is Dead. Long Live San Francisco</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.modernluxury.com/san-francisco/story/san-francisco-dead-long-live-san-francisco">http://www.modernluxury.com/san-francisco/story/san-francisco-dead-long-live-san-francisco</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #50504C, #F19823, #515252, #4F4F4E, #383732)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>Gary Kamiya has an excellent article in San Francisco Magazine, talking about the many factors and consequences of San Francisco’s economic growth.</p>
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #50504C, #F19823, #515252, #4F4F4E, #383732);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/san-francisco-is-dead-long-live-san-francisco">San Francisco Is Dead. Long Live San Francisco</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.modernluxury.com/san-francisco/story/san-francisco-dead-long-live-san-francisco">http://www.modernluxury.com/san-francisco/story/san-francisco-dead-long-live-san-francisco</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Gary Kamiya has an excellent article in San Francisco Magazine, talking about the many factors and consequences of San Francisco’s economic growth.</p>
 
 <blockquote>
   <p>(I)f present trends continue, the city could soon become a moated citadel of info-money, accessible only to venture capitalists, Twitter engineers, and the creators of hookup apps.<br />
@@ -95,118 +185,80 @@ I’m all for rushing the barricades when there’s an enemy to fight and a batt
 
 <p>I love what San Francisco has been, and I sure hope I also can love what it’s becoming.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/25/san-francisco-is-dead-long-live-san-francisco.html">Apr 25, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/25/san-francisco-is-dead-long-live-san-francisco.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/24/iwatch-concept.html">iWatch Concept</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://www.ifyoucouldseethefuture.com">http://www.ifyoucouldseethefuture.com</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #4E4E4F, #6F3019, #AFAFAF, #9F9F9F, #115B5C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/san-francisco-is-dead-long-live-san-francisco">Apr 25, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #4E4E4F, #6F3019, #AFAFAF, #9F9F9F, #115B5C);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/iwatch-concept">iWatch Concept</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://www.ifyoucouldseethefuture.com">http://www.ifyoucouldseethefuture.com</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
   <p>If you could see the future, what would you watch?</p>
 </blockquote>
 
 <p>Neat concept design by <a href="http://twitter.com/frandiCosta">@frandiCosta</a></p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/24/iwatch-concept.html">Apr 24, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/24/iwatch-concept.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/20/gion-cinemagraph.html">Gion - Cinemagraph</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #FFF688, #483435, #663019, #FEF089, #5B2B1C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <iframe src="https://gfycat.com/ifr/NiceBoilingAfricanpiedkingfisher" frameborder="0" scrolling="no" width="480" height="270"></iframe>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/iwatch-concept">Apr 24, 2014</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/20/gion-cinemagraph.html">Apr 20, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/20/gion-cinemagraph.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/12/cinemagraph-water.html">Water - Cinemagraph</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #9D9F95, #4D4B52, #4A2F2D, #4C4C50, #112B59)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <iframe src="https://gfycat.com/ifr/AcidicAlertGharial" frameborder="0" scrolling="no" width="480" height="270"></iframe>
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #995AD3, #662515, #9D6598, #5B2B1C, #24265C);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/yozakura">夜桜</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="/assets/images/yozakura.jpg"><img src="/assets/images/yozakura_s.jpg" alt="夜桜" /></a></p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/12/cinemagraph-water.html">Apr 12, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/12/cinemagraph-water.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/12/yozakura.html">夜桜</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #995AD3, #662515, #9D6598, #5B2B1C, #24265C)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><a href="/assets/images/yozakura.jpg"><img src="/assets/images/yozakura_s.jpg" alt="夜桜" /></a></p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/yozakura">Apr 12, 2014</a>
+    </div>
+  </article>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/12/yozakura.html">Apr 12, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/12/yozakura.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/09/iphone-5-wallpaper-stormtrooper-prism.html">iPhone 5 Wallpaper - Stormtrooper Prism</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #717070, #414141, #8B8B90, #394573, #63DBF1)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><a href="/assets/images/stormtrooper.jpg"><img src="/assets/images/stormtrooper_s.jpg" alt="Stormtrooper Prism" /></a></p>
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #717070, #414141, #8B8B90, #394573, #63DBF1);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/iphone-5-wallpaper-stormtrooper-prism">iPhone 5 Wallpaper - Stormtrooper Prism</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="/assets/images/stormtrooper.jpg"><img src="/assets/images/stormtrooper_s.jpg" alt="Stormtrooper Prism" /></a></p>
 
 <p>Please let me know if you know the source of this image.</p>
 
 <p>UPDATE: Artwork by <a href="http://www.liambrazier.com/">Liam Brazier</a></p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/09/iphone-5-wallpaper-stormtrooper-prism.html">Apr 9, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/09/iphone-5-wallpaper-stormtrooper-prism.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/03/love-is-overdrive.html">Love is Overdrive</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #681213, #566562, #C2B6C4, #681617, #B3B2AE)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/iphone-5-wallpaper-stormtrooper-prism">Apr 9, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #681213, #566562, #C2B6C4, #681617, #B3B2AE);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/love-is-overdrive">Love is Overdrive</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
   <p>ラブ･イズ・オーバーっていう、超有名な曲があって、
 ラブ･イズ・オーバーは、愛が終わったって意味やけど
 愛が終わっただけでは寂しいんで
@@ -217,43 +269,41 @@ I’m all for rushing the barricades when there’s an enemy to fight and a batt
   <p><em>ヤバオカムーブメンツ・中村隆太</em></p>
 </blockquote>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/03/love-is-overdrive.html">Apr 3, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/03/love-is-overdrive.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/04/03/sexisim-on-the-red-carpet.html">Sexisim on the Red Carpet</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #6D0910, #4D322D, #A31118, #5D220E, #562F22)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p><a href="http://mattsgifs.com/post/73774946424">During an E! interview at a red carpet ceremony</a>, the camera operator takes a sweeping toe-to-head shot of Cate Blanchett, when she crouches down to ask, <em>“Do you do that to the guys?”</em> The internet explodes with opinion, and more fuel is added to the increasing fight against the objectification of women in media.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/love-is-overdrive">Apr 3, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #6D0910, #4D322D, #A31118, #5D220E, #562F22);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/sexisim-on-the-red-carpet">Sexisim on the Red Carpet</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="http://mattsgifs.com/post/73774946424">During an E! interview at a red carpet ceremony</a>, the camera operator takes a sweeping toe-to-head shot of Cate Blanchett, when she crouches down to ask, <em>“Do you do that to the guys?”</em> The internet explodes with opinion, and more fuel is added to the increasing fight against the objectification of women in media.</p>
 
 <p>The way I see it, the camera operator was just doing their job. Red carpet ceremonies are events focused on fashion, and Cate Blanchett was wearing a very nice gown that should be seen in its entirety. No, most male guests would not have received the same treatment, because most male guests would be wearing suits or tuxedos and everybody knows what black pants look like.</p>
 
 <p>The real issue here is not the camera operator’s actions. The tragedy is that filming a gown at a fashion event can be taken as an attack, if the gown is being worn by a woman. That’s where sexism in our society has taken us. There is a lot of work to be done in changing attitudes and healing wounds before gender equality has a shot at realization.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/04/03/sexisim-on-the-red-carpet.html">Apr 3, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/04/03/sexisim-on-the-red-carpet.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/03/31/replace-text-in-file-osx-service.html">Replace Text in File - OSX Service</a>
-            </h1>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #648ADC, #A1B4D2, #172D6F, #B2B2B2, #636666)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <p>A quick Mac OSX service that will search and replace all given strings in a text file, and save the modified content as a new file. It’s not <em>that</em> much faster than just opening it in a text editor, but it was a fun way to learn how sed works.</p>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/sexisim-on-the-red-carpet">Apr 3, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #648ADC, #A1B4D2, #172D6F, #B2B2B2, #636666);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/replace-text-in-file-osx-service">Replace Text in File - OSX Service</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>A quick Mac OSX service that will search and replace all given strings in a text file, and save the modified content as a new file. It’s not <em>that</em> much faster than just opening it in a text editor, but it was a fun way to learn how sed works.</p>
 
 <p><a href="http://images.alexonsager.net/blog/Replace_Text.zip">Download the script here</a></p>
 
@@ -273,57 +323,99 @@ I’m all for rushing the barricades when there’s an enemy to fight and a batt
 
 <p>After doing so, you should be able to simply right-click a file in Finder to see the “Replace Text” option. (You might find it under a “Services” category)</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/03/31/replace-text-in-file-osx-service.html">Mar 31, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/03/31/replace-text-in-file-osx-service.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    <li class="post">
-      <header class="post-header"></header>
-            <h1>
-              <a class="post-link" href="/2014/03/25/if-the-moon-were-only-1-pixel.html">If The Moon Were Only 1 Pixel</a>
-            </h1>
-            <div class="post-meta link"> 
-                <span itemprop="link"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html</a></span>
-              </div>
-            <div class="post-banner" style="background-image:linear-gradient(-45deg, #DE5A0D, #FFC500, #343434, #FBC100, #8D8D8D)"></div>
-</header>
-          <div class="post-content" itemprop="articleBody">
-            <blockquote>
+      </div>
+    <div class="post-meta">
+      <a href="/posts/replace-text-in-file-osx-service">Mar 31, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #DE5A0D, #FFC500, #343434, #FBC100, #8D8D8D);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/if-the-moon-were-only-1-pixel">If The Moon Were Only 1 Pixel</a>
+        </h1>
+      <div class="post-meta link"> 
+          <span itemprop="link"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html</a></span>
+        </div>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <blockquote>
   <p>A tediously accurate scale model of the solar system</p>
 </blockquote>
 
 <p>I can’t even begin to grasp how big things in space are, but this does a pretty good job explaining.</p>
 
-            </div>
-          <div class="post-meta">
-            <a href="/2014/03/25/if-the-moon-were-only-1-pixel.html">Mar 25, 2014</a>
-            <!-- <div class="comment-link"><a href="/2014/03/25/if-the-moon-were-only-1-pixel.html#commento"></a></div> -->
-            </div>
-          </li>
-      <hr />
-    </ul>
-  <div class="paginator">
+      </div>
+    <div class="post-meta">
+      <a href="/posts/if-the-moon-were-only-1-pixel">Mar 25, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #70032B, #103A66, #606071, #D01209, #919492);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/terminal-theme">Terminal Theme</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><img src="/assets/images/terminal.png" alt="New Terminal setup" /></p>
+
+<p>You can download the theme <a href="http://images.alexonsager.net/downloads/Base16.terminal.zip">here</a></p>
+
+<p>Colors were taken from the <a href="https://github.com/chriskempson/base16-textmate">Base16 TextMate theme</a>, and the font is <a href="http://www.google.com/fonts/specimen/Source+Code+Pro">Source Code Pro</a></p>
+
+<p><a href="http://backup.noiseandheat.com/blog/2011/12/os-x-lion-terminal-colours/">These</a> <a href="http://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/">sites</a> describe how to get your Terminal to start showing colors.</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/terminal-theme">Mar 24, 2014</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #6995DF, #746556, #A49A87, #ACB5D0, #5D2A0E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/chargekey-review">Chargekey Review</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>I recently received a review unit of the <a href="http://www.hellonomad.com/products/chargekey-iphone5">Chargekey</a>.</p>
+
+<p>It’s essentially a key-sized USB to Lightning cable that you will can have available on your keychain (They also make a Micro-USB version to fit your Android phone). I don’t do too much wandering around during the day, but I hadn’t bought a second cable for charging my phone while at work so I was more than happy to start making daily use of this.</p>
+
+
+      <p>
+  <a href="/posts/chargekey-review">Continue reading &rarr;</a>
+  <!-- <span class="post-meta">
+    (1 min)
+    </span> -->
+</p>
+</div>
+    <div class="post-meta">
+      <a href="/posts/chargekey-review">Mar 20, 2014</a>
+    </div>
+  </article>
+<div class="paginator">
       <div class="prev-link">
         <a href="/posts/page/12/">&larr; Newer</a>
         </div>
       <div class="archive-link">
-        <a href="/archive">Archive</a>
+        <a href="/posts/archive">Archive</a>
       </div>
       <div class="next-link">
         <a href="/posts/page/14/">Older &rarr;</a>
         </div>
       
   </div>
-  </div>
-<script src="https://commento.invisibleparade.com/js/count.js"></script>
-
+  
+    </div>
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer mono">
   <div class="wrapper">
-    <p>By Alex Onsager.&nbsp;&nbsp;&nbsp;<a href="/contact">Say hello!</a></p>
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
   </div>
 </footer>
 

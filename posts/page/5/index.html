@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=202504171">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20250418">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/page/5/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -30,8 +30,8 @@
   <div class="container">
     <div class="site-title">
       <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="15" cy="15" r="10" fill="#fdfdfd" stroke="#2d2d2d" stroke-width="1" />
-            <circle cx="25" cy="15" r="10" fill="#2d2d2d" stroke="#fdfdfd" stroke-width="1" />
+        <circle cx="15" cy="15" r="10" fill="#fcfcfc" stroke="#202225" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#202225" stroke="#fcfcfc" stroke-width="1" />
       </svg>
       <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
         <line x1="5" y1="10" x2="35" y2="10" />
@@ -160,6 +160,18 @@
 </nav>
     <div class="page-content" aria-label="Content">
       
+  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>Pika Pulse is such a good idea! And applying each post’s custom theme (I’m assuming) is a really great look too. Makes me wish I had an account there too!<br /><br /><a href="https://pika.page/pulse" rel="nofollow noreferrer noopener" target="_blank">https://pika.page/pulse</a></p>
+
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/2025-01-04-01JGQ0DA7192XG7B8BX56KPS91">Jan 4, 2025</a>
+    </div>
+  </article>
+
   <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post-flair" style="background-image: linear-gradient(90deg, #6C1611, #184896, #463A37, #685352, #96B4D6);"></div>
       <header class="post-header">
@@ -443,63 +455,6 @@ This seems like the best solution for me.
       </div>
     <div class="post-meta">
       <a href="/posts/comments-are-back">Nov 27, 2024</a>
-    </div>
-  </article>
-
-  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="post-flair" style="background-image: linear-gradient(90deg, #AB0001, #AFAEAF, #B20001, #056B97, #B80000);"></div>
-      <header class="post-header">
-        <h1>
-          <a href="/posts/installing-python3-modules-on-macs-in-2024">Installing Python3 modules on Macs in 2024</a>
-        </h1>
-      </header>
-    <div class="post-content" itemprop="articleBody">
-      <p>When trying to install python modules on a new Mac, I kept getting thwarted by this error:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error: externally-managed-environment
-
-× This environment is externally managed
-╰─&gt; To <span class="nb">install </span>Python packages system-wide, try brew <span class="nb">install
-    </span>xyz, where xyz is the package you are trying to
-    install.
-    
-    If you wish to <span class="nb">install </span>a non-brew-packaged Python package,
-    create a virtual environment using python3 <span class="nt">-m</span> venv path/to/venv.
-    Then use path/to/venv/bin/python and path/to/venv/bin/pip.
-    
-    If you wish to <span class="nb">install </span>a non-brew packaged Python application,
-    it may be easiest to use pipx <span class="nb">install </span>xyz, which will manage a
-    virtual environment <span class="k">for </span>you. Make sure you have pipx installed.
-
-note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing <span class="nt">--break-system-packages</span><span class="nb">.</span>
-hint: See PEP 668 <span class="k">for </span>the detailed specification.
-</code></pre></div></div>
-
-<p>It seems like installing modules into a virtual environment is the way to go, which is what I had been doing for individual applications, but I wanted to be able to run this script from Alred workflows.</p>
-
-<h2 id="create-a-virtualenv-in-a-central-place-that-is-easy-to-access">Create a virtualenv in a central place that is easy to access</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv ~/.virtualenvs/python3
-<span class="nb">source</span> ~/.virtualenvs/python3/bin/activate
-pip <span class="nb">install </span>xyz
-</code></pre></div></div>
-
-<h2 id="use-this-virtualenv-whenever-i-run-the-script">Use this virtualenv whenever I run the script</h2>
-
-<p>By specifying the python executable inside the virtualenv we created, we can be sure that it can access the modules we installed there.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/.virtualenvs/python3/bin/python /path/to/my/script.py <span class="s2">"{query}"</span>
-</code></pre></div></div>
-
-<h2 id="bonus">Bonus</h2>
-
-<p>Add an alias to my <code class="language-plaintext highlighter-rouge">~/.zshrc</code> so that can just type <code class="language-plaintext highlighter-rouge">vpython /path/to/my/script.py</code></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">vpython</span><span class="o">=</span><span class="s1">'~/.virtualenvs/python3/bin/python'</span>
-</code></pre></div></div>
-
-      </div>
-    <div class="post-meta">
-      <a href="/posts/installing-python3-modules-on-macs-in-2024">Nov 21, 2024</a>
     </div>
   </article>
 <div class="paginator">

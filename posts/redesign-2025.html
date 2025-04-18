@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Google&#39;s AlphaZero Destroys Stockfish In 100-Game Match</title>
-  <meta name="description" content="My personal webpage and blog.">
+  <title>A website redesign</title>
+  <meta name="description" content="I&#39;ve overhauled the design of my website, and am very happy with how it turned out.">
   <link rel="stylesheet" href="/assets/css/main.css?v=20250418">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-  <link rel="canonical" href="https://invisibleparade.com/posts/google-s-alphazero-destroys-stockfish-in-100-game-match">
+  <link rel="canonical" href="https://invisibleparade.com/posts/redesign-2025">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -17,10 +17,12 @@
   <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta content="Invisible Parade" property="og:site_name">
-<meta content="Google's AlphaZero Destroys Stockfish In 100-Game Match" property="og:title">
+<meta content="A website redesign" property="og:title">
 <meta content="article" property="og:type">
-<meta content="Google’s AlphaZero program is a machine that plays chess, and it has managed to quickly become the strongest chess AI in the world by implementing machine learning techniques. While existing chess ..." property="og:description">
-<meta content="https://invisibleparade.com/posts/google-s-alphazero-destroys-stockfish-in-100-game-match" property="og:url">
+<meta content="I've overhauled the design of my website, and am very happy with how it turned out." property="og:description">
+<meta content="https://invisibleparade.com/posts/redesign-2025" property="og:url">
+<meta content="https://invisibleparade.com/assets/images/2025/redesign.jpg" property="og:image">
+  <meta content="" property="og:image_alt">
 <script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
 </head>
 
@@ -42,7 +44,7 @@
         <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
       </button>
       <div class="site-url">
-        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/google-s-alphazero-destroys-stockfish-in-100-game-match</span></span>
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/redesign-2025</span></span>
       </div>
     </div>
   </div>
@@ -160,39 +162,59 @@
 </nav>
     <div class="page-content" aria-label="Content">
       <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-flair" style="background-image: linear-gradient(90deg, #5F625C, #BBBBBB, #023A8D, #5B5B5B, #B55039);"></div>
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #DCD4AF, #081699, #96A7A7, #ACAFD5, #6B02FF);"></div>
   <header class="post-header">
-    <h1>Google&#39;s AlphaZero Destroys Stockfish In 100-Game Match</h1>
-    <div class="post-meta link">
-      <span itemprop="link"><a href="https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match">https://www.chess.com/news/view/google-s-alphazero-destroys-stockfish-in-100-game-match</a></span>
-    </div>
+    <h1>A website redesign</h1>
     </header>
   <div class="post-content" itemprop="articleBody">
-    <p>Google’s AlphaZero program is a machine that plays chess, and it has managed to quickly become the strongest chess AI in the world by implementing machine learning techniques. While existing chess AIs have mostly been massive dictionaries of moves that are put together by humans, AlphaZero learned chess entirely on its own with minimal human input.</p>
+    <p>I’ve overhauled the design of my website, and am very happy with how it turned out.</p>
 
-<p>As I understand it, the hardest part of creating an AI that solves problems like chess is finding some way to calculate if you’re winning or not. If that were easy to do, the program could just look at all of its possible moves (which is not very many for a computer) and see which one would leave it winning by more. The trouble is that it’s very hard to tell if you’re winning. You might need to consider all possible outcomes many moves in advance, which quickly becomes too many to calculate.</p>
+<figure>
+  <img src="/assets/images/2025/index-redesign.jpg" alt="The root homepage. Old design on the left, new design on the right." class="center-image" />
+  <figcaption>The root homepage. Old design on the left, new design on the right.</figcaption>
+  </figure>
 
-<p>Successful chess AI programs, of which Stockfish is the most popular, have a giant list of common board situations and good moves to make. An <a href="https://en.wikipedia.org/wiki/Chess_opening_theory_table">opening table</a> lists moves that can happen towards the beginning of a match, and an <a href="https://en.wikipedia.org/wiki/Endgame_tablebase">endgame tablebase</a> shows possible situations at the end of a match. The middle of a match is much more complicated and has far many more possibilities, so it’s difficult to create tables like this. The strength of a chess AI boils down to how big its tables are, and how quickly it can search them within the match’s time limits. But:</p>
+<figure>
+    <img src="/assets/images/2025/dark-redesign.jpg" alt="A post page in dark mode. Old design on the left, new design on the right." class="center-image" style="max-height: 300px;" />
+    <figcaption>A post page in dark mode. Old design on the left, new design on the right.</figcaption>
+</figure>
 
-<blockquote>
-  <p>[I]t took AlphaZero only four hours to “learn” chess. Sorry humans, you had a good run.</p>
+<h2 id="design-considerations">Design considerations</h2>
 
-  <p>That’s right – the programmers of AlphaZero, housed within the DeepMind division of Google, had it use “machine learning,” which is sometimes called “reinforced learning.” Put more plainly, AlphaZero was not “taught” the game in the traditional sense. No opening book, no endgame tables, and apparently no complicated algorithms dissecting minute differences between center pawns and side pawns.</p>
-</blockquote>
+<h3 id="the-structure">The structure</h3>
 
-<p>I think this means that the program just played a lot of chess games on its own, and learned for itself what positions and moves lead to more wins. It’s possible that it built an intuition of how much it is winning, or how likely it is to get more ahead, at any point in a match. It can learn which moves don’t pay off immediately but might give an advantage later. Programs like Stockfish can’t really plan ahead, which is why they need to search their tables for the best move on every turn. AlphaZero isn’t limited by whether or not it was explicitly taught a certain situation. This ability also makes the searches much more efficient:</p>
+<p>My first inspiration was the concept of <a href="https://slashpages.net">slash pages</a>, which I love — they are very easy to understand, and have a fun vibe characteristic of simple webpages that are just collections of pages. I wanted to take it a step further, and use the structure of the website as a design feature. The navigation element is arranged like a file system, and the current page’s URL is displayed prominently in the header.</p>
 
-<blockquote>
-  <p>Indeed, much like humans, AlphaZero searches fewer positions that its predecessors. The paper claims that it looks at “only” 80,000 positions per second, compared to Stockfish’s 70 million per second.</p>
-</blockquote>
+<h3 id="the-colors">The colors</h3>
 
-<p>That’s 0.01% of searching effort required, which gives a huge advantage over an entire match.</p>
+<p>I used colors from the <a href="https://uchu.style">uchū color palette</a> by <a href="https://webb.page/">Wibby</a>. I love these colors and was waiting for a project to use them in. I can tell that a lot of care went into choosing each shade, and it made handling the dark mode appearance fairly easy.</p>
 
-<p>If you’re interested, you can read the full paper <a href="https://arxiv.org/pdf/1712.01815.pdf">here</a>.</p>
+<p>Which brings me to:</p>
+
+<h3 id="dark-mode">Dark mode</h3>
+
+<p>There is a toggle in the upper-right, but the site will otherwise default to respecting your OS’s preference. I stopped using <code class="language-plaintext highlighter-rouge">prefers-color-scheme</code> declarations and instead am using <code class="language-plaintext highlighter-rouge">light-dark()</code>, which is fantastic.</p>
+
+<p>I learned about it from <a href="https://css-tricks.com/come-to-the-light-dark-side/">this article</a> by <a href="https://sarajoy.dev">Sara Joy</a>, which explained everything I needed to know and more. I won’t go into too many details here because you should just go read that article, but the main points of my implementation are:</p>
+
+<ol>
+  <li>Declare <code class="language-plaintext highlighter-rouge">color-scheme: light dark;</code> on <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code>, to automatically switch themes based on the visitor’s OS.</li>
+  <li>Each time I specify a color in the CSS, write it like <code class="language-plaintext highlighter-rouge">color: light-dark(black, white)</code> to define the color for light mode and dark mode, respectively.</li>
+  <li>If the theme toggle is clicked, update <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> to be only <code class="language-plaintext highlighter-rouge">color-scheme: light</code> or <code class="language-plaintext highlighter-rouge">color-scheme: dark</code> to lock it into the correct theme.</li>
+  <li>Save the chosen theme to the browser’s <code class="language-plaintext highlighter-rouge">localStorage</code> to preserve the preference across visits.</li>
+</ol>
+
+<p>All of the theme switching is done with Javascript, which has the advantage of creating a good fallback if Javascript is disabled — the default is to simply follow the OS’s preferences. And since the theme toggle button’s icon is drawn by Javascript to reflect the active theme, having no Javascript will render the button blank — which is perfect because it won’t do anything anyways.</p>
+
+<h2 id="thats-all-the-important-things-i-think">That’s all the important things, I think</h2>
+
+<p>You can check out the source code <a href="https://github.com/aonsager/aonsager_built">here</a> if you want to look inside.</p>
+
+<p>Please reach out if something looks broken!</p>
 
     <div class="post-meta">
-      <time datetime="2017-12-06T22:58:00+09:00" itemprop="datePublished">
-        Dec 6, 2017
+      <time datetime="2025-04-18T14:02:00+09:00" itemprop="datePublished">
+        Apr 18, 2025
       </time>
     </div>
   </div>
@@ -200,11 +222,11 @@
   <div class="post-related">
       <h3>Related Posts</h3>
 <ul class="archive-list">
-<li><a href="/posts/reimagining-chess-with-alphazero">Reimagining Chess with AlphaZero</a></li>
-      <li><a href="/posts/automating-materials-science-with-machine-learning">Automating Materials Science with Machine Learning</a></li>
-      <li><a href="/posts/a-teenagers-view-on-social-media-backchannel">A Teenager’s View on Social Media — Backchannel — Medium</a></li>
-      <li><a href="/posts/the-internet-with-a-human-face">The Internet With A Human Face</a></li>
-      <li><a href="/posts/computer-program-that-learns-to-play-classic-nes-games">Computer program that learns to play classic NES games</a></li>
+<li><a href="/posts/nava-ora-unica-wristwatch">NAVA Ora Unica Wristwatch</a></li>
+      <li><a href="/posts/adding-css-support-for-dark-mode">Adding CSS Support for Dark Mode</a></li>
+      <li><a href="/posts/adding-color-to-posts-automatically">Generating Colors from Post Titles</a></li>
+      <li><a href="/posts/picular">Picular - Google, but for Colors</a></li>
+      <li><a href="/posts/%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%80%B2%E5%8C%96">ゲームの空間認識と今後の進化</a></li>
       </ul></div>
   <hr />
   <div class="post-comments">

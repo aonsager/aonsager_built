@@ -161,6 +161,68 @@
     <div class="page-content" aria-label="Content">
       
   <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #A27D7A, #927D67, #EFAB4D, #24919A, #535E5E);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/adding-color-to-posts-automatically">Generating Colors from Post Titles</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p>This blog has an intentionally simple design, but lately I’ve been thinking that it needs more color. A lot of the posts don’t have images and are just text, so large areas of the page are black and white with nothing visually interesting. That said, trying to include an image with every post is a pain. I would probably spend more time browsing stock images than actually writing the posts.</p>
+
+<p><a href="https://picular.co">Picular</a> was a big inspiration. Generating colors from text by searching for images is a great idea, and I decided to automatically get a set of colors based on each post’s title. Picular doesn’t have an API that I could use, so I wrote a quick script that does something similar. Unless I’ve changed things since I published this post, there should now be a row of colors next to each post’s title.</p>
+
+<h2 id="getting-colors-from-images">Getting colors from images</h2>
+
+<p>I’ve included the script itself at the end of the post so you can the details of how it works, but the general process is as follows:</p>
+
+<ol>
+  <li>Do a Google Image search for the title of the post</li>
+  <li>Get the first five images</li>
+  <li>For each image, find the color that is most prominent</li>
+  <li>Save the list of colors to the post</li>
+</ol>
+
+<p>Here are the results for the title “My Vacation in Tahiti”:</p>
+
+<table>
+  <tr>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti1.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti2.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti3.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti4.jpg" /></td>
+    <td style="text-align:center"><img src="https://invisibleparade.com/assets/images/tahiti5.jpg" /></td>
+  </tr>
+  <tr>
+    <td style="width:20%;text-align:center;background-color:#626E6F;color:white">#626E6F</td>
+    <td style="width:20%;text-align:center;background-color:#53C2D6">#53C2D6</td>
+    <td style="width:20%;text-align:center;background-color:#7693C6">#7693C6</td>
+    <td style="width:20%;text-align:center;background-color:#39547B;color:white">#39547B</td>
+    <td style="width:20%;text-align:center;background-color:#515E65;color:white">#515E65</td>
+  </tr>
+</table>
+<p><br /></p>
+
+<p>After playing around with it, I found that just looking at the most frequently used color usually isn’t good enough. Most of the time you just end up with a lot of black and white. Instead of looking for the most common color, I should instead look for the most interesting color. There is a lot of room for optimization here, and Picular probably does a lot behind the scenes to make its results visually appealing. For now, I’m just ignoring any colors that are close to black or close to white. So far it’s working well enough for my uses.</p>
+
+<p>Even with these adjustments, this method tends to find a lot of colors that are either very dark or very bright. The colors often felt too strong compared to the rest of the site’s design. I thought about doing some adjustments to the colors to tone them down, but realized that it’s much easier to cheat by reducing the opacity of the colorful bars via CSS.</p>
+
+<p>I now also include this script in the rake task that generates my post files for Jekyll, so after I write a post it will automatically fetch colors before publishing. I might write another post about how that works, but for now you can see the file <a href="https://github.com/aonsager/aonsager.github.io/blob/master/Rakefile">here</a> (sorry if I’ve changed things since I wrote this and it’s no longer there).</p>
+
+
+      <p>
+  <a href="/posts/adding-color-to-posts-automatically">Continue reading &rarr;</a>
+  <!-- <span class="post-meta">
+    (5 mins) 
+    </span> -->
+</p>
+</div>
+    <div class="post-meta">
+      <a href="/posts/adding-color-to-posts-automatically">Mar 20, 2019</a>
+    </div>
+  </article>
+
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post-flair" style="background-image: linear-gradient(90deg, #5E2813, #0E64A1, #AFAFAD, #383939, #B55334);"></div>
       <header class="post-header">
         <h1>
@@ -467,68 +529,6 @@ It was showing at around 200 screens in Japan by March 2018 where it had officia
       </div>
     <div class="post-meta">
       <a href="/posts/universal-basic-income">Dec 5, 2018</a>
-    </div>
-  </article>
-
-  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="post-flair" style="background-image: linear-gradient(90deg, #F8EA93, #B5B5B5, #F7CD8E, #B0B0B0, #B0AFB0);"></div>
-      <header class="post-header">
-        <h1>
-          <a href="/posts/the-value-promise-of-subscription-games">The Value Promise of Subscription Games</a>
-        </h1>
-      </header>
-    <div class="post-content" itemprop="articleBody">
-      <p>I had been playing World of Warcraft on and off for about 10 years, but I decided to stop playing again about a year ago. I quit because of a series of changes that were made to the game, and it motivated me to think about why I reacted that way as a paying customer.</p>
-
-<p>A series of recent changes made to WoW were designed to motivate players to play by ensuring they always gain something and grow a little every time they play. Unfortunately, a side effect of these changes was an increased pressure to spend many hours playing. This made me feel like my limited time spent in the game was less valuable, and is what ultimately led to me quitting the game.</p>
-
-<h2 id="what-makes-a-subscription-based-game-worth-its-price">What makes a subscription-based game worth its price?</h2>
-
-<p>All games need to convince people that what they are buying (whether it’s a complete game, an item, or another month of game time) is worth the price. <a href="/posts/pay-to-win">I wrote previously</a> about what mobile games do to make people want to buy extra items. Online games where players pay a fixed amount every month have a very different strategy.</p>
-
-<p>Unlike games that sell items, games with a subscription model don’t need to maximize revenue per user because everybody pays the same price. Instead, the most important metric is how many people will keep playing the following month. The total revenue per user is determined by how many months they spend playing the game.</p>
-
-<p>Traditional console games need to convince people to pay money just once. “$60 will get you more than 100 hours of fun gameplay!” On the other hand, subscription-based games need to convince people to pay money <strong>every month</strong>. One thing that helps people make a decision is whether they felt like the previous month was worth the price. So online games do their best to make sure that people are always satisfied with the time they have spent playing the game so far.</p>
-
-<h2 id="how-to-design-a-subscription-based-game">How to design a subscription-based game</h2>
-
-<p>Most online RPGs follow a basic progression system that can give players a fun game experience over a long period of time. You enter a dungeon, beat a few bosses, and get a few strong items. The dungeons reset each week, and since those new items make you a little bit stronger you can get a little further in the dungeon. After a few months you are strong enough to defeat the final boss, and by that time the game will (hopefully) soon release a new dungeon.</p>
-
-<p>You always have a challenge, and you are always making progress towards completing the challenge. It’s almost like you’re buying and playing a new small game every few months, but it’s much more meaningful because you keep the same character who is constantly growing stronger.</p>
-
-<p>So then, what can go wrong and make people want to stop playing?</p>
-
-<h2 id="people-pay-for-their-time-dont-make-them-waste-it">People pay for their time. Don’t make them waste it.</h2>
-
-<p>The most competitive players will defeat all of the game’s bosses very quickly, and have little to do inside the game until the next dungeon is released. If there is nothing meaningful to do inside the game, then there’s no reason to spend money to keep playing. Making social elements important or having players battle each other are possible solutions, but online games constantly struggle to make sure that high-ranked players will always have a reason to keep playing.</p>
-
-<p>In other cases, a player might have plenty left to do but still feel like their time in the game was not spent well. You could play for many hours fighting bosses, but never manage to get any new strong items just because you were unlucky. All of the time spent fighting bosses would feel lost because you gained nothing for your effort.</p>
-
-<p>At the end of the month, players will ask themselves, “Did I get my money’s worth last month?” If you spent $15 to play a game but didn’t make any progress, you might feel like that was a waste of money.</p>
-
-<p>So WoW started to reward people for the time they spend playing the game. Now you constantly get special experience points when you play, and this will make your items stronger. Because you are always gaining these experience points it is guaranteed that none of your time will be a total waste. People can spend more time playing the game and be satisfied that it was time well-spent. Problem solved, right?</p>
-
-<p>Not quite.</p>
-
-<h2 id="people-pay-for-their-time-dont-devalue-it">People pay for their time. Don’t devalue it.</h2>
-
-<p>The issue is that if every hour you spend in the game makes you stronger, you are now required to spend many hours playing the game if you want to be strong. Before, I could play for a few hours on the weekend fighting bosses and if I was lucky I would get some great items and be a strong player. I was happy with that. But now having the good items isn’t enough. I’m required to make my items stronger by spending many more hours gaining extra experience points to improve them.</p>
-
-<p>In that sense, the time I spend fighting bosses is only meaningful if I also spend more time making the items stronger. Without the extra time put in, I can only get weak items from bosses. And what if I can’t because I’m too busy during the rest of the week? My time spent in the game, which hasn’t changed, is now worth less because I get less benefit from it. I now feel like I’m no longer getting my money’s worth from the game. And ironically, the cause was a new system designed to make every hour spent in the game feel more valuable.</p>
-
-<h2 id="what-was-wrong-with-these-changes">What was wrong with these changes?</h2>
-
-<p><strong>Making all time spent in the game directly make you stronger doesn’t work well in MMOs</strong>. In mobile games, it’s fine to reward time spent playing because it works as an alternative to paying money. Competitive players can choose to spend either time or money to become stronger, and non-competitive players aren’t affected because they lose nothing by playing the game for free. But if you are paying a monthly subscription, then having a disadvantage because you don’t have extra time or money is a terrible experience. MMOs generally don’t allow people to pay money to become stronger, and allowing people to spend time to become stronger can lead to similar issues.</p>
-
-<p><strong>Giving an advantage to hard-core players is not a great business decision, <em>especially if it makes the game less fun for more casual players</em></strong>. This is because no matter how dedicated a player is, they will only spend the same amount of money as a casual player. If a game gets the majority of its revenue from a small group of hard-core players, it’s fine to focus on them. But in an online game where everybody spends the same amount of money, the majority of revenue will come from more casual players and they are the ones for whom the main gameplay should be designed.</p>
-
-<p>I’m not sure what circumstances motivated the changes to WoW, but I think there had to be better solutions. If hard-core players were running out of things to do, maybe add more cosmetic rewards, or create one insanely difficult version of the current dungeon that most people can not complete. Or if casual players were having a hard time progressing within a limited time, then you can add safety mechanics that guarantee a good item after a certain number of unlucky attempts with no rewards.</p>
-
-<p>The latest version of WoW added changes that affected the core gameplay for all users and unfortunately did it in a way that gave a disadvantage to many casual players. I would guess that these people made up a large portion of the game’s players, and worsening their game experience may prove to do more harm than good.</p>
-
-      </div>
-    <div class="post-meta">
-      <a href="/posts/the-value-promise-of-subscription-games">Oct 18, 2018</a>
     </div>
   </article>
 <div class="paginator">

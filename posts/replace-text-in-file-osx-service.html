@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Replace Text in File - OSX Service</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=202504183">
+  <link rel="stylesheet" href="/assets/css/main.css?v=202504282">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/replace-text-in-file-osx-service">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -19,7 +19,7 @@
   <meta content="Invisible Parade" property="og:site_name">
 <meta content="Replace Text in File - OSX Service" property="og:title">
 <meta content="article" property="og:type">
-<meta content="A quick Mac OSX service that will search and replace all given strings in a text file, and save the modified content as a new file. It’s not that much faster than just opening it in a text editor, ..." property="og:description">
+<meta content="A quick Mac OSX service that will search and replace all given strings in a text file, and save the modified content as a new file. It’s not that much faster than just opening it in a text editor, but it was a fun way to learn how sed works. Download the script here It just runs a simple AppleScript that prompts for the query strings and new filename, and then runs sed through the shell to do the string replacements. on run {input, parameters} set filepath to quoted form of POSIX path of (first item of input) set folderpath to quoted form of POSIX path of (POSIX file (do shell script "dirname " &amp; filepath)) &amp; "/" set findText to text returned of (display dialog "Enter search string" default answer "") set replaceText to text returned of (display dialog "Enter replace string" default answer "") set newfilepath to folderpath &amp; text returned of (display dialog "Enter new file name" default answer "") do shell script "export LC_CTYPE=C;export LANG=C;sed 's/" &amp; findText &amp; "/" &amp; replaceText &amp; "/g' " &amp; filepath &amp; " &gt; " &amp; newfilepath end run After downloading, unzip and place the file in ~/Library/Services (or create the folder first if it doesn’t exist already) After doing so, you should be able to simply right-click a file in Finder to see the “Replace Text” option. (You might find it under a “Services” category)" property="og:description">
 <meta content="https://invisibleparade.com/posts/replace-text-in-file-osx-service" property="og:url">
 <script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
 </head>
@@ -136,9 +136,6 @@
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
-    </li>
-    <li class="blue-light ">
-      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>

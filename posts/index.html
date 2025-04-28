@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invisible Parade</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=202504183">
+  <link rel="stylesheet" href="/assets/css/main.css?v=202504282">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -138,9 +138,6 @@
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
     </li>
     <li class="blue-light ">
-      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
-    </li>
-    <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
       </a>
     </li>
@@ -160,6 +157,124 @@
 </nav>
     <div class="page-content" aria-label="Content">
       
+  <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-flair" style="background-image: linear-gradient(90deg, #A49F9C, #621D0F, #C7C1B7, #925D22, #3D4938);"></div>
+      <header class="post-header">
+        <h1>
+          <a href="/posts/identity-vs-community">Identity and Community on the Fediverse</a>
+        </h1>
+      </header>
+    <div class="post-content" itemprop="articleBody">
+      <p><a href="https://fediverse.info">The Fediverse</a>, a network of interconnected social media services, requires users to choose a service for their account, tying their identity to that community. This can be problematic if the community experiences issues like spam, moderation problems, or shutdown. If we could decouple identity from community, like Reddit did with subreddits, users could more freely participate in multiple communities — and the network overall would be more accessible and resilient.</p>
+
+<h2 id="the-way-things-work">The way things work</h2>
+
+<p>The Fediverse allows anyone to create their own social networking service — their own mini-X or mini-Instagram, if you will. There are many of these services now, each usually centered around a common interest.</p>
+
+<p>Additionally, all of these separate services are built to communicate with each other, so that you can interact with users and their posts on any compliant service. Instead of having a few, huge, separate services, there are now many, small, interconnected services.</p>
+
+<p>You do need to choose a service at which to initially create an account, but after you have, you are free to interact with anyone who is a part of this federated network.</p>
+
+<p>Anything you post online is saved to your chosen service, and is then broadcasted to the broader network. If you decide to move your account to a different service, there is a system to notify your contacts so that they will automatically be connected to your new account. However, your posts saved to the previous service will not come with you — you will have a fresh, new account.</p>
+
+<h2 id="the-problem-with-choosing-a-service">The problem with choosing a service</h2>
+
+<p>When I first tried to join the Fediverse, <a href="/posts/i-want-to-love-mastodon">I hated the idea</a> of needing to choose a service. Yes, you can connect and interact with anyone regardless of which service their account belongs to, so it seems like your choice of a service matters little. But consider the following hypothetical scenario:</p>
+
+<h3 id="making-a-choice">Making a choice</h3>
+
+<p>I look for a service at which to create my account. Several of my friends have accounts at <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> and it seems to have a fun vibe, so I choose it.</p>
+
+<p>Things are good. In additional to the members of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span>, I also make some friends at <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>, another casual and pleasant service. In <span class="green"><strong>&lt;woordworking.club&gt;</strong></span> I find a small community of very helpful people who give me tips on my DIY projects. I also love browsing everyone’s finished photos.</p>
+
+<p>Then, bad things happen.</p>
+
+<h3 id="overrun-by-spam">Overrun by spam</h3>
+
+<p>First, <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> becomes more popular and explodes with spam accounts. The admins are not able to handle the spam well, and other instances begin blocking access from <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> to protect their users from the spam. I can no longer talk to my friends at <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>. This is a huge bummer, but since most of my friends are on <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> there is not much I can do.</p>
+
+<h3 id="a-nazi-is-uncovered">A Nazi is uncovered</h3>
+
+<p>Then, it turns out that one of the moderators of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> is a Nazi. This is a huge bummer, and I seriously consider leaving the service for another. Ultimately though, it would be a lot of work to set up a new account — inertia wins, and I stay.</p>
+
+<h3 id="burn-out-and-shut-down">Burn-out and shut-down</h3>
+
+<p>Then, the owner of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span>, having been subjected to aggression and backlash from just about everyone about the service’s many issues, declares that it is no longer worth the trouble and will shut down the service. After a brief grace period, my account will disappear. This is a huge bummer.</p>
+
+<p>I need to find a new service. The easy option is <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>, but they have been seeing their fair share of drama too, and I’m afraid of the same thing happening again. I could go to <span class="green"><strong>&lt;woordworking.club&gt;</strong></span>, but I’m definitely not enough of a woodworker to tie that label to my online identity.</p>
+
+<p>There seems to be no good choice.</p>
+
+<h2 id="creating-your-own-service">Creating your own service</h2>
+
+<p>That was a hypothetical scenario, but all of those things can — and have — happen. These are the things that I needed to consider when choosing a service, and it was paralyzing. Ultimately, I ended up side-stepping the decision by <a href="/posts/installing-gotosocial-on-coolify">creating my own server</a>.</p>
+
+<p>This is fine, and everything works as expected. But, it is really hard to find and join communities when I’m starting with a home server of Population: One.</p>
+
+<p>Or, maybe it isn’t too much harder than one should expect, but it would be <em>so much easier</em> to join communities if I could just click <strong>join</strong> somewhere and be included on their list.</p>
+
+<h2 id="the-root-of-the-problem">The root of the problem</h2>
+
+<p>I think the main issue is that currently <strong>identity</strong> and <strong>community</strong> are tied together. If I want an <strong>identity</strong> on the Fediverse, I need to create an account with a service somewhere, which becomes my defacto <strong>community</strong>. If I have only one account, I will only officially be a member of one community.</p>
+
+<p>If that community disappears, so does my identity.</p>
+
+<p>I can, of course, create a new account and switch my contacts to the new one, but none of my posts will come with me. It’s like moving to a new house and filing a change of address, but having to leave all of your things behind and starting with an empty house. Or like moving to a new boat after my old boat sinks to the bottom of the ocean.</p>
+
+<h2 id="the-reddit-model">The Reddit model</h2>
+
+<p>There should be a way to de-couple identity and community. Reddit’s subreddits are actually a very resilient model that might work here.</p>
+
+<p>On Reddit, anybody can create a subreddit — a discussion board centered on any common interest. After creating a Reddit account, you are free to join any subreddits that interest you. Each subreddit will have its own moderation and be relatively self-governed, outside of extreme situations.</p>
+
+<p>Some subreddits will inevitably have drama, and in the worst cases they may shut down or become unusable. Motivated users would then create a replacement subreddit with new leadership and move over. Since user accounts are tied to Reddit as a whole and not to any particular subreddit, this is easy to do. The collapse of one subreddit does not have any impact on your personal account, or on your activity on other subreddits.</p>
+
+<h2 id="a-better-solution">A better solution?</h2>
+
+<p>Imagine if the Fediverse treated identities and communities as separate concerns.</p>
+
+<p>First you will create an identify, which will feel a lot like an email address. Most people will sign up at an identity provider, much like Gmail or Yahoo, but it would be moderately straightforward to set one up for yourself if desired.</p>
+
+<p>Once you have an identity, you are then free to join any of the many <strong>communities</strong> on the Fediverse. These communities can be created by anybody, and are often centered around a common interest. You can join any number of communities and be listed as a member there. You can also follow individual users directly.</p>
+
+<p>When you post something online, you can choose where to publish it:</p>
+
+<ol>
+  <li>To your own profile, viewable at your personal feed</li>
+  <li>To a particular community, viewable at its community feed</li>
+  <li>Both 1 and 2</li>
+</ol>
+
+<p>With this framework, lets consider the hypothetical huge bummers from before:</p>
+
+<h3 id="1-my-identity-provider-becomes-spammy-and-is-blocked">1. My identity provider becomes spammy, and is blocked</h3>
+
+<p>Spam is rampant and various communities begin blocking access from accounts created with this provider — I need to create a new account. The posts that I had been posting to my personal feed probably will not come with me.</p>
+
+<p>But all of the posts that I had posted to various communities will remain there. By notifying my change of identity, my old posts and membership status will be updated to point to my new identity. All in all, this is not too disruptive.</p>
+
+<h3 id="2-a-moderator-of-my-favorite-community-was-a-nazi">2. A moderator of my favorite community was a Nazi</h3>
+
+<p>I no longer want to be associated to that community, and I will stop posting there. It may or may not be easy to delete my old posts.</p>
+
+<p>But my identity is not tied to that community, so this is not a big deal. My friends and I will decide where our next online hangout will be.</p>
+
+<h3 id="3-my-favorite-community-is-shut-down">3. My favorite community is shut down</h3>
+
+<p>The service will disappear, along with all of the posts that I had made to that community.</p>
+
+<p>This is essentially the same as #2 above. My account will be intact, and I can continue to participate in other communities.</p>
+
+<h2 id="this-feels-like-a-good-idea">This feels like a good idea!</h2>
+
+<p>I can’t be the first person to have thought of this, so maybe there is a good reason why things haven’t been architected in this way. I’m curious to learn why!</p>
+
+      </div>
+    <div class="post-meta">
+      <a href="/posts/identity-vs-community">Apr 28, 2025</a>
+    </div>
+  </article>
+
   <article class="post list-item" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="post-flair" style="background-image: linear-gradient(90deg, #C90738, #525151, #582D1C, #B73A3C, #592D1C);"></div>
       <header class="post-header">
@@ -430,18 +545,6 @@
 </div>
     <div class="post-meta">
       <a href="/posts/the-compo-challenge">Mar 24, 2025</a>
-    </div>
-  </article>
-
-  <article class="toot list-item" itemscope itemtype="http://schema.org/BlogPosting">
-    </header>
-    <div class="post-content" itemprop="articleBody">
-      <p>Backblaze randomly stopped backing up for many Mac users on 3/13 (myself included), and the only information about this problem and its fix is in this reddit thread(!?)<br /><br /><a href="https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/" rel="nofollow noreferrer noopener" target="_blank">https://www.reddit.com/r/backblaze/comments/1jdlzop/bb_stopped_backing_up_after_macos_1532_update/</a><br /><br />tl;dr:<br />1. Restart the computer<br />2. Manually update the app via the latest installer<br />3. Invoke a magic command to make it rescan your drive(!?)</p>
-<div class="gallery"></div>
-
-      </div>
-    <div class="post-meta">
-      <a href="/posts/2025-03-21-01JPVG0MYR1H869E1A3RE10M9K">Mar 21, 2025</a>
     </div>
   </article>
 <div class="paginator">

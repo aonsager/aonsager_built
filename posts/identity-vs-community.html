@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identity and Community on the Fediverse</title>
+  <meta name="description" content="The Fediverse, a network of interconnected social media services, requires users to choose a service for their account, tying their identity to that community. This can be problematic if the community experiences issues like spam, moderation problems, or shutdown. If we could decouple identity from community, like Reddit did with subreddits, users could more freely participate in multiple communities — and the network overall would be more accessible and resilient.">
+  <link rel="stylesheet" href="/assets/css/main.css?v=202504282">
+  <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+  <link rel="canonical" href="https://invisibleparade.com/posts/identity-vs-community">
+  <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Invisible Parade" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta content="Invisible Parade" property="og:site_name">
+<meta content="Identity and Community on the Fediverse" property="og:title">
+<meta content="article" property="og:type">
+<meta content="The Fediverse, a network of interconnected social media services, requires users to choose a service for their account, tying their identity to that community. This can be problematic if the community experiences issues like spam, moderation problems, or shutdown. If we could decouple identity from community, like Reddit did with subreddits, users could more freely participate in multiple communities — and the network overall would be more accessible and resilient." property="og:description">
+<meta content="https://invisibleparade.com/posts/identity-vs-community" property="og:url">
+<script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
+</head>
+
+<body>
+  
+<header class="site-header mono">
+  <div class="container">
+    <div class="site-title">
+      <svg id="header-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="10" fill="#fcfcfc" stroke="#202225" stroke-width="1" />
+            <circle cx="25" cy="15" r="10" fill="#202225" stroke="#fcfcfc" stroke-width="1" />
+      </svg>
+      <svg id="nav-logo" width="50" height="30" xmlns="http://www.w3.org/2000/svg" onclick="toggle_nav();">
+        <line x1="5" y1="10" x2="35" y2="10" />
+        <line x1="5" y1="17" x2="35" y2="17" />
+        <line x1="5" y1="24" x2="35" y2="24" />
+      </svg>
+      <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer;" onclick="toggle_theme();">
+        <svg id="theme-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </button>
+      <div class="site-url">
+        <span class="header-url">invisibleparade.com</span><span class="header-url root-non-index blue">/posts<span class="blue-light">/identity-vs-community</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const html = document.querySelector('html');
+  const sunIcon = `
+    <circle cx="15" cy="15" r="6" stroke="black" stroke-width="2" fill="none"/>
+    <line x1="15" y1="2" x2="15" y2="6" stroke="black" stroke-width="2"/>
+    <line x1="15" y1="24" x2="15" y2="28" stroke="black" stroke-width="2"/>
+    <line x1="2" y1="15" x2="6" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="24" y1="15" x2="28" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="5.5" x2="8.5" y2="8.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5" stroke="black" stroke-width="2"/>
+    <line x1="5.5" y1="24.5" x2="8.5" y2="21.5" stroke="black" stroke-width="2"/>
+    <line x1="21.5" y1="8.5" x2="24.5" y2="5.5" stroke="black" stroke-width="2"/>
+  `;
+  const moonIcon = `
+    <path d="M15 25C20.5228 25 25 20.5228 25 15C25 14.5373 24.3065 14.4608 24.0672 14.8568C22.9289 16.7406 20.8615 18 18.5 18C14.9101 18 12 15.0899 12 11.5C12 9.13845 13.2594 7.07105 15.1432 5.93276C15.5392 5.69347 15.4627 5 15 5C9.47715 5 5 9.47715 5 15C5 20.5228 9.47715 25 15 25Z" fill="#fdfdfd"/>
+  `;
+
+  // Check saved preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeIcon = document.getElementById('theme-icon');
+
+  function switchLight() {
+    themeToggleButton.classList.remove('dark');
+    html.style.setProperty("color-scheme", "light");
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function switchDark() {
+    themeToggleButton.classList.add('dark');
+    html.style.setProperty("color-scheme", "dark");
+    themeIcon.innerHTML = moonIcon;
+  }
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      switchDark();
+    } else if (savedTheme === 'light') {
+      switchLight();
+    }
+  } else if (prefersDark) {
+    themeIcon.innerHTML = moonIcon;
+  } else {
+    themeIcon.innerHTML = sunIcon;
+  }
+
+  function toggle_theme() {
+    const isDark = themeToggleButton.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    if (isDark) {
+      switchLight();
+    } else {
+      switchDark();
+    }
+  }
+
+  function toggle_nav() {
+    document.getElementById("nav-logo").classList.toggle('open');
+    document.getElementById("site-nav").classList.toggle('open');
+  }
+</script>
+  <main class="container flex">
+    <nav id="site-nav" class="mono">
+  <ul class="nav-links">
+    <li class="red ">
+      ❯&nbsp;<a href="/">/index</a>
+    </li>
+    <li class="green ">
+      ❯&nbsp;<a href="/about">/about</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/now">/now</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/ai">/ai</a>
+    </li>
+    <li class="green-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/about/colophon">/colophon</a>
+    </li>
+    <li class="blue selected">
+      ❯&nbsp;<a href="/posts">/posts</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;❯&nbsp;<a href="/posts/archive">/archive</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
+      </a>
+    </li>
+    <li class="blue-light ">
+      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/mumbles">/mumbles</a>
+    </li>
+    <li class="purple ">
+      ❯&nbsp;<a href="/projects">/projects</a>
+    </li>
+    <li class="orange ">
+      ❯&nbsp;<a href="/contact">/contact</a>
+    </li>
+    <li class="pink ">
+      ❯&nbsp;<a href="/feeds">/feeds</a>
+    </li>
+  </ul>
+</nav>
+    <div class="page-content" aria-label="Content">
+      <article class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-flair" style="background-image: linear-gradient(90deg, #A49F9C, #621D0F, #C7C1B7, #925D22, #3D4938);"></div>
+  <header class="post-header">
+    <h1>Identity and Community on the Fediverse</h1>
+    </header>
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://fediverse.info">The Fediverse</a>, a network of interconnected social media services, requires users to choose a service for their account, tying their identity to that community. This can be problematic if the community experiences issues like spam, moderation problems, or shutdown. If we could decouple identity from community, like Reddit did with subreddits, users could more freely participate in multiple communities — and the network overall would be more accessible and resilient.</p>
+
+<h2 id="the-way-things-work">The way things work</h2>
+
+<p>The Fediverse allows anyone to create their own social networking service — their own mini-X or mini-Instagram, if you will. There are many of these services now, each usually centered around a common interest.</p>
+
+<p>Additionally, all of these separate services are built to communicate with each other, so that you can interact with users and their posts on any compliant service. Instead of having a few, huge, separate services, there are now many, small, interconnected services.</p>
+
+<p>You do need to choose a service at which to initially create an account, but after you have, you are free to interact with anyone who is a part of this federated network.</p>
+
+<p>Anything you post online is saved to your chosen service, and is then broadcasted to the broader network. If you decide to move your account to a different service, there is a system to notify your contacts so that they will automatically be connected to your new account. However, your posts saved to the previous service will not come with you — you will have a fresh, new account.</p>
+
+<h2 id="the-problem-with-choosing-a-service">The problem with choosing a service</h2>
+
+<p>When I first tried to join the Fediverse, <a href="/posts/i-want-to-love-mastodon">I hated the idea</a> of needing to choose a service. Yes, you can connect and interact with anyone regardless of which service their account belongs to, so it seems like your choice of a service matters little. But consider the following hypothetical scenario:</p>
+
+<h3 id="making-a-choice">Making a choice</h3>
+
+<p>I look for a service at which to create my account. Several of my friends have accounts at <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> and it seems to have a fun vibe, so I choose it.</p>
+
+<p>Things are good. In additional to the members of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span>, I also make some friends at <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>, another casual and pleasant service. In <span class="green"><strong>&lt;woordworking.club&gt;</strong></span> I find a small community of very helpful people who give me tips on my DIY projects. I also love browsing everyone’s finished photos.</p>
+
+<p>Then, bad things happen.</p>
+
+<h3 id="overrun-by-spam">Overrun by spam</h3>
+
+<p>First, <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> becomes more popular and explodes with spam accounts. The admins are not able to handle the spam well, and other instances begin blocking access from <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> to protect their users from the spam. I can no longer talk to my friends at <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>. This is a huge bummer, but since most of my friends are on <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> there is not much I can do.</p>
+
+<h3 id="a-nazi-is-uncovered">A Nazi is uncovered</h3>
+
+<p>Then, it turns out that one of the moderators of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span> is a Nazi. This is a huge bummer, and I seriously consider leaving the service for another. Ultimately though, it would be a lot of work to set up a new account — inertia wins, and I stay.</p>
+
+<h3 id="burn-out-and-shut-down">Burn-out and shut-down</h3>
+
+<p>Then, the owner of <span class="red"><strong>&lt;tootsosaurus.rex&gt;</strong></span>, having been subjected to aggression and backlash from just about everyone about the service’s many issues, declares that it is no longer worth the trouble and will shut down the service. After a brief grace period, my account will disappear. This is a huge bummer.</p>
+
+<p>I need to find a new service. The easy option is <span class="blue"><strong>&lt;happyfun.house&gt;</strong></span>, but they have been seeing their fair share of drama too, and I’m afraid of the same thing happening again. I could go to <span class="green"><strong>&lt;woordworking.club&gt;</strong></span>, but I’m definitely not enough of a woodworker to tie that label to my online identity.</p>
+
+<p>There seems to be no good choice.</p>
+
+<h2 id="creating-your-own-service">Creating your own service</h2>
+
+<p>That was a hypothetical scenario, but all of those things can — and have — happen. These are the things that I needed to consider when choosing a service, and it was paralyzing. Ultimately, I ended up side-stepping the decision by <a href="/posts/installing-gotosocial-on-coolify">creating my own server</a>.</p>
+
+<p>This is fine, and everything works as expected. But, it is really hard to find and join communities when I’m starting with a home server of Population: One.</p>
+
+<p>Or, maybe it isn’t too much harder than one should expect, but it would be <em>so much easier</em> to join communities if I could just click <strong>join</strong> somewhere and be included on their list.</p>
+
+<h2 id="the-root-of-the-problem">The root of the problem</h2>
+
+<p>I think the main issue is that currently <strong>identity</strong> and <strong>community</strong> are tied together. If I want an <strong>identity</strong> on the Fediverse, I need to create an account with a service somewhere, which becomes my defacto <strong>community</strong>. If I have only one account, I will only officially be a member of one community.</p>
+
+<p>If that community disappears, so does my identity.</p>
+
+<p>I can, of course, create a new account and switch my contacts to the new one, but none of my posts will come with me. It’s like moving to a new house and filing a change of address, but having to leave all of your things behind and starting with an empty house. Or like moving to a new boat after my old boat sinks to the bottom of the ocean.</p>
+
+<h2 id="the-reddit-model">The Reddit model</h2>
+
+<p>There should be a way to de-couple identity and community. Reddit’s subreddits are actually a very resilient model that might work here.</p>
+
+<p>On Reddit, anybody can create a subreddit — a discussion board centered on any common interest. After creating a Reddit account, you are free to join any subreddits that interest you. Each subreddit will have its own moderation and be relatively self-governed, outside of extreme situations.</p>
+
+<p>Some subreddits will inevitably have drama, and in the worst cases they may shut down or become unusable. Motivated users would then create a replacement subreddit with new leadership and move over. Since user accounts are tied to Reddit as a whole and not to any particular subreddit, this is easy to do. The collapse of one subreddit does not have any impact on your personal account, or on your activity on other subreddits.</p>
+
+<h2 id="a-better-solution">A better solution?</h2>
+
+<p>Imagine if the Fediverse treated identities and communities as separate concerns.</p>
+
+<p>First you will create an identify, which will feel a lot like an email address. Most people will sign up at an identity provider, much like Gmail or Yahoo, but it would be moderately straightforward to set one up for yourself if desired.</p>
+
+<p>Once you have an identity, you are then free to join any of the many <strong>communities</strong> on the Fediverse. These communities can be created by anybody, and are often centered around a common interest. You can join any number of communities and be listed as a member there. You can also follow individual users directly.</p>
+
+<p>When you post something online, you can choose where to publish it:</p>
+
+<ol>
+  <li>To your own profile, viewable at your personal feed</li>
+  <li>To a particular community, viewable at its community feed</li>
+  <li>Both 1 and 2</li>
+</ol>
+
+<p>With this framework, lets consider the hypothetical huge bummers from before:</p>
+
+<h3 id="1-my-identity-provider-becomes-spammy-and-is-blocked">1. My identity provider becomes spammy, and is blocked</h3>
+
+<p>Spam is rampant and various communities begin blocking access from accounts created with this provider — I need to create a new account. The posts that I had been posting to my personal feed probably will not come with me.</p>
+
+<p>But all of the posts that I had posted to various communities will remain there. By notifying my change of identity, my old posts and membership status will be updated to point to my new identity. All in all, this is not too disruptive.</p>
+
+<h3 id="2-a-moderator-of-my-favorite-community-was-a-nazi">2. A moderator of my favorite community was a Nazi</h3>
+
+<p>I no longer want to be associated to that community, and I will stop posting there. It may or may not be easy to delete my old posts.</p>
+
+<p>But my identity is not tied to that community, so this is not a big deal. My friends and I will decide where our next online hangout will be.</p>
+
+<h3 id="3-my-favorite-community-is-shut-down">3. My favorite community is shut down</h3>
+
+<p>The service will disappear, along with all of the posts that I had made to that community.</p>
+
+<p>This is essentially the same as #2 above. My account will be intact, and I can continue to participate in other communities.</p>
+
+<h2 id="this-feels-like-a-good-idea">This feels like a good idea!</h2>
+
+<p>I can’t be the first person to have thought of this, so maybe there is a good reason why things haven’t been architected in this way. I’m curious to learn why!</p>
+
+    <div class="post-meta">
+      <time datetime="2025-04-28T14:23:00+09:00" itemprop="datePublished">
+        Apr 28, 2025
+      </time>
+    </div>
+  </div>
+  <hr />
+  <div class="post-related">
+      <h3>Related Posts</h3>
+<ul class="archive-list">
+<li><a href="/posts/momokuro-fans">When a music festival was cancelled, idol fans supported the local community</a></li>
+      <li><a href="/posts/the-sociable-weaver">The Sociable Weaver</a></li>
+      <li><a href="/posts/installing-gotosocial-on-coolify">Installing GoToSocial on Coolify</a></li>
+      <li><a href="/posts/i-want-to-love-mastodon">I want to love Mastodon...</a></li>
+      <li><a href="/posts/web-links-july-2022">Web links - July 2022</a></li>
+      </ul></div>
+  <hr />
+  <div class="post-comments">
+      <script defer src="https://commento.invisibleparade.com/js/commento.js"></script>
+<div id="commento"></div>
+</div>
+</article>
+  
+    </div>
+  </main>
+  <footer class="site-footer mono">
+  <div class="wrapper">
+    <p>By Alex Onsager. <a href="/contact">Say hello!</a></p>
+  </div>
+</footer>
+
+<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script>
+  // Lightbox
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 0,
+      'resizeDuration': 0,
+      'wrapAround': true
+    })
+</script>
+</body>
+</html>

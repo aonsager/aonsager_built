@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adding CSS Support for Dark Mode</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=202504183">
+  <link rel="stylesheet" href="/assets/css/main.css?v=202504282">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/adding-css-support-for-dark-mode">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -19,7 +19,7 @@
   <meta content="Invisible Parade" property="og:site_name">
 <meta content="Adding CSS Support for Dark Mode" property="og:title">
 <meta content="article" property="og:type">
-<meta content="macOS Mojave added a system-wide Dark Mode, but it doesn’t do much if all of the websites you see are still bright white. To address this, there is a new CSS media query prefers-color-scheme that c..." property="og:description">
+<meta content="macOS Mojave added a system-wide Dark Mode, but it doesn’t do much if all of the websites you see are still bright white. To address this, there is a new CSS media query prefers-color-scheme that can detect Dark Mode and change styles accordingly. There are three possible values: no-preference, light, and dark. You can read more in the W3C specification. This new option looks to be supported in Safari 12.1 and Firefox 67. As of this writing both of these have not been released officially, but you can try it out in the Safari Technology Preview I’ve added Dark Mode support to this site, using code that looks something like this @media (prefers-color-scheme: dark) { body { color: $text-color-dark; background-color: $background-color-dark; } img { opacity: 0.9 } } You should probably tweak colors a bit more than simply switching black and white to keep things looking nice, and I found that reducing image opacity can help to reduce the contrast with bright pictures." property="og:description">
 <meta content="https://invisibleparade.com/posts/adding-css-support-for-dark-mode" property="og:url">
 <meta content="https://invisibleparade.com/assets/images/darkmode.png" property="og:image">
   <meta content="" property="og:image_alt">
@@ -138,9 +138,6 @@
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
-    </li>
-    <li class="blue-light ">
-      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>

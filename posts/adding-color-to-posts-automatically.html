@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Generating Colors from Post Titles</title>
   <meta name="description" content="My personal webpage and blog.">
-  <link rel="stylesheet" href="/assets/css/main.css?v=202504183">
+  <link rel="stylesheet" href="/assets/css/main.css?v=202504282">
   <link rel="stylesheet" href="/assets/css/lightbox.min.css">
   <link rel="canonical" href="https://invisibleparade.com/posts/adding-color-to-posts-automatically">
   <link rel="alternate" type="application/rss+xml" title="Invisible Parade" href="/feed.xml">
@@ -19,7 +19,7 @@
   <meta content="Invisible Parade" property="og:site_name">
 <meta content="Generating Colors from Post Titles" property="og:title">
 <meta content="article" property="og:type">
-<meta content="This blog has an intentionally simple design, but lately I’ve been thinking that it needs more color. A lot of the posts don’t have images and are just text, so large areas of the page are black an..." property="og:description">
+<meta content="This blog has an intentionally simple design, but lately I’ve been thinking that it needs more color. A lot of the posts don’t have images and are just text, so large areas of the page are black and white with nothing visually interesting. That said, trying to include an image with every post is a pain. I would probably spend more time browsing stock images than actually writing the posts. Picular was a big inspiration. Generating colors from text by searching for images is a great idea, and I decided to automatically get a set of colors based on each post’s title. Picular doesn’t have an API that I could use, so I wrote a quick script that does something similar. Unless I’ve changed things since I published this post, there should now be a row of colors next to each post’s title. Getting colors from images I’ve included the script itself at the end of the post so you can the details of how it works, but the general process is as follows: Do a Google Image search for the title of the post Get the first five images For each image, find the color that is most prominent Save the list of colors to the post Here are the results for the title “My Vacation in Tahiti”: #626E6F #53C2D6 #7693C6 #39547B #515E65 After playing around with it, I found that just looking at the most frequently used color usually isn’t good enough. Most of the time you just end up with a lot of black and white. Instead of looking for the most common color, I should instead look for the most interesting color. There is a lot of room for optimization here, and Picular probably does a lot behind the scenes to make its results visually appealing. For now, I’m just ignoring any colors that are close to black or close to white. So far it’s working well enough for my uses. Even with these adjustments, this method tends to find a lot of colors that are either very dark or very bright. The colors often felt too strong compared to the rest of the site’s design. I thought about doing some adjustments to the colors to tone them down, but realized that it’s much easier to cheat by reducing the opacity of the colorful bars via CSS. I now also include this script in the rake task that generates my post files for Jekyll, so after I write a post it will automatically fetch colors before publishing. I might write another post about how that works, but for now you can see the file here (sorry if I’ve changed things since I wrote this and it’s no longer there)." property="og:description">
 <meta content="https://invisibleparade.com/posts/adding-color-to-posts-automatically" property="og:url">
 <script defer src="https://beans.alexonsager.com/script.js" data-website-id="5b90f085-e9ee-40a7-9b51-2fc1fa9ae0d4"></script>
 </head>
@@ -136,9 +136,6 @@
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/me">/me</a>
-    </li>
-    <li class="blue-light ">
-      &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/games">/games</a>
     </li>
     <li class="blue-light ">
       &nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;<a href="/posts/archive/coding">/coding</span>
